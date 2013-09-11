@@ -1,6 +1,0 @@
-<?php
-echo "my site";
-
-
-?>
-
