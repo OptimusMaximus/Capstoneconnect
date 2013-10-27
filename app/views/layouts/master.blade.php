@@ -24,7 +24,8 @@
             }
             .navbar li{
                 display: inline;
-                padding-left: 10px;
+                padding-left: 5px;
+                padding-right: 5px;
                 border-left: 1px solid white;
             }
             .navbar li:first-child{
@@ -44,5 +45,6 @@
             <li class="navbar"><a href="#MyGrades" class="navbar">My Grades</a></li>
             <li class="navbar"><a href="#Help" class="navbar">Help</a></li>
         </ul>
+        @yield('content')
     </body>
-</html>b
+</html>
