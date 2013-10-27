@@ -9,42 +9,53 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
  
         <!-- CSS are placed here -->
-        {{ HTML::style('css/bootstrap.css') }}
+        <link rel="stylesheet" href="css/bootstrap.css" />
+        <link rel="stylesheet" href="css/bootstrap-responsive.css" />
         <style>
         @section('styles')
             body {
                 padding-top: 60px;
                 background-color: #73000A;
                 color: #FFFFFF;
+                text-align: center;
             }
-            .navbar{
+            .nav{
                 float: top;
                 text-align: center;
                 color: #FFFFFF;
             }
-            .navbar li{
+            .nav li{
                 display: inline;
                 padding-left: 5px;
                 padding-right: 5px;
                 border-left: 1px solid white;
             }
-            .navbar li:first-child{
+            .nav li:first-child{
                 border-left: 0px;
+                padding-left: 0px;
             }
+            .nav-pills{
+                display: inline-block;
+            }
+            a:link {color:#FFFFFF;}      /* unvisited link white */
+            a:visited {color:#FFFFFF}  /* visited link white*/
+            a:hover {color:rgb(95,87,79);}  /* mouse over link State House Gray*/
+            a:focus {color:rgb(95,87,79);}
+            a:active {color:rgb(178,180,179);}  /* selected link Pluff Mud*/ 
 
         @show
         </style>
-        {{ HTML::style('css/bootstrap-responsive.css') }}
- 
     </head>
- 
-    <body>
-        <ul class="navbar">
-            <li class="navbar"><a href="#home" class="navbar">Home</a></li>
-            <li class="navbar"><a href="#Questionaire" class="navbar">Questionaire</a></li>
-            <li class="navbar"><a href="#MyGrades" class="navbar">My Grades</a></li>
-            <li class="navbar"><a href="#Help" class="navbar">Help</a></li>
+    <div class="text-center">
+        @yield('header')
+        <ul class="nav nav-pills">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#Questionaire">Questionaire</a></li>
+            <li><a href="#MyGrades">My Grades</a></li>
+            <li><a href="#Help">Help</a></li>
         </ul>
+    </div>
+    <body>
         @yield('content')
     </body>
 </html>

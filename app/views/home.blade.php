@@ -2,10 +2,13 @@
 
 @section('title')
 @parent
-:: Home
+@stop
+
+@section('header')
+<h1>Capstone Connect</h1>
 @stop
 
 @section('content')
-    <h1>Home Page</h1>
+    
     <p>stuff</p>
 @stop
