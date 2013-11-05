@@ -24,13 +24,13 @@
                 text-align: center;
                 color: #FFFFFF;
             }
-            .nav li{
+            .nav-pills li{
                 display: inline;
                 padding-left: 5px;
                 padding-right: 5px;
                 border-left: 1px solid white;
             }
-            .nav li:first-child{
+            .nav-pills li:first-child{
                 border-left: 0px;
                 padding-left: 0px;
             }
