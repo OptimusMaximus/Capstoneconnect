@@ -37,11 +37,11 @@
             .nav-pills{
                 display: inline-block;
             }
-            a:link {color:#FFFFFF;}      /* unvisited link color white */
-            a:visited {color:#FFFFFF}  /* visited link color white*/
-            a:hover {color:rgb(95,87,79);}  /* mouse over link color Pluff mud*/
-            a:focus {color:rgb(95,87,79);}  /* link of focus color Pluff mud*/
-            a:active {color:rgb(178,180,179);}  /* selected link color State House Gray*/ 
+            a:link {color:#FFFFFF;}      /* unvisited link white */
+            a:visited {color:#FFFFFF}  /* visited link white*/
+            a:hover {color:rgb(95,87,79);}  /* mouse over link State House Gray*/
+            a:focus {color:rgb(95,87,79);}
+            a:active {color:rgb(178,180,179);}  /* selected link Pluff Mud*/ 
 
         
         </style>
