@@ -56,7 +56,11 @@
             <li><a href="/public">Home</a></li>
             <li><a href="#Questionaire">Questionaire</a></li>
             <li><a href="#MyGrades">My Grades</a></li>
+<<<<<<< HEAD
             <li><a href="/public/help">Help</a></li>
+=======
+            <li><a href="#Help">Help</a></li>
+>>>>>>> origin/maximus
             <li><a href="/public/login">Logout</a></li>
         </ul>
     </div>
