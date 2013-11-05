@@ -53,6 +53,7 @@
             <li><a href="#Questionaire">Questionaire</a></li>
             <li><a href="#MyGrades">My Grades</a></li>
             <li><a href="#Help">Help</a></li>
+            <li><a href="/public/login">Logout</a></li>
         </ul>
     </div>
     <body>
