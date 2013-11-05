@@ -43,11 +43,7 @@
             a:focus {color:rgb(95,87,79);}
             a:active {color:rgb(178,180,179);}  /* selected link Pluff Mud*/ 
 
-<<<<<<< HEAD
-        
-=======
-       
->>>>>>> Sean
+
         </style>
     </head>
     <div class="text-center">
@@ -55,12 +51,12 @@
         <ul class="nav nav-pills">
             <li><a href="/public">Home</a></li>
             <li><a href="#Questionaire">Questionaire</a></li>
-            <li><a href="#MyGrades">My Grades</a></li>
-<<<<<<< HEAD
+            <li><a href="/public/mygrades">My Grades</a></li>
+
             <li><a href="/public/help">Help</a></li>
-=======
+
             <li><a href="#Help">Help</a></li>
->>>>>>> origin/maximus
+
             <li><a href="/public/login">Logout</a></li>
         </ul>
     </div>
