@@ -53,11 +53,11 @@
     <div class="text-center">
         @yield('header')
         <ul class="nav nav-pills">
-            <li><a href="#home">Home</a></li>
+            <li><a href="/public">Home</a></li>
             <li><a href="#Questionaire">Questionaire</a></li>
             <li><a href="#MyGrades">My Grades</a></li>
-            <li><a href="#Help">Help</a></li>
-            <li><a href="#Logout">Logout</a></li>
+            <li><a href="/public/help">Help</a></li>
+            <li><a href="/public/login">Logout</a></li>
         </ul>
     </div>
     <body>
