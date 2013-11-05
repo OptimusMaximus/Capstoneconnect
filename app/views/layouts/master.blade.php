@@ -12,7 +12,7 @@
         <link rel="stylesheet" href="css/bootstrap.css" />
         <link rel="stylesheet" href="css/bootstrap-responsive.css" />
         <style>
-        @section('styles')
+        @yield('styles')
             body {
                 padding-top: 60px;
                 background-color: #73000A;
@@ -43,7 +43,7 @@
             a:focus {color:rgb(95,87,79);}  /* link of focus color Pluff mud*/
             a:active {color:rgb(178,180,179);}  /* selected link color State House Gray*/ 
 
-        @show
+        
         </style>
     </head>
     <div class="text-center">
