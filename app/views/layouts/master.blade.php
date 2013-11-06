@@ -42,8 +42,6 @@
             a:hover {color:rgb(95,87,79);}  /* mouse over link State House Gray*/
             a:focus {color:rgb(95,87,79);}
             a:active {color:rgb(178,180,179);}  /* selected link Pluff Mud*/ 
-
-
         </style>
     </head>
     <div class="text-center">
