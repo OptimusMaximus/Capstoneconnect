@@ -41,11 +41,12 @@
 	float:right;
 	
 }
-.RecentActivity {
+.AllGrades {
 	background-color:#73000A;
 	height:350px;
 	width:480px;
-	margin:30px 85px 10px 10px;
+
+	margin:210px 30px 10px 10px;
 	 float: right;
      bottom: 0;
      right: 0;
@@ -53,7 +54,7 @@
 	border:2px solid black;
 	}
 
-	.InsideRecentActivity {
+	.InsideAllGrades {
 	background-color:grey;
 	height:300px;
 	width:465px;
@@ -61,6 +62,11 @@
 	float:right;
 	border:2px solid black;
 	
+}
+.GradeAverageText{
+	float: right;
+	margin-right: 225px;
+	color: black;
 }
 	.Calendar {
 	background-color:Red;
@@ -79,43 +85,44 @@
 
 
 <div class="BigWhite">
+	<div class="GradeAverageText">
+ 	<h>
+ 		Your current average is: 
+ 	</h>
+ </div>
  <div class="Announcements">
 
 
 
-<div class="InsideAnnouncement">
+<div class="btn-group-vertical" style="margin-top:20px;">
+<button type="button" class="btn btn-default">Evaluations 1</button>
 
-<br>
- 
-    <button type="button" class="btn btn-default btn-xs">Evaluation 1</button>
-    <br> <br>
-<button type="button" class="btn btn-default btn-xs">Evaluation 2</button>
-    <br> <br>
-<button type="button" class="btn btn-default btn-xs">Evaluation 3</button>    <br> <br>
-<button type="button" class="btn btn-default btn-xs">Evaluation 4</button>   <br> <br>
-<button type="button" class="btn btn-default btn-xs">Evaluation 5</button>
-    <br> <br>
-<button type="button" class="btn btn-default btn-xs">Evaluation 6</button>    <br> <br>
-<button type="button" class="btn btn-default btn-xs">Evaluation 7</button>    <br> <br>
-<button type="button" class="btn btn-default btn-xs">Evaluation 8</button>    <br> <br>
-<button type="button" class="btn btn-default btn-xs">Evaluation 9</button>  <br><br>
-<button type="button" class="btn btn-default btn-xs">Evaluation 10</button><br><br>
+  <button type="button" class="btn btn-default">Evaluations 2</button>
+  <button type="button" class="btn btn-default">Evaluations 3</button>
+  <button type="button" class="btn btn-default">Evaluations 4</button>
+  <button type="button" class="btn btn-default">Evaluations 5</button>
+  <button type="button" class="btn btn-default">Evaluations 6</button>
+  <button type="button" class="btn btn-default">Evaluations 7</button>
+  <button type="button" class="btn btn-default">Evaluations 8</button>
+
+
+
 
  </div>
   <div class="WeeklyGrades">
  </div>
  </div>
-<div class="RecentActivity">
+ 
+<div class="AllGrades">
 <h>
-Recent Activity
+All grades go here!
 </h>
-<div class="InsideRecentActivity">
+<div class="InsideAllGrades">
 <h>
-Activity here!
+More grade stuff.
 </h>
 </div>
  </div>
-  
 
 
   
