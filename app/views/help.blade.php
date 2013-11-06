@@ -10,6 +10,8 @@
 	height:600px;
 	width:900px;	
 	margin: 0 auto;
+	border:2px solid;
+	border-radius:25px;
 }
  .blackbox{
  	background-color:#FFFFFF;

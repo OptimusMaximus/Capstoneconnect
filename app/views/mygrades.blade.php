@@ -9,6 +9,8 @@
 	height:600px;
 	width:1200px;
 	margin: 0 auto;
+	border:2px solid;
+	border-radius:25px;
 
 }
 .Announcements {	
