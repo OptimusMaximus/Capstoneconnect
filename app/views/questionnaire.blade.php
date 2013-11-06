@@ -7,9 +7,11 @@
 @section('styles')
 .BigWhite {
 	background-color:#FFFFFF;
-	height:600px;
+	height:1500px;
 	width:900px;
 	margin: 0 auto;
+	border:2px solid;
+	border-radius:25px;
 
 }
 
@@ -211,9 +213,8 @@
  			    <input type="radio" id="inlineRadio1" value="option1"> 10
 				</label>
 				<textarea class="form-control" rows="3" placeholder="Comments go here"></textarea>
-    		<div class = linkNextQ>
-    			<a href="#NextQuestionnaire" class = "blue" target="_blank">Proceed to next evaluation</a>
-    		</div>
+				<br /><br />
+    			<button type="button" class="btn btn-primary">Submit</button>
     	</div>
     		
     	

@@ -9,6 +9,8 @@
 	height:600px;
 	width:900px;
 	margin: 0 auto;
+	border:2px solid;
+	border-radius:25px;
 
 }
 .Announcements {	
@@ -48,7 +50,6 @@
 	
 }
 	.Calendar {
-	background-color:Red;
 	height:320px;
 	width:490px;
 	margin:15px 30px 10px 10px;
@@ -94,6 +95,6 @@ Calendar
  </div>
 
 </div>  
-  
+
 
 @stop
