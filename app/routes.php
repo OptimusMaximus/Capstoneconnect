@@ -14,3 +14,5 @@
 Route::get('/', 'HomeController@showWelcome');
 Route::get('/help', 'HelpController@showWelcome');
 Route::get('/admin', 'AdminToolsController@makePage');
+Route::get('/questionnaire', 'QuestionnaireController@showWelcome');
+
