@@ -14,7 +14,7 @@
         <style>
         @yield('styles')
             body {
-                padding-top: 60px;
+                padding-top: 30px;
                 background-color: #73000A;
                 color: #FFFFFF;
                 text-align: center;
@@ -50,13 +50,9 @@
         @yield('header')
         <ul class="nav nav-pills">
             <li><a href="/public">Home</a></li>
-            <li><a href="#Questionaire">Questionaire</a></li>
+            <li><a href="/public/questionnaire">Questionaire</a></li>
             <li><a href="/public/mygrades">My Grades</a></li>
-
             <li><a href="/public/help">Help</a></li>
-
-            <li><a href="#Help">Help</a></li>
-
             <li><a href="/public/login">Logout</a></li>
         </ul>
     </div>

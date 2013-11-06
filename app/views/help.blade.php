@@ -23,20 +23,31 @@
 @stop
 
 @section('header')
-<h1>Capstone Connect</h1>
+<h1>Frequently Asked Questions</h1>
 @stop
 
 @section('content')
   
-	<div class="whitebox""blackbox"></div>
-
- <div style="position: absolute; top:250px; left:200px;"> 
+<div class="whitebox">
+	<div style="float:left; padding-top:50px;"> 
  	<FONT COLOR="000000">
  		<p>
- 			FAQ #1 Blah Blah Blah Blah Blah
+ 			FAQ #1: Enter Question Here
+ 			<br /><br />
+ 			FAQ #3: Enter Question Here
+ 			<br /><br />
+ 			FAQ #4: Enter Question Here
+ 			<br /><br />
+ 			FAQ #5: Enter Question Here
+ 			<br /><br />
+ 			FAQ #6: Enter Question Here
  	</FONT>
 		</p>
+	</div>
+
 </div>
+
+ 
   
 
 
