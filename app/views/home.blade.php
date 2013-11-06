@@ -61,6 +61,7 @@
 @stop
 
 @section('content')
+<<<<<<< HEAD
 
 
 <div class="BigWhite">
@@ -96,4 +97,7 @@ Calendar
 </div>  
   
 
+=======
+   <p>stuff</p>
+>>>>>>> nicktest
 @stop

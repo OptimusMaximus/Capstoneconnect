@@ -44,6 +44,10 @@
             a:active {color:rgb(178,180,179);}  /* selected link Pluff Mud*/ 
 
 
+<<<<<<< HEAD
+=======
+       
+>>>>>>> nicktest
         </style>
     </head>
     <div class="text-center">

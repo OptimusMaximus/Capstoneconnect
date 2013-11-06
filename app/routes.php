@@ -15,4 +15,6 @@ Route::get('/', 'HomeController@showWelcome');
 Route::get('/help', 'HelpController@showWelcome');
 Route::get('/questionnaire', 'QuestionnaireController@showWelcome');
 Route::get('/mygrades', 'GradesController@showWelcome');
+Route::get('/login', 'LoginController@showWelcome');
+
 
