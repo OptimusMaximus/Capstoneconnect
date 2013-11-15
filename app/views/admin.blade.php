@@ -108,15 +108,7 @@
                             <input id="Name" name="Name" placeholder="John Doe" class="form-control input-md" type="text">
                         </div>
                     </div>
-                    <!-- Discription input-->
-                    <div class="form-group">
-                        <label class="col-md-4 control-label" for="Discriptioin">Discription&nbsp;</label>  
-                        <div class="col-md-4">
-                          <input id="Discription" name="Discription" class="form-control input-lg" type="text">    
-                        </div>
-                    </div>
                     <br>
-                    <!-- Group Discription -->
                     <div class="form-group">
                         <label class="col-md-4 control-label" for="Description">Description&nbsp;</label>
                         <div class="col-md-4">                     
