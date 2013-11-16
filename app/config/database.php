@@ -55,7 +55,8 @@ return array(
 		'mysql' => array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
-			'database'  => 'database',
+			'database'  => 'capstone_connect',
+			'port'		=> '3306',
 			'username'  => 'root',
 			'password'  => '',
 			'charset'   => 'utf8',
