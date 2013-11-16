@@ -21,21 +21,32 @@
 @stop
 
 @section('content')
-   <form role="form">
-  <div class ="whitebox">
-  <div class="form-group">
-    <label for="exampleInputEmail1">Email Address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-  </div>
   
-  <button type="submit" class="btn btn-default">Submit</button>
+  <div class ="whitebox">
+    {{ Form::open(array('url' => 'login')) }}
+      
+      <!-- if there are login errors, show them here -->
+      @if (Session::get('loginError'))
+        <div class="alert alert-danger">{{ Session::get('loginError') }}</div>
+      @endif
 
-  <br /><br />Forgot your password? Click Here
+      <p>
+        {{ $errors->first('email') }}
+        {{ $errors->first('password') }}
+      </p>
 
-</div>
-</form>
+      <p>
+        {{ Form::label('email', 'Email Address') }}
+        {{ Form::text('email', Input::old('email'), array('placeholder' => 'admin@admin.com')) }}
+      </p>
+
+      <p>
+        {{ Form::label('password', 'Password') }}
+        {{ Form::password('password') }}
+      </p>
+
+      <p>{{ Form::submit('Login') }}</p>
+    {{ Form::close() }}
+  </div>
+
 @stop
