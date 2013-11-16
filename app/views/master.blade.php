@@ -50,7 +50,7 @@
         @yield('header')
         <ul class="nav nav-pills">
             <li><a href="#home">Home</a></li>
-            <li><a href="#Questionaire">Questionaire</a></li>
+            <li><a href="#Questionnaire">Questionnaire</a></li>
             <li><a href="#MyGrades">My Grades</a></li>
             <li><a href="#Help">Help</a></li>
             <li><a href="#Logout">Logout</a></li>
