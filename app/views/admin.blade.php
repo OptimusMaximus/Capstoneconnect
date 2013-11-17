@@ -5,7 +5,7 @@
 @stop
 
 @section('stylesheets')
-<link rel="stylesheet" href="css/admin-bootstrap-overwrite.css" />
+<!-- <link rel="stylesheet" href="css/admin-bootstrap-overwrite.css" /> -->
 @stop
 
 @section('styles')

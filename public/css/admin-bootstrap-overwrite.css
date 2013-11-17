@@ -1,3 +1,5 @@
+
+
 .admin-container {
   margin: 0% auto 10%;
 }
@@ -17,8 +19,6 @@ ul.nav-tabs a:link {background-color:rgb(95,87,79);}
 ul.nav-tabs a:hover {background-color:rgb(178,180,179);}
 ul.nav-tabs a:focus {background-color:rgb(178,180,179);}
 ul.nav-tabs a:active {background-color:rgb(178,180,179);}
-
-
 
 .nav-tabs {
     border-style: none;
@@ -57,4 +57,3 @@ hr {
   border-style: solid;
   margin-top: 0px;
 }
-u

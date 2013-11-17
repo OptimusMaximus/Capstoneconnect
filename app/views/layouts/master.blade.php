@@ -10,43 +10,9 @@
  
         <!-- CSS are placed here -->
         <link rel="stylesheet" href="css/bootstrap.css" />
-        <link rel="stylesheet" href="css/bootstrap-responsive.css" />
+        <!-- <link rel="stylesheet" href="css/master-bootstrap-overwrite.css" /> -->
         @yield('stylesheets')
         <style>
-            body {
-                padding-top: 60px;
-                background-color: #73000A;
-                color: #FFFFFF;
-                text-align: center;
-            }
-            .nav{
-                float: top;
-                text-align: center;
-                color: #FFFFFF;
-            }
-            .nav-pills li{
-                display: inline;
-                padding-left: 5px;
-                padding-right: 5px;
-                border-left: 1px solid white;
-            }
-            .nav-pills li:first-child{
-                border-left: 0px;
-                padding-left: 0px;
-            }
-            .nav-pills{
-                display: inline-block;
-            }
-            ul.nav-pills a:link {background-color: none}
-            ul.nav-pills a:hover {background-color:rgb(178,180,179);}
-            ul.nav-pills a:focus {background-color:rgb(178,180,179);}
-            ul.nav-pills a:active {background-color:rgb(178,180,179);}
-
-            a:link {color:#FFFFFF;}      /* unvisited link white */
-            a:visited {color:#FFFFFF}  /* visited link white*/
-            a:hover {color:#000000;}  /* mouse over link State House Gray*/
-            a:focus {color:#000000;}
-            a:active {color:#000000;}  /* selected link Pluff Mud*/ 
             @yield('styles')
         </style>
     </head>
