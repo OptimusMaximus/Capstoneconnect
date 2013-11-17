@@ -41,9 +41,9 @@ class AuthController extends BaseController {
                         echo "{ $user}";//return Redirect::to('/mygrades')->withErrors(array('login' => $e->getMessage()));
                 }*/
                 catch (\Cartalyst\Sentry\Users\UserNotFoundException $e)
-                        {
+                {
                             return Redirect::to('/login')->withErrors()->withInput();
-                        }
+                }
 
         }
  
