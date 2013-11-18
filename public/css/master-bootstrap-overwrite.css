@@ -1,8 +1,15 @@
+            header{
+                margin-right: auto;
+                margin-left: auto;
+            }
+
             body {
                 padding-top: 60px;
                 background-color: #73000A;
                 color: #FFFFFF;
                 text-align: center;
+                margin-right: auto;
+                margin-left: auto;
             }
             .nav{
                 float: top;

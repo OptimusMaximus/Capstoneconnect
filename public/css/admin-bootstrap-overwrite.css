@@ -1,4 +1,6 @@
-
+body {
+  text-align: left;
+}
 
 .admin-container {
   margin: 0% auto 10%;
@@ -39,7 +41,7 @@ ul.nav-tabs a:active {background-color:rgb(178,180,179);}
 
 .table-groups {
   border-color: black;
-  width: 40%;
+  width: 80%;
   bottom: 5px;
 }
 
@@ -56,4 +58,16 @@ hr {
   border-color: black;
   border-style: solid;
   margin-top: 0px;
+}
+
+.panel {
+  border-color: rgb(95,87,79);
+}
+.panel-heading {
+  background-color: rgb(95,87,79);
+  border-color: rgb(95,87,79);
+}
+
+.panel-title > a {
+  color: white;
 }
