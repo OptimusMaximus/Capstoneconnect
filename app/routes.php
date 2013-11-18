@@ -13,3 +13,4 @@
 
 Route::get('/', 'HomeController@showWelcome');
 
+Route::get('/mygrades', 'GradesController@showWelcome');
