@@ -11,6 +11,7 @@
         <!-- CSS are placed here -->
         <link rel="stylesheet" href="css/bootstrap.css" />
         <link rel="stylesheet" href="css/master-bootstrap-overwrite.css" />
+        <link rel="stylesheet" type="text/css" href="css/base.css" />
         @yield('stylesheets')
         <style>
             @yield('styles')

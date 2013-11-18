@@ -4,63 +4,11 @@
 @parent
 @stop
 @section('styles')
-.BigWhite {
-	background-color:#FFFFFF;
-	height:600px;
-	width:900px;
-	margin: 0 auto;
-	border:2px solid;
-	border-radius:25px;
 
-}
-.Announcements {	
-	background-color:#73000A;
-	height:550px;
-	width:300px;
-	margin: 300 auto;
-	margin:30px 30px 30px 30px;
-	border:2px solid black;
-	float:left;
-	} 	
-
-	.InsideAnnouncement {
-	background-color:Grey;
-	height:500px;
-	width:275px;
-	border:2px scrollingd black;
-	margin: 0 auto;
-	
-}
-.RecentActivity {
-	background-color:#73000A;
-	height:200px;
-	width:490px;
-	margin:30px 30px 10px 10px;
-	float:right;
-	border:2px solid black;
-	}
-
-	.InsideRecentActivity {
-	background-color:grey;
-	height:165px;
-	width:475px;
-	margin-right:5px;
-	float:right;
-	border:2px solid black;
-	
-}
-	.Calendar {
-	height:320px;
-	width:490px;
-	margin:15px 30px 10px 10px;
-	float:right;
-	border:2px solid black;
-	}
 @stop
 @section('header')
 <h1>Capstone Connect</h1>
 @stop
-
 @section('content')
 
 
