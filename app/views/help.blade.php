@@ -3,24 +3,7 @@
 @section('title')
 @parent
 @stop
-
 @section('styles')
-.whitebox{
-	background-color:#FFFFFF;
-	height:600px;
-	width:900px;	
-	margin: 0 auto;
-	border:2px solid;
-	border-radius:25px;
-}
- .blackbox{
- 	background-color:#FFFFFF;
- 	height:400px;
- 	width:700px;
- 	border:2px solid black;
- 	margin: 125px;
-}
-
 
 @stop
 
@@ -30,7 +13,7 @@
 
 @section('content')
   
-<div class="whitebox">
+<div class="BigWhite">
 	<div style="float:left; padding-top:50px;"> 
  	<FONT COLOR="000000">
  		<p>

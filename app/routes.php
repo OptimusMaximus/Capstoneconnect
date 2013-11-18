@@ -17,5 +17,6 @@ Route::get('/admin', 'AdminToolsController@makePage');
 Route::get('/questionnaire', 'QuestionnaireController@showWelcome');
 Route::get('/mygrades', 'GradesController@showWelcome');
 Route::get('/login', 'LoginController@showWelcome');
+Route::get('/register', 'UserController@showWelcome');
 
 

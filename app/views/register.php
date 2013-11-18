@@ -2,9 +2,7 @@
 <html>
     <head>
         <title>
-            @section('title')
-            Capstoneconnect 
-            @show
+          Capstone Connect
         </title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
  
@@ -12,7 +10,6 @@
         <link rel="stylesheet" href="css/bootstrap.css" />
         <link rel="stylesheet" href="css/bootstrap-responsive.css" />
         <link rel="stylesheet" type="text/css" href="css/base.css" />
-        @yield('stylesheets')
         <style>
             body {
                 padding-top: 60px;
@@ -38,6 +35,9 @@
             .nav-pills{
                 display: inline-block;
             }
+            .checkbox{
+              color:black;
+            }
             ul.nav-pills a:link {background-color: none}
             ul.nav-pills a:hover {background-color:rgb(178,180,179);}
             ul.nav-pills a:focus {background-color:rgb(178,180,179);}
@@ -48,29 +48,30 @@
             a:hover {color:#000000;}  /* mouse over link State House Gray*/
             a:focus {color:#000000;}
             a:active {color:#000000;}  /* selected link Pluff Mud*/ 
-            @yield('styles')
-        </style>
+            </style>
     </head>
     <div class="text-center">
-        @yield('header')
-        <ul class="nav nav-pills">
-            <li><a href="/public">Home</a></li>
-            <li><a href="/public/questionnaire">Questionaire</a></li>
-            <li><a href="/public/mygrades">My Grades</a></li>
-
-            
-
-            <li><a href="/public/help">Help</a></li>
-
-            <li><a href="/public/login">Logout</a></li>
-        </ul>
+      <h1>Capstone Connect</h1>
+      
     </div>
     <body>
-        @yield('content')
-        
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://code.jquery.com/jquery.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
-    </body>
+
+   <br /><br />
+<div class="Login">
+      <legend>New to Capstone Connect? Sign up!</legend>
+    <form accept-charset="UTF-8" action="" method="post">
+        <input class="span3" name="name" placeholder="Full Name" type="text"><br /><br /> 
+        <input class="span3" name="username" placeholder="Username" type="text"><br /><br />
+        <input class="span3" name="password" placeholder="Password" type="password"> <br /><br />
+        <button class="btn btn-primary" type="submit">Sign up</button>
+    </form>
+</div>
+
+
+
+</body>
 </html>
