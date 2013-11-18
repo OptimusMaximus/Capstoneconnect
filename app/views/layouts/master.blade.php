@@ -21,7 +21,6 @@
         <!-- Include all compiled plugins (below), or include individual files as needed -->
         <script src="js/bootstrap.js"></script>
     </head>
-<<<<<<< HEAD
     <div class="text-center">
         @yield('header')
         <ul class="nav nav-pills">
@@ -31,21 +30,6 @@
             <li><a href="/Capstoneconnect/public/help">Help</a></li>
             <li><a href="/Capstoneconnect/public/logout">Logout</a></li>
         </ul>
-=======
-    <div class="container text-center">
-        <div class="row">
-            @yield('header')
-        </div>
-        <div class="row">
-            <ul class="nav nav-pills">
-                <li><a href="/public">Home</a></li>
-                <li><a href="/public/questionnaire">Questionaire</a></li>
-                <li><a href="/public/mygrades">My Grades</a></li>
-                <li><a href="/public/help">Help</a></li>
-                <li><a href="/public/login">Logout</a></li>
-            </ul>
-        </div>
->>>>>>> master
     </div>
     <body>
         @yield('content')   
