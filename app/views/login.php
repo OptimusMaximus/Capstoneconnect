@@ -100,7 +100,7 @@
                     Sign in</button>
                 </form>
                 <a class="forgotLnk" href="http://www.jquery2dotnet.com">I can't access my account</a>
-                <div class="or-box">
+               <!-- <div class="or-box">
                     <span class="or">OR</span>
                     <div class="row">
                         <div class="col-md-6 row-block">
@@ -117,7 +117,7 @@
                             <a href="/public/register" class="btn btn-primary btn-block">Create New Account</a>
                         </div>
                     </div>
-                </div>
+                </div>-->
             </div>
         </div>
     </div>
