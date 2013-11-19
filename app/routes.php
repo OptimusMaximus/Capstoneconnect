@@ -15,6 +15,8 @@ Route::get('/login', array('uses' => 'AuthController@getLogin'));
 Route::post('/login', array('uses' => 'AuthController@postLogin'));
 Route::get('/logout', array('uses' => 'AuthController@getLogout'));
 
+Route::post('create', 'AdminToolsController@createQuestionnaire');
+
 
 Route::group(array('prefix' => '', 'before' => 'auth'), function()
 {
@@ -24,15 +26,7 @@ Route::group(array('prefix' => '', 'before' => 'auth'), function()
 		Route::get('/questionnaire', 'QuestionnaireController@showWelcome');
 		Route::get('/mygrades', 'GradesController@showWelcome');
 });
-/*
-Route::get('/', 'HomeController@showWelcome');
-Route::get('/help', 'HelpController@showWelcome');
-Route::get('/admin', 'AdminToolsController@makePage');
-Route::get('/questionnaire', 'QuestionnaireController@showWelcome');
-Route::get('/mygrades', 'GradesController@showWelcome');
-Route::get('/login', 'LoginController@showWelcome');
-Route::get('/register', 'UserController@showWelcome');
-*/
+
 
 
 //For testing

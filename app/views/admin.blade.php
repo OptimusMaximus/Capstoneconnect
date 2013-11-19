@@ -23,17 +23,23 @@
     <li><a href="#eval" data-toggle="tab">View Evaluations</a></li>
     <li><a href="#question" data-toggle="tab">Create New Questions</a></li>
   </ul>
+
+
+
   <div class="tab-content container">
     <div id="manage" class="tab-pane active">
       <table class="table table-bordered table-responsive table-hover table-groups">
         <tr>
           <td>Name</td>
-          <td>Description</td>
+          <td>Email Address</td>
           <td>Date Created</td>
           <td>Edit</td>
           <td>Remove</td>
         </tr> <!-- trow1 -->
-          <td></td>
+
+
+          <td>
+          </td>
           <td></td>
           <td></td>
           <td></td>
@@ -188,6 +194,39 @@
     </div><!-- eval -->
 
     <div id="question" class="tab-pane">
+      {{ Form::open(array('action' => 'AdminToolsController@createQuestionnaire')) }}
+      {{ Form::label('q1', 'Question1') }}
+        {{ Form::text('q1', '', array('class' => 'createQuesForm')) }}
+        <br />
+      {{ Form::label('q2', 'Question2') }}
+        {{ Form::text('q2', '', array('class' => 'createQuesForm')) }}
+        <br />
+      {{ Form::label('q3', 'Question3') }}
+        {{ Form::text('q3', '', array('class' => 'createQuesForm')) }}
+        <br />
+      {{ Form::label('q4', 'Question4') }}
+        {{ Form::text('q4', '', array('class' => 'createQuesForm')) }}
+        <br />
+      {{ Form::label('q5', 'Question5') }}
+        {{ Form::text('q5', '', array('class' => 'createQuesForm')) }}
+        <br />
+      {{ Form::label('q6', 'Question6') }}
+        {{ Form::text('q6', '', array('class' => 'createQuesForm')) }}
+        <br />       
+      {{ Form::label('q7', 'Question7') }}
+        {{ Form::text('q7', '', array('class' => 'createQuesForm')) }}
+        <br />
+      {{ Form::label('q8', 'Question8') }}
+        {{ Form::text('q8', '', array('class' => 'createQuesForm')) }}
+        <br />
+      {{ Form::label('q9', 'Question9') }}
+        {{ Form::text('q9', '', array('class' => 'createQuesForm')) }}
+        <br />
+      {{ Form::label('q10', 'Question10') }}
+        {{ Form::text('q10', '', array('class' => 'createQuesForm')) }}      
+
+       <p>{{ Form::submit('create') }}</p>
+     {{ Form::close() }}
     </div><!-- question -->
   </div><!-- tab-content -->
 </div><!-- container -->
