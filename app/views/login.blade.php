@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.masterlogin')
 
 @section('title')
 @parent
@@ -21,23 +21,28 @@
 @stop
 
 @section('content')
-  
   <div class ="whitebox">
+    <p></p>
     {{ Form::open(array('url' => 'login')) }}
       
-      <!-- if there are login errors, show them here -->
+      <!-- login errors from Sentry -->
       @if (Session::get('loginError'))
-        <div class="alert alert-danger">{{ Session::get('loginError') }}</div>
+        <div class = "alert alert-danger"> {{ Session::get('loginError') }} </div>
+      @endif
+
+      <!-- login errors from Validator -->
+      @if ($errors->count() > 0)
+        <div class = "alert alert-danger">
+          <p>
+            {{ $errors->first('email') }}
+            {{ $errors->first('password') }}
+          </p>
+        </div>
       @endif
 
       <p>
-        {{ $errors->first('email') }}
-        {{ $errors->first('password') }}
-      </p>
-
-      <p>
         {{ Form::label('email', 'Email Address') }}
-        {{ Form::text('email', Input::old('email'), array('placeholder' => 'admin@admin.com')) }}
+        {{ Form::text('email', Input::old('email'), array('placeholder' => 'admin@sc.edu')) }}
       </p>
 
       <p>
@@ -48,5 +53,4 @@
       <p>{{ Form::submit('Login') }}</p>
     {{ Form::close() }}
   </div>
-
 @stop
