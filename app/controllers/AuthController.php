@@ -67,5 +67,5 @@ class AuthController extends BaseController {
  
                 return Redirect::to('login');
         }
- 
 }
+ 
