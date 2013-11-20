@@ -26,21 +26,27 @@ class AuthController extends BaseController {
                 
                 // Set Validation Rules
                 $rules = array (
-                        'email' => 'required|min:4|max:32|email',
-                        'password' => 'required|min:6'
+                        'email' => 'required|min:4|max:32|email|Exists:users,email|Regex:/.sc.edu$/',
+                        'password' => 'required|min:5'
                         );
 
                 //Run input validation
-                $v = Validator::make($credentials, $rules);
+                $validator = Validator::make($credentials, $rules);
+
+                //Check $credentials against $rules
+                if ($validator->fails())
+                {
+                    return Redirect::to('login')->withErrors($validator);
+                }
 
                 try
                 {
-                    $user = Sentry::authenticate($credentials, false);
+                    $user = Sentry::authenticateAndRemember($credentials, false);
  
                     if ($user)
                     {
                         //go home
-                        return Redirect::to('/home');
+                        return Redirect::to('home');
                     }
                 }
                 /*catch(\Exception $e)
@@ -51,8 +57,18 @@ class AuthController extends BaseController {
                 }*/
                 catch (\Cartalyst\Sentry\Users\UserNotFoundException $e)
                 {
-                        Session::flash('loginError', 'Invalid username or password.' );
-                        return Redirect::to('/login')->withErrors($v)->withInput();
+                    Session::flash('loginError', 'Invalid username or password.' );
+                    return Redirect::to('login')->withErrors($validator)->withInput();
+                }
+                catch (\Cartalyst\Sentry\Users\LoginRequiredException $e)
+                {
+                    Session::flash('loginError', 'Login field is required.' );
+                    return Redirect::to('login')->withErrors($validator)->withInput();
+                }
+                catch (\Cartalyst\Sentry\Users\PasswordRequiredException $e)
+                {
+                    Session::flash('loginError', 'Password field is required.' );
+                    return Redirect::to('login')->withErrors($validator)->withInput();
                 }
 
         }

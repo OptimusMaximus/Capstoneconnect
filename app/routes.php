@@ -28,13 +28,3 @@ Route::group(array('prefix' => '', 'before' => 'auth'), function()
 		Route::get('/questionnaire', 'QuestionnaireController@showWelcome');
 		Route::get('/mygrades', 'GradesController@showWelcome');
 });
-
-
-
-//For testing
-Route::get('/test', function()
-{
-    $users = User::all();
-
-    return View::make('/test')->with('users', $users);
-});

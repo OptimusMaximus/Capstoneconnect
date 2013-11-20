@@ -34,8 +34,8 @@ App::after(function($request, $response)
 */
 
 Route::filter('auth', function()
-{
-        if ( ! Sentry::check())
+{		//User is not logged in or is not activated
+        if ( ! Sentry::check() )
         {
             return Redirect::to('login');
         }
@@ -65,7 +65,7 @@ Route::filter('auth.basic', function()
 
 Route::filter('guest', function()
 {
-	if (Auth::check()) return Redirect::to('/');
+	if (Auth::check()) return Redirect::to('login');
 });
 
 /*
