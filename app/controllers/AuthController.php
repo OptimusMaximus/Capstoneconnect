@@ -36,13 +36,14 @@ class AuthController extends BaseController {
                 //Check $credentials against $rules
                 if ($validator->fails())
                 {
-                    return Redirect::to('login')->withErrors($validator);
+                    return Redirect::to('login')->withErrors($validator)->withInput();
                 }
 
                 try
                 {
-                    $user = Sentry::authenticateAndRemember($credentials, false);
- 
+                    $rememberMe = Input::get('remember');
+                    $user = Sentry::authenticate($credentials, $rememberMe);
+
                     if ($user)
                     {
                         //go home
@@ -80,7 +81,7 @@ class AuthController extends BaseController {
         public function getLogout()
         {
                 Sentry::logout();
- 
+                Session::flash('loginError', 'You have successfully logged out' );
                 return Redirect::to('login');
         }
 }

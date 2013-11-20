@@ -9,19 +9,10 @@
 @stop
 
 @section('styles')
-.whitebox {
-  background-color:#FFFFFF;
-  width:500px;
-  height:auto;
-  margin: 0 auto;
-  color:black;
-  border:2px solid;
-  border-radius:25px;
-}
 @stop
 
 @section('content')
-  <div class ="whitebox">
+  <div class = Login >
     <p></p>
     {{ Form::open(array('url' => 'login')) }}
       
@@ -49,8 +40,18 @@
         {{ Form::label('password', 'Password') }}
         {{ Form::password('password') }}
       </p>
-
+      <p>
+          <span class="login-checkbox">
+              <input id="remember" name="remember" type="checkbox" class="field login-checkbox" value="First Choice" tabindex="4" />
+              <label class="choice" for="remember">Keep me signed in</label>
+          </span>   
+      </p>
       <p>{{ Form::submit('Login') }}</p>
     {{ Form::close() }}
+    
+    {{ HTML::link('reset','Reset Password', array('class' => 'blue')) }}
+  
+    
+    
   </div>
 @stop
