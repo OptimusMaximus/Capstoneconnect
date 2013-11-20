@@ -11,156 +11,179 @@
 @section('header')
 <h1>Questionnaire</h1>
 @stop
-
+	 
 @section('content')
+
     <div class = QuestionnaireWhite>
-    	 
+
+    	{{ Form::open(array('action' => 'UserController@submitQuestionnaire')) }}
+
     		<h1>Group Member Questionnaire</h1>
     		<div class = questions> 
-    			<p>Question 1</p>	
-    			<div class="radio">
-  					<label>
-  						<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>1
-  					</label>
-  				</div>
-				<div class="radio">
-					<label>
-						<input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">2
-					</label>
-  				</div>
+    			<p>Question 1</p>	 
+    			
+	    			<select name = "answer1">
+	  				<option>1</option>
+	 				 <option>2</option>
+	 				 <option>3</option>
+	 				 <option>4</option>
+	 				 <option>5</option>
+	 				 <option>6</option>
+	 				 <option>7</option>
+	 				 <option>8</option>
+	 				 <option>9</option>
+	 				 <option>10</option>
+					</select>
+
 				
-				<textarea class="form-control" rows="3" placeholder="Comments go here"></textarea>
-    			<p>Question 2</p>	
-    			<label class="radio-inline">
- 			    <input type="radio" id="inlineRadio1" value="option1"> 1
- 			    <input type="radio" id="inlineRadio1" value="option1"> 2
- 			    <input type="radio" id="inlineRadio1" value="option1"> 3
- 			    <input type="radio" id="inlineRadio1" value="option1"> 4
- 			    <input type="radio" id="inlineRadio1" value="option1"> 5
- 			    <input type="radio" id="inlineRadio1" value="option1"> 6
- 			    <input type="radio" id="inlineRadio1" value="option1"> 7
- 			    <input type="radio" id="inlineRadio1" value="option1"> 8
- 			    <input type="radio" id="inlineRadio1" value="option1"> 9
- 			    <input type="radio" id="inlineRadio1" value="option1"> 10
-				</label>
-				<textarea class="form-control" rows="3" placeholder="Comments go here"></textarea>
-				<p>Question 3</p>	
-    			<label class="radio-inline">
- 			    <input type="radio" id="inlineRadio1" value="option1"> 1
- 			    <input type="radio" id="inlineRadio1" value="option1"> 2
- 			    <input type="radio" id="inlineRadio1" value="option1"> 3
- 			    <input type="radio" id="inlineRadio1" value="option1"> 4
- 			    <input type="radio" id="inlineRadio1" value="option1"> 5
- 			    <input type="radio" id="inlineRadio1" value="option1"> 6
- 			    <input type="radio" id="inlineRadio1" value="option1"> 7
- 			    <input type="radio" id="inlineRadio1" value="option1"> 8
- 			    <input type="radio" id="inlineRadio1" value="option1"> 9
- 			    <input type="radio" id="inlineRadio1" value="option1"> 10
-				</label>
-				<textarea class="form-control" rows="3" placeholder="Comments go here"></textarea>
-				<p>Question 4</p>	
-    			<label class="radio-inline">
- 			    <input type="radio" id="inlineRadio1" value="option1"> 1
- 			    <input type="radio" id="inlineRadio1" value="option1"> 2
- 			    <input type="radio" id="inlineRadio1" value="option1"> 3
- 			    <input type="radio" id="inlineRadio1" value="option1"> 4
- 			    <input type="radio" id="inlineRadio1" value="option1"> 5
- 			    <input type="radio" id="inlineRadio1" value="option1"> 6
- 			    <input type="radio" id="inlineRadio1" value="option1"> 7
- 			    <input type="radio" id="inlineRadio1" value="option1"> 8
- 			    <input type="radio" id="inlineRadio1" value="option1"> 9
- 			    <input type="radio" id="inlineRadio1" value="option1"> 10
-				</label>
-				<textarea class="form-control" rows="3" placeholder="Comments go here"></textarea>
-				<p>Question 5</p>	
-    			<label class="radio-inline">
- 			    <input type="radio" id="inlineRadio1" value="option1"> 1
- 			    <input type="radio" id="inlineRadio1" value="option1"> 2
- 			    <input type="radio" id="inlineRadio1" value="option1"> 3
- 			    <input type="radio" id="inlineRadio1" value="option1"> 4
- 			    <input type="radio" id="inlineRadio1" value="option1"> 5
- 			    <input type="radio" id="inlineRadio1" value="option1"> 6
- 			    <input type="radio" id="inlineRadio1" value="option1"> 7
- 			    <input type="radio" id="inlineRadio1" value="option1"> 8
- 			    <input type="radio" id="inlineRadio1" value="option1"> 9
- 			    <input type="radio" id="inlineRadio1" value="option1"> 10
-				</label>
-				<textarea class="form-control" rows="3" placeholder="Comments go here"></textarea>
-				<p>Question 6</p>	
-    			<label class="radio-inline">
- 			    <input type="radio" id="inlineRadio1" value="option1"> 1
- 			    <input type="radio" id="inlineRadio1" value="option1"> 2
- 			    <input type="radio" id="inlineRadio1" value="option1"> 3
- 			    <input type="radio" id="inlineRadio1" value="option1"> 4
- 			    <input type="radio" id="inlineRadio1" value="option1"> 5
- 			    <input type="radio" id="inlineRadio1" value="option1"> 6
- 			    <input type="radio" id="inlineRadio1" value="option1"> 7
- 			    <input type="radio" id="inlineRadio1" value="option1"> 8
- 			    <input type="radio" id="inlineRadio1" value="option1"> 9
- 			    <input type="radio" id="inlineRadio1" value="option1"> 10
-				</label>
-				<textarea class="form-control" rows="3" placeholder="Comments go here"></textarea>
-				<p>Question 7</p>	
-    			<label class="radio-inline">
- 			    <input type="radio" id="inlineRadio1" value="option1"> 1
- 			    <input type="radio" id="inlineRadio1" value="option1"> 2
- 			    <input type="radio" id="inlineRadio1" value="option1"> 3
- 			    <input type="radio" id="inlineRadio1" value="option1"> 4
- 			    <input type="radio" id="inlineRadio1" value="option1"> 5
- 			    <input type="radio" id="inlineRadio1" value="option1"> 6
- 			    <input type="radio" id="inlineRadio1" value="option1"> 7
- 			    <input type="radio" id="inlineRadio1" value="option1"> 8
- 			    <input type="radio" id="inlineRadio1" value="option1"> 9
- 			    <input type="radio" id="inlineRadio1" value="option1"> 10
-				</label>
-				<textarea class="form-control" rows="3" placeholder="Comments go here"></textarea>
-				<p>Question 8</p>	
-    			<label class="radio-inline">
- 			    <input type="radio" id="inlineRadio1" value="option1"> 1
- 			    <input type="radio" id="inlineRadio1" value="option1"> 2
- 			    <input type="radio" id="inlineRadio1" value="option1"> 3
- 			    <input type="radio" id="inlineRadio1" value="option1"> 4
- 			    <input type="radio" id="inlineRadio1" value="option1"> 5
- 			    <input type="radio" id="inlineRadio1" value="option1"> 6
- 			    <input type="radio" id="inlineRadio1" value="option1"> 7
- 			    <input type="radio" id="inlineRadio1" value="option1"> 8
- 			    <input type="radio" id="inlineRadio1" value="option1"> 9
- 			    <input type="radio" id="inlineRadio1" value="option1"> 10
-				</label>
-				<textarea class="form-control" rows="3" placeholder="Comments go here"></textarea>
-				<p>Question 9</p>	
-    			<label class="radio-inline">
- 			    <input type="radio" id="inlineRadio1" value="option1"> 1
- 			    <input type="radio" id="inlineRadio1" value="option1"> 2
- 			    <input type="radio" id="inlineRadio1" value="option1"> 3
- 			    <input type="radio" id="inlineRadio1" value="option1"> 4
- 			    <input type="radio" id="inlineRadio1" value="option1"> 5
- 			    <input type="radio" id="inlineRadio1" value="option1"> 6
- 			    <input type="radio" id="inlineRadio1" value="option1"> 7
- 			    <input type="radio" id="inlineRadio1" value="option1"> 8
- 			    <input type="radio" id="inlineRadio1" value="option1"> 9
- 			    <input type="radio" id="inlineRadio1" value="option1"> 10
-				</label>
-				<textarea class="form-control" rows="3" placeholder="Comments go here"></textarea>
-				<p>Question 10</p>	
-    			<label class="radio-inline">
- 			    <input type="radio" id="inlineRadio1" value="option1"> 1
- 			    <input type="radio" id="inlineRadio1" value="option1"> 2
- 			    <input type="radio" id="inlineRadio1" value="option1"> 3
- 			    <input type="radio" id="inlineRadio1" value="option1"> 4
- 			    <input type="radio" id="inlineRadio1" value="option1"> 5
- 			    <input type="radio" id="inlineRadio1" value="option1"> 6
- 			    <input type="radio" id="inlineRadio1" value="option1"> 7
- 			    <input type="radio" id="inlineRadio1" value="option1"> 8
- 			    <input type="radio" id="inlineRadio1" value="option1"> 9
- 			    <input type="radio" id="inlineRadio1" value="option1"> 10
-				</label>
-				<textarea class="form-control" rows="3" placeholder="Comments go here"></textarea>
+					<textarea class="form-control" name="comments1" rows="3" placeholder="Comments go here"></textarea>
+					<br>
+				
+
+    			<p><br>Question 2</p>	
+    			<select name = "answer2">
+  				<option>1</option>
+ 				 <option>2</option>
+ 				 <option>3</option>
+ 				 <option>4</option>
+ 				 <option>5</option>
+ 				 <option>6</option>
+ 				 <option>7</option>
+ 				 <option>8</option>
+ 				 <option>9</option>
+ 				 <option>10</option>
+
+				</select>
+				<textarea class="form-control" name="comments2" rows="3" placeholder="Comments go here"></textarea>
+				<p><br>Question 3</p>	
+    			<select name = "answer3">
+  				<option>1</option>
+ 				 <option>2</option>
+ 				 <option>3</option>
+ 				 <option>4</option>
+ 				 <option>5</option>
+ 				 <option>6</option>
+ 				 <option>7</option>
+ 				 <option>8</option>
+ 				 <option>9</option>
+ 				 <option>10</option>
+
+				</select>
+				<textarea class="form-control" rows="3" name="comments3" placeholder="Comments go here"></textarea>
+				<p><br>Question 4</p>	
+    		<select name = "answer4">
+  				<option>1</option>
+ 				 <option>2</option>
+ 				 <option>3</option>
+ 				 <option>4</option>
+ 				 <option>5</option>
+ 				 <option>6</option>
+ 				 <option>7</option>
+ 				 <option>8</option>
+ 				 <option>9</option>
+ 				 <option>10</option>
+
+				</select>
+				<textarea class="form-control" rows="3" name="comments4" placeholder="Comments go here"></textarea>
+				<p><br>Question 5</p>	
+    			<select name = "answer5">
+  				<option>1</option>
+ 				 <option>2</option>
+ 				 <option>3</option>
+ 				 <option>4</option>
+ 				 <option>5</option>
+ 				 <option>6</option>
+ 				 <option>7</option>
+ 				 <option>8</option>
+ 				 <option>9</option>
+ 				 <option>10</option>
+
+				</select>
+				<textarea class="form-control" rows="3"name="comments5" placeholder="Comments go here"></textarea>
+				<p><br>Question 6</p>	
+    			<select name = "answer6">
+  				<option>1</option>
+ 				 <option>2</option>
+ 				 <option>3</option>
+ 				 <option>4</option>
+ 				 <option>5</option>
+ 				 <option>6</option>
+ 				 <option>7</option>
+ 				 <option>8</option>
+ 				 <option>9</option>
+ 				 <option>10</option>
+
+				</select>
+				<textarea class="form-control" rows="3" name="comments6" placeholder="Comments go here"></textarea>
+				<p><br>Question 7</p>	
+    			<select name = "answer7">
+  				<option>1</option>
+ 				 <option>2</option>
+ 				 <option>3</option>
+ 				 <option>4</option>
+ 				 <option>5</option>
+ 				 <option>6</option>
+ 				 <option>7</option>
+ 				 <option>8</option>
+ 				 <option>9</option>
+ 				 <option>10</option>
+
+				</select>
+				<textarea class="form-control" rows="3" name="comments7" placeholder="Comments go here"></textarea>
+				<p><br>Question 8</p>	
+    			<select name = "answer8">
+  				<option>1</option>
+ 				 <option>2</option>
+ 				 <option>3</option>
+ 				 <option>4</option>
+ 				 <option>5</option>
+ 				 <option>6</option>
+ 				 <option>7</option>
+ 				 <option>8</option>
+ 				 <option>9</option>
+ 				 <option>10</option>
+
+				</select>
+				<textarea class="form-control" rows="3" name="comments8" placeholder="Comments go here"></textarea>
+				<p><br>Question 9</p>	
+    			<select name = "answer9">
+  				<option>1</option>
+ 				 <option>2</option>
+ 				 <option>3</option>
+ 				 <option>4</option>
+ 				 <option>5</option>
+ 				 <option>6</option>
+ 				 <option>7</option>
+ 				 <option>8</option>
+ 				 <option>9</option>
+ 				 <option>10</option>
+
+				</select>
+				<textarea class="form-control" rows="3" name="comments9" placeholder="Comments go here"></textarea>
+				<p><br>Question 10</p>	
+    			<select name = "answer10">
+  				<option>1</option>
+ 				 <option>2</option>
+ 				 <option>3</option>
+ 				 <option>4</option>
+ 				 <option>5</option>
+ 				 <option>6</option>
+ 				 <option>7</option>
+ 				 <option>8</option>
+ 				 <option>9</option>
+ 				 <option>10</option>
+
+				</select>
+				<textarea class="form-control" rows="3" name="comments10" placeholder="Comments go here"></textarea>
 				<br /><br />
-    			<button type="button" class="btn btn-primary">Submit</button>
+
+    			<!--<button type="Submit" class="btn btn-primary">Submit</button>
+    -->
+
     	</div>
     		
-    	
+    	 <p>{{ Form::submit('submit') }}</p>
+     {{ Form::close() }}
     </div>
     
 @stop

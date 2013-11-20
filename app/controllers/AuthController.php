@@ -84,5 +84,5 @@ class AuthController extends BaseController {
                 Session::flash('loginError', 'You have successfully logged out' );
                 return Redirect::to('login');
         }
- 
 }
+ 
