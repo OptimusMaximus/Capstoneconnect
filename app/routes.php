@@ -10,11 +10,14 @@
 | and give it the Closure to execute when that URI is requested.
 |
 */
-//Route::get('/', array('uses' => 'AuthController@getLogin'));
+Route::get('/', array('uses' => 'AuthController@getLogin'));
 Route::get('/login', array('uses' => 'AuthController@getLogin'));
 Route::post('/login', array('uses' => 'AuthController@postLogin'));
 Route::get('/logout', array('uses' => 'AuthController@getLogout'));
-
+Route::get('/reset', array('uses' => 'PasswordController@remind', 'as' => 'remind'));
+Route::post('/reset', array('uses' => 'PasswordController@request', 'as' => 'request'));
+Route::get('/reset/{token}', array('uses' => 'PasswordController@reset','as' => 'reset'));
+Route::post('/reset/{token}', array('uses' => 'PasswordController@update','as' => 'update'));
 
 Route::group(array('prefix' => '', 'before' => 'auth'), function()
 {
