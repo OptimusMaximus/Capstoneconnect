@@ -76,15 +76,34 @@
       </table>
       <hr>
       <h4><u><b>Add New User</b></u></h4>
-       {{ Form::open(array('action' => '')) }}
-      {{ Form::label('name', 'Full Name') }}
-        {{ Form::text('name', '', array('class' => 'form-control')) }}
-      </br />
-      {{ Form::label('email', 'Email Address') }}
-        {{ Form::text('email', '', array('class' => 'form-control')) }}
-
-        <p>{{ Form::submit('create') }}</p>
-     {{ Form::close() }}
+  {{ Form::open(array('action' => '', 'class' => 'form-horizontal', 'role' => 'form')) }}
+    <div class="form-group">  
+        {{ Form::label('name', 'Full Name:', 
+          array('class' => 'col-sm-2 control-label')
+        )}}
+        <div class="col-sm-5">
+          {{ Form::text('name', '', 
+            array('class' => 'form-control',
+                  'placeholder' => 'John Doe'
+          ))}}
+        </div>
+    </div>
+    <div class="form-group">
+      {{ Form::label('email', 'Email Address:',
+         array('class' => 'col-sm-2 control-label'
+      ))}}
+      <div class="col-sm-5">
+        {{{ Form::email('email', '', 
+            array('class' => 'form-control',
+                  'placeholder' => 'johnd@email.sc.edu'
+        ))}}}
+      </div>
+    </div>
+    <div class="form-group">
+      {{ Form::submit('create') }}
+    </div>
+     
+  {{ Form::close() }}
 
 
   <!----    <form class="form-horizontal" role="form">
