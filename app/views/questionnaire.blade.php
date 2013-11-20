@@ -14,12 +14,12 @@
 
 @section('content')
     <div class = QuestionnaireWhite>
-    	
+    	{{ Form::open(array('action' => 'UserController@submitQuestionnaire')) }}
     		<h1>Group Member Questionnaire</h1>
     		<div class = questions> 
     			<p>Question 1</p>	 
     			
-	    			<select>
+	    			<select name = "answer1">
 	  				<option>1</option>
 	 				 <option>2</option>
 	 				 <option>3</option>
@@ -33,12 +33,12 @@
 					</select>
 
 				
-					<textarea class="form-control" rows="3" placeholder="Comments go here"></textarea>
+					<textarea class="form-control" name="comments1" rows="3" placeholder="Comments go here"></textarea>
 					<br>
 				
 
     			<p><br>Question 2</p>	
-    			<select>
+    			<select name = "answer2">
   				<option>1</option>
  				 <option>2</option>
  				 <option>3</option>
@@ -51,9 +51,9 @@
  				 <option>10</option>
 
 				</select>
-				<textarea class="form-control" rows="3" placeholder="Comments go here"></textarea>
+				<textarea class="form-control" name="comments2" rows="3" placeholder="Comments go here"></textarea>
 				<p><br>Question 3</p>	
-    			<select>
+    			<select name = "answer3">
   				<option>1</option>
  				 <option>2</option>
  				 <option>3</option>
@@ -66,9 +66,9 @@
  				 <option>10</option>
 
 				</select>
-				<textarea class="form-control" rows="3" placeholder="Comments go here"></textarea>
+				<textarea class="form-control" rows="3" name="comments3" placeholder="Comments go here"></textarea>
 				<p><br>Question 4</p>	
-    		<select>
+    		<select name = "answer4">
   				<option>1</option>
  				 <option>2</option>
  				 <option>3</option>
@@ -81,9 +81,9 @@
  				 <option>10</option>
 
 				</select>
-				<textarea class="form-control" rows="3" placeholder="Comments go here"></textarea>
+				<textarea class="form-control" rows="3" name="comments4" placeholder="Comments go here"></textarea>
 				<p><br>Question 5</p>	
-    			<select>
+    			<select name = "answer5">
   				<option>1</option>
  				 <option>2</option>
  				 <option>3</option>
@@ -96,9 +96,9 @@
  				 <option>10</option>
 
 				</select>
-				<textarea class="form-control" rows="3" placeholder="Comments go here"></textarea>
+				<textarea class="form-control" rows="3"name="comments5" placeholder="Comments go here"></textarea>
 				<p><br>Question 6</p>	
-    			<select>
+    			<select name = "answer6">
   				<option>1</option>
  				 <option>2</option>
  				 <option>3</option>
@@ -111,9 +111,9 @@
  				 <option>10</option>
 
 				</select>
-				<textarea class="form-control" rows="3" placeholder="Comments go here"></textarea>
+				<textarea class="form-control" rows="3" name="comments6" placeholder="Comments go here"></textarea>
 				<p><br>Question 7</p>	
-    			<select>
+    			<select name = "answer7">
   				<option>1</option>
  				 <option>2</option>
  				 <option>3</option>
@@ -126,9 +126,9 @@
  				 <option>10</option>
 
 				</select>
-				<textarea class="form-control" rows="3" placeholder="Comments go here"></textarea>
+				<textarea class="form-control" rows="3" name="comments7" placeholder="Comments go here"></textarea>
 				<p><br>Question 8</p>	
-    			<select>
+    			<select name = "answer8">
   				<option>1</option>
  				 <option>2</option>
  				 <option>3</option>
@@ -141,9 +141,9 @@
  				 <option>10</option>
 
 				</select>
-				<textarea class="form-control" rows="3" placeholder="Comments go here"></textarea>
+				<textarea class="form-control" rows="3" name="comments8" placeholder="Comments go here"></textarea>
 				<p><br>Question 9</p>	
-    			<select>
+    			<select name = "answer9">
   				<option>1</option>
  				 <option>2</option>
  				 <option>3</option>
@@ -156,9 +156,9 @@
  				 <option>10</option>
 
 				</select>
-				<textarea class="form-control" rows="3" placeholder="Comments go here"></textarea>
+				<textarea class="form-control" rows="3" name="comments9" placeholder="Comments go here"></textarea>
 				<p><br>Question 10</p>	
-    			<select>
+    			<select name = "answer10">
   				<option>1</option>
  				 <option>2</option>
  				 <option>3</option>
@@ -171,14 +171,16 @@
  				 <option>10</option>
 
 				</select>
-				<textarea class="form-control" rows="3" placeholder="Comments go here"></textarea>
+				<textarea class="form-control" rows="3" name="comments10" placeholder="Comments go here"></textarea>
 				<br /><br />
 
-    			<button type="button" class="btn btn-primary">Submit</button>
-    
+    			<!--<button type="Submit" class="btn btn-primary">Submit</button>
+    -->
+
     	</div>
     		
-    	
+    	 <p>{{ Form::submit('submit') }}</p>
+     {{ Form::close() }}
     </div>
     
 @stop

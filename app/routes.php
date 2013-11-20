@@ -16,6 +16,7 @@ Route::post('/login', array('uses' => 'AuthController@postLogin'));
 Route::get('/logout', array('uses' => 'AuthController@getLogout'));
 
 Route::post('create', 'AdminToolsController@createQuestionnaire');
+Route::post('submit', 'UserController@submitQuestionnaire');
 
 
 Route::group(array('prefix' => '', 'before' => 'auth'), function()

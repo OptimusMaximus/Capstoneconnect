@@ -20,6 +20,8 @@ class AdminToolsController extends Controller {
 	}
 
 	
+
+
 	public function createQuestionnaire()
 	{
 		$question1 = Input::get('q1');
