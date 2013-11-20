@@ -76,7 +76,18 @@
       </table>
       <hr>
       <h4><u><b>Add New User</b></u></h4>
-      <form class="form-horizontal" role="form">
+       {{ Form::open(array('action' => '')) }}
+      {{ Form::label('name', 'Full Name') }}
+        {{ Form::text('name', '', array('class' => 'form-control')) }}
+      </br />
+      {{ Form::label('email', 'Email Address') }}
+        {{ Form::text('email', '', array('class' => 'form-control')) }}
+
+        <p>{{ Form::submit('create') }}</p>
+     {{ Form::close() }}
+
+
+  <!----    <form class="form-horizontal" role="form">
         <div class="form-group">
           <label for="fullName" class="col-sm-2 control-label">Full Name:</label>
           <div class="col-sm-5">
@@ -95,6 +106,7 @@
           </div>
         </div>
       </form>
+      ---->
       <hr>
       <h4><u><b>Creat New Group</b></u></h4>
       <form class="form-horizontal" role="form">
