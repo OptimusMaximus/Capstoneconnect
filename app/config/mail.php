@@ -16,7 +16,7 @@ return array(
 	*/
 
 	'driver' => 'smtp',
-
+	//'driver' => 'mail',
 	/*
 	|--------------------------------------------------------------------------
 	| SMTP Host Address
@@ -28,8 +28,9 @@ return array(
 	|
 	*/
 
-	'host' => 'smtp.mailgun.org',
-
+	//'host' => 'smtp.mailgun.org',
+	//'host' => '',
+	'host' => 'localhost',
 	/*
 	|--------------------------------------------------------------------------
 	| SMTP Host Port
@@ -41,8 +42,8 @@ return array(
 	|
 	*/
 
-	'port' => 587,
-
+	//'port' => 587,
+	'port' => 25,
 	/*
 	|--------------------------------------------------------------------------
 	| Global "From" Address
@@ -54,7 +55,8 @@ return array(
 	|
 	*/
 
-	'from' => array('address' => null, 'name' => null),
+	//'from' => array('address' => null, 'name' => null),
+	'from' => array('address' => 'admin@localhost.com', 'name' => 'Support Team'),
 
 	/*
 	|--------------------------------------------------------------------------
@@ -119,6 +121,6 @@ return array(
 	|
 	*/
 
-	'pretend' => false,
-
+	//'pretend' => false,
+	'pretend' => true,
 );
