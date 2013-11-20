@@ -13,8 +13,12 @@
 @stop
 
 @section('content')
+
+	{{print_r($_GET); }}
     <div class = QuestionnaireWhite>
+
     	{{ Form::open(array('action' => 'UserController@submitQuestionnaire')) }}
+
     		<h1>Group Member Questionnaire</h1>
     		<div class = questions> 
     			<p>Question 1</p>	 

@@ -18,6 +18,7 @@ class UserController extends BaseController {
 	public function getQuestions()
 	{
 		$results = DB::select('select * from questions where id = 10');
+		return $results;
 	}
 
 	public function submitQuestionnaire()
