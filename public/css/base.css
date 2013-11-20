@@ -144,12 +144,23 @@
 .questions{
 	background-color: #FFFFFF;
 	color: #000000;
-	text-align: left;
+	text-align: center;
 	height: 500;
+
 	
 	postion: absolute;
 	left: 20px; {{-- 20px from left of insideBigWhite --}}
 	top: 25px; {{-- 25px from top of insideBigWhite --}}
+}
+
+.questionairedropbox{
+	background-color: #FFFFFF;
+	color: #000000;
+	text-align: left;
+	height: 500;
+		postion: absolute;
+	left: 20px; {{-- 20px from left of insideBigWhite --}}
+	top: 30px; {{-- 25px from top of insideBigWhite --}}
 }
 
 .radio-inline {
@@ -158,9 +169,12 @@
 }
 
 .form-control {
-	
-	
+	width:500px;
+	margin:auto;
+	display:inline;
+		
 }
+
 
 .linkNextQ {
 	background-color: #FFFFFF;
