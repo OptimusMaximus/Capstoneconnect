@@ -66,4 +66,5 @@ class UserController extends BaseController {
 		return View::make('register');
 	}
 
+	
 }
