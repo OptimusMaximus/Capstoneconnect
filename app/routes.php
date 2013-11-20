@@ -17,7 +17,8 @@ Route::get('/logout', array('uses' => 'AuthController@getLogout'));
 
 Route::post('create', 'AdminToolsController@createQuestionnaire');
 Route::post('submit', 'UserController@submitQuestionnaire');
-Route::get('test', 'UserController@getQuestions');
+//Route::get('getQuestions', 'UserController@getQuestions');
+
 
 Route::group(array('prefix' => '', 'before' => 'auth'), function()
 {

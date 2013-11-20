@@ -11,10 +11,9 @@
 @section('header')
 <h1>Questionnaire</h1>
 @stop
-
+	 
 @section('content')
 
-	{{print_r($_GET); }}
     <div class = QuestionnaireWhite>
 
     	{{ Form::open(array('action' => 'UserController@submitQuestionnaire')) }}
