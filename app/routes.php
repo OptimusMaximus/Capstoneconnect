@@ -41,3 +41,24 @@ Route::get('/test', function()
 
     return View::make('/test')->with('users', $users);
 });
+
+
+/*groups model routing example
+
+Group::  refers to the php file Group.php in
+the models folder. It extends Eloquent. Which
+has methods that allow you to do CRUD operations
+on the groups table. Create Retrieve Update Delete
+
+I've made other models called Question and Answer. These
+Are the models for the questions and answers table. The
+below route closure shows an example of using the Group
+model to access all records in groups. Check out the
+groups view to see how you would use this info on a view.
+*/
+Route::get('groups', function()
+{
+    $groups = Group::all();
+
+    return View::make('groups')->with('groups', $groups);
+});
