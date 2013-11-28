@@ -23,9 +23,6 @@
     <li><a href="#eval" data-toggle="tab">View Evaluations</a></li>
     <li><a href="#question" data-toggle="tab">Create New Questions</a></li>
   </ul>
-
-
-
   <div class="tab-content container">
     <div id="manage" class="tab-pane active">
       <table class="table table-bordered table-responsive table-hover table-groups">
@@ -36,43 +33,17 @@
           <td>Edit</td>
           <td>Remove</td>
         </tr> <!-- trow1 -->
+      <?php $groups = Group::all();?>
+      @foreach($groups as $group)
+          <tr>
+          <td></td>
+          <td>{{$group->name}}</td>
+          <td>{{$group->created_at}}</td>
+          <td>Edit</td>
+          <td>Remove</td>
+          </tr> <!-- trow1 -->
+      @endforeach
 
-
-          <td>
-          </td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        <tr>                        
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr> <!-- trow2 -->
-        <tr>                        
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr> <!-- trow3 -->
-        <tr>                        
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr> <!-- trow4 -->
-        <tr>                        
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr> <!-- trow5 -->
-        <br>
       </table>
       <hr>
       <h4><u><b>Add New User</b></u></h4>
@@ -112,7 +83,7 @@
   {{ Form::close() }}
 
 
-  <!----    <form class="form-horizontal" role="form">
+  <!--    <form class="form-horizontal" role="form" >
         <div class="form-group">
           <label for="fullName" class="col-sm-2 control-label">Full Name:</label>
           <div class="col-sm-5">
@@ -131,7 +102,7 @@
           </div>
         </div>
       </form>
-      ---->
+      -->
       <hr>
       <h4><u><b>Creat New Group</b></u></h4>
       <form class="form-horizontal" role="form">
@@ -157,50 +128,29 @@
     <div id="eval" class="tab-pane">
       <div class="row">
         <div class="col-xs-2 panel-group" id="accordion">
+          <?php $panelNum=0; ?>
+          @foreach($groups as $group)
+          <?php ++$panelNum; ?>
           <div class="panel">
             <div class="panel-heading">
               <h4 class="panel-title">
-                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-                  Group 1
+                <a data-toggle="collapse" data-parent="#accordion" href=<?php echo("\"#collapse".$panelNum."\""); ?>>
+                    {{$group->name}}
                 </a>
               </h4>
             </div>
-            <div id="collapseOne" class="panel-collapse collapse in">
+            <div id=<?php echo("\"collapse".$panelNum."\""); ?> class="panel-collapse collapse in">
               <div class="panel-body">
                 <button type="button" class="btn btn-default">John Doe</button>
               </div>
             </div>
           </div>
-          <div class="panel">
-            <div class="panel-heading">
-              <h4 class="panel-title">
-                <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
-                  Group 2
-                </a>
-              </h4>
-            </div>
-            <div id="collapseTwo" class="panel-collapse collapse">
-              <div class="panel-body">
-                ro
-              </div>
-            </div>
-          </div>
-          <div class="panel">
-            <div class="panel-heading">
-              <h4 class="panel-title">
-                <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
-                  Group 3
-                </a>
-              </h4>
-            </div>
-            <div id="collapseThree" class="panel-collapse collapse">
-              <div class="panel-body">
-                da
-              </div>
-            </div>
-          </div>
+          @endforeach
         </div>
+        <?php $questions=Question::all();?> 
         <table class="table table-bordered table-groups pull-right">
+          @foreach($questions as $question)
+
           <tr>
             <td>fasd</td>
             <td>adsf</td>
@@ -211,21 +161,7 @@
             <td>dsfa</td>
             <td>dsfa</td>
           </tr>
-        </table>
-      </div>
-      <br>
-      <div class="row">
-        <table class="table table-bordered table-groups pull-right">
-          <tr>
-            <td>fasd</td>
-            <td>adsf</td>
-            <td>test</td>
-          </tr>
-          <tr>
-            <td>adsf</td>
-            <td>dsfa</td>
-            <td>dsfa</td>
-          </tr>
+          @foreach($questions as $question)
         </table>
       </div>
     </div><!-- eval -->
