@@ -24,85 +24,59 @@
     <li><a href="#question" data-toggle="tab">Create New Questions</a></li>
   </ul>
   <div class="tab-content container">
+    <!-- Manage Groups and Users tab -->
     <div id="manage" class="tab-pane active">
       <table class="table table-bordered table-responsive table-hover table-groups">
         <tr>
           <td>Name</td>
-          <td>Email Address</td>
+          <td>Discription</td>
           <td>Date Created</td>
           <td>Edit</td>
           <td>Remove</td>
         </tr> <!-- trow1 -->
-      <?php $groups = Group::all();?>
-      @foreach($groups as $group)
+      <?php $projectGroups = ProjectGroup::all();?>
+      @foreach($projectGroups as $pjgroup)
           <tr>
-          <td></td>
-          <td>{{$group->name}}</td>
-          <td>{{$group->created_at}}</td>
+          <td>{{$pjgroup->pgname}}</td>
+          <td>{{$pjgroup->discription}}</td>
+          <td>{{$pjgroup->date_created}}</td>
           <td>Edit</td>
           <td>Remove</td>
           </tr> <!-- trow1 -->
       @endforeach
-
       </table>
       <hr>
-      <h4><u><b>Add New User</b></u></h4>
-  
-  {{ Form::open(
-    array('action' => '',
-          'class' => 'form-horizontal',
-          'role' => 'form'
-  )) }}
-    <div class="form-group">  
-        {{ Form::label('name', 'Full Name:', 
-          array('class' => 'col-sm-2 control-label')
-        )}}
-        <div class="col-sm-5">
-          {{ Form::text('name', '', 
-            array('class' => 'form-control',
-                  'placeholder' => 'John Doe'
-          ))}}
-        </div>
-    </div>
-    <div class="form-group">
-
-      {{ Form::label('email', 'Email Address:',
-        array('class' => 'col-sm-2 control-label'
+      <h4><u><b>Add New Student</b></u></h4>  
+      <!-- Form for adding a new student -->
+      {{ Form::open(
+        array('action' => '',
+              'class' => 'form-horizontal',
+              'role' => 'form'
       ))}}
-      <div class="col-sm-5">
-        {{{ Form::email('email', '', 
-            array('class' => 'form-control',
-                  'placeholder' => 'johnd@email.sc.edu'
-        ))}}}
-      </div>
-    </div>
-    <div class="form-group">
-      {{ Form::submit('create') }}
-    </div>
-     
-  {{ Form::close() }}
-
-
-  <!--    <form class="form-horizontal" role="form" >
-        <div class="form-group">
-          <label for="fullName" class="col-sm-2 control-label">Full Name:</label>
+        <div class="form-group">  
+          {{ Form::label('name', 'Full Name:', 
+            array('class' => 'col-sm-2 control-label')
+          )}}
           <div class="col-sm-5">
-            <input type="text" class="form-control" id="fullName" placeholder="John Doe">
+            {{ Form::text('name', '', 
+              array('class' => 'form-control',
+                    'placeholder' => 'John Doe'
+            ))}}
           </div>
         </div>
         <div class="form-group">
-          <label for="Email" class="col-sm-2 control-label">Email Address:</label>
+          {{ Form::label('email', 'Email Address:',
+            array('class' => 'col-sm-2 control-label'
+          ))}}
           <div class="col-sm-5">
-            <input type="email" class="form-control" id="Email" placeholder="johnd@email.sc.edu">
+            {{ Form::email('email', '', 
+                array('class' => 'form-control',
+                      'placeholder' => 'johnd@email.sc.edu'
+            ))}}
           </div>
         </div>
-        <div class="form-group">
-          <div class="col-sm-offset-2 col-sm-10">
-            <button type="submit" class="btn btn-default">Add Student</button>
-          </div>
-        </div>
-      </form>
-      -->
+          {{ Form::submit('create') }}
+      {{ Form::close() }}
       <hr>
       <h4><u><b>Creat New Group</b></u></h4>
       <form class="form-horizontal" role="form">
@@ -125,23 +99,33 @@
         </div>
       </form>
     </div><!-- manage -->
+
+    <!-- Evaluations page -->
     <div id="eval" class="tab-pane">
-      <div class="row">
-        <div class="col-xs-2 panel-group" id="accordion">
-          <?php $panelNum=0; ?>
-          @foreach($groups as $group)
+      <div class="row">Discription<div class="col-xs-2 panel-group" id="accordion">
+          <?php $panelNum=0; 
+                $projectGroups = ProjectGroup::all();
+          ?>
+          @foreach($projectGroups as $pjgroup)
           <?php ++$panelNum; ?>
           <div class="panel">
             <div class="panel-heading">
               <h4 class="panel-title">
                 <a data-toggle="collapse" data-parent="#accordion" href=<?php echo("\"#collapse".$panelNum."\""); ?>>
-                    {{$group->name}}
+                    {{$pjgroup->pgname}}
                 </a>
               </h4>
             </div>
-            <div id=<?php echo("\"collapse".$panelNum."\""); ?> class="panel-collapse collapse in">
+            <div id=<?php echo("\"collapse".$panelNum."\""); ?> class="panel-collapse collapse">
               <div class="panel-body">
-                <button type="button" class="btn btn-default">John Doe</button>
+                <?php $students = Student::where('pgid',$pjgroup->pid)->get()?>
+                @foreach($students as $student)
+                  <button type="button" class="btn btn-default">
+                    {{$student->first_name." ".$student->last_name}}
+                  </button>
+                  <br>
+                  <br>
+                @endforeach
               </div>
             </div>
           </div>
@@ -161,7 +145,7 @@
             <td>dsfa</td>
             <td>dsfa</td>
           </tr>
-          @foreach($questions as $question)
+          @endforeach
         </table>
       </div>
     </div><!-- eval -->
