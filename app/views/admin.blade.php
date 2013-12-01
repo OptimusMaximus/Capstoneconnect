@@ -49,18 +49,29 @@
       <h4><u><b>Add New Student</b></u></h4>  
       <!-- Form for adding a new student -->
       {{ Form::open(
-        array('action' => '',
+        array('url' => 'student',
               'class' => 'form-horizontal',
-              'role' => 'form'
-      ))}}
+              'role' => 'form'))}}
+      
         <div class="form-group">  
-          {{ Form::label('name', 'Full Name:', 
+          {{ Form::label('name', 'First Name:', 
             array('class' => 'col-sm-2 control-label')
           )}}
           <div class="col-sm-5">
-            {{ Form::text('name', '', 
+            {{ Form::text('first_name', '', 
               array('class' => 'form-control',
-                    'placeholder' => 'John Doe'
+                    'placeholder' => 'John'
+            ))}}
+          </div>
+        </div>
+        <div class="form-group">  
+          {{ Form::label('name', 'Last Name:', 
+            array('class' => 'col-sm-2 control-label')
+          )}}
+          <div class="col-sm-5">
+            {{ Form::text('last_name', '', 
+              array('class' => 'form-control',
+                    'placeholder' => 'Doe'
             ))}}
           </div>
         </div>
@@ -75,8 +86,14 @@
             ))}}
           </div>
         </div>
-          {{ Form::submit('create') }}
+        <div class="form group">
+          <div class="col-sm-offset-2 col-sm-10">
+            {{ Form::submit('Add Student', array('class'=>'btn btn-default'))}}
+          </div>
+        </div>
       {{ Form::close() }}
+      <br>
+      <br>
       <hr>
       <h4><u><b>Creat New Group</b></u></h4>
       <form class="form-horizontal" role="form">
@@ -94,7 +111,7 @@
         </div>
         <div class="form-group">
           <div class="col-sm-offset-2 col-sm-10">
-            <button type="submit" class="btn btn-default">Add Student</button>
+            <button type="submit" class="btn btn-default">Add Group</button>
           </div>
         </div>
       </form>
