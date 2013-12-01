@@ -15,6 +15,11 @@ class DatabaseSeeder extends Seeder {
         $this->command->info('Sentry tables seeded!');
  
 		// $this->call('UserTableSeeder');
+		$this->call('ProjectGroupsTableSeeder');
+		$this->command->info('ProjectGroups table seeded!');
+
+		$this->call('StudentsTableSeeder');
+		$this->command->info('Students table seeded!');
 	}
 
 }

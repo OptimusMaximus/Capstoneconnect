@@ -29,7 +29,7 @@
       <table class="table table-bordered table-responsive table-hover table-groups">
         <tr>
           <td>Name</td>
-          <td>Discription</td>
+          <td>Description</td>
           <td>Date Created</td>
           <td>Edit</td>
           <td>Remove</td>
@@ -37,9 +37,9 @@
       <?php $projectGroups = ProjectGroup::all();?>
       @foreach($projectGroups as $pjgroup)
           <tr>
-          <td>{{$pjgroup->pgname}}</td>
-          <td>{{$pjgroup->discription}}</td>
-          <td>{{$pjgroup->date_created}}</td>
+          <td>{{$pjgroup->name}}</td>
+          <td>{{$pjgroup->description}}</td>
+          <td>{{$pjgroup->created_at}}</td>
           <td>Edit</td>
           <td>Remove</td>
           </tr> <!-- trow1 -->
@@ -49,7 +49,7 @@
       <h4><u><b>Add New Student</b></u></h4>  
       <!-- Form for adding a new student -->
       {{ Form::open(
-        array('url' => 'student',
+        array('url' => 'addNewStudent',
               'class' => 'form-horizontal',
               'role' => 'form'))}}
       
@@ -96,25 +96,39 @@
       <br>
       <hr>
       <h4><u><b>Creat New Group</b></u></h4>
-      <form class="form-horizontal" role="form">
-        <div class="form-group">
-          <label for="groupName" class="col-sm-2 control-label">Group Name:</label>
+      {{ Form::open(
+        array('url' => 'addNewGroup',
+              'class' => 'form-horizontal',
+              'role' => 'form'))}}
+      
+        <div class="form-group">  
+          {{ Form::label('group_name', 'Group Name:', 
+            array('class' => 'col-sm-2 control-label')
+          )}}
           <div class="col-sm-5">
-            <input type="text" class="form-control" id="groupName" placeholder="Group One">
+            {{ Form::text('group_name', '', 
+              array('class' => 'form-control',
+                    'placeholder' => 'Group Blank'
+            ))}}
           </div>
         </div>
-        <div class="form-group">
-          <label for="Discription" class="col-sm-2 control-label">Group Description:</label>
+        <div class="form-group">  
+          {{ Form::label('description', 'Description:', 
+            array('class' => 'col-sm-2 control-label')
+          )}}
           <div class="col-sm-5">
-            <textarea class="form-control" id="Discription" placeholder="Group description" rows="3"></textarea>
+            {{ Form::textarea('description', '', 
+              array('class' => 'form-control',
+                    'placeholder' => 'blah blah blah'
+            ))}}
           </div>
         </div>
-        <div class="form-group">
+        <div class="form group">
           <div class="col-sm-offset-2 col-sm-10">
-            <button type="submit" class="btn btn-default">Add Group</button>
+            {{ Form::submit('Add Group', array('class'=>'btn btn-default'))}}
           </div>
         </div>
-      </form>
+      {{ Form::close() }}
     </div><!-- manage -->
 
     <!-- Evaluations page -->
@@ -123,19 +137,19 @@
           <?php $panelNum=0; 
                 $projectGroups = ProjectGroup::all();
           ?>
-          @foreach($projectGroups as $pjgroup)
+          @foreach($projectGroups as $pjgroup) 
           <?php ++$panelNum; ?>
           <div class="panel">
             <div class="panel-heading">
               <h4 class="panel-title">
                 <a data-toggle="collapse" data-parent="#accordion" href=<?php echo("\"#collapse".$panelNum."\""); ?>>
-                    {{$pjgroup->pgname}}
+                    {{$pjgroup->name}}
                 </a>
               </h4>
             </div>
             <div id=<?php echo("\"collapse".$panelNum."\""); ?> class="panel-collapse collapse">
               <div class="panel-body">
-                <?php $students = Student::where('pgid',$pjgroup->pid)->get()?>
+                <?php $students = Student::where('pgid',$pjgroup->id)->get()?>
                 @foreach($students as $student)
                   <button type="button" class="btn btn-default">
                     {{$student->first_name." ".$student->last_name}}
@@ -148,9 +162,9 @@
           </div>
           @endforeach
         </div>
-        <?php $questions=Question::all();?> 
+        <?php $evaluations=Evaluation::all();?> 
         <table class="table table-bordered table-groups pull-right">
-          @foreach($questions as $question)
+          @foreach($evaluations as $evaluation)
 
           <tr>
             <td>fasd</td>
@@ -168,39 +182,22 @@
     </div><!-- eval -->
 
     <div id="question" class="tab-pane">
-      {{ Form::open(array('action' => 'AdminToolsController@createQuestionnaire')) }}
-      {{ Form::label('q1', 'Question1') }}
-        {{ Form::text('q1', '', array('class' => 'createQuesForm')) }}
-        <br />
-      {{ Form::label('q2', 'Question2') }}
-        {{ Form::text('q2', '', array('class' => 'createQuesForm')) }}
-        <br />
-      {{ Form::label('q3', 'Question3') }}
-        {{ Form::text('q3', '', array('class' => 'createQuesForm')) }}
-        <br />
-      {{ Form::label('q4', 'Question4') }}
-        {{ Form::text('q4', '', array('class' => 'createQuesForm')) }}
-        <br />
-      {{ Form::label('q5', 'Question5') }}
-        {{ Form::text('q5', '', array('class' => 'createQuesForm')) }}
-        <br />
-      {{ Form::label('q6', 'Question6') }}
-        {{ Form::text('q6', '', array('class' => 'createQuesForm')) }}
-        <br />       
-      {{ Form::label('q7', 'Question7') }}
-        {{ Form::text('q7', '', array('class' => 'createQuesForm')) }}
-        <br />
-      {{ Form::label('q8', 'Question8') }}
-        {{ Form::text('q8', '', array('class' => 'createQuesForm')) }}
-        <br />
-      {{ Form::label('q9', 'Question9') }}
-        {{ Form::text('q9', '', array('class' => 'createQuesForm')) }}
-        <br />
-      {{ Form::label('q10', 'Question10') }}
-        {{ Form::text('q10', '', array('class' => 'createQuesForm')) }}      
-
-       <p>{{ Form::submit('create') }}</p>
-     {{ Form::close() }}
+      {{ Form::open(        
+         array('url' => 'addNewEvaluation',
+              'role' => 'form'))}}
+        @for($i = 1; $i <= 10; $i++)
+          <div class="form group">
+          {{ Form::label('q'.$i, 'Question '.$i,
+             array('class' => 'col-sm-2 control-label'))}}
+          {{ Form::text('q'.$i,'',
+             array('class' => 'form-control',
+                   'placeholder' => 'enter question'))}}
+          </div>
+        @endfor
+        <div class="form group">
+          {{ Form::submit('Create Evaluation', array('class'=>'btn btn-default'))}}
+        </div>
+      {{ Form::close() }}
     </div><!-- question -->
   </div><!-- tab-content -->
 </div><!-- container -->

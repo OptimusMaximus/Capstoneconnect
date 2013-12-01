@@ -61,5 +61,8 @@ Route::get('groups', function()
     return View::make('groups')->with('groups', $groups);
 });
 
-Route::post('/student', array('uses' => 'AdminToolsController@addStudent'));
+Route::post('/addNewStudent', array('uses' => 'AdminToolsController@addStudent'));
+Route::post('/addNewGroup', array('uses' => 'AdminToolsController@addGroup'));
+Route::post('/addNewEvaluation', array('uses' => 'AdminToolsController@addEvaluation'));
+
 
