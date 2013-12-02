@@ -133,7 +133,8 @@
 
     <!-- Evaluations page -->
     <div id="eval" class="tab-pane">
-      <div class="row">Discription<div class="col-xs-2 panel-group" id="accordion">
+      <div class="row">
+        <div class="col-xs-2 panel-group" id="accordion">
           <?php $panelNum=0; 
                 $projectGroups = ProjectGroup::all();
           ?>
@@ -165,7 +166,6 @@
         <?php $evaluations=Evaluation::all();?> 
         <table class="table table-bordered table-groups pull-right">
           @foreach($evaluations as $evaluation)
-
           <tr>
             <td>fasd</td>
             <td>adsf</td>
