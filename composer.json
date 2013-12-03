@@ -4,6 +4,7 @@
 	"keywords": ["framework", "laravel"],
 	"license": "MIT",
   "require": {
+      "laravel/framework": "4.0.*",
       "cartalyst/sentry": "2.0.*",
       "illuminate/database": "4.0.*",
       "ircmaxell/password-compat": "1.0.*"
