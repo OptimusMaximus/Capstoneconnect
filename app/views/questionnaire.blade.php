@@ -18,7 +18,7 @@
 
     	{{ Form::open(array('action' => 'UserController@submitQuestionnaire')) }}
 
-    		<h1>Group Member Questionnaire</h1>
+    		
     		<div class = questions> 
     			<?php $evaluations = Evaluation::all();?>
     			@foreach ($evaluations as $evaluation)
