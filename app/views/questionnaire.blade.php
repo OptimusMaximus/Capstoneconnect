@@ -20,13 +20,13 @@
 
     		<br /><br />
     		<div class = questions> 
-    			<?php $evaluations = Evaluation::all();?>
-    			@foreach ($evaluations as $evaluation)
-
+    			<?php $mostRecentEvalDate = Evaluation::max('created_at');
+                $evaluation = Evaluation::where('created_at', $mostRecentEvalDate)->first();
+          ?>
     			<p>{{$evaluation->q1}}</p>	 
     			
-	    			<select name = "answer1">
-	  				<option>1</option>
+	    		 <select name = "answer1">
+	  			 <option>1</option>
 	 				 <option>2</option>
 	 				 <option>3</option>
 	 				 <option>4</option>
@@ -59,8 +59,8 @@
 				</select>
 				<textarea class="form-control" name="comments2" rows="3" placeholder="Comments go here"></textarea>
 				<p><br />{{$evaluation->q3}}</p>
-    			<select name = "answer3">
-  				<option>1</option>
+    		<select name = "answer3">
+  			 <option>1</option>
  				 <option>2</option>
  				 <option>3</option>
  				 <option>4</option>
@@ -182,7 +182,6 @@
 
     			<!--<button type="Submit" class="btn btn-primary">Submit</button>
     -->
-		@endforeach
     	</div>
     		
     	 <p>{{ Form::submit('submit') }}</p>
