@@ -20,7 +20,10 @@
 
     		<h1>Group Member Questionnaire</h1>
     		<div class = questions> 
-    			<p>Question 1</p>	 
+    			<?php $evaluations = Evaluation::all();?>
+    			@foreach ($evaluations as $evaluation)
+
+    			<p>{{$evaluation->q1}}</p>	 
     			
 	    			<select name = "answer1">
 	  				<option>1</option>
@@ -40,7 +43,7 @@
 					<br>
 				
 
-    			<p><br>Question 2</p>	
+    			<p><br />{{$evaluation->q2}}</p>	
     			<select name = "answer2">
   				<option>1</option>
  				 <option>2</option>
@@ -55,7 +58,7 @@
 
 				</select>
 				<textarea class="form-control" name="comments2" rows="3" placeholder="Comments go here"></textarea>
-				<p><br>Question 3</p>	
+				<p><br />{{$evaluation->q3}}</p>
     			<select name = "answer3">
   				<option>1</option>
  				 <option>2</option>
@@ -70,7 +73,7 @@
 
 				</select>
 				<textarea class="form-control" rows="3" name="comments3" placeholder="Comments go here"></textarea>
-				<p><br>Question 4</p>	
+				<p><br />{{$evaluation->q4}}</p>	
     		<select name = "answer4">
   				<option>1</option>
  				 <option>2</option>
@@ -85,7 +88,7 @@
 
 				</select>
 				<textarea class="form-control" rows="3" name="comments4" placeholder="Comments go here"></textarea>
-				<p><br>Question 5</p>	
+				<p><br />{{$evaluation->q5}}</p>	
     			<select name = "answer5">
   				<option>1</option>
  				 <option>2</option>
@@ -100,7 +103,7 @@
 
 				</select>
 				<textarea class="form-control" rows="3"name="comments5" placeholder="Comments go here"></textarea>
-				<p><br>Question 6</p>	
+				<p><br />{{$evaluation->q6}}</p>	
     			<select name = "answer6">
   				<option>1</option>
  				 <option>2</option>
@@ -115,7 +118,7 @@
 
 				</select>
 				<textarea class="form-control" rows="3" name="comments6" placeholder="Comments go here"></textarea>
-				<p><br>Question 7</p>	
+				<p><br />{{$evaluation->q7}}</p>	
     			<select name = "answer7">
   				<option>1</option>
  				 <option>2</option>
@@ -130,7 +133,7 @@
 
 				</select>
 				<textarea class="form-control" rows="3" name="comments7" placeholder="Comments go here"></textarea>
-				<p><br>Question 8</p>	
+				<p><br />{{$evaluation->q8}}</p>	
     			<select name = "answer8">
   				<option>1</option>
  				 <option>2</option>
@@ -145,7 +148,7 @@
 
 				</select>
 				<textarea class="form-control" rows="3" name="comments8" placeholder="Comments go here"></textarea>
-				<p><br>Question 9</p>	
+				<p><br />{{$evaluation->q9}}</p>	
     			<select name = "answer9">
   				<option>1</option>
  				 <option>2</option>
@@ -160,7 +163,7 @@
 
 				</select>
 				<textarea class="form-control" rows="3" name="comments9" placeholder="Comments go here"></textarea>
-				<p><br>Question 10</p>	
+				<p><br />{{$evaluation->q10}}</p>	
     			<select name = "answer10">
   				<option>1</option>
  				 <option>2</option>
@@ -179,7 +182,7 @@
 
     			<!--<button type="Submit" class="btn btn-primary">Submit</button>
     -->
-
+		@endforeach
     	</div>
     		
     	 <p>{{ Form::submit('submit') }}</p>
