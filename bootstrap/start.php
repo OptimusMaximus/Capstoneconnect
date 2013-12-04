@@ -28,6 +28,7 @@ $app->redirectIfTrailingSlash();
 
 $env = $app->detectEnvironment(array(
 
+	'dev' => array('localhost'),
 	'production' => array('ip-172-31-46-242'),
 
 ));
