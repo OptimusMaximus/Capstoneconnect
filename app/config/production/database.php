@@ -54,11 +54,11 @@ return array(
 
 		'mysql' => array(
 			'driver'    => 'mysql',
-			'host'      => 'localhost',
-			'database'  => 'capstone_connect',
+			'host'      => 'capstonedb.c3o5uazfp1by.us-west-2.rds.amazonaws.com',
+			'database'  => 'capstonedb',
 			'port'      => '3306',
-			'username'  => 'root',
-			'password'  => '',
+			'username'  => 'awsuser',
+			'password'  => 'mypassword',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
