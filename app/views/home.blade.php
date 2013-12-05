@@ -8,6 +8,7 @@
 @stop
 @section('header')
 <h1>Capstone Connect</h1>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 @stop
 @section('content')
 

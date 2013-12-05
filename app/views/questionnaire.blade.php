@@ -16,16 +16,18 @@
 
     <div class = QuestionnaireWhite>
 
-    	{{ Form::open(array('action' => 'UserController@submitQuestionnaire')) }}
+    	 {{ Form::open(        
+         array('url' => 'submitAnswers',
+              'role' => 'form'))}}
 
     		<br /><br />
-    		<div class = questions> 
+    		<div class = questions> <p>Please rate your group members from 1-10 for the following questions with 10 being a perfect group member.</p>
     			<?php $mostRecentEvalDate = Evaluation::max('created_at');
                 $evaluation = Evaluation::where('created_at', $mostRecentEvalDate)->first();
-          ?>
+         		?>
     			<p>{{$evaluation->q1}}</p>	 
     			
-	    		 <select name = "answer1">
+	    		 <select name = "ans1">
 	  			 <option>1</option>
 	 				 <option>2</option>
 	 				 <option>3</option>
@@ -37,14 +39,12 @@
 	 				 <option>9</option>
 	 				 <option>10</option>
 					</select>
-
-				
-					<textarea class="form-control" name="comments1" rows="3" placeholder="Comments go here"></textarea>
+					<!---<textarea class="form-control" rows="3" name="comment" placeholder="Comments go here"></textarea>-->
 					<br>
 				
 
     			<p><br />{{$evaluation->q2}}</p>	
-    			<select name = "answer2">
+    			<select name = "ans2">
   				<option>1</option>
  				 <option>2</option>
  				 <option>3</option>
@@ -57,9 +57,9 @@
  				 <option>10</option>
 
 				</select>
-				<textarea class="form-control" name="comments2" rows="3" placeholder="Comments go here"></textarea>
+				<!---<textarea class="form-control" rows="3" name="comment" placeholder="Comments go here"></textarea>-->
 				<p><br />{{$evaluation->q3}}</p>
-    		<select name = "answer3">
+    		<select name = "ans3">
   			 <option>1</option>
  				 <option>2</option>
  				 <option>3</option>
@@ -72,9 +72,9 @@
  				 <option>10</option>
 
 				</select>
-				<textarea class="form-control" rows="3" name="comments3" placeholder="Comments go here"></textarea>
+				<!---<textarea class="form-control" rows="3" name="comment" placeholder="Comments go here"></textarea>-->
 				<p><br />{{$evaluation->q4}}</p>	
-    		<select name = "answer4">
+    		<select name = "ans4">
   				<option>1</option>
  				 <option>2</option>
  				 <option>3</option>
@@ -87,9 +87,9 @@
  				 <option>10</option>
 
 				</select>
-				<textarea class="form-control" rows="3" name="comments4" placeholder="Comments go here"></textarea>
+				<!---<textarea class="form-control" rows="3" name="comment" placeholder="Comments go here"></textarea>-->
 				<p><br />{{$evaluation->q5}}</p>	
-    			<select name = "answer5">
+    			<select name = "ans5">
   				<option>1</option>
  				 <option>2</option>
  				 <option>3</option>
@@ -102,9 +102,9 @@
  				 <option>10</option>
 
 				</select>
-				<textarea class="form-control" rows="3"name="comments5" placeholder="Comments go here"></textarea>
+				<!---<textarea class="form-control" rows="3" name="comment" placeholder="Comments go here"></textarea>-->
 				<p><br />{{$evaluation->q6}}</p>	
-    			<select name = "answer6">
+    			<select name = "ans6">
   				<option>1</option>
  				 <option>2</option>
  				 <option>3</option>
@@ -117,9 +117,9 @@
  				 <option>10</option>
 
 				</select>
-				<textarea class="form-control" rows="3" name="comments6" placeholder="Comments go here"></textarea>
+				<!---<textarea class="form-control" rows="3" name="comment" placeholder="Comments go here"></textarea>-->
 				<p><br />{{$evaluation->q7}}</p>	
-    			<select name = "answer7">
+    			<select name = "ans7">
   				<option>1</option>
  				 <option>2</option>
  				 <option>3</option>
@@ -132,9 +132,9 @@
  				 <option>10</option>
 
 				</select>
-				<textarea class="form-control" rows="3" name="comments7" placeholder="Comments go here"></textarea>
+				<!---<textarea class="form-control" rows="3" name="comment" placeholder="Comments go here"></textarea>-->
 				<p><br />{{$evaluation->q8}}</p>	
-    			<select name = "answer8">
+    			<select name = "ans8">
   				<option>1</option>
  				 <option>2</option>
  				 <option>3</option>
@@ -147,9 +147,9 @@
  				 <option>10</option>
 
 				</select>
-				<textarea class="form-control" rows="3" name="comments8" placeholder="Comments go here"></textarea>
+				<!---<textarea class="form-control" rows="3" name="comment" placeholder="Comments go here"></textarea>-->
 				<p><br />{{$evaluation->q9}}</p>	
-    			<select name = "answer9">
+    			<select name = "ans9">
   				<option>1</option>
  				 <option>2</option>
  				 <option>3</option>
@@ -162,9 +162,9 @@
  				 <option>10</option>
 
 				</select>
-				<textarea class="form-control" rows="3" name="comments9" placeholder="Comments go here"></textarea>
-				<p><br />{{$evaluation->q10}}</p>	
-    			<select name = "answer10">
+				<!---<textarea class="form-control" rows="3" name="comment" placeholder="Comments go here"></textarea>--><p>
+				<br />{{$evaluation->q10}}</p>	
+    			<select name = "ans10">
   				<option>1</option>
  				 <option>2</option>
  				 <option>3</option>
@@ -177,14 +177,24 @@
  				 <option>10</option>
 
 				</select>
-				<textarea class="form-control" rows="3" name="comments10" placeholder="Comments go here"></textarea>
+				<!---<textarea class="form-control" rows="3" name="comment" placeholder="Comments go here"></textarea>-->
+				
 				<br /><br />
 
-    			<!--<button type="Submit" class="btn btn-primary">Submit</button>
-    -->
+             <div class="form-group">  
+         
+          <div class="col-sm-5">
+            {{ Form::textarea('comment', '', 
+              array('class' => 'form-control',
+                    'placeholder' => 'blah blah blah'
+            ))}}
+          </div>
+        </div>	
+        
     	</div>
     		
-    	 <p>{{ Form::submit('submit') }}</p>
+    	 <p><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    	 	{{ Form::submit('Submit Answers', array('class'=>'btn btn-default'))}}</p>
      {{ Form::close() }}
     </div>
     

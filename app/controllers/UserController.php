@@ -20,7 +20,7 @@ class UserController extends BaseController {
 		$results = DB::select('select * from questions where id = 10');
 		return $results;
 	}
-
+	/*
 	public function submitQuestionnaire()
 	{
 		$answer1 = Input::get('answer1');
@@ -60,7 +60,24 @@ class UserController extends BaseController {
 		return Redirect::to('questionnaire');
 
 	}
+	*/
+	public function submitAnswers(){
+		$answers = Answer::create(array('ans1' => $_POST["ans1"],
+											   'ans2' => $_POST["ans2"],
+											   'ans3' => $_POST["ans3"],
+											   'ans4' => $_POST["ans4"],
+											   'ans5' => $_POST["ans5"],
+											   'ans6' => $_POST["ans6"],
+											   'ans7' => $_POST["ans7"],
+											   'ans8' => $_POST["ans8"],
+											   'ans9' => $_POST["ans9"],
+											   'ans10' => $_POST["ans10"],
+											   'comment'=>$_POST["comment"]));
+		return Redirect::to('questionnaire');
+	}
+	
 
+	
 	public function showWelcome()
 	{
 		return View::make('register');

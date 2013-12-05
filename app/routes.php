@@ -15,8 +15,8 @@ Route::get('/login', array('uses' => 'AuthController@getLogin'));
 Route::post('/login', array('uses' => 'AuthController@postLogin'));
 Route::get('/logout', array('uses' => 'AuthController@getLogout'));
 
-Route::post('create', 'AdminToolsController@createQuestionnaire');
-Route::post('submit', 'UserController@submitQuestionnaire');
+//Route::post('create', 'AdminToolsController@createQuestionnaire');
+//Route::post('submit', 'UserController@submitAnswers');
 //Route::get('getQuestions', 'UserController@getQuestions');
 
 Route::get('/reset', array('uses' => 'PasswordController@remind', 'as' => 'remind'));
@@ -44,5 +44,6 @@ Route::get('/test', function()
 Route::post('/addNewStudent', array('uses' => 'AdminToolsController@addStudent'));
 Route::post('/addNewGroup', array('uses' => 'AdminToolsController@addGroup'));
 Route::post('/addNewEvaluation', array('uses' => 'AdminToolsController@addEvaluation'));
+Route::post('/submitAnswers', array('uses' => 'UserController@submitAnswers'));
 
 

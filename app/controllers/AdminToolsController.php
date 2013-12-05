@@ -21,7 +21,7 @@ class AdminToolsController extends Controller {
 
 	
 
-
+	/*
 	public function createQuestionnaire()
 	{
 		$question1 = Input::get('q1');
@@ -39,7 +39,7 @@ class AdminToolsController extends Controller {
 			question6, question7, question8, question9, question10) VALUES (NOW(), '$question1', '$question2', '$question3',
 			'$question4', '$question5', '$question6', '$question7', '$question8', '$question9', '$question10')");
 		return Redirect::to('admin');
-	}
+	}*/
 
 	public function addStudent()
 	{
