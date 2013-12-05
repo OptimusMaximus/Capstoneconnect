@@ -16,6 +16,12 @@ class SentrySeeder extends Seeder {
             'first_name'  => 'John',
             'last_name'   => 'Doe',
             'activated'   => 1,
+            'permissions' => array(
+                'user.create' => 1,
+                'user.delete' => 1,
+                'user.view'   => 1,
+                'user.update' => 1,
+                )
         ));
 
 
@@ -31,7 +37,7 @@ class SentrySeeder extends Seeder {
 
         Sentry::getUserProvider()->create(array(
             'email'       => 'user@sc.edu',
-            'password'    => 'user',
+            'password'    => 'usertest',
             'first_name'  => 'Patrick',
             'last_name'   => 'McG',
             'activated'   => 1,
