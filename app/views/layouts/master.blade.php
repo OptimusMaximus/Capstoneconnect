@@ -32,6 +32,7 @@
         </ul>
     </div>
     <body>
-        @yield('content')   
+        @yield('content')
+           
     </body>
 </html>
