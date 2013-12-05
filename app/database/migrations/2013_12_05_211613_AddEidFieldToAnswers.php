@@ -26,7 +26,7 @@ class AddEidFieldToAnswers extends Migration {
 	{
 		Schema::table('answers', function($table)
 		{
-			$table->dropColum('eid');
+			$table->dropColumn('eid');
 		});	
 	}
 
