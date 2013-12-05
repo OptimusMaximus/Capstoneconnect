@@ -17,16 +17,40 @@ class SentrySeeder extends Seeder {
             'last_name'   => 'Doe',
             'activated'   => 1,
         ));
- 
+
+
         Sentry::getGroupProvider()->create(array(
             'name'        => 'Admin',
             'permissions' => array('admin' => 1),
         ));
  
-        // Assign user permissions
+        // Assign admin to group
         $adminUser  = Sentry::getUserProvider()->findByLogin('admin@sc.edu');
         $adminGroup = Sentry::getGroupProvider()->findByName('Admin');
         $adminUser->addGroup($adminGroup);
+
+        Sentry::getUserProvider()->create(array(
+            'email'       => 'user@sc.edu',
+            'password'    => 'user',
+            'first_name'  => 'Patrick',
+            'last_name'   => 'McG',
+            'activated'   => 1,
+            'permissions' => array(
+                'user.create' => -1,
+                'user.delete' => -1,
+                'user.view'   => 1,
+                'user.update' => 1,
+                )
+            ));
+
+        Sentry::getGroupProvider()->create(array(
+            'name'        => 'Users',
+            'permissions' =>  array('users' => 1),
+            ));
+        $studentUser = Sentry::getUserProvider()->findByLogin('user@sc.edu');
+        $studentGroup = Sentry::getGroupProvider()->findByName('Users');
+        $studentUser->addGroup($studentGroup);
+ 
     }
  
 }
