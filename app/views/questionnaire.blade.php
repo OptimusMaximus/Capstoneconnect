@@ -183,10 +183,10 @@
 
              <div class="form-group">  
          
-          <div class="col-sm-5">
+          <div class="col-sm-5" style="padding-left:23%">
             {{ Form::textarea('comment', '', 
               array('class' => 'form-control',
-                    'placeholder' => 'blah blah blah'
+                    'placeholder' => 'Please enter some comments about your fellow group member.'
             ))}}
           </div>
         </div>	

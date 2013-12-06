@@ -8,7 +8,6 @@
 @stop
 @section('header')
 <h1>Capstone Connect</h1>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 @stop
 @section('content')
 
@@ -21,7 +20,8 @@
  </h>
 <div class="InsideAnnouncement">
   <h>
-  Here
+  Final Exams are coming up!<br />
+  12/06 Capstone Presentations 
   </h>
   </div>
  </div>
@@ -32,7 +32,7 @@ Recent Activity
 </h>
 <div class="InsideRecentActivity">
 <h>
-Activity here!
+Recent activity will be listed here. 
 </h>
 </div>
  </div>
