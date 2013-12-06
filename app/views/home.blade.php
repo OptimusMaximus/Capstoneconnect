@@ -20,7 +20,8 @@
  </h>
 <div class="InsideAnnouncement">
   <h>
-  Here
+  Final Exams are coming up!<br />
+  12/06 Capstone Presentations 
   </h>
   </div>
  </div>
@@ -31,7 +32,7 @@ Recent Activity
 </h>
 <div class="InsideRecentActivity">
 <h>
-Activity here!
+Recent activity will be listed here. 
 </h>
 </div>
  </div>
