@@ -44,6 +44,12 @@ class AuthController extends BaseController {
                     $rememberMe = Input::get('remember');
                     $user = Sentry::authenticate($credentials, $rememberMe);
 
+                    //if admin logs in
+                    if (  Sentry::getUser()->hasAnyAccess(['admin']) )
+                    {   //go to admin page
+                        return Redirect::to('admin');
+                    }
+
                     if ($user)
                     {
                         //go home
