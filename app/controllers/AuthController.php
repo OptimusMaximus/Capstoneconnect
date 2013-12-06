@@ -45,7 +45,7 @@ class AuthController extends BaseController {
                     $user = Sentry::authenticate($credentials, $rememberMe);
 
                     //if admin logs in
-                    if (  Sentry::getUser()->hasAnyAccess(['admin']) )
+                    if (  Sentry::getUser()->hasAnyAccess(array('admin')) )
                     {   //go to admin page
                         return Redirect::to('admin');
                     }
