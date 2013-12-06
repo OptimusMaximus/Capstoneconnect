@@ -32,6 +32,21 @@ App::after(function($request, $response)
 | integrates HTTP Basic authentication for quick, simple checking.
 |
 */
+//Login for user with admin permissions only
+Route::filter('authAdmin', function()
+{
+	if ( ! Sentry::check() )
+    {
+        return Redirect::to('login');
+    }
+
+	if ( ! Sentry::getUser()->hasAnyAccess(['admin']) )
+	{
+		Session::flash('accessError', 'You do not have permission to access this!' );
+    	return Response::make('Access Forbidden!  You do not have permissions to access this page!', '403');
+	}
+});
+
 
 Route::filter('auth', function()
 {		//User is not logged in or is not activated

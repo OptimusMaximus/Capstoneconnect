@@ -29,10 +29,17 @@ Route::group(array('prefix' => '', 'before' => 'auth'), function()
 {
         Route::get('/home', 'HomeController@showWelcome');
 		Route::get('/help', 'HelpController@showWelcome');
-		Route::get('/admin', 'AdminToolsController@makePage');
+		//Route::get('/admin', 'AdminToolsController@makePage');
 		Route::get('/questionnaire', 'QuestionnaireController@showWelcome');
 		Route::get('/mygrades', 'GradesController@showWelcome');
 });
+
+//For user with admin access permissions only
+Route::group(array('prefix' => '', 'before' => 'authAdmin'), function()
+{
+		Route::get('/admin', 'AdminToolsController@makePage');
+});
+
 Route::get('/test', function()
 {
     $users = User::all();
