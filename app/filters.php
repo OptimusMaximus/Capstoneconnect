@@ -40,7 +40,8 @@ Route::filter('authAdmin', function()
         return Redirect::to('login');
     }
 
-	if ( ! Sentry::getUser()->hasAnyAccess(array('admin')) )
+
+	if ( ! Sentry::getUser()->hasAnyAccess(array('admin')) 
 	{
 		Session::flash('accessError', 'You do not have permission to access this!' );
     	return Response::make('Access Forbidden!  You do not have permissions to access this page!', '403');
