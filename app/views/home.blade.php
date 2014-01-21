@@ -4,62 +4,11 @@
 @parent
 @stop
 @section('styles')
-.BigWhite {
-	background-color:#FFFFFF;
-	height:600px;
-	width:900px;
-	margin: 0 auto;
 
-}
-.Announcements {	
-	background-color:#73000A;
-	height:550px;
-	width:300px;
-	margin: 300 auto;
-	margin:30px 30px 30px 30px;
-	border:2px solid black;
-	float:left;
-	} 	
-
-	.InsideAnnouncement {
-	background-color:Grey;
-	height:500px;
-	width:275px;
-	border:2px scrollingd black;
-	margin: 0 auto;
-	
-}
-.RecentActivity {
-	background-color:#73000A;
-	height:200px;
-	width:490px;
-	margin:30px 30px 10px 10px;
-	float:right;
-	border:2px solid black;
-	}
-
-	.InsideRecentActivity {
-	background-color:grey;
-	height:165px;
-	width:475px;
-	margin-right:5px;
-	float:right;
-	border:2px solid black;
-	
-}
-	.Calendar {
-	background-color:Red;
-	height:320px;
-	width:490px;
-	margin:15px 30px 10px 10px;
-	float:right;
-	border:2px solid black;
-	}
 @stop
 @section('header')
 <h1>Capstone Connect</h1>
 @stop
-
 @section('content')
 
 
@@ -71,7 +20,8 @@
  </h>
 <div class="InsideAnnouncement">
   <h>
-  Here
+  Final Exams are coming up!<br />
+  12/06 Capstone Presentations 
   </h>
   </div>
  </div>
@@ -82,7 +32,7 @@ Recent Activity
 </h>
 <div class="InsideRecentActivity">
 <h>
-Activity here!
+Recent activity will be listed here. 
 </h>
 </div>
  </div>
@@ -94,6 +44,6 @@ Calendar
  </div>
 
 </div>  
-  
+
 
 @stop

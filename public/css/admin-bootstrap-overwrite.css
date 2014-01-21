@@ -1,0 +1,73 @@
+body {
+  text-align: left;
+}
+
+.admin-container {
+  margin: 0% auto 10%;
+}
+
+.nav-tabs > .active > a,
+.nav-tabs > .active > a:hover,
+.nav-tabs > .active > a:focus,
+.nav-tabs > .active > a:visited
+{
+    background-color:rgb(178,180,179);
+    border-bottom: none;
+
+    color:#000000;
+}
+
+ul.nav-tabs a:link {background-color:rgb(95,87,79);}
+ul.nav-tabs a:hover {background-color:rgb(178,180,179);}
+ul.nav-tabs a:focus {background-color:rgb(178,180,179);}
+ul.nav-tabs a:active {background-color:rgb(178,180,179);}
+
+.nav-tabs {
+    border-style: none;
+    border-bottom-width: thick;
+    border-bottom-color: rgb(178,180,179);
+    margin-bottom: 0px;
+}
+
+.tab-content{
+  padding: 2%;
+  background-color: rgb(178,180,179);
+  color: #000;
+}
+
+.tab-pane {
+  background-color: rgb(178,180,179);
+}
+
+.table-groups {
+  border-color: black;
+  width: 80%;
+  bottom: 5px;
+}
+
+.table th, .table td {
+  border-color: black;
+}
+
+form {
+  text-align: left;
+  display:inline;
+}
+
+hr {
+  border-color: black;
+  border-style: solid;
+  margin-top: 0px;
+}
+
+.panel {
+  border-color: rgb(95,87,79);
+}
+.panel-heading {
+  background-color: rgb(95,87,79);
+  border-color: rgb(95,87,79);
+}
+
+.panel-title > a {
+  color: white;
+}
