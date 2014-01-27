@@ -1,0 +1,274 @@
+@media only screen and (max-width: 600px), only screen and (max-device-width: 600px)  {
+
+	.BigWhite {
+		background-color:#FFFFFFFF;
+		height:auto;
+		width:auto;
+		margin: 0 auto;
+		border:2px solid;
+		border-radius:25px;
+
+	}
+	.HelpBox {
+		background-color:#FFFFFF;
+		height:auto;
+		width:auto;
+		margin: 0 auto;
+		text-align: left;
+		color: black;
+		border:2px solid;
+		border-radius:25px;
+		padding-top:25px;
+	}
+	.Announcements {	
+		background-color:#73000A;
+		height:550px;
+		width:auto;
+		margin: 300 auto;
+		margin:30px 20px 20px 20px;
+		border:2px solid black;
+		float:none
+	} 	
+
+	.InsideAnnouncement {
+		background-color:Grey;
+		height:500px;
+		width:auto;
+		border:2px solid black;
+		margin: 0 auto;
+	}
+	.RecentActivity {
+		background-color:#73000A;
+		height:200px;
+		width:auto;
+		margin:0px 20px 20px 20px;
+		float:none;
+		border:2px solid black;
+	}
+
+	.InsideRecentActivity {
+		background-color:grey;
+		height:165px;
+		width:auto;
+		margin-right:5px;
+		float:none;
+		border:2px solid black;
+	}
+	.Calendar {
+		height:320px;
+		width:auto;
+		margin:0px 20px 20px 20px;
+		float:none;
+		border:2px solid black;
+	}
+
+	.whitebox{
+		background-color:#FFFFFF;
+		height:600px;
+		width:900px;	
+		margin: 0 auto;
+		border:2px solid;
+		border-radius:25px;
+	}
+	.blackbox{
+ 		background-color:#FFFFFF;
+ 		height:400px;
+ 		width:700px;
+ 		border:2px solid black;
+ 		margin: 125px;
+	}
+	.GradesWhite {
+		background-color:#FFFFFF;
+		height:900px;
+		width:auto;
+		margin: 0 auto;
+		border:2px solid;
+		border-radius:5px;
+	}
+	.Evals {	
+		background-color:#73000A;
+		height:300px;
+		width:auto;
+		margin:0 0px 20px 20px;
+		border:2px solid black;
+		float:left;
+		text-align:left;
+	}	
+
+	.WeeklyGrades {
+		background-color:Grey;
+		height:300px;
+		width:auto;
+		margin:0 20px 20px 100px;
+		float: none;
+		border:2px solid black;
+	}
+
+	.AllGrades {
+		background-color:#73000A;
+		height:500px;
+		width:auto;
+		margin:0 20px 20px 20px;
+		border:2px solid black;
+		float:none;
+	}
+
+	.InsideAllGrades {
+		background-color:grey;
+		height:480px;
+		width:auto;
+		margin: 10px 10px 10px 10px;
+		border:2px solid black;
+		float:none;
+	}
+	.GradeAverageText{
+		height: auto;
+		width: 400px;
+		text-align: left;
+		margin: 20px 20px 20px 20px;
+		color: black;
+	}
+	.GradesCalendar {
+		background-color:Red;
+		height:320px;
+		width:auto;
+		margin:15px 30px 10px 10px;
+		float:none;
+		border:2px solid black;
+	}
+
+	.QuestionnaireWhite {
+		background-color:#FFFFFF;
+		height:1500px;
+		width:auto;
+		margin: 0 auto;
+		border:2px solid;
+		border-radius:25px;
+	}
+
+	.questions{
+		background-color: #FFFFFF;
+		color: #000000;
+		text-align: center;
+		height: 500;	
+		postion: absolute;
+		left: 20px; {{-- 20px from left of insideBigWhite --}}
+		top: 25px; {{-- 25px from top of insideBigWhite --}}
+	}	
+
+	.questionairedropbox{
+		background-color: #FFFFFF;
+		color: #000000;
+		text-align: left;
+		height: 500;
+		postion: absolute;
+		left: 20px; {{-- 20px from left of insideBigWhite --}}
+		top: 30px; {{-- 25px from top of insideBigWhite --}}
+	}
+
+	.radio-inline {
+		width:900px;
+	}
+
+	.form-control {
+		width:500px;
+		margin:auto;
+		display:inline;
+	}
+
+	.linkNextQ {
+		background-color: #FFFFFF;
+		height: 50px;
+		width: 200px;	 
+		left: 50px; {{-- 50px from left of questions --}}
+		top: 600px; {{-- 600px from top of questions --}}
+	}
+	.Login {
+  		background-color:#FFFFFFFF;
+  		width:auto;
+  		height:auto;
+  		margin: 0 auto;
+  		color:black;
+  		border:2px solid;
+  		border-radius:25px;
+	}
+
+
+ 	a.black:link {color:#000000}      /* unvisited link color blue */
+ 	a.black:visited {color:#000000}  /* visited link color blue*/
+ 	a.black:hover {color:rgb(95,87,79);}  /* mouse over link color Pluff mud*/
+ 	a.black:focus {color:rgb(95,87,79);}  /* link of focus color Pluff mud*/
+ 	a.black:active {color:rgb(178,180,179);}  /* selected link color State House Gray*/
+		
+	a.blue:link {color:#0000FF}      /* unvisited link color blue */
+	a.blue:visited {color:#0000FF}  /* visited link color blue*/
+ 	a.blue:hover {color:rgb(95,87,79);}  /* mouse over link color Pluff mud*/
+ 	a.blue:focus {color:rgb(95,87,79);}  /* link of focus color Pluff mud*/
+ 	a.blue:active {color:rgb(178,180,179);}  /* selected link color State House Gray*/
+
+	.account-box {
+		border: 2px solid rgba(153, 153, 153, 0.75);
+    		border-radius: 2px;
+		-moz-border-radius: 2px;
+    		-webkit-border-radius: 2px;
+    		-khtml-border-radius: 2px;
+    		-o-border-radius: 2px;
+    		z-index: 3;
+    		font-size: 13px !important;
+    		font-family: "Helvetica Neue" ,Helvetica,Arial,sans-serif;
+    		background-color: #ffffff;
+    		padding: 20px;
+	}
+
+	.logo {
+    		width: 138px;
+    		height: 30px;
+    		text-align: center;
+    		margin: 10px 0px 27px 40px;
+    		background-position: 0px -4px;
+    		position: relative;
+	}
+
+	.forgotLnk {
+    		margin-top: 10px;
+    		display: block;
+    		text-color: black;
+	}
+
+	.purple-bg {
+    		background-color: #6E329D;
+    		color: #fff;
+	}
+	.or-box {
+    		position: relative;
+    		border-top: 1px solid #dfdfdf;
+    		padding-top: 20px;
+    		margin-top:20px;
+	}
+	.or {
+    		color: #666666;
+    		background-color: #ffffff;
+    		position: absolute;
+    		text-align: center;
+    		top: -8px;
+    		width: 40px;
+		left: 90px;
+	}
+	.account-box .btn:hover {
+    		color: #fff;
+	}
+	.btn-facebook {
+    		background-color: #3F639E;
+    		color: #fff;
+    		font-weight:bold;
+	}
+	.btn-google {
+    		background-color: #454545;
+    		color: #fff;
+    		font-weight:bold;
+	}
+	.createQuesForm
+	{
+		width:auto;
+	}
+}
