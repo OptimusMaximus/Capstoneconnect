@@ -1,5 +1,6 @@
 <?php
 
+TODO make this projects not project groups
 use Illuminate\Database\Migrations\Migration;
 
 class CreateProjectGroupsTable extends Migration {
@@ -17,6 +18,8 @@ class CreateProjectGroupsTable extends Migration {
 			$table->string('name',25);
 			$table->string('description');
 			$table->timestamps();
+
+			$table->engine = 'InnoDB';
 		});
 	}
 

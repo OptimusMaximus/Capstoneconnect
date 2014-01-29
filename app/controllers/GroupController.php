@@ -1,38 +1,15 @@
 <?php
 
-class UserController extends \BaseController {
+class GroupController extends \BaseController {
 
 	/**
-	 * Display a listing of users.
+	 * Display a listing of the resource.
 	 *
 	 * @return Response
 	 */
-	public function getIndex()
+	public function index()
 	{
-		$users = Users::get();
-		
-	}
-
-	/**
-	*
-	* Displays a list of all student users
-	*
-	*
-	*/
-	public function getAdmins()
-	{
-
-	}
-
-	/**
-	*
-	* Displays a list of all student users
-	*
-	*
-	*/
-	public function getStudents()
-	{
-		
+		//
 	}
 
 	/**

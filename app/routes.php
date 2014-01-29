@@ -48,9 +48,10 @@ Route::get('/test', function()
 });
 
 // Admin tool routes for adding students, groups and evaluations
-Route::post('/addNewStudent', array('uses' => 'AdminToolsController@addStudent'));
-Route::post('/addNewGroup', array('uses' => 'AdminToolsController@addGroup'));
-Route::post('/addNewEvaluation', array('uses' => 'AdminToolsController@addEvaluation'));
-Route::post('/submitAnswers', array('uses' => 'UserController@submitAnswers'));
+Route::post('/user/new', array('as' => 'newUser', 'uses' => 'UserController@addUser'));
+//Route::post('/student/new', array('uses' => 'AdminToolsController@addStudent'));
+Route::post('/group/new', array('as' => 'newGroup', 'uses' => 'AdminToolsController@addGroup'));
+Route::post('/evaluation/new', array('as' => 'newEval', 'uses' => 'AdminToolsController@addEvaluation'));
+//Route::post('/answers', array('as' => 'submitAnswers' 'uses' => 'UserController@submitAnswers'));
 
 

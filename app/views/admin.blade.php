@@ -51,7 +51,7 @@
             <h4><u><b>Add New Student</b></u></h4>  
             <!-- Form for adding a new student -->
             {{ Form::open(
-                array('url' => 'addNewStudent',
+                array('url' => URL::route('newUser'),
                             'class' => 'form-horizontal',
                             'role' => 'form'))}}
             
@@ -99,7 +99,7 @@
             <hr>
             <h4><u><b>Creat New Group</b></u></h4>
             {{ Form::open(
-                array('url' => 'addNewGroup',
+                array('url' => URL::route('newGroup'),
                             'class' => 'form-horizontal',
                             'role' => 'form'))}}
             
@@ -228,7 +228,7 @@
         <!-- Questions page -->
         <div id="question" class="tab-pane">
             {{ Form::open(        
-                 array('url' => 'addNewEvaluation',
+                 array('url' => URL::route('newEval'),
                             'role' => 'form'))}}
                 @for($i = 1; $i <= 10; $i++)
                     <div class="form group">

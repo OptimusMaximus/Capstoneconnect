@@ -41,33 +41,51 @@ class AdminToolsController extends Controller {
 		return Redirect::to('admin');
 	}*/
 
-	public function addStudent()
+
+	public function addUser()
 	{
-		$student = Student::create(array('first_name' => $_POST["first_name"],
-		    							 'last_name' => $_POST["last_name"],
-		    							 'email' => $_POST["email"]));
+		try
+		{
+			$user = Sentry::createUser(array(
+				'email' => $_POST["email"],
+				'first_name' => $_POST["first_name"],
+				'last_name' => $_POST["last_name"],
+				'activated' => false
+			));
+		}
+		catch (Cartalyst\Sentry\Users\UserExistsException $e)
+		{
+    		echo 'User with this email already exists.';
+		}
+
 		return Redirect::to('admin');
 	}
 
 	public function addGroup()
 	{
-		$group = ProjectGroup::create(array('name' => $_POST["group_name"],
-		    							 'description' => $_POST["description"]));
+		$group = ProjectGroup::create(array(
+			'name' => $_POST["group_name"],
+			'description' => $_POST["description"]
+		));
+
 		return Redirect::to('admin');
 	}
 
 	public function addEvaluation()
 	{
-		$evaluation = Evaluation::create(array('q1' => $_POST["q1"],
-											   'q2' => $_POST["q2"],
-											   'q3' => $_POST["q3"],
-											   'q4' => $_POST["q4"],
-											   'q5' => $_POST["q5"],
-											   'q6' => $_POST["q6"],
-											   'q7' => $_POST["q7"],
-											   'q8' => $_POST["q8"],
-											   'q9' => $_POST["q9"],
-											   'q10' => $_POST["q10"]));
+		$evaluation = Evaluation::create(array(
+			'q1' => $_POST["q1"],
+		    'q2' => $_POST["q2"],
+		    'q3' => $_POST["q3"],
+		    'q4' => $_POST["q4"],
+		    'q5' => $_POST["q5"],
+		    'q6' => $_POST["q6"],
+		    'q7' => $_POST["q7"],
+		    'q8' => $_POST["q8"],
+		    'q9' => $_POST["q9"],
+		    'q10' => $_POST["q10"]
+		));
+
 		return Redirect::to('admin');
 	}
 }
