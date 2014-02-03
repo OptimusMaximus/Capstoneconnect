@@ -19,7 +19,7 @@
 @section('content')
 <div class="container admin-container">
     <ul class="nav nav-tabs">
-        <li class="active"><a href="#manage" data-toggle="tab">Manage Groups and Users</a></li>
+        <li><a href="#manage" data-toggle="tab">Manage Groups and Users</a></li>
         <li><a href="#eval" data-toggle="tab">View Evaluations</a></li>
         <li><a href="#question" data-toggle="tab">Create New Questions</a></li>
     </ul>
@@ -31,27 +31,33 @@
                     <td>Name</td>
                     <td>Description</td>
                     <td>Date Created</td>
-                    <td>Edit</td>
-                    <td>Remove</td>
+                    <td></td>
+                    <td></td>
                 </tr> <!-- trow1 -->
-            <?php $projectGroups = ProjectGroup::all();?>
-            @if($projectGroups != null)
-                @foreach($projectGroups as $pjgroup)
+            <?php $projects = Project::all();?>
+            @if($projects != null)
+                @foreach($projects as $project)
                     <tr>
-                        <td>{{$pjgroup->name}}</td>
-                        <td>{{$pjgroup->description}}</td>
-                        <td>{{$pjgroup->created_at}}</td>
-                        <td>Edit</td>
-                        <td>Remove</td>
+                        <td>{{$project->name}}</td>
+                        <td>{{$project->description}}</td>
+                        <td>{{$project->created_at}}</td>
+                        <td>
+                            {{ HTML::linkRoute('project.edit', 'Edit', $project->id, array('class'=>'edit-button btn btn-default')) }}
+                        </td>
+                        <td>
+                            {{ Form::open(array('route' => array('project.destroy', $project->id), 'method' => 'delete')) }}
+                            {{ Form::submit('Remove', array('class'=>'btn btn-default'))}}
+                            {{ Form::close() }}
+                        </td>
                     </tr> <!-- trow1 -->
                 @endforeach
             @endif
             </table>
             <hr>
-            <h4><u><b>Add New Student</b></u></h4>  
+            <h4><u><b>Add New User</b></u></h4>  
             <!-- Form for adding a new student -->
             {{ Form::open(
-                array('url' => URL::route('newUser'),
+                array('url' => route('user.store'),
                             'class' => 'form-horizontal',
                             'role' => 'form'))}}
             
@@ -88,9 +94,25 @@
                         ))}}
                     </div>
                 </div>
+                <div class="form-group">  
+                    {{ Form::label('password', 'Password: ', 
+                        array('class' => 'col-sm-2 control-label')
+                    )}}
+                    <div class="col-sm-5">
+                        {{ Form::password('password', array('class' => 'form-control')) }}
+                    </div>
+                </div>
+                <div class="form-group">  
+                    {{ Form::label('name', 'User Type:', 
+                        array('class' => 'col-sm-2 control-label')
+                    )}}
+                    <div class="col-sm-5">
+                        {{ Form::select('group', array('U' => 'User', 'A' => 'Admin'), 'U', array('class' => 'form-control'))}}
+                    </div>
+                </div>
                 <div class="form group">
                     <div class="col-sm-offset-2 col-sm-10">
-                        {{ Form::submit('Add Student', array('class'=>'btn btn-default'))}}
+                        {{ Form::submit('Add User', array('class'=>'btn btn-default'))}}
                     </div>
                 </div>
             {{ Form::close() }}
@@ -138,22 +160,22 @@
             <div class="row">
                 <div class="col-xs-2 panel-group" id="accordion">
                     <?php $panelNum=0; 
-                                $projectGroups = ProjectGroup::all();
+                                $projects = Project::all();
                     ?>
-                    @if($projectGroups != null)
-                        @foreach($projectGroups as $pjgroup) 
+                    @if($projects != null)
+                        @foreach($projects as $project) 
                         <?php ++$panelNum; ?>
                         <div class="panel">
                             <div class="panel-heading">
                                 <h4 class="panel-title">
                                     <a data-toggle="collapse" data-parent="#accordion" href=<?php echo("\"#collapse".$panelNum."\""); ?>>
-                                            {{$pjgroup->name}}
+                                            {{$project->name}}
                                     </a>
                                 </h4>
                             </div>
                             <div id=<?php echo("\"collapse".$panelNum."\""); ?> class="panel-collapse collapse">
                                 <div class="panel-body">
-                                    <?php $students = Student::where('pgid',$pjgroup->id)->get()?>
+                                    <?php $students = User::all()?>
                                     @foreach($students as $student)
                                         <button type="button" class="btn btn-default">
                                             {{$student->first_name." ".$student->last_name}}
@@ -240,7 +262,7 @@
                     </div>
                 @endfor
                 <div class="form group">
-                    {{ Form::submit('Create Evaluation', array('class'=>'btn btn-default'))}}
+                    {{ Form::submit('Create Evaluation', array('class'=>'btn btn-default')) }}
                 </div>
             {{ Form::close() }}
         </div><!-- question -->

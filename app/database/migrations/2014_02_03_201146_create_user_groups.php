@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 
-class UserGroups extends Migration {
+class CreateUserGroups extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -11,15 +11,15 @@ class UserGroups extends Migration {
 	 */
 	public function up()
 	{
-		Schema::table('user_groups', function($table))
+		Schema::dropIfExists('user_groups');
+		Schema::create('user_groups', function($table)
 		{
-			$table->bigIncrement('id');
+			$table->bigIncrements('id');
 			$table->bigInteger('user_id');
 			$table->bigInteger('group_id');
 
-			$table->primary('id');
 			$table->engine = 'InnoDB';
-		}
+		});
 	}
 
 	/**
@@ -29,7 +29,7 @@ class UserGroups extends Migration {
 	 */
 	public function down()
 	{
-		//
+		Schema::drop('user_groups');
 	}
 
 }

@@ -1,9 +1,8 @@
 <?php
 
-TODO make this projects not project groups
 use Illuminate\Database\Migrations\Migration;
 
-class CreateProjectGroupsTable extends Migration {
+class CreateGroups extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,13 +11,16 @@ class CreateProjectGroupsTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('project_groups',function($table)
+		Schema::dropIfExists('groups');
+		
+		Schema::create('groups', function($table)
 		{
-			$table->increments('id');
-			$table->string('name',25);
-			$table->string('description');
+			$table->bigIncrements('id');
+			$table->string('name');
+			$table->mediumText('permissions')->nullable();
 			$table->timestamps();
 
+			$table->unique('name');
 			$table->engine = 'InnoDB';
 		});
 	}
@@ -30,7 +32,7 @@ class CreateProjectGroupsTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('project_groups');
+		Schema::drop('groups');
 	}
 
 }

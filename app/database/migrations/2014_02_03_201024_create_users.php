@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 
-class Users extends Migration {
+class CreateUsers extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -11,10 +11,12 @@ class Users extends Migration {
 	 */
 	public function up()
 	{
-		Schema::table('users', function($table))
+		Schema::dropIfExists('users');
+		
+		Schema::create('users', function($table)
 		{
-			$table->bigIncrement('id');
-			$table->bigInteger('project_id');
+			$table->bigIncrements('id');
+			$table->bigInteger('project_id')->unsigned()->nullable()->default(NULL);
 			$table->string('email');
 			$table->string('password');
 			$table->mediumText('permissions')->nullable();
@@ -26,15 +28,13 @@ class Users extends Migration {
 			$table->string('reset_password_code')->nullable()->default(NULL);
 			$table->string('first_name')->nullable()->default(NULL);
 			$table->string('last_name')->nullable()->default(NULL);
-			$table->timestamps()->default('0000-00-00 00:00:00');
+			$table->timestamps();
 
-			$table->primary('id');
 			$table->unique('email');
 			$table->index('activation_code');
 			$table->index('reset_password_code');
-
-			$table->foreign('project_id')->references('id')->('projects');
 			$table->engine = 'InnoDB';
+		});
 	}
 
 	/**
@@ -44,7 +44,7 @@ class Users extends Migration {
 	 */
 	public function down()
 	{
-		Schema::dropIfExists('users');
+		Schema::drop('users');
 	}
 
 }

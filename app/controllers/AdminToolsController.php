@@ -1,6 +1,6 @@
 <?php
 
-class AdminToolsController extends Controller {
+class AdminToolsController extends BaseController {
 
 	/*
 	|--------------------------------------------------------------------------
@@ -41,29 +41,9 @@ class AdminToolsController extends Controller {
 		return Redirect::to('admin');
 	}*/
 
-
-	public function addUser()
+	public function addProject()
 	{
-		try
-		{
-			$user = Sentry::createUser(array(
-				'email' => $_POST["email"],
-				'first_name' => $_POST["first_name"],
-				'last_name' => $_POST["last_name"],
-				'activated' => false
-			));
-		}
-		catch (Cartalyst\Sentry\Users\UserExistsException $e)
-		{
-    		echo 'User with this email already exists.';
-		}
-
-		return Redirect::to('admin');
-	}
-
-	public function addGroup()
-	{
-		$group = ProjectGroup::create(array(
+		$group = Project::create(array(
 			'name' => $_POST["group_name"],
 			'description' => $_POST["description"]
 		));

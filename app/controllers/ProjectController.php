@@ -1,6 +1,6 @@
 <?php
 
-class GroupController extends \BaseController {
+class ProjectController extends BaseController {
 
 	/**
 	 * Display a listing of the resource.
@@ -9,7 +9,7 @@ class GroupController extends \BaseController {
 	 */
 	public function index()
 	{
-		//
+		return View::make('admin');
 	}
 
 	/**
@@ -19,7 +19,12 @@ class GroupController extends \BaseController {
 	 */
 	public function create()
 	{
-		//
+		$group = Project::create(array(
+			'name' => $_POST["group_name"],
+			'description' => $_POST["description"]
+		));
+
+		return Redirect::to('admin');
 	}
 
 	/**
@@ -73,7 +78,8 @@ class GroupController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		//
+		Project::destroy($id);
+		return Redirect::to('admin');
 	}
 
 }
