@@ -310,11 +310,30 @@ body {
 
 .navbar a:link {color:#000000}      /* unvisited link color blue */
 .navbar a:visited {color:#000000}  /* visited link color blue*/
-.navbar a:hover {color:rgb(95,87,79);}  /* mouse over link color Pluff mud*/
+.navbar a:hover {color:rgb(95,87,79)
+	background-color: #000}  /* mouse over link color Pluff mud*/
 .navbar a:focus {color:rgb(95,87,79);}  /* link of focus color Pluff mud*/
 .navbar a:active {color:rgb(178,180,179);}  /* selected link color State House Gray*/
 .navbar li a:link {color:#000000}      /* unvisited link color blue */
 .navbar li a:visited {color:#000000}  /* visited link color blue*/
-.navbar li a:hover {color:rgb(95,87,79);}  /* mouse over link color Pluff mud*/
+.navbar li a:hover {
+	color:rgb(95,87,79);
+	background-color: #000
+					}  /* mouse over link color Pluff mud*/
 .navbar li a:focus {color:rgb(95,87,79);}  /* link of focus color Pluff mud*/
 .navbar li a:active {color:rgb(178,180,179);}  /* selected link color State House Gray*/
+
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: black;
+}
+
+.navbar-default .navbar-toggle  {
+	border-color: black;
+}
+
+.navbar-default .navbar-collapse {
+	border-color: black;
+} 
+.navbar-collapse .in{
+	border-color: black;
+}
