@@ -6,7 +6,7 @@
 @stop
 
 @section('header')
-Capstone Connect
+Project Management
 @stop
 
 @section('content')

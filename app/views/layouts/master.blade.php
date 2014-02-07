@@ -31,7 +31,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#"> @yield('header') </a>
+          <a class="navbar-brand" href="#">Capstone Connect</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -49,7 +49,10 @@
       </div><!-- /.container-fluid -->
     </nav>
     <body>
-        @yield('content')
+        <h1><u><b>@yield('header')</u></b></h1> 
+        <div class="BigWhite container">
+            @yield('content')
+        </div>
            
     </body>
 </html>

@@ -1,23 +1,14 @@
 .BigWhite {
 	background-color:#FFFFFF;
-	height:615px;
+	height: auto;
 	width: 75%;
-	margin: 0 auto;
+	margin: 3% auto 0%;
 	border:2px solid;
 	border-radius:25px;
+	padding: 3%;
 	color: #000;
 }
-.HelpBox {
-	background-color:#FFFFFF;
-	height:auto;
-	width:900px;
-	margin: 0 auto;
-	text-align: left;
-	color: black;
-	border:2px solid;
-	border-radius:25px;
-	padding-top:25px;
-}
+
 .Announcements {	
 	background-color:#73000A;
 	height:550px;
@@ -76,15 +67,6 @@
  	width:700px;
  	border:2px solid black;
  	margin: 125px;
-}
-.GradesWhite {
-	background-color:#FFFFFF;
-	height:600px;
-	width:900px;
-	margin: 0 auto;
-	border:2px solid;
-	border-radius:5px;
-
 }
 .Evals {	
 	background-color:#73000A;

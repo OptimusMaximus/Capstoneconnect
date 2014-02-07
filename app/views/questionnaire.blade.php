@@ -14,7 +14,6 @@ Questionnaire
 	 
 @section('content')
 
-    <div class = QuestionnaireWhite>
     	 {{ Form::open(        
          array('url' => 'submitAnswers',
               'role' => 'form'))}}
@@ -63,6 +62,5 @@ Questionnaire
     	 <p><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
     	 	{{ Form::submit('Submit Answers', array('class'=>'btn btn-default'))}}</p>
      {{ Form::close() }}
-    </div>
     
 @stop

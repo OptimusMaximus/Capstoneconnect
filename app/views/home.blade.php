@@ -7,12 +7,9 @@
 
 @stop
 @section('header')
-Capstone Connect
+Welcome to Capstone Connect!
 @stop
 @section('content')
-
-
-<div class="BigWhite">
 	<div class="Announcements">
 		<h>Announcements</h>
 		
@@ -34,7 +31,5 @@ Capstone Connect
 		<iframe src="https://www.google.com/calendar/embed?src=seanfrankett%40gmail.com&ctz=America/New_York" style="border: 20" width="490" height="320" frameborder="0" scrolling="no"></iframe>
 		<h>Calendar</h>
  	</div>
-
-</div>  
 
 @stop
