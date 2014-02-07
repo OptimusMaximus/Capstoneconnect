@@ -300,7 +300,8 @@ body {
 }
 
 .navbar {
-	padding-top: 10px;
+	margin-top: -10px;
+	padding-top: 20px;
 	background-color:rgb(178,180,179);
 	border-color:rgb(95,87,79);
 }
