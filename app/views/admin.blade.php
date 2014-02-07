@@ -12,7 +12,7 @@
 @stop
 
 @section('header')
-<h1>Admin Tools</h1>
+<a class="navbar-brand" href="#">Admin Tools</a>
 @stop
 
 

@@ -37,7 +37,7 @@ Route::group(array('prefix' => '', 'before' => 'auth'), function()
 		Route::get('/mygrades', 'GradesController@showWelcome');
 });
 
-//For user with admin access permissions only
+For user with admin access permissions only
 Route::group(array('prefix' => '', 'before' => 'authAdmin'), function()
 {
 		Route::get('/admin', 'AdminToolsController@makePage');

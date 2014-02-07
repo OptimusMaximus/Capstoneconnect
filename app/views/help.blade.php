@@ -8,7 +8,7 @@
 @stop
 
 @section('header')
-<h1>Frequently Asked Questions</h1>
+FAQ
 @stop
 
 @section('content')
