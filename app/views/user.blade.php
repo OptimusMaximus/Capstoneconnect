@@ -11,7 +11,7 @@
 @stop
 
 @section('header')
-Capstone Connect
+User
 @stop
 
 @section('content')

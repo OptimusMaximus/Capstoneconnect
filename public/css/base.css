@@ -1,11 +1,11 @@
 .BigWhite {
 	background-color:#FFFFFF;
 	height:615px;
-	width:900px;
+	width: 75%;
 	margin: 0 auto;
 	border:2px solid;
 	border-radius:25px;
-
+	color: #000;
 }
 .HelpBox {
 	background-color:#FFFFFF;
@@ -300,10 +300,12 @@ body {
 }
 
 .navbar {
-	margin-top: -10px;
-	padding-top: 20px;
+	margin: -20px 10% 5%;
+	padding-top: 30px;
 	background-color:rgb(178,180,179);
-	border-color:rgb(95,87,79);
+	border: 2px solid;
+	border-color: #000;
+	border-radius:25px;
 }
 
 .navbar a:link {color:#000000}      /* unvisited link color blue */

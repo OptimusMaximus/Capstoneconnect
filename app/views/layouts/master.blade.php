@@ -9,10 +9,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
  
         <!-- CSS are placed here -->
-        <link rel="stylesheet" href="css/bootstrap.css" />
-        <!-- <link rel="stylesheet" href="css/master-bootstrap-overwrite.css" /> -->
-        <link rel="stylesheet" type="text/css" href="css/base.css" />
-        <link rel="stylesheet" type="text/css" media="only screen and (max-width: 600px), only screen and (max-device-width: 600px)" href="css/small-device.css" />
+        {{ HTML::style('css/bootstrap.css') }}
+        {{ HTML::style('css/base.css', array('type' => 'text/css')) }}
+        {{ HTML::style('css/small-device.css', array('type' => 'text/css','media'=> 'only screen and (max-width: 600px), only screen and (max-device-width: 600px)')) }}
         @yield('stylesheets')
         <style>
             @yield('styles')
