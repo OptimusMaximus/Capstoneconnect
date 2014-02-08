@@ -9,7 +9,7 @@
 @stop
 
 @section('header')
-<h1>Questionnaire</h1>
+Questionnaire
 @stop
 	 
 @section('content')

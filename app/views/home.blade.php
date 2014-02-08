@@ -7,7 +7,7 @@
 
 @stop
 @section('header')
-<h1>Capstone Connect</h1>
+Capstone Connect
 @stop
 @section('content')
 

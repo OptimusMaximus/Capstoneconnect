@@ -9,7 +9,7 @@
 	
 @stop
 @section('header')
-<h1>My Grades</h1>
+My Grades
 @stop
 
 @section('content')
