@@ -11,13 +11,15 @@
 @stop
 
 @section('header')
-User
+User Management
 @stop
 
+
 @section('content')
-<div class = "BigWhite container">
-	<h4><u><b>Add New User</b></u></h4> 
+<div class = "User-Form container">
 	<!-- Form for adding a new student -->
+	<h1 class="text-center"><u>User</u></h1>
+	<br>
 	{{ Form::open(
 	    array('url' => route('user.store'),
 	                'class' => 'form-horizontal',

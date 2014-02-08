@@ -5,7 +5,6 @@
 	margin: 0 auto;
 	border:2px solid;
 	border-radius:25px;
-
 }
 .HelpBox {
 	background-color:#FFFFFF;
@@ -285,3 +284,16 @@
 {
 	width:500px;
 }
+
+.User-Form {
+	background-color:#FFFFFF;
+	height:615px;
+	width:900px;
+	margin: 0 auto;
+	border:2px solid;
+	border-radius:25px;
+	padding: 5%;
+	color: black;
+}
+
+.initiallyHidden { display: none; }
