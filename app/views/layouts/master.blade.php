@@ -10,13 +10,13 @@
  
         <!-- CSS are placed here -->
         <link rel="stylesheet" href="css/bootstrap.css" />
-<<<<<<< HEAD
+
         <link rel="stylesheet" hre=f"css/bootstrap-responsive.css" />
-=======
+
         <link rel="stylesheet" href="css/master-bootstrap-overwrite.css" />
         <link rel="stylesheet" type="text/css" href="css/base.css" />
         @yield('stylesheets')
->>>>>>> db3ed745a2f96d7ad433a707494f7b6955ace169
+
         <style>
             @yield('styles')
         </style>
@@ -32,7 +32,29 @@
             <li><a href="/Capstoneconnect/public/questionnaire">Questionnaire</a></li>
             <li><a href="/Capstoneconnect/public/mygrades">My Grades</a></li>
             <li><a href="/Capstoneconnect/public/help">Help</a></li>
-            <li><a href="/Capstoneconnect/public/logout">Logout</a></li>
+             <li class="dropdown">  
+         <a class="dropdown-toggle" data-toggle="dropdown" href="#"><?php $user = DB::table('users')->select('email')->get();print_r($user);?><b class="caret bottom-up"></b></a>  
+         <ul class="dropdown-menu bottom-up pull-right">  
+            
+         
+       <li><a href="/Capstoneconnect/public/logout">Logout</a></li>  
+         </ul>  
+       </li>  
+
+           
+
+
+         <!--   <div class="dropdown"> <a id="dLabel" role="button" data-toggle="dropdown" data-target="#" href="/page.html">
+    Dropdown <span class="caret"></span>
+  </a>
+
+
+  <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+     <li><a href="/Capstoneconnect/public/logout"><font color = Red>Logout</font></a></li>
+  </ul>
+</div>
+-->
+
         </ul>
     </div>
     <body>
