@@ -11,6 +11,20 @@
 @section('styles')
 @stop
 
+@section('head')
+<script>
+$(document).ready(function(){
+   $(function() {
+        $('tr.parent td')
+            .on("click","span.btn", function(){
+                var idOfParent = $(this).parents('tr').attr('id');
+                $('tr.child-'+idOfParent).toggle('fast');
+            });
+    });
+});
+</script>
+@stop
+
 @section('header')
 <a class="navbar-brand" href="#">Admin Tools</a>
 @stop
@@ -37,12 +51,12 @@
             <?php $projects = Project::all();?>
             @if($projects != null)
                 @foreach($projects as $project)
-                    <tr>
-                        <td>{{$project->name}}</td>
+                    <tr class="parent" id={{ "\"".$project->id."\"" }}>
+                        <td><span class="btn">{{$project->name}}</span></td>
                         <td>{{$project->description}}</td>
                         <td>{{$project->created_at}}</td>
                         <td>
-                            {{ HTML::linkRoute('project.edit', 'Edit', $project->id, array('class'=>'edit-button btn btn-default')) }}
+                            {{ HTML::linkRoute('project.edit', 'Edit', $project->id)}}
                         </td>
                         <td>
                             {{ Form::open(array('route' => array('project.destroy', $project->id), 'method' => 'delete')) }}
@@ -50,76 +64,32 @@
                             {{ Form::close() }}
                         </td>
                     </tr> <!-- trow1 -->
+                    <?php $users = User::where('project_id','=',$project->id)->get(); ?>
+                    @foreach ($users as $user)
+                        <tr class="{{"child-".$project->id}} initiallyHidden">
+                            <td></td>
+                            <td>{{$user->first_name." ".$user->last_name}}</td>
+                            <td>{{$user->email}}</td>
+                            <td>{{HTML::linkRoute('user.edit','Edit',$user->id)}}</td>
+                            <td>
+                                {{ Form::open(array('route' => array('user.destroy', $user->id), 'method' => 'delete')) }}
+                                {{ Form::submit('Remove', array('class'=>'btn'))}}
+                                {{ Form::close() }}
+                            </td>
+                        </tr>
+                    @endforeach
+                        <tr class="{{"child-".$project->id}} initiallyHidden">
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td><span class="btn">{{"ha"}}</span></td>
+                        </tr>
                 @endforeach
             @endif
             </table>
-            <hr>
-            <h4><u><b>Add New User</b></u></h4>  
-            <!-- Form for adding a new student -->
-            {{ Form::open(
-                array('url' => route('user.store'),
-                            'class' => 'form-horizontal',
-                            'role' => 'form'))}}
-            
-                <div class="form-group">  
-                    {{ Form::label('name', 'First Name:', 
-                        array('class' => 'col-sm-2 control-label')
-                    )}}
-                    <div class="col-sm-5">
-                        {{ Form::text('first_name', '', 
-                            array('class' => 'form-control',
-                                        'placeholder' => 'John'
-                        ))}}
-                    </div>
-                </div>
-                <div class="form-group">  
-                    {{ Form::label('name', 'Last Name:', 
-                        array('class' => 'col-sm-2 control-label')
-                    )}}
-                    <div class="col-sm-5">
-                        {{ Form::text('last_name', '', 
-                            array('class' => 'form-control',
-                                        'placeholder' => 'Doe'
-                        ))}}
-                    </div>
-                </div>
-                <div class="form-group">
-                    {{ Form::label('email', 'Email Address:',
-                        array('class' => 'col-sm-2 control-label'
-                    ))}}
-                    <div class="col-sm-5">
-                        {{ Form::email('email', '', 
-                                array('class' => 'form-control',
-                                            'placeholder' => 'johnd@email.sc.edu'
-                        ))}}
-                    </div>
-                </div>
-                <div class="form-group">  
-                    {{ Form::label('password', 'Password: ', 
-                        array('class' => 'col-sm-2 control-label')
-                    )}}
-                    <div class="col-sm-5">
-                        {{ Form::password('password', array('class' => 'form-control')) }}
-                    </div>
-                </div>
-                <div class="form-group">  
-                    {{ Form::label('name', 'User Type:', 
-                        array('class' => 'col-sm-2 control-label')
-                    )}}
-                    <div class="col-sm-5">
-                        {{ Form::select('group', array('U' => 'User', 'A' => 'Admin'), 'U', array('class' => 'form-control'))}}
-                    </div>
-                </div>
-                <div class="form group">
-                    <div class="col-sm-offset-2 col-sm-10">
-                        {{ Form::submit('Add User', array('class'=>'btn btn-default'))}}
-                    </div>
-                </div>
-            {{ Form::close() }}
-            <br>
-            <br>
-            <hr>
-            <h4><u><b>Creat New Group</b></u></h4>
+
+            <!-- <h4><u><b>Creat New Group</b></u></h4>
             {{ Form::open(
                 array('url' => URL::route('newGroup'),
                             'class' => 'form-horizontal',
@@ -152,7 +122,7 @@
                         {{ Form::submit('Add Group', array('class'=>'btn btn-default'))}}
                     </div>
                 </div>
-            {{ Form::close() }}
+            {{ Form::close() }} -->
         </div><!-- manage -->
 
         <!-- Evaluations page -->

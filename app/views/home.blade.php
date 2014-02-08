@@ -7,7 +7,7 @@
 
 @stop
 @section('header')
-Welcome to Capstone Connect!
+Capstone Connect
 @stop
 @section('content')
 	<div class="Announcements">

@@ -91,7 +91,10 @@ class UserController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		//
+		$user = User::find($id);
+		return View::make('user',array('first_name' => $user->first_name,
+										'last_name' => $user->last_name,
+										'email' => $user->email));
 	}
 
 	/**

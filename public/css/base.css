@@ -268,6 +268,7 @@
 	width:500px;
 }
 
+<<<<<<< HEAD
 header{
     margin-right: auto;
     margin-left: auto;
@@ -319,3 +320,16 @@ body {
 .navbar-collapse .in{
 	border-color: black;
 }
+
+.User-Form {
+	background-color:#FFFFFF;
+	height:615px;
+	width:900px;
+	margin: 0 auto;
+	border:2px solid;
+	border-radius:25px;
+	padding: 5%;
+	color: black;
+}
+
+.initiallyHidden { display: none; }
