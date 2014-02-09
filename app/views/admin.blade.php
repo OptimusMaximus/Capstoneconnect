@@ -40,53 +40,58 @@ $(document).ready(function(){
     <div class="tab-content container">
         <!-- Manage Groups and Users tab -->
         <div id="manage" class="tab-pane active">
-            <table class="table table-bordered table-responsive table-hover table-groups">
-                <tr>
-                    <td>Name</td>
-                    <td>Description</td>
-                    <td>Date Created</td>
-                    <td></td>
-                    <td></td>
-                </tr> <!-- trow1 -->
-            <?php $projects = Project::all();?>
-            @if($projects != null)
-                @foreach($projects as $project)
-                    <tr class="parent" id={{ "\"".$project->id."\"" }}>
-                        <td><span class="btn">{{$project->name}}</span></td>
-                        <td>{{$project->description}}</td>
-                        <td>{{$project->created_at}}</td>
-                        <td>
-                            {{ HTML::linkRoute('project.edit', 'Edit', $project->id)}}
-                        </td>
-                        <td>
-                            {{ Form::open(array('route' => array('project.destroy', $project->id), 'method' => 'delete')) }}
-                            {{ Form::submit('Remove', array('class'=>'btn btn-default'))}}
-                            {{ Form::close() }}
-                        </td>
-                    </tr> <!-- trow1 -->
-                    <?php $users = User::where('project_id','=',$project->id)->get(); ?>
-                    @foreach ($users as $user)
-                        <tr class="{{"child-".$project->id}} initiallyHidden">
-                            <td></td>
-                            <td>{{$user->first_name." ".$user->last_name}}</td>
-                            <td>{{$user->email}}</td>
-                            <td>{{HTML::linkRoute('user.edit','Edit',$user->id)}}</td>
-                            <td>
-                                {{ Form::open(array('route' => array('user.destroy', $user->id), 'method' => 'delete')) }}
-                                {{ Form::submit('Remove', array('class'=>'btn'))}}
-                                {{ Form::close() }}
-                            </td>
-                        </tr>
-                    @endforeach
-                        <tr class="{{"child-".$project->id}} initiallyHidden">
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td><span class="btn">{{"ha"}}</span></td>
-                        </tr>
-                @endforeach
-            @endif
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Date Created</th>
+                        <th colspan=2>options</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php $projects = Project::all();?>
+                    @if($projects != null)
+                        @foreach($projects as $project)
+                            <?php $users = User::where('project_id','=',$project->id)->get(); ?>
+                            <tr class="parent" id={{ "\"".$project->id."\"" }}>
+                                <td><span class="btn">{{$project->name}}</span></td>
+                                <td>{{$project->description}}</td>
+                                <td>{{$project->created_at}}</td>
+                                <td>
+                                    {{ HTML::linkRoute('project.edit', 'Edit', $project->id)}}
+                                </td>
+                                <td>
+                                    {{ Form::open(array('route' => array('project.destroy', $project->id), 'method' => 'delete')) }}
+                                    {{ Form::submit('Remove', array('class'=>'btn btn-default'))}}
+                                    {{ Form::close() }}
+                                </td>
+                            </tr> <!-- trow1 -->
+                            <tr class="{{"child-".$project->id}} initiallyHidden">
+                                <td rowspan={{count($users)+2}}></td>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th colspan="2">options</th>
+                            </tr>
+                            @foreach ($users as $user)
+                            <tr class="{{"child-".$project->id}} initiallyHidden">
+                                    <td>{{$user->first_name." ".$user->last_name}}</td>
+                                    <td>{{$user->email}}</td>
+                                    <td>{{HTML::linkRoute('user.edit','Edit',$user->id, array('class' => 'btn btn-default'))}}</td>
+                                    <td>
+                                        {{ Form::open(array('route' => array('user.destroy', $user->id), 'method' => 'delete')) }}
+                                        {{ Form::submit('Remove', array('class'=>'btn btn-default'))}}
+                                        {{ Form::close() }}
+                                    </td>
+                                </tr>
+                            @endforeach
+                                <tr class="{{"child-".$project->id}} initiallyHidden">
+                                    <td colspan=3></td>
+                                    <td class="text-center">{{HTML::linkRoute('user.create','add', NULL, array('class' => 'btn btn-default'))}}</td>
+                                </tr>
+                        @endforeach
+                    @endif
+                </tbody>
             </table>
 
             <!-- <h4><u><b>Creat New Group</b></u></h4>
