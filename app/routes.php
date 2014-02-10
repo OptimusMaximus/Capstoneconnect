@@ -40,12 +40,15 @@ Route::group(array('prefix' => '', 'before' => 'authAdmin'), function()
 		Route::get('/admin', 'AdminToolsController@makePage');
 });
 
-Route::get('/test', function()
+/*Route::get('/test', function()
 {
     $users = User::all();
 
     return View::make('/test')->with('users', $users);
-});
+
+});*/
+
+Route::get('/test', array('uses' => 'ExportCSVController@export'));
 
 // Admin tool routes for adding students, groups and evaluations
 Route::post('/addNewStudent', array('uses' => 'AdminToolsController@addStudent'));

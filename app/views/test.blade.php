@@ -70,9 +70,13 @@
 
 @section('content')
     	    
- 		@foreach($users as $user)
-        	<p>{{ $user->email }}</p>
+ 		{{-- @foreach($users as $user)
+        	<p>{{ $user->email }}</p> 
         	<p>{{ $user->first_name}}</p>
-    	@endforeach	    
+    	@endforeach	 --}}
+
+    	 {{HTML::link('/ExportCSV', 'Download CSV file')}}
+
+
     
 @stop
