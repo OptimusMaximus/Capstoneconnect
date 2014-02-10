@@ -45,22 +45,19 @@ Questionnaire
 					</select>
 					<br><br>
 				@endfor
-			@endif
-             <div class="form-group">  
-         
-          <div class="col-sm-5" style="padding-left:23%">
-            {{ Form::textarea('comment', '', 
-              array('class' => 'form-control',
-                    'placeholder' => 'Please enter some comments about your fellow group member.'
-            ))}}
-          </div>
-        </div>	
-        
+			 @endif
+          <form role = 'form'>
+             <div class="form-group col-centered">                  
+                  {{ Form::textarea('comment', '', 
+                    array('class' => 'col-xs-12',
+                    'placeholder' => 'Please enter some comments about your fellow group member.'))}}                
+            </div>	
+          </form>
+
     	</div>
     	
-    	<!-- This needs to be cleaned up -->
-    	 <p><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-    	 	{{ Form::submit('Submit Answers', array('class'=>'btn btn-default'))}}</p>
-     {{ Form::close() }}
+    	
+    	 <p><br /> {{ Form::submit('Submit Answers', array('class'=>'btn btn-default'))}}</p>
+    {{ Form::close() }}
     
 @stop
