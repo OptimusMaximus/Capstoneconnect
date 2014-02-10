@@ -10,6 +10,8 @@
 | and give it the Closure to execute when that URI is requested.
 |
 */
+Route::resource('answer', 'AnswerController');
+Route::resource('evaluation', 'EvaluationController');
 Route::resource('project', 'ProjectController');
 Route::resource('user', 'UserController');
 

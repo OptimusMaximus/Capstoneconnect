@@ -116,7 +116,8 @@ class UserController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		//
+		User::destroy($id);
+		return Redirect::back();
 	}
 
 }
