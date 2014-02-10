@@ -33,7 +33,9 @@
             <li><a href="/Capstoneconnect/public/mygrades">My Grades</a></li>
             <li><a href="/Capstoneconnect/public/help">Help</a></li>
              <li class="dropdown">  
-         <a class="dropdown-toggle" data-toggle="dropdown" href="#"><?php $user = DB::table('users')->select('email')->get();print_r($user);?><b class="caret bottom-up"></b></a>  
+         <a class="dropdown-toggle" data-toggle="dropdown" href="#"><?php $user = Sentry::getUser();
+echo $user['email'];?>
+<b class="caret bottom-up"></b></a>  
          <ul class="dropdown-menu bottom-up pull-right">  
             
          

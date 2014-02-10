@@ -28,7 +28,8 @@ Route::post('/reset/{token}', array('uses' => 'PasswordController@update','as' =
 Route::group(array('prefix' => '', 'before' => 'auth'), function()
 {
         Route::get('/home', 'HomeController@showWelcome');
-		Route::get('/help', 'HelpController@showWelcome');
+         Route::get('/allgrades', 'allGradesController@showWelcome');
+         Route::get('/help', 'HelpController@showWelcome');
 		//Route::get('/admin', 'AdminToolsController@makePage');
 		Route::get('/questionnaire', 'QuestionnaireController@showWelcome');
 		Route::get('/mygrades', 'GradesController@showWelcome');
