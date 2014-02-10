@@ -21,7 +21,7 @@ echo $user['email'];
 ?>
 
     <div class="table-responsive">
-<?php $users = DB::table('students')->get();?>
+<?php $users = User::all();?>
 
 <table class="table table-bordered table-groups pull-right">
  <tr bgcolor="Black">
