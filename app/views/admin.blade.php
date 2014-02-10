@@ -5,7 +5,6 @@
 @stop
 
 @section('stylesheets')
-<link rel="stylesheet" href="css/admin-bootstrap-overwrite.css" />
 @stop
 
 @section('styles')
@@ -32,7 +31,7 @@ Admin Tools
 
 @section('content')
 <div id="manage" class="tab-pane active">
-    <table class="table table-bordered">
+    <table class="table gamecock-table">
         <thead>
             <tr>
                 <th>Name</th>
@@ -47,11 +46,11 @@ Admin Tools
                 @foreach($projects as $project)
                     <?php $users = User::where('project_id','=',$project->id)->get(); ?>
                     <tr class="parent" id={{ "\"".$project->id."\"" }}>
-                        <td><span class="btn">{{$project->name}}</span></td>
+                        <td><span class="btn btn-default">{{$project->name}}</span></td>
                         <td>{{$project->description}}</td>
                         <td>{{$project->created_at}}</td>
                         <td>
-                            {{ HTML::linkRoute('project.edit', 'Edit', $project->id)}}
+                            {{ HTML::linkRoute('project.edit', 'Edit', $project->id, array('class' => 'btn btn-default'))}}
                         </td>
                         <td>
                             {{ Form::open(array('route' => array('project.destroy', $project->id), 'method' => 'delete')) }}
@@ -60,7 +59,7 @@ Admin Tools
                         </td>
                     </tr> <!-- trow1 -->
                     <tr class="{{"child-".$project->id}} initiallyHidden">
-                        <td rowspan={{count($users)+2}}></td>
+                        <td class='table-white-space' rowspan={{count($users)+2}}></td>
                         <th>Name</th>
                         <th>Email</th>
                         <th colspan="2">options</th>
@@ -78,7 +77,7 @@ Admin Tools
                         </tr>
                     @endforeach
                         <tr class="{{"child-".$project->id}} initiallyHidden">
-                            <td colspan=3></td>
+                            <td class='table-white-space' colspan=3></td>
                             <td class="text-center">{{HTML::linkRoute('user.create','add', NULL, array('class' => 'btn btn-default'))}}</td>
                         </tr>
                 @endforeach
