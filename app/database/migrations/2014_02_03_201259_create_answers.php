@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAnswersTable extends Migration {
+class CreateAnswers extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -11,10 +11,13 @@ class CreateAnswersTable extends Migration {
 	 */
 	public function up()
 	{
+		Schema::dropIfExists('answers');
+		
 		Schema::create('answers',function($table)
 		{
 			//scheme
-			$table->increments('id');
+			$table->bigIncrements('id');
+			$table->integer('eid');
 			$table->integer('answered_by');
 			$table->integer('answered_about');
 			$table->string('ans1');

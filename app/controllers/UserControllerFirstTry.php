@@ -1,33 +1,13 @@
 <?php
 
-class UserController extends \BaseController {
+class UserController extends BaseController {
 
 	/**
-	 * Display a listing of the resource.
-	 *
-	 * @return Response
-	 */
-	public function index()
-	{
-		//
-	}
-
-	/**
-	 * Show the form for creating a new resource.
+	 * Create a new User 
 	 *
 	 * @return Response
 	 */
 	public function create()
-	{
-		return View::make('user');	
-	}
-
-	/**
-	 * Store a newly created resource in storage.
-	 *
-	 * @return Response
-	 */
-	public function store()
 	{
 		try
 		{
@@ -91,10 +71,7 @@ class UserController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		$user = User::find($id);
-		return View::make('user',array('first_name' => $user->first_name,
-										'last_name' => $user->last_name,
-										'email' => $user->email));
+		//
 	}
 
 	/**

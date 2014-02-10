@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePasswordRemindersTable extends Migration {
+class CreatePasswordReminders extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,6 +12,8 @@ class CreatePasswordRemindersTable extends Migration {
 	 */
 	public function up()
 	{
+		Schema::dropIfExists('password_reminders');
+
 		Schema::create('password_reminders', function(Blueprint $table)
 		{
 			$table->string('email')->index();

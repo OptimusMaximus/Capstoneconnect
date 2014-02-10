@@ -10,6 +10,9 @@
 | and give it the Closure to execute when that URI is requested.
 |
 */
+Route::resource('project', 'ProjectController');
+Route::resource('user', 'UserController');
+
 Route::get('/', array('uses' => 'AuthController@getLogin'));
 Route::get('/login', array('uses' => 'AuthController@getLogin'));
 Route::post('/login', array('uses' => 'AuthController@postLogin'));
@@ -48,11 +51,7 @@ Route::get('/test', function()
     return View::make('/test')->with('users', $users);
 });
 
-// Admin tool routes for adding students, groups and evaluations
-Route::post('/addNewStudent', array('uses' => 'AdminToolsController@addStudent'));
-Route::post('/addNewGroup', array('uses' => 'AdminToolsController@addGroup'));
-Route::post('/addNewEvaluation', array('uses' => 'AdminToolsController@addEvaluation'));
-Route::post('/submitAnswers', array('uses' => 'UserController@submitAnswers'));
-
-
-Route::get('/mygrades', 'GradesController@showWelcome');
+//Route::post('/user/new', 'UserController@create');
+Route::post('/group/new', array('as' => 'newGroup', 'uses' => 'AdminToolsController@addGroup'));
+Route::post('/evaluation/new', array('as' => 'newEval', 'uses' => 'AdminToolsController@addEvaluation'));
+//Route::post('/answers', array('as' => 'submitAnswers' 'uses' => 'UserController@submitAnswers'));
