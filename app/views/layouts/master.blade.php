@@ -41,18 +41,58 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="navbar-collapse">
             <ul class="nav navbar-nav">
-                <li><a href="/Capstoneconnect/public/home">Home</a></li>
-                <li><a href="/Capstoneconnect/public/questionnaire">Questionnaire</a></li>
-                <li><a href="/Capstoneconnect/public/mygrades">My Grades</a></li>
-                <li><a href="/Capstoneconnect/public/help">Help</a></li>
+                <li>{{ HTML::linkRoute('home', 'Home') }}</li>
+                <li>{{ HTML::linkRoute('questionnaire', 'Questionnaire') }}</li>
+                <li>{{ HTML::linkRoute('mygrades', 'My Grades') }}</li>
+                <li>{{ HTML::linkRoute('help', 'Help') }}</li>
+                <?php 
+                    try
+                    {
+                        // Find the user using the user id
+                        $user = Sentry::getUser();
+
+                        // Find the Administrator group
+                        $admin = Sentry::findGroupByName('Admin');
+
+                        // Check if the user is in the administrator group
+                        if ($user->inGroup($admin))
+                        {
+                            echo(
+                                '<li class="dropdown">  
+                                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                        Admin Tools <b class="caret bottom-up"></b>
+                                    </a>  
+                                    <ul class="dropdown-menu bottom-up">');
+                                    echo('<li>');  
+                                        echo( HTML::linkRoute('admin_users', 'User/Project') );
+                                    echo('</li>');
+                                    echo('<li>');
+                                        echo( HTML::linkRoute('admin_evals', 'Evaluations') );
+                                    echo('</li>');
+                            echo(  '</ul>  
+                                </li>'
+                            );
+                        }
+                    }
+                    catch (Cartalyst\Sentry\Users\UserNotFoundException $e)
+                    {
+                        echo 'User was not found.';
+                    }
+                    catch (Cartalyst\Sentry\Groups\GroupNotFoundException $e)
+                    {
+                        echo 'Group was not found.';
+                    } 
+                ?>
+            </ul>
+            <ul class='nav navbar-nav navbar-right'> 
                 <li class="dropdown">  
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                         <?php $user = Sentry::getUser(); echo $user['email'];?> <b class="caret bottom-up"></b>
                     </a>  
-                    <ul class="dropdown-menu bottom-up pull-right">  
-                        <li><a href="/Capstoneconnect/public/logout">Logout</a></li>  
+                    <ul class="dropdown-menu bottom-up">  
+                        <li>{{ HTML::linkRoute('logout', 'Logout') }}</li>  
                     </ul>  
-                </li>  
+                </li> 
             </ul>
         </div>
     </nav>

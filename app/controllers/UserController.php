@@ -9,7 +9,7 @@ class UserController extends \BaseController {
 	 */
 	public function index()
 	{
-		//
+		//List all Users
 	}
 
 	/**
@@ -19,7 +19,7 @@ class UserController extends \BaseController {
 	 */
 	public function create()
 	{
-		return View::make('user');	
+		return View::make('user_new');	
 	}
 
 	/**
@@ -69,7 +69,7 @@ class UserController extends \BaseController {
     		echo 'User with this email already exists.';
 		}
 
-		return Redirect::to('admin');
+		return Redirect::to('admin_users');
 	}
 
 	/**
@@ -80,7 +80,8 @@ class UserController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		//
+		//Ask if this is correct
+		//Then confirm
 	}
 
 	/**
@@ -92,9 +93,7 @@ class UserController extends \BaseController {
 	public function edit($id)
 	{
 		$user = User::find($id);
-		return View::make('user',array('first_name' => $user->first_name,
-										'last_name' => $user->last_name,
-										'email' => $user->email));
+		return View::make('user_edit', $user);
 	}
 
 	/**
@@ -105,7 +104,38 @@ class UserController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		//
+		$user = User::find($id);
+
+		$group=$_POST["group"];
+		switch ($group)
+		{
+			case "U":
+			  $user->permissions = array(
+			  	'user.create' => -1,
+                'user.delete' => -1,
+                'user.view'   => 1,
+                'user.update' => 1,
+                );
+			  break;
+			case "A":
+			  $user->permissions = array(
+                'user.create' => 1,
+                'user.delete' => 1,
+                'user.view'   => 1,
+                'user.update' => 1,
+                );
+			  break;
+			default:
+				echo "Group wan't specified.";
+			exit;
+		}
+
+		$user->email = $_POST["email"];
+		$user->first_name = $_POST["first_name"];
+		$user->last_name = $_POST["last_name"];
+		$user->save();
+
+		return Redirect::to('user_edit');
 	}
 
 	/**

@@ -9,7 +9,7 @@ class ProjectController extends BaseController {
 	 */
 	public function index()
 	{
-		return View::make('admin');
+		return View::make('admin_users');
 	}
 
 	/**
@@ -24,7 +24,7 @@ class ProjectController extends BaseController {
 			'description' => $_POST["description"]
 		));
 
-		return Redirect::to('admin');
+		return Redirect::to('admin_users');
 	}
 
 	/**
@@ -56,7 +56,9 @@ class ProjectController extends BaseController {
 	 */
 	public function edit($id)
 	{
-		//
+		$project = Project::find($id);
+		return View::make('project', array('project_name' => $project->name,
+											'description' => $project->description));
 	}
 
 	/**
@@ -79,7 +81,7 @@ class ProjectController extends BaseController {
 	public function destroy($id)
 	{
 		Project::destroy($id);
-		return Redirect::to('admin');
+		return Redirect::to('admin_users');
 	}
 
 }

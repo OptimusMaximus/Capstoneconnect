@@ -13,10 +13,16 @@ class AdminToolsController extends BaseController {
 	|
 	*/
 
-	/*render admin.blade.php*/
-	public function makePage()
+	// render admin_users.blade.php
+	public function makeManageUsers()
 	{
-		return View::make('admin');
+		return View::make('admin_users');
+	}
+
+	// render admin_evals.blade.php
+	public function makeManageEvals()
+	{
+		return View::make('admin_evals');
 	}
 
 	
@@ -43,29 +49,11 @@ class AdminToolsController extends BaseController {
 
 	public function addProject()
 	{
-		$group = Project::create(array(
-			'name' => $_POST["group_name"],
-			'description' => $_POST["description"]
-		));
 
-		return Redirect::to('admin');
 	}
 
 	public function addEvaluation()
 	{
-		$evaluation = Evaluation::create(array(
-			'q1' => $_POST["q1"],
-		    'q2' => $_POST["q2"],
-		    'q3' => $_POST["q3"],
-		    'q4' => $_POST["q4"],
-		    'q5' => $_POST["q5"],
-		    'q6' => $_POST["q6"],
-		    'q7' => $_POST["q7"],
-		    'q8' => $_POST["q8"],
-		    'q9' => $_POST["q9"],
-		    'q10' => $_POST["q10"]
-		));
 
-		return Redirect::to('admin');
 	}
 }

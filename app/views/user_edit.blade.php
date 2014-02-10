@@ -17,10 +17,10 @@ User Management
 
 @section('content')
 <!-- Form for adding a new student -->
-<h1 class="text-center"><u>User</u></h1>
+<h1 class="text-center"><u>{{ $first_name." ".$last_name}}</u></h1>
 <br>
 {{ Form::open(
-    array('url' => route('user.store'),
+    array('url' => route('user.update', $id),
                 'class' => 'form-horizontal',
                 'role' => 'form'))}}
 
@@ -77,7 +77,7 @@ User Management
     </div>
     <div class="form group">
         <div class="col-sm-offset-2 col-sm-10">
-            {{ Form::submit('Add User', array('class'=>'btn btn-default pull-left'))}}
+            {{ Form::submit('Update', array('class'=>'btn btn-default pull-left'))}}
         </div>
     </div>
 {{ Form::close() }}
