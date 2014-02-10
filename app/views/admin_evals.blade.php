@@ -64,5 +64,7 @@ Capstone Connect
             </tr>
         </table>
     @endif
+    <br><br>
+    {{ HTML::linkRoute('evaluation.create', 'Create New Evaluation', NULL, array('class' => 'btn btn-default')) }}
 </div>
 @stop
