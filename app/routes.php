@@ -61,5 +61,5 @@ Route::get('/test', function()
 
 //Route::post('/user/new', 'UserController@create');
 Route::post('/group/new', array('as' => 'newGroup', 'uses' => 'AdminToolsController@addGroup'));
-Route::post('/evaluation/new', array('as' => 'newEval', 'uses' => 'AdminToolsController@addEvaluation'));
+Route::post('/evaluation/new', array('as' => 'newEval', 'uses' => 'EvaluationController@store'));
 //Route::post('/answers', array('as' => 'submitAnswers' 'uses' => 'UserController@submitAnswers'));

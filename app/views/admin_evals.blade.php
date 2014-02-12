@@ -11,11 +11,15 @@ Capstone Connect
 @section('content')
     <?php $mostRecentEvalDate = Evaluation::max('created_at');
                     $evaluation = Evaluation::where('created_at', $mostRecentEvalDate)->first();
-            ?> 
-    <?php $mostRecentAnswerDate = Answer::max('created_at');
+             
+          $mostRecentAnswerDate = Answer::max('created_at');
                     $answer = Answer::where('created_at', $mostRecentAnswerDate)->first();
+          $evalDates = DB::table('evaluations')->lists('created_at');
+
+
             ?>
     @if($evaluation!=null && $answer!=null)   
+        
         <table class="table table-bordered table-groups pull-right">
             
             <tr>
