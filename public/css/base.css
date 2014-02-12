@@ -275,7 +275,6 @@
 	width:500px;
 }
 
-<<<<<<< HEAD
 header{
     margin-right: auto;
     margin-left: auto;
@@ -337,6 +336,19 @@ body {
 	border-radius:25px;
 	padding: 5%;
 	color: black;
+}
+
+.gamecock-table {
+	color: white;
+	background-color: #73000A;
+	border-color: white;
+}
+.gamecock-table th{
+	background-color: black;
+}
+
+.table-white-space {
+	background-color: white;
 }
 
 .initiallyHidden { display: none; }

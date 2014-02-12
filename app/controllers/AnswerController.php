@@ -1,6 +1,6 @@
 <?php
 
-class ProjectController extends BaseController {
+class AnswerController extends \BaseController {
 
 	/**
 	 * Display a listing of the resource.
@@ -9,7 +9,7 @@ class ProjectController extends BaseController {
 	 */
 	public function index()
 	{
-		return View::make('admin_users');
+		//
 	}
 
 	/**
@@ -19,12 +19,7 @@ class ProjectController extends BaseController {
 	 */
 	public function create()
 	{
-		$group = Project::create(array(
-			'name' => $_POST["group_name"],
-			'description' => $_POST["description"]
-		));
-
-		return Redirect::to('admin_users');
+		//
 	}
 
 	/**
@@ -34,7 +29,18 @@ class ProjectController extends BaseController {
 	 */
 	public function store()
 	{
-		//
+		Answer::create(array('ans1' => $_POST["ans1"],
+						   'ans2' => $_POST["ans2"],
+						   'ans3' => $_POST["ans3"],
+						   'ans4' => $_POST["ans4"],
+						   'ans5' => $_POST["ans5"],
+						   'ans6' => $_POST["ans6"],
+						   'ans7' => $_POST["ans7"],
+						   'ans8' => $_POST["ans8"],
+						   'ans9' => $_POST["ans9"],
+						   'ans10' => $_POST["ans10"],
+						   'comment'=>$_POST["comment"]));
+		return Redirect::to('questionnaire');
 	}
 
 	/**
@@ -56,9 +62,7 @@ class ProjectController extends BaseController {
 	 */
 	public function edit($id)
 	{
-		$project = Project::find($id);
-		return View::make('project', array('project_name' => $project->name,
-											'description' => $project->description));
+		//
 	}
 
 	/**
@@ -80,8 +84,7 @@ class ProjectController extends BaseController {
 	 */
 	public function destroy($id)
 	{
-		Project::destroy($id);
-		return Redirect::to('admin_users');
+		//
 	}
 
 }

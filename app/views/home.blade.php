@@ -18,8 +18,7 @@ Capstone Connect
   			12/06 Capstone Presentations 
   			</h>
   		</div>
- 	</div>
-  
+ 	</div>  
 	<div class="RecentActivity">
 		<h>Recent Activity</h>
 		<div class="InsideRecentActivity">
