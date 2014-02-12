@@ -7,12 +7,9 @@
 
 @stop
 @section('header')
-<h1>Capstone Connect</h1>
+Capstone Connect
 @stop
 @section('content')
-
-
-<div class="BigWhite">
 	<div class="Announcements">
 		<h>Announcements</h>
 		
@@ -21,8 +18,7 @@
   			12/06 Capstone Presentations 
   			</h>
   		</div>
- 	</div>
-  
+ 	</div>  
 	<div class="RecentActivity">
 		<h>Recent Activity</h>
 		<div class="InsideRecentActivity">
@@ -31,10 +27,7 @@
  	</div>
 
  	<div class="Calendar">
-		<iframe src="https://www.google.com/calendar/embed?src=seanfrankett%40gmail.com&ctz=America/New_York" style="border: 20" width="490" height="320" frameborder="0" scrolling="no"></iframe>
-		<h>Calendar</h>
+		<iframe src="https://www.google.com/calendar/embed?src=seanfrankett%40gmail.com&ctz=America/New_York" style="border: 20" width="95%" height="95%" frameborder="0" scrolling="no"></iframe>
  	</div>
-
-</div>  
 
 @stop

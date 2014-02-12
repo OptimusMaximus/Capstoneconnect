@@ -9,12 +9,11 @@
 	
 @stop
 @section('header')
-<h1>My Grades</h1>
+My Grades
 @stop
 
 @section('content')
 
-<div class="GradesWhite">
 	<div class="GradeAverageText">
  	  <h>Your current average is: </h>
   </div>
@@ -40,6 +39,5 @@
       <h>More grade stuff.</h>
     </div>
   </div>
-</div> 
 
 @stop

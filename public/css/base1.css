@@ -21,10 +21,11 @@
 
 .InsideAnnouncement {
 	background-color:Grey;
-	height:500px;
-	width:275px;
+	height:520px;
+	width:auto;
 	border:2px solid black;
-	margin: 0 auto;
+	margin: 0 0 3% 0;
+	
 	
 }
 .RecentActivity {
@@ -38,19 +39,17 @@
 
 .InsideRecentActivity {
 	background-color:grey;
-	height:165px;
-	width:475px;
-	margin-right:5px;
-	float:right;
+	height:520px;
+	width:auto;
+	margin:0 0 3% 0;
 	border:2px solid black;
 	
 }
 .Calendar {
 	height:320px;
-	width:490px;
-	margin:15px 30px 10px 10px;
-	float:right;
-	border:2px solid black;
+	width:auto;
+	margin: 3% 0 3% 0;
+	float:none;
 }
 
 .whitebox{
@@ -275,6 +274,7 @@
 	width:500px;
 }
 
+<<<<<<< HEAD
 header{
     margin-right: auto;
     margin-left: auto;
@@ -336,19 +336,6 @@ body {
 	border-radius:25px;
 	padding: 5%;
 	color: black;
-}
-
-.gamecock-table {
-	color: white;
-	background-color: #73000A;
-	border-color: white;
-}
-.gamecock-table th{
-	background-color: black;
-}
-
-.table-white-space {
-	background-color: white;
 }
 
 .initiallyHidden { display: none; }

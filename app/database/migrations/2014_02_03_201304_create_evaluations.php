@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 
-class CreateEvaluationsTable extends Migration {
+class CreateEvaluations extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -11,10 +11,12 @@ class CreateEvaluationsTable extends Migration {
 	 */
 	public function up()
 	{
+		Schema::dropIfExists('evaluations');
+
 		Schema::create('evaluations', function($table)
 		{
 			//scheme
-			$table->increments('id');
+			$table->bigIncrements('id');
 			$table->string('q1');
 			$table->string('q2');
 			$table->string('q3');

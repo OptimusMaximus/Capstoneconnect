@@ -1,13 +1,14 @@
-@media only screen and (max-width: 600px), only screen and (max-device-width: 600px)  {
+@media only screen and (max-width: 767px), only screen and (max-device-width: 767px)  {
 
 	.BigWhite {
-		background-color:#FFFFFFFF;
-		height:auto;
-		width:auto;
-		margin: 0 auto;
+		background-color:#FFFFFF;
+		height: auto;
+		width: 75%;
+		margin: 3% auto 0%;
 		border:2px solid;
 		border-radius:25px;
-
+		padding: 3%;
+		color: #000;
 	}
 	.HelpBox {
 		background-color:#FFFFFF;
@@ -24,42 +25,41 @@
 		background-color:#73000A;
 		height:550px;
 		width:auto;
-		margin: 300 auto;
-		margin:30px 20px 20px 20px;
+		margin: 0 auto;
 		border:2px solid black;
 		float:none
 	} 	
-
+	
 	.InsideAnnouncement {
 		background-color:Grey;
-		height:500px;
-		width:auto;
+		height:520px;	
+		width:95%;
 		border:2px solid black;
-		margin: 0 auto;
+		margin: 0 0 3% 0;	
+	}
+
+	.InsideRecentActivity {
+		background-color:grey;
+		height:200px;
+		width:80%;
+		margin:5% 5% 5% 5%;
+		border:2px solid black;
+	
 	}
 	.RecentActivity {
 		background-color:#73000A;
 		height:200px;
 		width:auto;
-		margin:0px 20px 20px 20px;
+		margin:0 auto;
 		float:none;
 		border:2px solid black;
 	}
 
-	.InsideRecentActivity {
-		background-color:grey;
-		height:165px;
-		width:auto;
-		margin-right:5px;
-		float:none;
-		border:2px solid black;
-	}
 	.Calendar {
 		height:320px;
-		width:auto;
-		margin:0px 20px 20px 20px;
+		width:80%;
+		margin:3% 0 3% 0;
 		float:none;
-		border:2px solid black;
 	}
 
 	.whitebox{
@@ -144,6 +144,12 @@
 		margin: 0 auto;
 		border:2px solid;
 		border-radius:25px;
+	}
+
+	.col-centered{
+    		float: none;
+    		margin: 0 auto;
+		width: 50%;
 	}
 
 	.questions{
