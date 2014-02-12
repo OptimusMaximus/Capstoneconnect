@@ -40,11 +40,8 @@ Capstone Connect
         	<p>{{ $user->first_name}}</p>
     	@endforeach	 --}}
 
-<<<<<<< HEAD
-    	 {{HTML::link('/ExportCSV', 'Download CSV file')}}
-=======
     	{{-- {{HTML::link('/ExportCSV', 'Download CSV file')}} --}}
->>>>>>> master
+
 
 
     
