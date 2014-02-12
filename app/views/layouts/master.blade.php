@@ -112,10 +112,5 @@
         </div>
     </nav>
 
-    <body>
-        <h1><u><b>@yield('header')</u></b></h1> 
-        <div class="BigWhite container">
-            @yield('content')
-        </div>
-    </body>
+
 </html>

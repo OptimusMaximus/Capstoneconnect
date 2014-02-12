@@ -28,6 +28,6 @@ Capstone Connect
 
  	<div class="Calendar">
 		<iframe src="https://www.google.com/calendar/embed?src=seanfrankett%40gmail.com&ctz=America/New_York" style="border: 20" width="95%" height="95%" frameborder="0" scrolling="no"></iframe>
- 	</div
+ 	</div>
 
 @stop
