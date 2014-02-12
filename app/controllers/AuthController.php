@@ -87,7 +87,7 @@ class AuthController extends BaseController {
         {
                 Sentry::logout();
                 Session::flash('loginError', 'You have successfully logged out' );
-                return View::make('login');/*Redirect::to('login'); for some reason this gives an error*/
+                return Redirect::to('login'); 
         }
 }
  

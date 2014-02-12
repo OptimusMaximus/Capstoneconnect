@@ -15,8 +15,8 @@ Route::resource('evaluation', 'EvaluationController');
 Route::resource('project', 'ProjectController');
 Route::resource('user', 'UserController');
 
-Route::get('/', array('uses' => 'AuthController@getLogin'));
-Route::get('/login', array('uses' => 'AuthController@getLogin', 'as' => 'login'));
+Route::get('/', array('uses' => 'AuthController@getLogin' ));
+Route::get('/login', array('uses' => 'AuthController@getLogin'));  //, 'as' => 'login')); error here?????
 Route::post('/login', array('uses' => 'AuthController@postLogin', 'as' => 'login'));
 Route::get('/logout', array('uses' => 'AuthController@getLogout', 'as' => 'logout'));
 
