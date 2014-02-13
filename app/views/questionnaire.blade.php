@@ -20,11 +20,27 @@ Questionnaire
 
     		<br/><br/>
     		<div class = 'questions'> 
-    			<p>Please rate your group members from 1-10 for the following questions with 10 being a perfect group member.</p>
-    			<?php $mostRecentEvalDate = Evaluation::max('created_at');
+    			
+    			<?php 
+                $currentUser = Sentry::getUser(); 
+                //$userGroup = DB::select('SELECT id, first_name, last_name, project_id FROM users WHERE project_id = '.$currentUser['project_id']);
+                $userGroup = User::where('project_id','=',$currentUser->project_id)->get();
+
+                $mostRecentEvalDate = Evaluation::max('created_at');
                 $evaluation = Evaluation::where('created_at', $mostRecentEvalDate)->first();
                 $numOfQuestions = 10;
          		?>
+
+                @if($userGroup!=null)
+                    <p>Select the user you are evaluating</p>
+                    <select name = "answered_about" >
+                        @foreach($userGroup as $users)
+                            <option value = {{$users['id']}}>{{$users['first_name']." ".$users['last_name']}}</option>
+                        @endforeach
+                    </select>
+                    <br /><br />
+                @endif
+
          	@if($evaluation!=null)
 	         	@for($i = 1; $i<=$numOfQuestions; ++$i)
 	         		<?php $question = "q".$i;
@@ -51,6 +67,7 @@ Questionnaire
                     array('class' => 'col-xs-12',
                     'placeholder' => 'Please enter some comments about your fellow group member.'))}}                
             </div>	
+            <input type="hidden" name="answered_by" value={{$currentUser['id']}}>
     	</div>
     	
     	
