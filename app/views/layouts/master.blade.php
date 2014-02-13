@@ -3,7 +3,7 @@
     <head>
         <title>
             @section('title')
-            Capstoneconnect 
+            Capstoneconnect
             @show
         </title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,8 +11,8 @@
         <!-- CSS are placed here -->
 
         {{ HTML::style('css/bootstrap.css') }}
-        {{ HTML::style('css/base.css', array('type' => 'text/css')) }}
-        {{ HTML::style('css/small-device.css', array('type' => 'text/css','media'=> 'only screen and (max-width: 600px), only screen and (max-device-width: 600px)')) }}
+        {{ HTML::style('css/base1.css', array('type' => 'text/css')) }}
+        {{ HTML::style('css/small-device.css', array('type' => 'text/css','media'=> 'only screen and (max-width: 767px), only screen and (max-device-width: 767px)')) }}
         @yield('stylesheets')
 
         <style>
@@ -35,7 +35,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Capstone Connect</a>
+          <a class="navbar-brand" href='home'>Capstone Connect</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -98,7 +98,7 @@
     </nav>
 
     <body>
-        <h1><u><b>@yield('header')</u></b></h1> 
+        <h1><b>@yield('header')</b></h1> 
         <div class="BigWhite container">
             @yield('content')
         </div>

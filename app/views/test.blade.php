@@ -42,7 +42,5 @@ Capstone Connect
 
     	{{-- {{HTML::link('/ExportCSV', 'Download CSV file')}} --}}
 
-
-
     
 @stop

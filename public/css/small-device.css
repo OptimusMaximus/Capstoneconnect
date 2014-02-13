@@ -33,16 +33,16 @@
 	.InsideAnnouncement {
 		background-color:Grey;
 		height:520px;	
-		width:95%;
+		width:auto;
 		border:2px solid black;
 		margin: 0 0 3% 0;	
 	}
 
 	.InsideRecentActivity {
 		background-color:grey;
-		height:200px;
-		width:80%;
-		margin:5% 5% 5% 5%;
+		height:520px;
+		width:auto;
+		margin:0 0 3% 0;
 		border:2px solid black;
 	
 	}

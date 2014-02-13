@@ -10,24 +10,26 @@
 Capstone Connect
 @stop
 @section('content')
-	<div class="Announcements">
-		<h>Recent Activity</h>
+<div class = "row">
+	<div class="col-sm-12 col-md-5" style = "background-color: #73000A">
+		<h>Announcements</h>
 		
 		<div class="InsideAnnouncement">
-  			<h>Final Exams are coming up!<br />
-  			*Need functions to pull up previous evals.
+  			<h>Final Exams are coming up!</br>
+  			12/06 Capstone Presentations 
   			</h>
   		</div>
- 	</div>  
-	<div class="RecentActivity">
-		<h>Announcements</h>
+  	</div>
+ 	<div class="col-sm-12 col-md-5 col-md-offset-2" style = "background-color: #73000A">
+		<h>Recent Activity</h>
+		
 		<div class="InsideRecentActivity">
-			<h>Need a function for admin to store announcements.</h>
-		</div>
+  			<h>Recent activity will be listed here. </h>  			
+  		</div>
  	</div>
+	
+</div>
+	
 
- 	<div class="Calendar">
-		<iframe src="https://www.google.com/calendar/embed?src=seanfrankett%40gmail.com&ctz=America/New_York" style="border: 20" width="95%" height="95%" frameborder="0" scrolling="no"></iframe>
- 	</div>
 
 @stop
