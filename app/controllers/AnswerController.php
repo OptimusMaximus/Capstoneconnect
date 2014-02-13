@@ -29,7 +29,12 @@ class AnswerController extends \BaseController {
 	 */
 	public function store()
 	{
-		Answer::create(array('ans1' => $_POST["ans1"],
+		
+		
+		Answer::create(array(
+						   'answered_about'=>$_POST["answered_about"],
+						   'answered_by'=>$_POST["answered_by"],
+						   'ans1' => $_POST["ans1"],
 						   'ans2' => $_POST["ans2"],
 						   'ans3' => $_POST["ans3"],
 						   'ans4' => $_POST["ans4"],
@@ -39,7 +44,8 @@ class AnswerController extends \BaseController {
 						   'ans8' => $_POST["ans8"],
 						   'ans9' => $_POST["ans9"],
 						   'ans10' => $_POST["ans10"],
-						   'comment'=>$_POST["comment"]));
+						   'comment'=>$_POST["comment"]
+						   ));
 		return Redirect::to('questionnaire');
 	}
 

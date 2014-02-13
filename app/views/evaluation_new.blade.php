@@ -19,6 +19,8 @@ New Evaluation
 	        {{ Form::text('q'.$i,'',
 	             array('class' => 'form-control',
 	                         'placeholder' => 'enter question'))}}
+	        
+	        
 	        </div>
 	    @endfor
 	    <div class="form group">
