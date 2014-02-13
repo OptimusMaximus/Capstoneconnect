@@ -14,12 +14,18 @@ Capstone Connect
              
           $mostRecentAnswerDate = Answer::max('created_at');
                     $answer = Answer::where('created_at', $mostRecentAnswerDate)->first();
-          $evalDates = DB::table('evaluations')->lists('created_at');
+          $evalDates = DB::table('evaluations')->lists('created_at', 'id');
 
 
             ?>
     @if($evaluation!=null && $answer!=null)   
-        
+        @if($evalDates!=null)
+        <select name = "evalDates">
+        @foreach($evalDates as $evalDate)
+            <option>{{$evalDate}}</option>
+        @endforeach
+        </select>
+        @endif
         <table class="table table-bordered table-groups pull-right">
             
             <tr>
