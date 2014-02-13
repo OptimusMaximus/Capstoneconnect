@@ -46,7 +46,7 @@ class AuthController extends BaseController {
                     //if admin logs in
                     if (  Sentry::getUser()->hasAnyAccess(array('admin')) )
                     {   //go to admin page
-                        return Redirect::to('admin');
+                        return Redirect::to('admin_evals');
                     }
 
                     if ($user)
@@ -87,7 +87,7 @@ class AuthController extends BaseController {
         {
                 Sentry::logout();
                 Session::flash('loginError', 'You have successfully logged out' );
-                return Redirect::to('login');
+                return Redirect::to('login'); 
         }
 }
  

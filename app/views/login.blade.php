@@ -46,7 +46,7 @@ Capstone Connect
               <label class="choice" for="remember">Keep me signed in</label>
           </span>   
       </p>
-      <p>{{ Form::submit('Login') }}</p>
+      <p>{{ Form::submit('login') }}</p>
     {{ Form::close() }}
     
     {{ HTML::link('reset','Reset Password', array('class' => 'blue')) }}

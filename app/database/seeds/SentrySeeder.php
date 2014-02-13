@@ -36,11 +36,11 @@ class SentrySeeder extends Seeder {
         $adminUser->addGroup($adminGroup);
 
         Sentry::getUserProvider()->create(array(
-            'email'       => 'user1a@sc.edu',
+            'email'       => 'gandalfg@sc.edu',
             'project_id'  => '1',
-            'password'    => 'usertest',
-            'first_name'  => 'Patrick',
-            'last_name'   => 'McG',
+            'password'    => 'flyyoufools',
+            'first_name'  => 'Gandalf',
+            'last_name'   => 'Grey',
             'activated'   => 1,
             'permissions' => array(
                 'user.create' => -1,
@@ -50,11 +50,11 @@ class SentrySeeder extends Seeder {
                 )
             ));
         Sentry::getUserProvider()->create(array(
-            'email'       => 'user1b@sc.edu',
+            'email'       => 'frodob@sc.edu',
             'project_id'  => '1',
-            'password'    => 'usertest',
-            'first_name'  => 'User1b',
-            'last_name'   => 'B',
+            'password'    => 'shire',
+            'first_name'  => 'Frodo',
+            'last_name'   => 'Baggins',
             'activated'   => 1,
             'permissions' => array(
                 'user.create' => -1,
@@ -64,11 +64,11 @@ class SentrySeeder extends Seeder {
                 )
             ));
         Sentry::getUserProvider()->create(array(
-            'email'       => 'user1c@sc.edu',
+            'email'       => 'aragorn@sc.edu',
             'project_id'  => '1',
-            'password'    => 'usertest',
-            'first_name'  => 'User1c',
-            'last_name'   => 'C',
+            'password'    => 'myblade',
+            'first_name'  => 'Aragorn',
+            'last_name'   => 'Arathorn',
             'activated'   => 1,
             'permissions' => array(
                 'user.create' => -1,
@@ -78,11 +78,39 @@ class SentrySeeder extends Seeder {
                 )
             ));
         Sentry::getUserProvider()->create(array(
-            'email'       => 'user2a@sc.edu',
+            'email'       => 'legolas@sc.edu',
+            'project_id'  => '1',
+            'password'    => 'mybow',
+            'first_name'  => 'Legolas',
+            'last_name'   => 'Thrandull',
+            'activated'   => 1,
+            'permissions' => array(
+                'user.create' => -1,
+                'user.delete' => -1,
+                'user.view'   => 1,
+                'user.update' => 1,
+                )
+            ));
+        Sentry::getUserProvider()->create(array(
+            'email'       => 'gimli@sc.edu',
+            'project_id'  => '1',
+            'password'    => 'myaxe',
+            'first_name'  => 'Gimli',
+            'last_name'   => 'Durin',
+            'activated'   => 1,
+            'permissions' => array(
+                'user.create' => -1,
+                'user.delete' => -1,
+                'user.view'   => 1,
+                'user.update' => 1,
+                )
+            ));
+        Sentry::getUserProvider()->create(array(
+            'email'       => 'xavier@sc.edu',
             'project_id'  => '2',
-            'password'    => 'usertest',
-            'first_name'  => 'User2a',
-            'last_name'   => 'A',
+            'password'    => 'profx',
+            'first_name'  => 'Charles',
+            'last_name'   => 'Xavier',
             'activated'   => 1,
             'permissions' => array(
                 'user.create' => -1,
@@ -92,11 +120,11 @@ class SentrySeeder extends Seeder {
                 )
             ));
         Sentry::getUserProvider()->create(array(
-            'email'       => 'user2b@sc.edu',
+            'email'       => 'howlett@sc.edu',
             'project_id'  => '2',
-            'password'    => 'usertest',
-            'first_name'  => 'User2b',
-            'last_name'   => 'B',
+            'password'    => 'wolverine',
+            'first_name'  => 'Logan',
+            'last_name'   => 'Howlett',
             'activated'   => 1,
             'permissions' => array(
                 'user.create' => -1,
@@ -106,11 +134,11 @@ class SentrySeeder extends Seeder {
                 )
             ));
         Sentry::getUserProvider()->create(array(
-            'email'       => 'user2c@sc.edu',
+            'email'       => 'ororo@sc.edu',
             'project_id'  => '2',
-            'password'    => 'usertest',
-            'first_name'  => 'User2c',
-            'last_name'   => 'C',
+            'password'    => 'storm',
+            'first_name'  => 'Ororo',
+            'last_name'   => 'Munroe',
             'activated'   => 1,
             'permissions' => array(
                 'user.create' => -1,
@@ -120,11 +148,11 @@ class SentrySeeder extends Seeder {
                 )
             ));
         Sentry::getUserProvider()->create(array(
-            'email'       => 'user3a@sc.edu',
-            'project_id'  => '3',
-            'password'    => 'usertest',
-            'first_name'  => 'User3a',
-            'last_name'   => 'A',
+            'email'       => 'summers@sc.edu',
+            'project_id'  => '2',
+            'password'    => 'cyclops',
+            'first_name'  => 'Scott',
+            'last_name'   => 'Summers',
             'activated'   => 1,
             'permissions' => array(
                 'user.create' => -1,
@@ -134,11 +162,11 @@ class SentrySeeder extends Seeder {
                 )
             ));
         Sentry::getUserProvider()->create(array(
-            'email'       => 'user3b@sc.edu',
-            'project_id'  => '3',
-            'password'    => 'usertest',
-            'first_name'  => 'User3b',
-            'last_name'   => 'B',
+            'email'       => 'greyj@sc.edu',
+            'project_id'  => '2',
+            'password'    => 'phoenix',
+            'first_name'  => 'Jean',
+            'last_name'   => 'Grey',
             'activated'   => 1,
             'permissions' => array(
                 'user.create' => -1,
@@ -148,11 +176,53 @@ class SentrySeeder extends Seeder {
                 )
             ));
         Sentry::getUserProvider()->create(array(
-            'email'       => 'user3c@sc.edu',
+            'email'       => 'stark@sc.edu',
             'project_id'  => '3',
-            'password'    => 'usertest',
-            'first_name'  => 'User3c',
-            'last_name'   => 'C',
+            'password'    => 'ironman',
+            'first_name'  => 'Tony',
+            'last_name'   => 'Stark',
+            'activated'   => 1,
+            'permissions' => array(
+                'user.create' => -1,
+                'user.delete' => -1,
+                'user.view'   => 1,
+                'user.update' => 1,
+                )
+            ));
+        Sentry::getUserProvider()->create(array(
+            'email'       => 'rogers@sc.edu',
+            'project_id'  => '3',
+            'password'    => 'captianamerica',
+            'first_name'  => 'Steven',
+            'last_name'   => 'Rogers',
+            'activated'   => 1,
+            'permissions' => array(
+                'user.create' => -1,
+                'user.delete' => -1,
+                'user.view'   => 1,
+                'user.update' => 1,
+                )
+            ));
+        Sentry::getUserProvider()->create(array(
+            'email'       => 'alianovna@sc.edu',
+            'project_id'  => '3',
+            'password'    => 'blackwidow',
+            'first_name'  => 'Natalia',
+            'last_name'   => 'Alianovna',
+            'activated'   => 1,
+            'permissions' => array(
+                'user.create' => -1,
+                'user.delete' => -1,
+                'user.view'   => 1,
+                'user.update' => 1,
+                )
+            ));
+        Sentry::getUserProvider()->create(array(
+            'email'       => 'banner@sc.edu',
+            'project_id'  => '3',
+            'password'    => 'hulk',
+            'first_name'  => 'Bruce',
+            'last_name'   => 'Banner',
             'activated'   => 1,
             'permissions' => array(
                 'user.create' => -1,
@@ -165,31 +235,46 @@ class SentrySeeder extends Seeder {
             'name'        => 'Users',
             'permissions' =>  array('users' => 1),
             ));
-        $studentUser = Sentry::getUserProvider()->findByLogin('user1a@sc.edu');
+        $studentUser = Sentry::getUserProvider()->findByLogin('gandalfg@sc.edu');
         $studentGroup = Sentry::getGroupProvider()->findByName('Users');
         $studentUser->addGroup($studentGroup);
-        $studentUser = Sentry::getUserProvider()->findByLogin('user1b@sc.edu');
+        $studentUser = Sentry::getUserProvider()->findByLogin('frodob@sc.edu');
         $studentGroup = Sentry::getGroupProvider()->findByName('Users');
         $studentUser->addGroup($studentGroup);
-        $studentUser = Sentry::getUserProvider()->findByLogin('user1c@sc.edu');
+        $studentUser = Sentry::getUserProvider()->findByLogin('aragorn@sc.edu');
         $studentGroup = Sentry::getGroupProvider()->findByName('Users');
         $studentUser->addGroup($studentGroup);
-        $studentUser = Sentry::getUserProvider()->findByLogin('user2a@sc.edu');
+        $studentUser = Sentry::getUserProvider()->findByLogin('legolas@sc.edu');
         $studentGroup = Sentry::getGroupProvider()->findByName('Users');
         $studentUser->addGroup($studentGroup);
-        $studentUser = Sentry::getUserProvider()->findByLogin('user2b@sc.edu');
+        $studentUser = Sentry::getUserProvider()->findByLogin('gimli@sc.edu');
         $studentGroup = Sentry::getGroupProvider()->findByName('Users');
         $studentUser->addGroup($studentGroup);
-        $studentUser = Sentry::getUserProvider()->findByLogin('user2c@sc.edu');
+        $studentUser = Sentry::getUserProvider()->findByLogin('xavier@sc.edu');
         $studentGroup = Sentry::getGroupProvider()->findByName('Users');
         $studentUser->addGroup($studentGroup);
-        $studentUser = Sentry::getUserProvider()->findByLogin('user3a@sc.edu');
+        $studentUser = Sentry::getUserProvider()->findByLogin('howlett@sc.edu');
         $studentGroup = Sentry::getGroupProvider()->findByName('Users');
         $studentUser->addGroup($studentGroup);
-        $studentUser = Sentry::getUserProvider()->findByLogin('user3b@sc.edu');
+        $studentUser = Sentry::getUserProvider()->findByLogin('ororo@sc.edu');
         $studentGroup = Sentry::getGroupProvider()->findByName('Users');
         $studentUser->addGroup($studentGroup);
-        $studentUser = Sentry::getUserProvider()->findByLogin('user3c@sc.edu');
+        $studentUser = Sentry::getUserProvider()->findByLogin('summers@sc.edu');
+        $studentGroup = Sentry::getGroupProvider()->findByName('Users');
+        $studentUser->addGroup($studentGroup);
+        $studentUser = Sentry::getUserProvider()->findByLogin('greyj@sc.edu');
+        $studentGroup = Sentry::getGroupProvider()->findByName('Users');
+        $studentUser->addGroup($studentGroup);
+        $studentUser = Sentry::getUserProvider()->findByLogin('stark@sc.edu');
+        $studentGroup = Sentry::getGroupProvider()->findByName('Users');
+        $studentUser->addGroup($studentGroup);
+        $studentUser = Sentry::getUserProvider()->findByLogin('rogers@sc.edu');
+        $studentGroup = Sentry::getGroupProvider()->findByName('Users');
+        $studentUser->addGroup($studentGroup);
+        $studentUser = Sentry::getUserProvider()->findByLogin('alianovna@sc.edu');
+        $studentGroup = Sentry::getGroupProvider()->findByName('Users');
+        $studentUser->addGroup($studentGroup);
+        $studentUser = Sentry::getUserProvider()->findByLogin('banner@sc.edu');
         $studentGroup = Sentry::getGroupProvider()->findByName('Users');
         $studentUser->addGroup($studentGroup);
     }

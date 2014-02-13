@@ -11,18 +11,18 @@ Capstone Connect
 @stop
 @section('content')
 	<div class="Announcements">
-		<h>Announcements</h>
+		<h>Recent Activity</h>
 		
 		<div class="InsideAnnouncement">
   			<h>Final Exams are coming up!<br />
-  			12/06 Capstone Presentations 
+  			*Need functions to pull up previous evals.
   			</h>
   		</div>
  	</div>  
 	<div class="RecentActivity">
-		<h>Recent Activity</h>
+		<h>Announcements</h>
 		<div class="InsideRecentActivity">
-			<h>Recent activity will be listed here.</h>
+			<h>Need a function for admin to store announcements.</h>
 		</div>
  	</div>
 

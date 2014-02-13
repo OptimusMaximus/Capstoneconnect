@@ -7,14 +7,14 @@ class ProjectsSeeder extends Seeder {
         DB::table('projects')->delete();
 
         Project::create(array('id'=>'1',
-                              'name'=>'Project One',
-                              'description'=>'This is the test data for the discription field of Project One.'));
+                              'name'=>'Middle Earth Interactive',
+                              'description'=>'A interactive map of Middle Earth.'));
         Project::create(array('id'=>'2',
-                              'name'=>'Project Two',
-                              'description'=>'This is the test data for the discription field of Project Two.'));
+                              'name'=>'Mutant Genome Analyzer',
+                              'description'=>'Analyses x-men DNA and addes it to the human genome project.'));
         Project::create(array('id'=>'3',
-                              'name'=>'Project Three',
-                              'description'=>'This is the test data for the discription field of Project Three.'));
+                              'name'=>'Hero Space',
+                              'description'=>'Social media app for super heroes.'));
     }
  
 }
