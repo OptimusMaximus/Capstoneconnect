@@ -1,5 +1,13 @@
 @media only screen and (max-width: 767px), only screen and (max-device-width: 767px)  {
 
+	h3 {
+	color: #FFFFFF;
+	}
+
+	p1 {
+	font-size: 140%;
+
+	}
 	.BigWhite {
 		background-color:#FFFFFF;
 		height: auto;
@@ -34,15 +42,15 @@
 		background-color:Grey;
 		height:520px;	
 		width:auto;
-		border:2px solid black;
-		margin: 0 0 3% 0;	
+		margin: 0 auto;
+		border:2px solid black;	
 	}
 
 	.InsideRecentActivity {
 		background-color:grey;
 		height:520px;
 		width:auto;
-		margin:0 0 3% 0;
+		margin:0 auto;
 		border:2px solid black;
 	
 	}
