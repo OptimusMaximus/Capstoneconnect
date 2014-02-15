@@ -1,3 +1,12 @@
+h3 {
+	color: #FFFFFF;
+}
+
+p1 {
+	font-size: 140%;
+
+}
+
 .BigWhite {
 	background-color:#FFFFFF;
 	height: auto;
@@ -21,10 +30,10 @@
 
 .InsideAnnouncement {
 	background-color:Grey;
-	height:500px;
-	width:275px;
+	height:520px;
+	width:auto;
 	border:2px solid black;
-	margin: 0 auto;
+	margin: 0 0 3% 0;	
 	
 }
 .RecentActivity {
@@ -35,13 +44,11 @@
 	float:right;
 	border:2px solid black;
 }
-
 .InsideRecentActivity {
 	background-color:grey;
-	height:165px;
-	width:475px;
-	margin-right:5px;
-	float:right;
+	height:520px;
+	width:auto;
+	margin:0 0 3% 0;
 	border:2px solid black;
 	
 }

@@ -12,7 +12,7 @@
         <link rel="stylesheet" href="css/bootstrap.css" />
         <link rel="stylesheet" href="css/master-bootstrap-overwrite.css" />
         <link rel="stylesheet" type="text/css" href="css/base.css" />
-        <link rel="stylesheet" type="text/css" media="only screen and (max-width: 600px), only screen and (max-device-width: 600px)" href="css/small-device.css" />
+        <link rel="stylesheet" type="text/css" media="only screen and (max-width: 767px), only screen and (max-device-width: 767px)" href="css/small-device.css" />
         @yield('stylesheets')
         <style>
             @yield('styles')

@@ -11,20 +11,30 @@ Capstone Connect
 @stop
 @section('content')
 <div class = "row">
-	<div class="col-sm-12 col-md-5" style = "background-color: #73000A">
-		<h>Announcements</h>
+	<div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-4 col-lg-4" style = "background-color: #73000A">
+		<h3>Announcements</h3>
 		
 		<div class="InsideAnnouncement">
-  			<h>Final Exams are coming up!</br>
-  			12/06 Capstone Presentations 
-  			</h>
+  			<?php
+  				$mostRecentDate = Announcement::max('created_at');
+  				$announce = Announcement::where('created_at', $mostRecentDate)->first();
+  			?>
+
+  			@if($announce != null)
+  				<p1>
+  					{{ $announce->announcement }}
+  				</p1>
+  			@endif
+
   		</div>
   	</div>
- 	<div class="col-sm-12 col-md-5 col-md-offset-2" style = "background-color: #73000A">
-		<h>Recent Activity</h>
+ 	<div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-4 col-md-offset-2 col-lg-4" style = "background-color: #73000A">
+		<h3>Recent Activity</h3>
 		
 		<div class="InsideRecentActivity">
-  			<h>Recent activity will be listed here. </h>  			
+  			<p1>
+  				Need another function here
+  			</p1>			
   		</div>
  	</div>
 	

@@ -1,3 +1,12 @@
+h3 {
+	color: #FFFFFF;
+}
+
+p1 {
+	font-size: 140%;
+
+}
+
 .BigWhite {
 	background-color:#FFFFFF;
 	height: auto;
@@ -24,8 +33,7 @@
 	height:520px;
 	width:auto;
 	border:2px solid black;
-	margin: 0 0 3% 0;
-	
+	margin: 0 0 3% 0;	
 	
 }
 .RecentActivity {
@@ -274,7 +282,6 @@
 	width:500px;
 }
 
-<<<<<<< HEAD
 header{
     margin-right: auto;
     margin-left: auto;
@@ -338,4 +345,16 @@ body {
 	color: black;
 }
 
+.gamecock-table {
+	color: white;
+	background-color: #73000A;
+	border-color: white;
+}
+.gamecock-table th{
+	background-color: black;
+}
+
+.table-white-space {
+	background-color: white;
+}
 .initiallyHidden { display: none; }
