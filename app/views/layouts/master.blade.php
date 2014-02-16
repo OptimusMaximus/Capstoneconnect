@@ -44,7 +44,7 @@
                 <li>{{ HTML::linkRoute('home', 'Home') }}</li>
                 <li>{{ HTML::linkRoute('questionnaire', 'Questionnaire') }}</li>
                 <li>{{ HTML::linkRoute('mygrades', 'My Grades') }}</li>
-                <li>{{ HTML::linkRoute('help', 'Help') }}</li>
+               
                 <?php 
                     try
                     {
@@ -69,6 +69,9 @@
                                     echo('<li>');
                                         echo( HTML::linkRoute('admin_evals', 'Evaluations') );
                                     echo('</li>');
+                                    echo('<li>');
+                                        echo( HTML::linkRoute('allgrades', 'All Grades') );
+                                    echo('</li>');
                             echo(  '</ul>  
                                 </li>'
                             );
@@ -90,6 +93,7 @@
                         <?php $user = Sentry::getUser(); echo $user['email'];?> <b class="caret bottom-up"></b>
                     </a>  
                     <ul class="dropdown-menu bottom-up">  
+                      <li>{{ HTML::linkRoute('help', 'Help') }}</li>
                         <li>{{ HTML::linkRoute('logout', 'Logout') }}</li>  
                     </ul>  
                 </li> 
