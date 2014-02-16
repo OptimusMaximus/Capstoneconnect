@@ -38,7 +38,7 @@ echo $user['email'];
         <option label="Grades">Grades</option>
    
         @foreach($evalID as $evalDate)
-            <option>{{$evalDate}}</option>
+            <option>Evaluation {{$evalDate}}</option>
         @endforeach
         </select>
         @endif</td>   
