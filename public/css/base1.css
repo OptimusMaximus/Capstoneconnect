@@ -44,6 +44,7 @@ p1 {
 	float:right;
 	border:2px solid black;
 }
+
 .InsideRecentActivity {
 	background-color:grey;
 	height:520px;
@@ -54,10 +55,9 @@ p1 {
 }
 .Calendar {
 	height:320px;
-	width:490px;
-	margin:15px 30px 10px 10px;
-	float:right;
-	border:2px solid black;
+	width:auto;
+	margin: 3% 0 3% 0;
+	float:none;
 }
 
 .whitebox{
@@ -357,5 +357,4 @@ body {
 .table-white-space {
 	background-color: white;
 }
-
 .initiallyHidden { display: none; }
