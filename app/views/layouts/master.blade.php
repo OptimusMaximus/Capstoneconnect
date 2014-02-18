@@ -70,12 +70,12 @@
                                         echo( HTML::linkRoute('admin_evals', 'Evaluations') );
                                     echo('</li>');
                                     echo('<li>');
-<<<<<<< HEAD
+
                                         echo( HTML::linkRoute('allgrades', 'All Grades') );
                                     echo('</li>');
-=======
+
                                         echo( HTML::linkRoute('create_announcement', 'Create Announcement'));
->>>>>>> master
+
                             echo(  '</ul>  
                                 </li>'
                             );
