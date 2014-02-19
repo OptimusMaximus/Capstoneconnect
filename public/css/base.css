@@ -162,18 +162,9 @@ p1 {
 	top: 30px; {{-- 25px from top of insideBigWhite --}}
 }
 
-.radio-inline {
+/*.radio-inline {
 	width:900px;
-
-}
-
-.form-control {
-	width:500px;
-	margin:auto;
-	display:inline;
-		
-}
-
+}*/
 
 .linkNextQ {
 	background-color: #FFFFFF;
@@ -185,13 +176,14 @@ p1 {
 	
 }
 .Login {
-  background-color:#FFFFFF;
-  width:500px;
-  height:auto;
-  margin: 0 auto;
-  color:black;
-  border:2px solid;
-  border-radius:25px;
+	background-color:#FFFFFF;
+	height: auto;
+	width: 40%;
+	margin: 3% auto 0%;
+	border:2px solid;
+	border-radius:25px;
+	padding: 3%;
+	color: #000;
 }
  a.black:link {color:#000000}      /* unvisited link color blue */
  a.black:visited {color:#000000}  /* visited link color blue*/
@@ -295,13 +287,12 @@ body {
     margin-left: auto;
 }
 
-.navbar {
-	margin: -20px 10% 5%;
+.cc-navbar {
+	margin-top: -20px;
+	margin-bottom: 5em;
 	padding-top: 30px;
 	background-color:rgb(178,180,179);
-	border: 2px solid;
 	border-color: #000;
-	border-radius:25px;
 }
 
 .navbar a:link {color:#000000}      /* unvisited link color blue */
@@ -359,3 +350,17 @@ body {
 }
 
 .initiallyHidden { display: none; }
+
+.master-header {
+	margin-bottom: 5%;
+}
+
+.cc-btn-primary {
+	color: white;
+	background-color: rgb(95,87,79);
+/*	padding-right: 5px;
+*/}
+
+.cc-remember-box{
+	margin-left: 1em;
+}
