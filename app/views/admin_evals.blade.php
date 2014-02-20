@@ -46,6 +46,7 @@ Capstone Connect
 
 <!---    @if($evaluation!=null && $answer!=null)   
         @if($evalDates!=null)
+<<<<<<< HEAD
          <select name = "evalDates">
               @foreach($evalDates as $evalDate)
                   <option>{{$evalDate}}</option>
@@ -55,6 +56,7 @@ Capstone Connect
     @endif
 
 ---->
+
         <table class="table table-bordered table-groups pull-right">
             
             <tr>
