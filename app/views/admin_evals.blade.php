@@ -12,12 +12,13 @@ Capstone Connect
     <?php 
           $userid = 12;
           //$newanswers = Answer::where('answered_by', $userid);
-          $newanswers = DB::table('answers')->where('answered_by', '=', '12')->get();
+          $newanswers = DB::table('answers')->join('evaluations', 'answers.eid', '=', 'evaluations.id')
+                        ->where('answered_by', '=', $userid)->get();
           
 
 
           $eid = 4;
-                    $evaluation = Evaluation::where('eid', $eid)->get();
+            $evaluation = DB::table('evaluations')->where('id','=',$eid)->get();
              
           $mostRecentAnswerDate = Answer::max('created_at');
                     $answer = Answer::where('created_at', $mostRecentAnswerDate)->first();
@@ -25,6 +26,11 @@ Capstone Connect
           $users = User::all();
 
     ?>
+    @foreach ($newanswers as $answers)
+        <p>1</p>
+
+        
+    @endforeach
 
 
 <!----    @if($users!=null)
