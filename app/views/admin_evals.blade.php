@@ -9,94 +9,75 @@ Capstone Connect
 @stop
 
 @section('content')
+    
+
+
     <?php 
-          $userid = 12;
           //$newanswers = Answer::where('answered_by', $userid);
-          $newanswers = DB::table('answers')->join('evaluations', 'answers.eid', '=', 'evaluations.id')
+          $answers = DB::table('answers')->join('evaluations', 'answers.eid', '=', 'evaluations.id')
                         ->where('answered_by', '=', $userid)->get();
           
-
-
-          $eid = 4;
-            $evaluation = DB::table('evaluations')->where('id','=',$eid)->get();
-             
-          $mostRecentAnswerDate = Answer::max('created_at');
-                    $answer = Answer::where('created_at', $mostRecentAnswerDate)->first();
-          $evalDates = DB::table('evaluations')->lists('created_at', 'id');
+          
           $users = User::all();
 
     ?>
-    @foreach ($newanswers as $answers)
-        <p>1</p>
+    
+
+
+    @foreach($answers as $answer)
+        <?php 
+        
 
         
-    @endforeach
+        $answered_about = DB::table('users')->where('id', '=', $answer->answered_about)->get();
+        $answered_by = DB::table('users')->where('id', '=', $answer->answered_by)->get();        
 
 
-<!----    @if($users!=null)
-        <p>Select a User to pull up his evals.</p>
-            <select name = "answered_about" >
-                    @foreach($users as $user)
-                        <option value = {{$user['id']}}>{{$user['first_name']." ".$user['last_name']}}</option>
-                    @endforeach
-            </select>
-            <br /><br />
-    @endif
----->
-
-<!---    @if($evaluation!=null && $answer!=null)   
-        @if($evalDates!=null)
-<<<<<<< HEAD
-         <select name = "evalDates">
-              @foreach($evalDates as $evalDate)
-                  <option>{{$evalDate}}</option>
-              @endforeach
-           </select>
-        <br /><br />
-    @endif
-
----->
-
+        $answered_about_user = $answered_about[0]->first_name.' '.$answered_about[0]->last_name;
+        $answered_by_user = $answered_by[0]->first_name.' '.$answered_by[0]->last_name;
+        ?>
         <table class="table table-bordered table-groups pull-right">
-            
+                
+                <p>{{$answered_by_user}} evaluating on {{$answered_about_user}}</p>
+                
             <tr>
-                <td>{{$evaluation->q1}}</td>
+                <td>{{$answer->q1}}</td>
                 <td>{{$answer->ans1}}</td>
             </tr>
             <tr>
-                <td>{{$evaluation->q2}}</td>
+                <td>{{$answer->q2}}</td>
                 <td>{{$answer->ans2}}</td>
             </tr>
             <tr>
-                <td>{{$evaluation->q3}}</td>
+                <td>{{$answer->q3}}</td>
                 <td>{{$answer->ans3}}</td>
             </tr>
             <tr>
-                <td>{{$evaluation->q4}}</td>
+                <td>{{$answer->q4}}</td>
                 <td>{{$answer->ans4}}</td>
             </tr>
             <tr>
-                <td>{{$evaluation->q5}}</td>
+                <td>{{$answer->q5}}</td>
                 <td>{{$answer->ans5}}</td>
             </tr>
             <tr>
-                <td>{{$evaluation->q6}}</td>
+                <td>{{$answer->q6}}</td>
                 <td>{{$answer->ans6}}</td>
             </tr>
             <tr>
-                <td>{{$evaluation->q7}}</td>
+                <td>{{$answer->q7}}</td>
                 <td>{{$answer->ans7}}</td>
             </tr>
             <tr>
-                <td>{{$evaluation->q8}}</td>
+                <td>{{$answer->q8}}</td>
                 <td>{{$answer->ans8}}</td>
             </tr>
             <tr>
-                <td>{{$evaluation->q9}}</td>
+                <td>{{$answer->q9}}</td>
                 <td>{{$answer->ans9}}</td>
             </tr>
             <tr>
-                <td>{{$evaluation->q10}}</td>
+                <td>{{$answer->q10}}</td>
                 <td>{{$answer->ans10}}</td>
             </tr>
             <tr>
@@ -104,7 +85,8 @@ Capstone Connect
                 <td>{{$answer->comment}}</td>
             </tr>
         </table>
-    @endif
+        @endforeach
+    
     <br><br>
     {{ HTML::linkRoute('evaluation.create', 'Create New Evaluation', NULL, array('class' => 'btn btn-default')) }}
 </div>

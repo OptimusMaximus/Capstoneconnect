@@ -66,9 +66,9 @@
                                     echo('<li>');  
                                         echo( HTML::linkRoute('admin_users', 'User/Project') );
                                     echo('</li>');
-                                    echo('<li>');
-                                        echo( HTML::linkRoute('admin_evals', 'Evaluations') );
-                                    echo('</li>');
+                                    //echo('<li>');
+                                    //    echo( HTML::linkRoute('admin_evals', 'Evaluations') );
+                                    //echo('</li>');
                                     echo('<li>');
                                         echo( HTML::linkRoute('create_announcement', 'Create Announcement'));
                             echo(  '</ul>  
