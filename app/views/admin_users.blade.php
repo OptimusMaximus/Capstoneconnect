@@ -68,6 +68,7 @@ Admin Tools
                     <tr class="{{"child-".$project->id}} initiallyHidden">
                             <td>{{$user->first_name." ".$user->last_name}}</td>
                             <td>{{$user->email}}</td>
+                            <td>{{HTML::linkRoute('admin_user_evals','Evals', $user->id, array('class' => 'btn btn-default'))}}</td>
                             <td>{{HTML::linkRoute('user.edit','Edit',$user->id, array('class' => 'btn btn-default'))}}</td>
                             <td>
                                 {{ Form::open(array('route' => array('user.destroy', $user->id), 'method' => 'delete')) }}
