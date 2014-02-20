@@ -29,6 +29,7 @@ Capstone Connect
         @endforeach
         </select>
         @endif
+        
         <table class="table table-bordered table-groups pull-right">
             
             <tr>
