@@ -49,9 +49,7 @@ Capstone Connect
       <p>{{ Form::submit('login') }}</p>
     {{ Form::close() }}
     
-    {{ HTML::link('reset','Reset Password', array('class' => 'blue')) }}
-  
-    
+    {{ HTML::link('reset','Reset Password', array('class' => 'blue')) }}    
     
   </div>
 @stop
