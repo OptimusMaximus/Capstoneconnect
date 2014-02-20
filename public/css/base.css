@@ -349,6 +349,14 @@ body {
 	background-color: white;
 }
 
+.table-btn-top-offset {
+	margin-top: 0.5em;
+}
+
+.table-btn-bottom-offset {
+	margin-bottom: 0.5em;
+}
+
 .initiallyHidden { display: none; }
 
 .master-header {

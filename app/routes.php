@@ -50,6 +50,7 @@ Route::group(array('prefix' => '', 'before' => 'authAdmin'), function()
 		Route::resource('user', 'UserController');
 		Route::get('/admin_users', array('uses' => 'AdminToolsController@makeManageUsers', 'as' => 'admin_users'));
 		Route::get('/admin_evals', array('uses' => 'AdminToolsController@makeManageEvals', 'as' => 'admin_evals'));
+		Route::get('/admin_evals/{token}', array('uses' => 'AdminToolsController@getUserEvals', 'as' => 'admin_user_evals'));
 		Route::get('/create_announcement', array('uses' => 'AnnouncementController@makeAnnouncement', 'as' => 'create_announcement'));
 		Route::post('/create_announcement', array('uses' => 'AnnouncementController@store', 'as' => 'announcement.store'));
 });
