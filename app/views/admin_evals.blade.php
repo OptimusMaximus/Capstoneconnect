@@ -15,17 +15,33 @@ Capstone Connect
           $mostRecentAnswerDate = Answer::max('created_at');
                     $answer = Answer::where('created_at', $mostRecentAnswerDate)->first();
           $evalDates = DB::table('evaluations')->lists('created_at', 'id');
+          $users = User::all();
+
+    ?>
 
 
-            ?>
-    @if($evaluation!=null && $answer!=null)   
+<!----    @if($users!=null)
+        <p>Select a User to pull up his evals.</p>
+            <select name = "answered_about" >
+                    @foreach($users as $user)
+                        <option value = {{$user['id']}}>{{$user['first_name']." ".$user['last_name']}}</option>
+                    @endforeach
+            </select>
+            <br /><br />
+    @endif
+---->
+
+<!---    @if($evaluation!=null && $answer!=null)   
         @if($evalDates!=null)
-        <select name = "evalDates">
-        @foreach($evalDates as $evalDate)
-            <option>{{$evalDate}}</option>
-        @endforeach
-        </select>
-        @endif
+         <select name = "evalDates">
+              @foreach($evalDates as $evalDate)
+                  <option>{{$evalDate}}</option>
+              @endforeach
+           </select>
+        <br /><br />
+    @endif
+
+---->
         <table class="table table-bordered table-groups pull-right">
             
             <tr>
