@@ -43,17 +43,26 @@
             <ul class="nav navbar-nav">
                 <li>{{ HTML::linkRoute('home', 'Home') }}</li>
                 <li>{{ HTML::linkRoute('questionnaire', 'Questionnaire') }}</li>
-                <li>{{ HTML::linkRoute('mygrades', 'My Grades') }}</li>
-               
+                
                 <?php 
                     try
                     {
                         // Find the user using the user id
                         $user = Sentry::getUser();
+                        $NOTadmin = Sentry::findGroupByName('Users');
+
 
                         // Find the Administrator group
                         $admin = Sentry::findGroupByName('Admin');
 
+
+
+                             if ($user->inGroup($NOTadmin))
+                        {
+                        echo('<li>');
+                            echo (HTML::linkRoute('mygrades', 'My Grades') );
+                            echo('</li>');
+                        }
                         // Check if the user is in the administrator group
                         if ($user->inGroup($admin))
                         {
