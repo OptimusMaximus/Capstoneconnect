@@ -19,9 +19,9 @@
             @yield('styles')
         </style>
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-        <script src="js/jquery-2.0.3.js"></script>
+        {{ HTML::script('js/jquery-2.0.3.js') }}
         <!-- Include all compiled plugins (below), or include individual files as needed -->
-        <script src="js/bootstrap.js"></script>
+        {{ HTML::script('js/bootstrap.js') }}
         @yield('head')
     </head>
 
