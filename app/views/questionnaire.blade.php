@@ -18,7 +18,7 @@ Questionnaire
          array('url' => route('answer.store'),
               'role' => 'form'))}}
 
-    		<br/><br/>
+    		<br/>
     		<div class = 'questions'> 
     			
     			<?php 
@@ -33,13 +33,13 @@ Questionnaire
          		?>
 
                 @if($userGroup!=null)
-                    <p>Select the user you are evaluating</p>
+                    <p><font size ='5'>Select the user you are evaluating</font></p>
                     <select name = "answered_about" >
                         @foreach($userGroup as $users)
                             <option value = {{$users['id']}}>{{$users['first_name']." ".$users['last_name']}}</option>
                         @endforeach
                     </select>
-                    <br /><br />
+                    <br /><br /><br /><br />
                 @endif
 
          	@if($evaluation!=null)
