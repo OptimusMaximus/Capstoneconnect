@@ -9,8 +9,15 @@ Capstone Connect
 @stop
 
 @section('content')
-    <?php $mostRecentEvalDate = Evaluation::max('created_at');
-                    $evaluation = Evaluation::where('created_at', $mostRecentEvalDate)->first();
+    <?php 
+          $userid = 12;
+          //$newanswers = Answer::where('answered_by', $userid);
+          $newanswers = DB::table('answers')->where('answered_by', '=', '12')->get();
+          
+
+
+          $eid = 4;
+                    $evaluation = Evaluation::where('eid', $eid)->get();
              
           $mostRecentAnswerDate = Answer::max('created_at');
                     $answer = Answer::where('created_at', $mostRecentAnswerDate)->first();
