@@ -14,30 +14,69 @@ My Grades
 
 @section('content')
 
-	<div class="GradeAverageText">
- 	  <h>Your current average is: </h>
-  </div>
-  <div class="Evals">
-    <div class="btn-group-vertical" style="margin-top:20px; margin-left:5px; margin-right:5px;">
-      <button type="button" class="btn btn-default">Evaluations 1</button>
-      <button type="button" class="btn btn-default">Evaluations 2</button>
-      <button type="button" class="btn btn-default">Evaluations 3</button>
-      <button type="button" class="btn btn-default">Evaluations 4</button>
-      <button type="button" class="btn btn-default">Evaluations 5</button>
-      <button type="button" class="btn btn-default">Evaluations 6</button>
-      <button type="button" class="btn btn-default">Evaluations 7</button>
-      <button type="button" class="btn btn-default">Evaluations 8</button>
-    </div>
-  </div>
-  <div class="WeeklyGrades">
-    <p>Weekly grades go here</p>
-  </div> 
- 
-  <div class="AllGrades">
-    <div class="InsideAllGrades">
-      <h>All grades go here!</h>
-      <h>More grade stuff.</h>
-    </div>
-  </div>
+	
+    <div class = QuestionnaireWhite>
+You are logged in as: 
 
+
+<?php $user = Sentry::getUser();
+echo $user['email'];
+
+?>
+
+    <div class="table-responsive">
+
+<?php 
+
+$answers = DB::table('answers')->join('evaluations', 'answers.eid', '=', 'evaluations.id')->where('answered_about', '=', $user->id)->get();
+
+$evaluations = DB::table('evaluations')->join('answers', 'evaluations.id', '=', 'answers.eid');
+
+?>
+
+<table class="table table-bordered table-groups pull-right">
+<tr bgcolor="Black">
+                       <td><font color = 'White'>First Name</td>
+                       <td><font color = 'White'>Last Name</td>
+                       <td><font color = 'White'>Average Evaluation Grade</td>
+                       </font>
+                       </tr>
+
+@foreach ($answers as $answer)
+<?php
+
+
+$a1 = DB::table('answers')->where('answered_about', '=', $user->id)->avg('ans1');
+$a2 = DB::table('answers')->where('answered_about', '=', $user->id)->avg('ans2');
+$a3 = DB::table('answers')->where('answered_about', '=', $user->id)->avg('ans3');
+$a4 = DB::table('answers')->where('answered_about', '=', $user->id)->avg('ans4');
+$a5 = DB::table('answers')->where('answered_about', '=', $user->id)->avg('ans5');
+$a6 = DB::table('answers')->where('answered_about', '=', $user->id)->avg('ans6');
+$a7 = DB::table('answers')->where('answered_about', '=', $user->id)->avg('ans7');
+$a8 = DB::table('answers')->where('answered_about', '=', $user->id)->avg('ans8');
+$a9 = DB::table('answers')->where('answered_about', '=', $user->id)->avg('ans9');
+$a10 = DB::table('answers')->where('answered_about', '=', $user->id)->avg('ans10');
+$avg = ($a1 + $a2 + $a3 + $a4 + $a5 + $a6 + $a7 + $a7 + $a8 + $a7 + $a8 + $a9 + $a10)/10;
+?>
+
+
+
+                        <tr bgcolor="#73000A">
+                            <td><font color = 'White'>{{$user->first_name}}</td>
+                            <td><font color = 'White'>{{$user->last_name}}</td>
+                            <td><font color = 'White'>{{$avg}}</td>
+                        </tr>
+  
+@endforeach  
+
+<?php
+?>
+</table>
+  
+  <table class="table">
+
+  </table>
+</div>
+    </div>
+    
 @stop
