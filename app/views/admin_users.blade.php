@@ -46,15 +46,15 @@ Admin Tools
                 @foreach($projects as $project)
                     <?php $users = User::where('project_id','=',$project->id)->get(); ?>
                     <tr class="parent" id={{ "\"".$project->id."\"" }}>
-                        <td><span class="btn btn-default">{{$project->name}}</span></td>
+                        <td><span class="btn btn-block btn-default">{{$project->name}}</span></td>
                         <td>{{$project->description}}</td>
                         <td>{{$project->created_at}}</td>
                         <td>
-                            {{ HTML::linkRoute('project.edit', 'Edit', $project->id, array('class' => 'btn btn-default'))}}
+                            {{ HTML::linkRoute('project.edit', 'Edit', $project->id, array('class' => 'btn btn-sm btn-default'))}}
                         </td>
                         <td>
                             {{ Form::open(array('route' => array('project.destroy', $project->id), 'method' => 'delete')) }}
-                            {{ Form::submit('Remove', array('class'=>'btn btn-default'))}}
+                            {{ Form::submit('Remove', array('class'=>'btn btn-sm btn-default'))}}
                             {{ Form::close() }}
                         </td>
                     </tr> <!-- trow1 -->
@@ -68,18 +68,18 @@ Admin Tools
                     <tr class="{{"child-".$project->id}} initiallyHidden">
                             <td>{{$user->first_name." ".$user->last_name}}</td>
                             <td>{{$user->email}}</td>
-                            <td>{{HTML::linkRoute('admin_user_evals','Evals', $user->id, array('class' => 'btn btn-default'))}}</td>
-                            <td>{{HTML::linkRoute('user.edit','Edit',$user->id, array('class' => 'btn btn-default'))}}</td>
-                            <td>
+                            <td colspan="2" class="text-right">
+                                {{HTML::linkRoute('admin_user_evals','Evals', $user->id, array('class' => 'btn btn-xs btn-block btn-default table-btn-bottom-offset'))}}
+                                {{HTML::linkRoute('user.edit','Edit',$user->id, array('class' => 'btn btn-default btn-xs btn-block table-btn-bottom-offset'))}}        
                                 {{ Form::open(array('route' => array('user.destroy', $user->id), 'method' => 'delete')) }}
-                                {{ Form::submit('Remove', array('class'=>'btn btn-default'))}}
+                                {{ Form::submit('Remove', array('class'=>'btn btn-default btn-xs btn-block table-btn-top-offset'))}}
                                 {{ Form::close() }}
                             </td>
                         </tr>
                     @endforeach
                         <tr class="{{"child-".$project->id}} initiallyHidden">
                             <td class='table-white-space' colspan=3></td>
-                            <td class="text-center">{{HTML::linkRoute('user.create','add', NULL, array('class' => 'btn btn-default'))}}</td>
+                            <td class="text-center">{{HTML::linkRoute('user.create','add', NULL, array('class' => 'btn btn-sm btn-default'))}}</td>
                         </tr>
                 @endforeach
             @endif

@@ -28,6 +28,7 @@ Questionnaire
 
                 $mostRecentEvalDate = Evaluation::max('created_at');
                 $evaluation = Evaluation::where('created_at', $mostRecentEvalDate)->first();
+                
                 $numOfQuestions = 10;
          		?>
 
@@ -68,6 +69,7 @@ Questionnaire
                     'placeholder' => 'Please enter some comments about your fellow group member.'))}}                
             </div>	
             <input type="hidden" name="answered_by" value={{$currentUser['id']}}>
+            <input type="hidden" name="eid" value={{$evaluation['id']}}>
     	</div>
     	
     	

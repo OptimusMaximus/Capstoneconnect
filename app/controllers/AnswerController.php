@@ -32,6 +32,7 @@ class AnswerController extends \BaseController {
 		
 		
 		Answer::create(array(
+						   'eid'=>$_POST["eid"],
 						   'answered_about'=>$_POST["answered_about"],
 						   'answered_by'=>$_POST["answered_by"],
 						   'ans1' => $_POST["ans1"],
