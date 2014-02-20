@@ -25,7 +25,7 @@
         @yield('head')
     </head>
 
-    <nav class="navbar navbar-default" role="navigation">
+    <nav class="cc-navbar navbar navbar-default" role="navigation">
       <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
@@ -106,7 +106,7 @@
     </nav>
 
     <body>
-        <h1><b>@yield('header')</b></h1> 
+        <h1 class="master-header"><b>@yield('header')</b></h1> 
         <div class="BigWhite container">
             @yield('content')
         </div>
