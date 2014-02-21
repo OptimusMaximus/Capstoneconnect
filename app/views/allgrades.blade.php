@@ -62,7 +62,7 @@ $a7 = DB::table('answers')->where('answered_about', '=', $user->id)->avg('ans7')
 $a8 = DB::table('answers')->where('answered_about', '=', $user->id)->avg('ans8');
 $a9 = DB::table('answers')->where('answered_about', '=', $user->id)->avg('ans9');
 $a10 = DB::table('answers')->where('answered_about', '=', $user->id)->avg('ans10');
-$avg = ($a1 + $a2 + $a3 + $a4 + $a5 + $a6 + $a7 + $a7 + $a8 + $a7 + $a8 + $a9 + $a10)/10;
+$avg = ($a1 + $a2 + $a3 + $a4 + $a5 + $a6 + $a7 + $a8 + $a9 + $a10)/10;
 ?>
    
 
