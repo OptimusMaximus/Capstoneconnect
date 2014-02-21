@@ -13,32 +13,27 @@ Capstone Connect
 
 
     <?php 
-          //$newanswers = Answer::where('answered_by', $userid);
+          
           $answers = DB::table('answers')->join('evaluations', 'answers.eid', '=', 'evaluations.id')
                         ->where('answered_by', '=', $userid)->get();
           
-          
           $users = User::all();
-
+          $answered_by = DB::table('users')->where('id', '=', $userid)->get();
+          $answered_by_user =  $answered_by[0]->first_name.' '.$answered_by[0]->last_name;
     ?>
     
-
+    <p><b><font size ='6'>{{$answered_by_user}}</font></b></p>
 
     @foreach($answers as $answer)
         <?php 
-        
 
-        
         $answered_about = DB::table('users')->where('id', '=', $answer->answered_about)->get();
-        $answered_by = DB::table('users')->where('id', '=', $answer->answered_by)->get();        
-
-
         $answered_about_user = $answered_about[0]->first_name.' '.$answered_about[0]->last_name;
-        $answered_by_user = $answered_by[0]->first_name.' '.$answered_by[0]->last_name;
+        
         ?>
         <table class="table table-bordered table-groups pull-right">
                 
-                <p>{{$answered_by_user}} evaluating on {{$answered_about_user}}</p>
+                <p>Evaluating {{$answered_about_user}}</p>
                 
             <tr>
                 <td>{{$answer->q1}}</td>
@@ -85,6 +80,7 @@ Capstone Connect
                 <td>{{$answer->comment}}</td>
             </tr>
         </table>
+        <br /><br />
         @endforeach
     
     <br><br>

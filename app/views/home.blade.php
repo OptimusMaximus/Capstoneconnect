@@ -32,8 +32,20 @@ Capstone Connect
 		<h3>Recent Activity</h3>
 		
 		<div class="InsideRecentActivity">
+        <?php
+          $recent5 = DB::table('answers')->join('evaluations', 'answers.eid', '=', 'evaluations.id')
+                        ->join('users', 'answers.answered_about','=','users.id')->take(10)->get();
+
+
+        ?>
+
   			<p1>
-  				Need another function here
+  			@foreach($recent5 as $recent)
+        <p><font size='2'>{{$recent->first_name.' '.$recent->last_name}} was Evaluated at 
+          {{$recent->created_at}}</font> </p>
+
+
+        @endforeach	
   			</p1>			
   		</div>
  	</div>
