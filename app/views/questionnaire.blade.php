@@ -9,158 +9,72 @@
 @stop
 
 @section('header')
-<h1>Questionnaire</h1>
+Questionnaire
 @stop
-
+	 
 @section('content')
-    <div class = QuestionnaireWhite>
-    	 
-    		<h1>Group Member Questionnaire</h1>
-    		<div class = questions> 
-    			<p>Question 1</p>	
-    			<div class="radio">
-  					<label>
-  						<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>1
-  					</label>
-  				</div>
-				<div class="radio">
-					<label>
-						<input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">2
-					</label>
-  				</div>
-				
-				<textarea class="form-control" rows="3" placeholder="Comments go here"></textarea>
-    			<p>Question 2</p>	
-    			<label class="radio-inline">
- 			    <input type="radio" id="inlineRadio1" value="option1"> 1
- 			    <input type="radio" id="inlineRadio1" value="option1"> 2
- 			    <input type="radio" id="inlineRadio1" value="option1"> 3
- 			    <input type="radio" id="inlineRadio1" value="option1"> 4
- 			    <input type="radio" id="inlineRadio1" value="option1"> 5
- 			    <input type="radio" id="inlineRadio1" value="option1"> 6
- 			    <input type="radio" id="inlineRadio1" value="option1"> 7
- 			    <input type="radio" id="inlineRadio1" value="option1"> 8
- 			    <input type="radio" id="inlineRadio1" value="option1"> 9
- 			    <input type="radio" id="inlineRadio1" value="option1"> 10
-				</label>
-				<textarea class="form-control" rows="3" placeholder="Comments go here"></textarea>
-				<p>Question 3</p>	
-    			<label class="radio-inline">
- 			    <input type="radio" id="inlineRadio1" value="option1"> 1
- 			    <input type="radio" id="inlineRadio1" value="option1"> 2
- 			    <input type="radio" id="inlineRadio1" value="option1"> 3
- 			    <input type="radio" id="inlineRadio1" value="option1"> 4
- 			    <input type="radio" id="inlineRadio1" value="option1"> 5
- 			    <input type="radio" id="inlineRadio1" value="option1"> 6
- 			    <input type="radio" id="inlineRadio1" value="option1"> 7
- 			    <input type="radio" id="inlineRadio1" value="option1"> 8
- 			    <input type="radio" id="inlineRadio1" value="option1"> 9
- 			    <input type="radio" id="inlineRadio1" value="option1"> 10
-				</label>
-				<textarea class="form-control" rows="3" placeholder="Comments go here"></textarea>
-				<p>Question 4</p>	
-    			<label class="radio-inline">
- 			    <input type="radio" id="inlineRadio1" value="option1"> 1
- 			    <input type="radio" id="inlineRadio1" value="option1"> 2
- 			    <input type="radio" id="inlineRadio1" value="option1"> 3
- 			    <input type="radio" id="inlineRadio1" value="option1"> 4
- 			    <input type="radio" id="inlineRadio1" value="option1"> 5
- 			    <input type="radio" id="inlineRadio1" value="option1"> 6
- 			    <input type="radio" id="inlineRadio1" value="option1"> 7
- 			    <input type="radio" id="inlineRadio1" value="option1"> 8
- 			    <input type="radio" id="inlineRadio1" value="option1"> 9
- 			    <input type="radio" id="inlineRadio1" value="option1"> 10
-				</label>
-				<textarea class="form-control" rows="3" placeholder="Comments go here"></textarea>
-				<p>Question 5</p>	
-    			<label class="radio-inline">
- 			    <input type="radio" id="inlineRadio1" value="option1"> 1
- 			    <input type="radio" id="inlineRadio1" value="option1"> 2
- 			    <input type="radio" id="inlineRadio1" value="option1"> 3
- 			    <input type="radio" id="inlineRadio1" value="option1"> 4
- 			    <input type="radio" id="inlineRadio1" value="option1"> 5
- 			    <input type="radio" id="inlineRadio1" value="option1"> 6
- 			    <input type="radio" id="inlineRadio1" value="option1"> 7
- 			    <input type="radio" id="inlineRadio1" value="option1"> 8
- 			    <input type="radio" id="inlineRadio1" value="option1"> 9
- 			    <input type="radio" id="inlineRadio1" value="option1"> 10
-				</label>
-				<textarea class="form-control" rows="3" placeholder="Comments go here"></textarea>
-				<p>Question 6</p>	
-    			<label class="radio-inline">
- 			    <input type="radio" id="inlineRadio1" value="option1"> 1
- 			    <input type="radio" id="inlineRadio1" value="option1"> 2
- 			    <input type="radio" id="inlineRadio1" value="option1"> 3
- 			    <input type="radio" id="inlineRadio1" value="option1"> 4
- 			    <input type="radio" id="inlineRadio1" value="option1"> 5
- 			    <input type="radio" id="inlineRadio1" value="option1"> 6
- 			    <input type="radio" id="inlineRadio1" value="option1"> 7
- 			    <input type="radio" id="inlineRadio1" value="option1"> 8
- 			    <input type="radio" id="inlineRadio1" value="option1"> 9
- 			    <input type="radio" id="inlineRadio1" value="option1"> 10
-				</label>
-				<textarea class="form-control" rows="3" placeholder="Comments go here"></textarea>
-				<p>Question 7</p>	
-    			<label class="radio-inline">
- 			    <input type="radio" id="inlineRadio1" value="option1"> 1
- 			    <input type="radio" id="inlineRadio1" value="option1"> 2
- 			    <input type="radio" id="inlineRadio1" value="option1"> 3
- 			    <input type="radio" id="inlineRadio1" value="option1"> 4
- 			    <input type="radio" id="inlineRadio1" value="option1"> 5
- 			    <input type="radio" id="inlineRadio1" value="option1"> 6
- 			    <input type="radio" id="inlineRadio1" value="option1"> 7
- 			    <input type="radio" id="inlineRadio1" value="option1"> 8
- 			    <input type="radio" id="inlineRadio1" value="option1"> 9
- 			    <input type="radio" id="inlineRadio1" value="option1"> 10
-				</label>
-				<textarea class="form-control" rows="3" placeholder="Comments go here"></textarea>
-				<p>Question 8</p>	
-    			<label class="radio-inline">
- 			    <input type="radio" id="inlineRadio1" value="option1"> 1
- 			    <input type="radio" id="inlineRadio1" value="option1"> 2
- 			    <input type="radio" id="inlineRadio1" value="option1"> 3
- 			    <input type="radio" id="inlineRadio1" value="option1"> 4
- 			    <input type="radio" id="inlineRadio1" value="option1"> 5
- 			    <input type="radio" id="inlineRadio1" value="option1"> 6
- 			    <input type="radio" id="inlineRadio1" value="option1"> 7
- 			    <input type="radio" id="inlineRadio1" value="option1"> 8
- 			    <input type="radio" id="inlineRadio1" value="option1"> 9
- 			    <input type="radio" id="inlineRadio1" value="option1"> 10
-				</label>
-				<textarea class="form-control" rows="3" placeholder="Comments go here"></textarea>
-				<p>Question 9</p>	
-    			<label class="radio-inline">
- 			    <input type="radio" id="inlineRadio1" value="option1"> 1
- 			    <input type="radio" id="inlineRadio1" value="option1"> 2
- 			    <input type="radio" id="inlineRadio1" value="option1"> 3
- 			    <input type="radio" id="inlineRadio1" value="option1"> 4
- 			    <input type="radio" id="inlineRadio1" value="option1"> 5
- 			    <input type="radio" id="inlineRadio1" value="option1"> 6
- 			    <input type="radio" id="inlineRadio1" value="option1"> 7
- 			    <input type="radio" id="inlineRadio1" value="option1"> 8
- 			    <input type="radio" id="inlineRadio1" value="option1"> 9
- 			    <input type="radio" id="inlineRadio1" value="option1"> 10
-				</label>
-				<textarea class="form-control" rows="3" placeholder="Comments go here"></textarea>
-				<p>Question 10</p>	
-    			<label class="radio-inline">
- 			    <input type="radio" id="inlineRadio1" value="option1"> 1
- 			    <input type="radio" id="inlineRadio1" value="option1"> 2
- 			    <input type="radio" id="inlineRadio1" value="option1"> 3
- 			    <input type="radio" id="inlineRadio1" value="option1"> 4
- 			    <input type="radio" id="inlineRadio1" value="option1"> 5
- 			    <input type="radio" id="inlineRadio1" value="option1"> 6
- 			    <input type="radio" id="inlineRadio1" value="option1"> 7
- 			    <input type="radio" id="inlineRadio1" value="option1"> 8
- 			    <input type="radio" id="inlineRadio1" value="option1"> 9
- 			    <input type="radio" id="inlineRadio1" value="option1"> 10
-				</label>
-				<textarea class="form-control" rows="3" placeholder="Comments go here"></textarea>
-				<br /><br />
-    			<button type="button" class="btn btn-primary">Submit</button>
+
+    	 {{ Form::open(        
+         array('url' => route('answer.store'),
+              'role' => 'form'))}}
+
+    		<br/><br/>
+    		<div class = 'questions'> 
+    			
+    			<?php 
+                $currentUser = Sentry::getUser(); 
+                //$userGroup = DB::select('SELECT id, first_name, last_name, project_id FROM users WHERE project_id = '.$currentUser['project_id']);
+                $userGroup = User::where('project_id','=',$currentUser->project_id)->get();
+
+                $mostRecentEvalDate = Evaluation::max('created_at');
+                $evaluation = Evaluation::where('created_at', $mostRecentEvalDate)->first();
+                
+                $numOfQuestions = 10;
+         		?>
+
+                @if($userGroup!=null)
+                    <p>Select the user you are evaluating</p>
+                    <select name = "answered_about" >
+                        @foreach($userGroup as $users)
+                            <option value = {{$users['id']}}>{{$users['first_name']." ".$users['last_name']}}</option>
+                        @endforeach
+                    </select>
+                    <br /><br />
+                @endif
+
+         	@if($evaluation!=null)
+	         	@for($i = 1; $i<=$numOfQuestions; ++$i)
+	         		<?php $question = "q".$i;
+	         			  $answer = "ans".$i;?>
+	    			<p>{{$evaluation->$question}}</p>	 
+	    			
+		    		<select name = {{$answer}}>
+		  			 	<option>1</option>
+		 				<option>2</option>
+		 				<option>3</option>
+		 				<option>4</option>
+		 				<option>5</option>
+		 				<option>6</option>
+		 				<option>7</option>
+		 				<option>8</option>
+		 				<option>9</option>
+		 				<option>10</option>
+					</select>
+					<br><br>
+				@endfor
+			 @endif
+             <div class="form-group col-centered">                  
+                  {{ Form::textarea('comment', '', 
+                    array('class' => 'col-xs-12',
+                    'placeholder' => 'Please enter some comments about your fellow group member.'))}}                
+            </div>	
+            <input type="hidden" name="answered_by" value={{$currentUser['id']}}>
+            <input type="hidden" name="eid" value={{$evaluation['id']}}>
     	</div>
-    		
     	
-    </div>
+    	
+    	 <br /> 
+       {{ Form::submit('Submit Answers', array('class'=>'btn btn-default'))}}
+    {{ Form::close() }}
     
 @stop

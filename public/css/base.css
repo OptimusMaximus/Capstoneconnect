@@ -1,259 +1,402 @@
-.BigWhite {
-	background-color:#FFFFFF;
-	height:600px;
-	width:900px;
-	margin: 0 auto;
-	border:2px solid;
-	border-radius:25px;
-
-}
-.Announcements {	
-	background-color:#73000A;
-	height:550px;
-	width:300px;
-	margin: 300 auto;
-	margin:30px 30px 30px 30px;
-	border:2px solid black;
-	float:left
-} 	
-
-	.InsideAnnouncement {
-	background-color:Grey;
-	height:500px;
-	width:275px;
-	border:2px scrollingd black;
-	margin: 0 auto;
-	
-}
-.RecentActivity {
-	background-color:#73000A;
-	height:200px;
-	width:490px;
-	margin:30px 30px 10px 10px;
-	float:right;
-	border:2px solid black;
-}
-
-	.InsideRecentActivity {
-	background-color:grey;
-	height:165px;
-	width:475px;
-	margin-right:5px;
-	float:right;
-	border:2px solid black;
-	
-}
-	.Calendar {
-	height:320px;
-	width:490px;
-	margin:15px 30px 10px 10px;
-	float:right;
-	border:2px solid black;
+/*master and master login */
+	.BigWhite {
+		background-color:#FFFFFF;
+		height: auto;
+		width: 75%;
+		margin: 3% auto 0%;
+		border:2px solid;
+		border-radius:25px;
+		padding: 3%;
+		color: #000;
 	}
 
-	.whitebox{
-	background-color:#FFFFFF;
-	height:600px;
-	width:900px;	
-	margin: 0 auto;
-	border:2px solid;
-	border-radius:25px;
-}
- .blackbox{
- 	background-color:#FFFFFF;
- 	height:400px;
- 	width:700px;
- 	border:2px solid black;
- 	margin: 125px;
-}
-.GradesWhite {
-	background-color:#FFFFFF;
-	height:600px;
-	width:1200px;
-	margin: 0 auto;
-	border:2px solid;
-	border-radius:25px;
+	.cc-navbar {
+		margin-top: -20px;
+		margin-bottom: 5em;
+		padding-top: 30px;
+		background-color:rgb(178,180,179);
+		border-color: #000;
+	}
 
-}
-.Evals {	
-	background-color:#73000A;
-	height:550px;
-	width:590px;
-	//margin: 300 auto;
-	margin:30px 30px 30px 30px;
-	border:2px solid black;
-	float:left;
-}	
+	.navbar a:link {color:#000000}      /* unvisited link color blue */
+	.navbar a:visited {color:#000000}  /* visited link color blue*/
+	.navbar a:hover {color:rgb(95,87,79)
+		background-color: #000}  /* mouse over link color Pluff mud*/
+	.navbar a:focus {color:rgb(95,87,79);}  /* link of focus color Pluff mud*/
+	.navbar a:active {color:rgb(178,180,179);}  /* selected link color State House Gray*/
+	.navbar li a:link {color:#000000}      /* unvisited link color blue */
+	.navbar li a:visited {color:#000000}  /* visited link color blue*/
+	.navbar li a:hover {
+		color:rgb(95,87,79);
+		background-color: #000
+						}  /* mouse over link color Pluff mud*/
+	.navbar li a:focus {color:rgb(95,87,79);}  /* link of focus color Pluff mud*/
+	.navbar li a:active {color:rgb(178,180,179);}  /* selected link color State House Gray*/
+
+	.navbar-default .navbar-toggle .icon-bar {
+	    background-color: black;
+	}
+
+	.navbar-default .navbar-toggle  {
+		border-color: black;
+	}
+
+	.navbar-default .navbar-collapse {
+		border-color: black;
+	} 
+	.navbar-collapse .in{
+		border-color: black;
+	}
+
+	.master-header {
+		margin-bottom: 5%;
+	}
+	h3 {
+		color: #FFFFFF;
+	}
+
+	p1 {
+		font-size: 140%;
+
+	}
+/*-----------------------*/
+
+/* Home page */
+	.Announcements {	
+		background-color:#73000A;
+		height:550px;
+		width:300px;
+		margin: 300 auto;
+		margin:30px 30px 30px 30px;
+		border:2px solid black;
+		float:left
+	} 	
+
+	.InsideAnnouncement {
+		background-color:Grey;
+		height:520px;
+		width:auto;
+		border:2px solid black;
+		margin: 0 0 3% 0;	
+		
+	}
+	.RecentActivity {
+		background-color:#73000A;
+		height:200px;
+		width:490px;
+		margin:30px 30px 10px 10px;
+		float:right;
+		border:2px solid black;
+	}
+	.InsideRecentActivity {
+		background-color:grey;
+		height:520px;
+		width:auto;
+		margin:0 0 3% 0;
+		border:2px solid black;
+		
+	}
+	.Calendar {
+		height:320px;
+		width:490px;
+		margin:15px 30px 10px 10px;
+		float:right;
+		border:2px solid black;
+	}
+/*---------------------------*/
+
+/* My Grades */
+
+	.GradeAverageText{
+		height: 50px;
+		width: auto;
+		margin-top: 20px;
+		margin-right: 225px;
+		color: black;
+	}
 
 	.WeeklyGrades {
-	background-color:Grey;
-	height:550px;
-	width:450px;
-	border:2px scrollingd black;
-	margin: 0 auto;
-	
-	float:right;
-	
-}
+		background-color:Grey;
+		height:500px;
+		width:450px;
+		margin:0 auto;
+		float: left;
+		border:2px solid black;
+	}
+
 	.AllGrades {
-	background-color:#73000A;
-	height:350px;
-	width:480px;
-
-	margin:210px 30px 10px 10px;
-	 float: right;
-     bottom: 0;
-     right: 0;
-
-	border:2px solid black;
+		background-color:#73000A;
+		height:500px;
+		width:auto;
+		margin:0 10px 10px 600px;
+		border:2px solid black;
 	}
 
 	.InsideAllGrades {
-	background-color:grey;
-	height:300px;
-	width:465px;
-	margin-right:5px;
-	float:right;
-	border:2px solid black;
-	
-}
-.GradeAverageText{
-	float: right;
-	margin-right: 225px;
-	color: black;
-}
-	.GradesCalendar {
-	background-color:Red;
-	height:320px;
-	width:490px;
-	margin:15px 30px 10px 10px;
-	float:right;
-	border:2px solid black;
+		background-color:grey;
+		height:480px;
+		width:auto;
+		margin: 10px 10px 10px 10px;
+		border:2px solid black;
+		
 	}
 
-.QuestionnaireWhite {
-	background-color:#FFFFFF;
-	height:1500px;
-	width:900px;
-	margin: 0 auto;
-	border:2px solid;
-	border-radius:25px;
+	.GradesCalendar {
+		background-color:Red;
+		height:320px;
+		width:490px;
+		margin:15px 30px 10px 10px;
+		float:right;
+		border:2px solid black;
+		}
 
-}
+	.Evals {	
+		background-color:#73000A;
+		height:500px;
+		width:auto;
+		margin:0 0 0 10px;
+		border:2px solid black;
+		float:left;
+	}	
+/*----------------------------*/
 
-.questions{
-	background-color: #FFFFFF;
-	color: #000000;
-	text-align: left;
-	height: 500;
-	
-	postion: absolute;
-	left: 20px; {{-- 20px from left of insideBigWhite --}}
-	top: 25px; {{-- 25px from top of insideBigWhite --}}
-}
+/*Login page*/
 
-.radio-inline {
-	width:900px;
+	.Login {
+		background-color:#FFFFFF;
+		height: auto;
+		width: 40%;
+		margin: 3% auto 0%;
+		border:2px solid;
+		border-radius:25px;
+		padding: 3%;
+		color: #000;
+	}
 
-}
+	.cc-btn-primary {
+		color: white;
+		background-color: rgb(95,87,79);
+	}
 
-.form-control {
-	
-	
-}
+	.cc-remember-box{
+		margin-left: 1em;
+	}
+/*----------------------------*/
 
-.linkNextQ {
-	background-color: #FFFFFF;
-	height: 50px;
-	width: 200px;
-	 
-	left: 50px; {{-- 50px from left of questions --}}
-	top: 600px; {{-- 600px from top of questions --}}
-	
-}
-.Login {
-  background-color:#FFFFFF;
-  width:500px;
-  height:auto;
-  margin: 0 auto;
-  color:black;
-  border:2px solid;
-  border-radius:25px;
-}
+/*Questionare*/
+	.questions{
+		background-color: #FFFFFF;
+		color: #000000;
+		text-align: center;
+		height: 500;
+		postion: absolute;
+		left: 20px; {{-- 20px from left of insideBigWhite --}}
+		top: 25px; {{-- 25px from top of insideBigWhite --}}
+	}
+
+	.col-centered{
+	    float: none;
+	    margin: 0 auto;
+	    width: 50%;
+	}
+
+	.QuestionnaireWhite {
+		background-color:#FFFFFF;
+		height:1500px;
+		width:900px;
+		margin: 0 auto;
+		border:2px solid;
+		border-radius:25px;
+
+	}
+
+	.questionairedropbox{
+		background-color: #FFFFFF;
+		color: #000000;
+		text-align: left;
+		height: 500;
+		postion: absolute;
+		left: 20px; {{-- 20px from left of insideBigWhite --}}
+		top: 30px; {{-- 25px from top of insideBigWhite --}}
+	}
+
+	.linkNextQ {
+		background-color: #FFFFFF;
+		height: 50px;
+		width: 200px;
+		 
+		left: 50px; {{-- 50px from left of questions --}}
+		top: 600px; {{-- 600px from top of questions --}}
+		
+	}
+/*----------------------------*/
+
+/* Admin Users */
+
+	.gamecock-table {
+		color: white;
+		background-color: #73000A;
+		border-color: white;
+	}
+	.gamecock-table th{
+		background-color: black;
+	}
+
+	.table-white-space {
+		background-color: white;
+	}
+
+	.table-btn-top-offset {
+		margin-top: 0.5em;
+	}
+
+	.table-btn-bottom-offset {
+		margin-bottom: 0.5em;
+	}
+
+	.initiallyHidden { display: none; }
+
+/*----------------------------*/
+/* Misc & Unordered */
+
+	.whitebox{
+		background-color:#FFFFFF;
+		height:600px;
+		width:900px;	
+		margin: 0 auto;
+		border:2px solid;
+		border-radius:25px;
+	}
+
+	.blackbox{
+	 	background-color:#FFFFFF;
+	 	height:400px;
+	 	width:700px;
+	 	border:2px solid black;
+	 	margin: 125px;
+	}
 
 
-	a.blue:link {color:#0000FF}      /* unvisited link color blue */
-    a.blue:visited {color:#0000FF}  /* visited link color blue*/
-    a.blue:hover {color:rgb(95,87,79);}  /* mouse over link color Pluff mud*/
-    a.blue:focus {color:rgb(95,87,79);}  /* link of focus color Pluff mud*/
-    a.blue:active {color:rgb(178,180,179);}  /* selected link color State House Gray*/
 
-.account-box
-{
-    border: 2px solid rgba(153, 153, 153, 0.75);
-    border-radius: 2px;
-    -moz-border-radius: 2px;
-    -webkit-border-radius: 2px;
-    -khtml-border-radius: 2px;
-    -o-border-radius: 2px;
-    z-index: 3;
-    font-size: 13px !important;
-    font-family: "Helvetica Neue" ,Helvetica,Arial,sans-serif;
-    background-color: #ffffff;
-    padding: 20px;
-}
 
-.logo
-{
-    width: 138px;
-    height: 30px;
-    text-align: center;
-    margin: 10px 0px 27px 40px;
-    background-position: 0px -4px;
-    position: relative;
-}
 
-.forgotLnk
-{
-    margin-top: 10px;
-    display: block;
-}
 
-.purple-bg
-{
-    background-color: #6E329D;
-    color: #fff;
-}
-.or-box
-{
-    position: relative;
-    border-top: 1px solid #dfdfdf;
-    padding-top: 20px;
-    margin-top:20px;
-}
-.or
-{
-    color: #666666;
-    background-color: #ffffff;
-    position: absolute;
-    text-align: center;
-    top: -8px;
-    width: 40px;
-    left: 90px;
-}
-.account-box .btn:hover
-{
-    color: #fff;
-}
-.btn-facebook
-{
-    background-color: #3F639E;
-    color: #fff;
-    font-weight:bold;
-}
-.btn-google
-{
-    background-color: #454545;
-    color: #fff;
-    font-weight:bold;
-}
+
+	 a.black:link {color:#000000}      /* unvisited link color blue */
+	 a.black:visited {color:#000000}  /* visited link color blue*/
+	 a.black:hover {color:rgb(95,87,79);}  /* mouse over link color Pluff mud*/
+	 a.black:focus {color:rgb(95,87,79);}  /* link of focus color Pluff mud*/
+	 a.black:active {color:rgb(178,180,179);}  /* selected link color State House Gray*/
+
+	 a.blue:link {color:#0000FF}      /* unvisited link color blue */
+	 a.blue:visited {color:#0000FF}  /* visited link color blue*/
+	 a.blue:hover {color:rgb(95,87,79);}  /* mouse over link color Pluff mud*/
+	 a.blue:focus {color:rgb(95,87,79);}  /* link of focus color Pluff mud*/
+	 a.blue:active {color:rgb(178,180,179);}  /* selected link color State House Gray*/
+
+	.account-box
+	{
+	    border: 2px solid rgba(153, 153, 153, 0.75);
+	    border-radius: 2px;
+	    -moz-border-radius: 2px;
+	    -webkit-border-radius: 2px;
+	    -khtml-border-radius: 2px;
+	    -o-border-radius: 2px;
+	    z-index: 3;
+	    font-size: 13px !important;
+	    font-family: "Helvetica Neue" ,Helvetica,Arial,sans-serif;
+	    background-color: #ffffff;
+	    padding: 20px;
+	}
+
+	.logo
+	{
+	    width: 138px;
+	    height: 30px;
+	    text-align: center;
+	    margin: 10px 0px 27px 40px;
+	    background-position: 0px -4px;
+	    position: relative;
+	}
+
+	.forgotLnk
+	{
+	    margin-top: 10px;
+	    display: block;
+	    text-color: black;
+	}
+
+	.purple-bg
+	{
+	    background-color: #6E329D;
+	    color: #fff;
+	}
+
+	.or-box
+	{
+	    position: relative;
+	    border-top: 1px solid #dfdfdf;
+	    padding-top: 20px;
+	    margin-top:20px;
+	}
+
+	.or
+	{
+	    color: #666666;
+	    background-color: #ffffff;
+	    position: absolute;
+	    text-align: center;
+	    top: -8px;
+	    width: 40px;
+	    left: 90px;
+	}
+
+	.account-box .btn:hover
+	{
+	    color: #fff;
+	}
+
+	.btn-facebook
+	{
+	    background-color: #3F639E;
+	    color: #fff;
+	    font-weight:bold;
+	}
+
+	.btn-google
+	{
+	    background-color: #454545;
+	    color: #fff;
+	    font-weight:bold;
+	}
+
+	.createQuesForm
+	{
+		width:500px;
+	}
+
+	header{
+	    margin-right: auto;
+	    margin-left: auto;
+	}
+
+	body {
+	    background-color: #73000A;
+	    color: #FFFFFF;
+	    text-align: center;
+	    margin-right: auto;
+	    margin-left: auto;
+	}
+
+	.User-Form {
+		background-color:#FFFFFF;
+		height:615px;
+		width:900px;
+		margin: 0 auto;
+		border:2px solid;
+		border-radius:25px;
+		padding: 5%;
+		color: black;
+	}
+/*-----------------------------*/
+

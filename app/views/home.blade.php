@@ -7,42 +7,39 @@
 
 @stop
 @section('header')
-<h1>Capstone Connect</h1>
+Capstone Connect
 @stop
 @section('content')
+<div class = "row">
+	<div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-4 col-lg-4" style = "background-color: #73000A">
+		<h3>Announcements</h3>
+		
+		<div class="InsideAnnouncement">
+  			<?php
+  				$mostRecentDate = Announcement::max('created_at');
+  				$announce = Announcement::where('created_at', $mostRecentDate)->first();
+  			?>
 
+  			@if($announce != null)
+  				<p1>
+  					{{ $announce->announcement }}
+  				</p1>
+  			@endif
 
-<div class="BigWhite">
- <div class="Announcements">
-
- <h>
- Announcements
- </h>
-<div class="InsideAnnouncement">
-  <h>
-  Here
-  </h>
-  </div>
- </div>
-  
-<div class="RecentActivity">
-<h>
-Recent Activity
-</h>
-<div class="InsideRecentActivity">
-<h>
-Activity here!
-</h>
+  		</div>
+  	</div>
+ 	<div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-4 col-md-offset-2 col-lg-4" style = "background-color: #73000A">
+		<h3>Recent Activity</h3>
+		
+		<div class="InsideRecentActivity">
+  			<p1>
+  				Need another function here
+  			</p1>			
+  		</div>
+ 	</div>
+	
 </div>
- </div>
- <div class="Calendar">
-<iframe src="https://www.google.com/calendar/embed?src=seanfrankett%40gmail.com&ctz=America/New_York" style="border: 20" width="490" height="320" frameborder="0" scrolling="no"></iframe>
-<h>
-Calendar
-</h>
- </div>
-
-</div>  
+	
 
 
 @stop

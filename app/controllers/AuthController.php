@@ -8,8 +8,7 @@ class AuthController extends BaseController {
          */
         public function getLogin()
         {
-                return View::make('login');
-
+            return View::make('login');
         }
  
         /**
@@ -36,13 +35,20 @@ class AuthController extends BaseController {
                 //Check $credentials against $rules
                 if ($validator->fails())
                 {
-                    return Redirect::to('login')->withErrors($validator);
+                    return Redirect::to('login')->withErrors($validator)->withInput();
                 }
 
                 try
                 {
-                    $user = Sentry::authenticateAndRemember($credentials, false);
- 
+                    $rememberMe = Input::get('remember');
+                    $user = Sentry::authenticate($credentials, $rememberMe);
+
+                    //if admin logs in
+                    if (  Sentry::getUser()->hasAnyAccess(array('admin')) )
+                    {   //go to admin page
+                        return Redirect::to('admin_users');
+                    }
+
                     if ($user)
                     {
                         //go home
@@ -80,8 +86,8 @@ class AuthController extends BaseController {
         public function getLogout()
         {
                 Sentry::logout();
- 
-                return Redirect::to('login');
+                Session::flash('loginError', 'You have successfully logged out' );
+                return Redirect::to('login'); 
         }
- 
 }
+ 

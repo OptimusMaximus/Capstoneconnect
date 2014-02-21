@@ -5,25 +5,18 @@
 @stop
 
 @section('header')
-<h1>Capstone Connect</h1>
+<h1><b>Capstone Connect</b></h1>
 @stop
 
 @section('styles')
-.whitebox {
-  background-color:#FFFFFF;
-  width:500px;
-  height:auto;
-  margin: 0 auto;
-  color:black;
-  border:2px solid;
-  border-radius:25px;
-}
 @stop
 
 @section('content')
-  <div class ="whitebox">
-    <p></p>
-    {{ Form::open(array('url' => 'login')) }}
+  <div class = "Login container text-left" >
+    {{ Form::open(array('url'   => 'login', 
+                        'class' => 'form-horizontal',
+                        'role'  => 'form')) 
+    }}
       
       <!-- login errors from Sentry -->
       @if (Session::get('loginError'))
@@ -40,17 +33,37 @@
         </div>
       @endif
 
-      <p>
-        {{ Form::label('email', 'Email Address') }}
-        {{ Form::text('email', Input::old('email'), array('placeholder' => 'admin@sc.edu')) }}
-      </p>
+      <div class="form-group">
+        {{ Form::label('email', 'Email', array('class' => 'col-sm-2 control-label')) }}
+        <div class="col-sm-10">
+          {{ Form::email('email', Input::old('email'), array('placeholder' => 'admin@sc.edu', 
+                                                             'class'       => 'form-control')) }}
+        </div>
+      </div>
 
-      <p>
-        {{ Form::label('password', 'Password') }}
-        {{ Form::password('password') }}
-      </p>
+      <div class="form-group">
+        {{ Form::label('password', 'Password', array('class' => 'col-sm-2 control-label')) }}
+        <div class="col-sm-10">
+            {{ Form::password('password', array('class' => 'form-control')) }}
+        </div>
 
-      <p>{{ Form::submit('Login') }}</p>
+      </div>
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-8">
+            {{ Form::submit('login', array('class' => 'btn cc-btn-primary')) }}
+            <div class="checkbox-inline cc-remember-box">
+                <label>
+                {{ Form::checkbox('remember', 'First Choice', false, array('id' => 'remember')) }} Remember me
+                </label>
+            </div>
+        </div>
+    </div>
     {{ Form::close() }}
+    
+    <div class="row">
+        {{ HTML::link('reset','Reset Password', array('class' => 'blue col-sm-offset-2 col-sm-5')) }}
+    </div>
+    
+    
   </div>
 @stop
