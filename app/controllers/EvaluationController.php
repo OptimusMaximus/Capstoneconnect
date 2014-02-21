@@ -42,7 +42,7 @@ class EvaluationController extends \BaseController {
 		    'q10' => $_POST["q10"]
 		));
 
-		return Redirect::to('admin_evals');
+		return Redirect::to('admin_users');
 	}
 
 	/**
