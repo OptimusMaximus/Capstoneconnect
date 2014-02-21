@@ -47,12 +47,28 @@ class ExportCSVController extends BaseController {
 
 		echo $output;
 		exit;*/
-
+		return View::make('download_csv');
+		/*
 		$table = ExportCSV::all();
-		$file = fopen('Downloads/ExportedData.csv', 'w');
+		$file = fopen('Downloads/ExportedData.csv', 'w'); //Place the csv file in downloads
+		foreach($table as $row) {
+			fputcsv($file, array($row));
+		}
+		fclose($file);*/
+	}
+
+	public function doneExportCSV()
+	{
+
+		
+		$table = ExportCSV::all();
+		$file = fopen('Downloads/ExportedData.csv', 'w'); //Place the csv file in downloads
 		foreach($table as $row) {
 			fputcsv($file, array($row));
 		}
 		fclose($file);
+
+		Session::flash('screenAnnounce', 'You have successfully downloaded the CSV file!' );
+		return Redirect::to('download_csv');
 	}
 }

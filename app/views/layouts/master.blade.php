@@ -79,11 +79,14 @@
                                         echo( HTML::linkRoute('admin_evals', 'Evaluations') );
                                     echo('</li>');
                                     echo('<li>');
-
                                         echo( HTML::linkRoute('allgrades', 'All Grades') );
                                     echo('</li>');
-
+                                    echo('<li>');
                                         echo( HTML::linkRoute('create_announcement', 'Create Announcement'));
+                                    echo('</li>');
+                                    echo('<li>');
+                                        echo( HTML::linkRoute('download_csv', 'Download CSV File'));
+                                    echo('</li>');
 
                             echo(  '</ul>  
                                 </li>'

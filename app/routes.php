@@ -53,6 +53,9 @@ Route::group(array('prefix' => '', 'before' => 'authAdmin'), function()
 		Route::get('/admin_evals/{token}', array('uses' => 'AdminToolsController@getUserEvals', 'as' => 'admin_user_evals'));
 		Route::get('/create_announcement', array('uses' => 'AnnouncementController@makeAnnouncement', 'as' => 'create_announcement'));
 		Route::post('/create_announcement', array('uses' => 'AnnouncementController@store', 'as' => 'announcement.store'));
+		Route::get('/download_csv', array('uses' => 'ExportCSVController@export', 'as' => 'download_csv'));
+		Route::post('/download_csv', array('uses' => 'ExportCSVController@doneExportCSV'));
+
 });
 
 /*Route::get('/test', function()
@@ -62,8 +65,6 @@ Route::group(array('prefix' => '', 'before' => 'authAdmin'), function()
     return View::make('/test')->with('users', $users);
 
 });*/
-
-Route::get('/test', array('uses' => 'ExportCSVController@export'));
 
 
 //Route::post('/user/new', 'UserController@create');

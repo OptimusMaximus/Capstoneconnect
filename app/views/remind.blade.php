@@ -5,7 +5,7 @@
 @stop
 
 @section('header')
-Capstone Connect
+<h1><b>Capstone Connect</b></h1>
 @stop
 
 @section('styles')
@@ -22,7 +22,7 @@ Capstone Connect
  
 	{{ Form::open(array('route' => 'request')) }}
 	@if (!Session::has('success'))
- 	Enter sc.edu email address associated with your account to reset password
+ 	  <p> Enter sc.edu email address associated with your account to reset password </p>
  	
   	<p>{{ Form::label('email', 'Email') }}
   	{{ Form::text('email', Input::old('email'), array('placeholder' => 'admin@sc.edu')) }}	

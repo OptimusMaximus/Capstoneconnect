@@ -5,7 +5,7 @@
 @stop
 
 @section('header')
-Capstone Connect
+<h1><b>Capstone Connect</b></h1>
 @stop
 
 @section('styles')
