@@ -15,7 +15,7 @@ Create Annoucements
 
         <!-- Post message if successful -->
         @if (Session::get('screenAnnounce'))
-            <div class = "alert alert-danger"> {{ Session::get('screenAnnounce') }} </div>
+            <div class = "alert alert-success"> {{ Session::get('screenAnnounce') }} </div>
          @endif
 
         <div class="form-group col-centered">                  

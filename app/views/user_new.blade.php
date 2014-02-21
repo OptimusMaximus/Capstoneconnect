@@ -75,7 +75,7 @@ User Management
             {{ Form::select('group', array('U' => 'User', 'A' => 'Admin'), 'U', array('class' => 'form-control'))}}
         </div>
     </div>
-    <div class="form group">
+    <div class="form-group">
         <div class="col-sm-offset-2 col-sm-10">
             {{ Form::submit('Add User', array('class'=>'btn btn-default pull-left'))}}
         </div>

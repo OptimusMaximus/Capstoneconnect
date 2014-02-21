@@ -19,13 +19,13 @@
             @yield('styles')
         </style>
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-        <script src="js/jquery-2.0.3.js"></script>
+        {{ HTML::script('js/jquery-2.0.3.js') }}
         <!-- Include all compiled plugins (below), or include individual files as needed -->
-        <script src="js/bootstrap.js"></script>
+        {{ HTML::script('js/bootstrap.js') }}
         @yield('head')
     </head>
 
-    <nav class="navbar navbar-default" role="navigation">
+    <nav class="cc-navbar navbar navbar-default" role="navigation">
       <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
@@ -43,17 +43,26 @@
             <ul class="nav navbar-nav">
                 <li>{{ HTML::linkRoute('home', 'Home') }}</li>
                 <li>{{ HTML::linkRoute('questionnaire', 'Questionnaire') }}</li>
-                <li>{{ HTML::linkRoute('mygrades', 'My Grades') }}</li>
-               
+                
                 <?php 
                     try
                     {
                         // Find the user using the user id
                         $user = Sentry::getUser();
+                        $NOTadmin = Sentry::findGroupByName('Users');
+
 
                         // Find the Administrator group
                         $admin = Sentry::findGroupByName('Admin');
 
+
+
+                             if ($user->inGroup($NOTadmin))
+                        {
+                        echo('<li>');
+                            echo (HTML::linkRoute('mygrades', 'My Grades') );
+                            echo('</li>');
+                        }
                         // Check if the user is in the administrator group
                         if ($user->inGroup($admin))
                         {
@@ -66,9 +75,9 @@
                                     echo('<li>');  
                                         echo( HTML::linkRoute('admin_users', 'User/Project') );
                                     echo('</li>');
-                                    //echo('<li>');
-                                    //    echo( HTML::linkRoute('admin_evals', 'Evaluations') );
-                                    //echo('</li>');
+                                    echo('<li>');
+                                        echo( HTML::linkRoute('admin_evals', 'Evaluations') );
+                                    echo('</li>');
                                     echo('<li>');
 
                                         echo( HTML::linkRoute('allgrades', 'All Grades') );
@@ -106,7 +115,7 @@
     </nav>
 
     <body>
-        <h1><b>@yield('header')</b></h1> 
+        <h1 class="master-header"><b>@yield('header')</b></h1> 
         <div class="BigWhite container">
             @yield('content')
         </div>
