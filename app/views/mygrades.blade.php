@@ -16,7 +16,7 @@ My Grades
 
 	
     <div class = QuestionnaireWhite>
-You are logged in as: 
+User: 
 
 
 <?php $user = Sentry::getUser();
@@ -28,16 +28,15 @@ echo $user['email'];
 
 <?php 
 
-$answers = DB::table('answers')->join('evaluations', 'answers.eid', '=', 'evaluations.id')->where('answered_about', '=', $user->id)->distinct()->get();
+$answers = DB::table('answers')->join('evaluations', 'answers.eid', '=', 'evaluations.id')->where('answered_about', '=', $user['id'])->get();
 //$sql = "select avg(ans1+ans2+ans3+ans4+ans5+ans6+ans7+ans8+ans9+ans10) from answers a, evaluations e where a.eid=e.id AND a.answered_about=$user";
-
 
 ?>
 
-<table class="table table-bordered table-groups pull-right">
-<tr bgcolor="Black">
-                       <td><font color = 'White'>First Name</td>
-                       <td><font color = 'White'>Last Name</td>
+      <table class="table table-bordered table-groups pull-right">
+            <tr bgcolor="Black">
+                       <td><font color = 'White'>Evaluation #</td>
+                       <td><font color = 'White'>Created at</td>
                        <td><font color = 'White'>Average Evaluation Grade</td>
                        </font>
                        </tr>
@@ -45,37 +44,36 @@ $answers = DB::table('answers')->join('evaluations', 'answers.eid', '=', 'evalua
 @foreach ($answers as $answer)
 <?php
 
+$submitted_at = DB::table('answers')->select('created_at')->where('id','=', $answer->id)->get();
+$submitted_time = $submitted_at[0];
 
-$a1 = DB::table('answers')->where('answered_about', '=', $user->id)->avg('ans1');
-$a2 = DB::table('answers')->where('answered_about', '=', $user->id)->avg('ans2');
-$a3 = DB::table('answers')->where('answered_about', '=', $user->id)->avg('ans3');
-$a4 = DB::table('answers')->where('answered_about', '=', $user->id)->avg('ans4');
-$a5 = DB::table('answers')->where('answered_about', '=', $user->id)->avg('ans5');
-$a6 = DB::table('answers')->where('answered_about', '=', $user->id)->avg('ans6');
-$a7 = DB::table('answers')->where('answered_about', '=', $user->id)->avg('ans7');
-$a8 = DB::table('answers')->where('answered_about', '=', $user->id)->avg('ans8');
-$a9 = DB::table('answers')->where('answered_about', '=', $user->id)->avg('ans9');
-$a10 = DB::table('answers')->where('answered_about', '=', $user->id)->avg('ans10');
-$avg = ($a1 + $a2 + $a3 + $a4 + $a5 + $a6 + $a7  + $a8  + $a9 + $a10)/10;
+
+$avg = ($answer->ans1
+       +$answer->ans2
+       +$answer->ans3
+       +$answer->ans4
+       +$answer->ans5
+       +$answer->ans6
+       +$answer->ans7
+       +$answer->ans8
+       +$answer->ans9
+       +$answer->ans10)/10;
+
 ?>
    <tr bgcolor="#73000A">
-                            <td><font color = 'White'>{{$user->first_name}}</td>
-                            <td><font color = 'White'>{{$user->last_name}}</td>
-                            <td><font color = 'White'>{{round($avg,2)}}/10 or {{round($avg*10,2)}}%</td>
+                            <td><font color = 'White'>{{$answer->eid}}</td>
+                            <td><font color = 'White'>{{$submitted_time->created_at}}</td>
+                            <td><font color = 'White'>{{$avg}}</td>
                         </tr>
 @endforeach  
 
 
 
 
-<?php
-?>
-</table>
+        </table>
   
-  <table class="table">
-
-  </table>
+ 
+      </div>
 </div>
-    </div>
     
 @stop
