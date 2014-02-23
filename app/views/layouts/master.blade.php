@@ -76,7 +76,7 @@
                                         echo( HTML::linkRoute('admin_users', 'User/Project') );
                                     echo('</li>');
                                     echo('<li>');
-                                        echo( HTML::linkRoute('admin_evals', 'Evaluations') );
+                                        echo( HTML::linkRoute('admin_evals', 'Create Evaluation') );
                                     echo('</li>');
                                     echo('<li>');
                                         echo( HTML::linkRoute('allgrades', 'All Grades') );
