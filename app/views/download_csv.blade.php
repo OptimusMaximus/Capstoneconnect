@@ -9,18 +9,31 @@ Download CSV File
 @stop
 
 @section('content')
-    {{ Form::open(        
-         array('url' => URL::route('download_csv'),
+
+    <?php
+        $answers = ExportCSV::all();
+    ?>
+
+    {{ Form::open( array('url' => URL::route('download_csv', $answers),
                     'role' => 'form'))}}
 
         <!-- Post message if successful -->
         @if (Session::get('screenAnnounce'))
             <div class = "alert alert-success"> {{ Session::get('screenAnnounce') }} </div>
-         @endif
+        @endif
 
-        <div class="form group">
-            {{ Form::submit('Download CSV', array('class'=>'btn btn-default')) }}
-        </div>
+        
+        
+        @if($answers != null)
+            @foreach($answers as $row)
+               <?php $eid = ExportCSV::find($row->eid); ?>
+                <div class="form group">
+                    {{ Form::submit("Download CSV with Evaluation ID #$eid->eid", array('class'=>'btn btn-default')) }}
+                </div>
+                </br>
+            @endforeach
+        @endif
+
     {{ Form::close() }}
 
 
