@@ -12,30 +12,31 @@ Download CSV File
 
     <?php
         $answers = ExportCSV::all();
+        //Get the evaluation id number
+        $evalId = $answers->lists('eid', 'eid');        
     ?>
 
-    {{ Form::open( array('url' => URL::route('download_csv', $answers),
-                    'role' => 'form'))}}
+    <!-- Post message if successful -->
+    @if (Session::get('screenAnnounce'))
+        <div class = "alert alert-success"> {{ Session::get('screenAnnounce') }} </div>
+    @endif
 
-        <!-- Post message if successful -->
-        @if (Session::get('screenAnnounce'))
-            <div class = "alert alert-success"> {{ Session::get('screenAnnounce') }} </div>
-        @endif
+    @if($answers != null)
+        @for($i = 1; $i <= count($evalId); $i++)
 
-        
-        
-        @if($answers != null)
-            @foreach($answers as $row)
-               <?php $eid = ExportCSV::find($row->eid); ?>
-                <div class="form group">
-                    {{ Form::submit("Download CSV with Evaluation ID #$eid->eid", array('class'=>'btn btn-default')) }}
-                </div>
-                </br>
-            @endforeach
-        @endif
+            {{ Form::open(array('route' => array('download_csv'))) }}
 
-    {{ Form::close() }}
+            <!-- eid is variable passed to controller, eid = $i -->
+            {{ Form::hidden('eid', $i) }}            
+      
+            <div class="form group">
+                {{ Form::submit("Download CSV File with Evaluation ID #$evalId[$i]", array('class'=>'btn btn-default')) }}
+            </div>
+            </br>        
 
+        {{ Form::close() }}
+        @endfor
+    @endif
 
 
 @stop
