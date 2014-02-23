@@ -32,7 +32,7 @@ $answers = DB::table('answers')->join('evaluations', 'answers.eid', '=', 'evalua
 //$sql = "select avg(ans1+ans2+ans3+ans4+ans5+ans6+ans7+ans8+ans9+ans10) from answers a, evaluations e where a.eid=e.id AND a.answered_about=$user";
 
 ?>
-
+@if ($answers != null)
       <table class="table table-bordered table-groups pull-right">
             <tr bgcolor="Black">
                        <td><font color = 'White'>Evaluation #</td>
@@ -66,6 +66,9 @@ $avg = ($answer->ans1
                             <td><font color = 'White'>{{$avg}}</td>
                         </tr>
 @endforeach  
+@else
+<p><font size = '5'>There are no evaluations filled out about you.</font></p>
+@endif
 
 
 

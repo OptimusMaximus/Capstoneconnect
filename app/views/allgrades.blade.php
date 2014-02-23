@@ -16,10 +16,10 @@
 
     <div class = QuestionnaireWhite>
 <?php $user = Sentry::getUser();
-echo $user['email'];
+//echo $user['email'];
 
 ?>
-
+<p><font size ='5'>Average Grade per User</font></p>
     <div class="table-responsive">
 <?php $users = User::all();
  $evalID = DB::table('evaluations')->lists('id', 'id');
