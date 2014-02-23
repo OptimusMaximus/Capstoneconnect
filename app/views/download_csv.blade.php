@@ -21,6 +21,10 @@ Download CSV File
         <div class = "alert alert-success"> {{ Session::get('screenAnnounce') }} </div>
     @endif
 
+    @if($evalId == null)
+        <p1> No evaluations have been completed yet.</p1>
+    @endif
+
     @if($answers != null)
         @for($i = 1; $i <= count($evalId); $i++)
 
