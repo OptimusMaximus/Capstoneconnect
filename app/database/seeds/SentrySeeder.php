@@ -220,7 +220,7 @@ class SentrySeeder extends Seeder {
         Sentry::getUserProvider()->create(array(
             'email'       => 'banner@sc.edu',
             'project_id'  => '3',
-            'password'    => 'hulk',
+            'password'    => 'hulksmash',
             'first_name'  => 'Bruce',
             'last_name'   => 'Banner',
             'activated'   => 1,
