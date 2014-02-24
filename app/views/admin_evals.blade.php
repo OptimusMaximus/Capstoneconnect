@@ -23,7 +23,7 @@ Capstone Connect
     ?>
     
     <p><b><font size ='6'>{{$answered_by_user}}</font></b></p>
-
+    @if ($answers != null)
     @foreach($answers as $answer)
         <?php 
 
@@ -82,8 +82,10 @@ Capstone Connect
         </table>
         <br /><br />
         @endforeach
-    
+        @else
+        <p>This user has no evaluations filled out about them.</p>
+        @endif
     <br><br>
-    {{ HTML::linkRoute('evaluation.create', 'Create New Evaluation', NULL, array('class' => 'btn btn-default')) }}
+    
 </div>
 @stop
