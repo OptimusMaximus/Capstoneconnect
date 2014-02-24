@@ -5,16 +5,18 @@
 @stop
 
 @section('header')
-Capstone Connect
+<h1><b>Capstone Connect</b></h1>
 @stop
 
 @section('styles')
 @stop
 
 @section('content')
-  <div class = Login >
-    <p></p>
-    {{ Form::open(array('url' => 'login')) }}
+  <div class = "Login container text-left" >
+    {{ Form::open(array('url'   => 'login', 
+                        'class' => 'form-horizontal',
+                        'role'  => 'form')) 
+    }}
       
       <!-- login errors from Sentry -->
       @if (Session::get('loginError'))
@@ -31,25 +33,41 @@ Capstone Connect
         </div>
       @endif
 
-      <p>
-        {{ Form::label('email', 'Email Address') }}
-        {{ Form::text('email', Input::old('email'), array('placeholder' => 'admin@sc.edu')) }}
-      </p>
+      <div class="form-group">
+        {{ Form::label('email', 'Email', array('class' => 'col-sm-2 control-label')) }}
+        <div class="col-sm-10">
+          {{ Form::email('email', Input::old('email'), array('placeholder' => 'admin@sc.edu', 
+                                                             'class'       => 'form-control')) }}
+        </div>
+      </div>
 
-      <p>
-        {{ Form::label('password', 'Password') }}
-        {{ Form::password('password') }}
-      </p>
-      <p>
-          <span class="login-checkbox">
-              <input id="remember" name="remember" type="checkbox" class="field login-checkbox" value="First Choice" tabindex="4" />
-              <label class="choice" for="remember">Keep me signed in</label>
-          </span>   
-      </p>
-      <p>{{ Form::submit('login') }}</p>
+      <div class="form-group">
+        {{ Form::label('password', 'Password', array('class' => 'col-sm-2 control-label')) }}
+        <div class="col-sm-10">
+            {{ Form::password('password', array('class' => 'form-control')) }}
+        </div>
+
+      </div>
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-8">
+            {{ Form::submit('login', array('class' => 'btn cc-btn-primary')) }}
+            <div class="checkbox-inline cc-remember-box">
+                <label>
+                {{ Form::checkbox('remember', 'First Choice', false, array('id' => 'remember')) }} Remember me
+                </label>
+            </div>
+        </div>
+    </div>
     {{ Form::close() }}
-    
-    {{ HTML::link('reset','Reset Password', array('class' => 'blue')) }}    
-    
+
+    <div class="row">
+        {{ HTML::link('reset','Reset Password', array('class' => 'blue col-sm-offset-2 col-sm-5')) }}
+    </div>
+    <div class="row">
+      <br>
+      <div class="text-center">
+        {{ HTML::link('register', 'Register!', array('class' => 'btn cc-btn-primary btn-lg')) }}
+      </div>
+    </div>    
   </div>
 @stop

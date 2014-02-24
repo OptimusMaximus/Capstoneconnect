@@ -46,7 +46,7 @@ class AuthController extends BaseController {
                     //if admin logs in
                     if (  Sentry::getUser()->hasAnyAccess(array('admin')) )
                     {   //go to admin page
-                        return Redirect::to('admin_evals');
+                        return Redirect::to('admin_users');
                     }
 
                     if ($user)
@@ -88,6 +88,37 @@ class AuthController extends BaseController {
                 Sentry::logout();
                 Session::flash('loginError', 'You have successfully logged out' );
                 return Redirect::to('login'); 
+        }
+
+        /**
+         *Register User
+         *@return view
+         */
+        public function showRegister()
+        {
+            return View::make('register');
+        }
+
+        /**
+         *Activate newly registered user or reply
+         *that the user isn't in the class.
+         *@return view
+         */
+        pubilc function activateUser() 
+        {
+            $user = User::where('email','=',$_POST["email"])->where('activated','=',false)->get();
+
+            if(is_null($user))
+            {
+                Session::flash('registerError', 'Either your account is already active or your email is not in the capstone email list.' );
+                return Redirect::to('register')
+            }
+            else
+            {
+                $user->password = $_POST["password"];
+                $user->activated = true;
+                $user->save();
+            }
         }
 }
  

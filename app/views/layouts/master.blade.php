@@ -19,13 +19,13 @@
             @yield('styles')
         </style>
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-        <script src="js/jquery-2.0.3.js"></script>
+        {{ HTML::script('js/jquery-2.0.3.js') }}
         <!-- Include all compiled plugins (below), or include individual files as needed -->
-        <script src="js/bootstrap.js"></script>
+        {{ HTML::script('js/bootstrap.js') }}
         @yield('head')
     </head>
 
-    <nav class="navbar navbar-default" role="navigation">
+    <nav class="cc-navbar navbar navbar-default" role="navigation">
       <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
@@ -44,7 +44,7 @@
                 <li>{{ HTML::linkRoute('home', 'Home') }}</li>
                 <li>{{ HTML::linkRoute('questionnaire', 'Questionnaire') }}</li>
                 <li>{{ HTML::linkRoute('mygrades', 'My Grades') }}</li>
-                <li>{{ HTML::linkRoute('help', 'Help') }}</li>
+               
                 <?php 
                     try
                     {
@@ -66,11 +66,16 @@
                                     echo('<li>');  
                                         echo( HTML::linkRoute('admin_users', 'User/Project') );
                                     echo('</li>');
+                                    //echo('<li>');
+                                    //    echo( HTML::linkRoute('admin_evals', 'Evaluations') );
+                                    //echo('</li>');
                                     echo('<li>');
-                                        echo( HTML::linkRoute('admin_evals', 'Evaluations') );
+
+                                        echo( HTML::linkRoute('allgrades', 'All Grades') );
                                     echo('</li>');
-                                    echo('<li>');
+
                                         echo( HTML::linkRoute('create_announcement', 'Create Announcement'));
+
                             echo(  '</ul>  
                                 </li>'
                             );
@@ -92,6 +97,7 @@
                         <?php $user = Sentry::getUser(); echo $user['email'];?> <b class="caret bottom-up"></b>
                     </a>  
                     <ul class="dropdown-menu bottom-up">  
+                      <li>{{ HTML::linkRoute('help', 'Help') }}</li>
                         <li>{{ HTML::linkRoute('logout', 'Logout') }}</li>  
                     </ul>  
                 </li> 
@@ -100,7 +106,7 @@
     </nav>
 
     <body>
-        <h1><b>@yield('header')</b></h1> 
+        <h1 class="master-header"><b>@yield('header')</b></h1> 
         <div class="BigWhite container">
             @yield('content')
         </div>

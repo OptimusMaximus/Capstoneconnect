@@ -180,16 +180,6 @@
 		top: 30px; {{-- 25px from top of insideBigWhite --}}
 	}
 
-	.radio-inline {
-		width:900px;
-	}
-
-	.form-control {
-		width:500px;
-		margin:auto;
-		display:inline;
-	}
-
 	.linkNextQ {
 		background-color: #FFFFFF;
 		height: 50px;
@@ -198,13 +188,14 @@
 		top: 600px; {{-- 600px from top of questions --}}
 	}
 	.Login {
-  		background-color:#FFFFFFFF;
-  		width:auto;
-  		height:auto;
-  		margin: 0 auto;
-  		color:black;
-  		border:2px solid;
-  		border-radius:25px;
+		background-color:#FFFFFF;
+		height: auto;
+		width: 75%;
+		margin: 3% auto 0%;
+		border:2px solid;
+		border-radius:25px;
+		padding: 3%;
+		color: #000;
 	}
 
 

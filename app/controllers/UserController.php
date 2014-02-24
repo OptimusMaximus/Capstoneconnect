@@ -61,7 +61,6 @@ class UserController extends \BaseController {
 				'last_name' => $_POST["last_name"],
 				'activated' => false,
 				'permissions'=> $permissions,
-				'password' => $_POST["password"],
 			));
 		}
 		catch (Cartalyst\Sentry\Users\UserExistsException $e)
