@@ -19,11 +19,12 @@ Project Management
 <h1><u>Creat New Group</u></h1>
 
 {{ Form::open(
-    array('url' => URL::route('project.store'),
+    array('url' => URL::route('project.update', $id),
 
                 'class' => 'form-horizontal',
 
-                'role' => 'form'))}}
+                'role' => 'form',
+                'method' => 'patch'))}}
 
     <div class="form-group">  
         {{ Form::label('project_name', 'Project Name:', 
@@ -32,7 +33,7 @@ Project Management
 
         )}}
         <div class="col-sm-5">
-            {{ Form::text('project_name', empty($project_name)? '' : $project_name, 
+            {{ Form::text('project_name', empty($name)? '' : $name, 
 
                 array('class' => 'form-control',
 
@@ -55,14 +56,13 @@ Project Management
                 array('class' => 'form-control',
 
                             'placeholder' => 'blah blah blah'
-
             ))}}
         </div>
     </div>
 
     <div class="form group">
         <div class="col-sm-offset-2 col-sm-10">
-            {{ Form::submit('Add Group', array('class'=>'btn btn-default pull-left'))}}
+            {{ Form::submit('Edit Group', array('class'=>'btn btn-default pull-left'))}}
         </div>
     </div>
 

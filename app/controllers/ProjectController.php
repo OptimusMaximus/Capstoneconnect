@@ -57,8 +57,7 @@ class ProjectController extends BaseController {
 	public function edit($id)
 	{
 		$project = Project::find($id);
-		return View::make('project', array('project_name' => $project->name,
-											'description' => $project->description));
+		return View::make('project', $project);
 	}
 
 	/**
@@ -69,7 +68,12 @@ class ProjectController extends BaseController {
 	 */
 	public function update($id)
 	{
-		//
+		$project = Project::find($id);
+
+		$project->name = $_POST["project_name"];
+		$project->description = $_POST["description"];
+		$project->save();
+		return Redirect::to('admin_users');
 	}
 
 	/**
