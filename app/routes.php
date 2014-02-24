@@ -25,6 +25,8 @@ Route::post('/reset', array('uses' => 'PasswordController@request', 'as' => 'req
 Route::get('/reset/{token}', array('uses' => 'PasswordController@reset','as' => 'reset'));
 Route::post('/reset/{token}', array('uses' => 'PasswordController@update','as' => 'update'));
 
+Route::get('/register', array('uses' => 'AuthController@showRegister'));
+Route::post('/register', array('uses' => 'AuthController@activateUser', 'as' => 'activate'));
 
 Route::group(array('prefix' => '', 'before' => 'auth'), function()
 {

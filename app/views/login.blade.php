@@ -33,6 +33,11 @@
         </div>
       @endif
 
+      <!-- successful registration -->
+      @if (Session::get('registerSuccess'))
+        <div class = "alert alert-success">{{ Session::get('registerSuccess') }}</div>
+      @endif
+
       <div class="form-group">
         {{ Form::label('email', 'Email', array('class' => 'col-sm-2 control-label')) }}
         <div class="col-sm-10">
@@ -59,11 +64,15 @@
         </div>
     </div>
     {{ Form::close() }}
-    
+
     <div class="row">
         {{ HTML::link('reset','Reset Password', array('class' => 'blue col-sm-offset-2 col-sm-5')) }}
     </div>
-    
-    
+    <div class="row">
+      <br>
+      <div class="text-center">
+        {{ HTML::link('register', 'Register!', array('class' => 'btn cc-btn-primary btn-lg')) }}
+      </div>
+    </div>    
   </div>
 @stop

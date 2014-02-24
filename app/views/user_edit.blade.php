@@ -80,6 +80,7 @@ User Management
             {{ Form::submit('Update', array('class'=>'btn btn-default pull-left'))}}
         </div>
     </div>
+    {{ Form::hidden('pid', $value) }}
 {{ Form::close() }}
 
 @stop

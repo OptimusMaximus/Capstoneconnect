@@ -10,7 +10,10 @@
 
 @section('content')
 <div class='LittleWhite container'>
-    {{ Form::open('url' => route('register.submit') array('role'=>'form', 'class'=>'form-horizontal')) }}
+    @if (Session::get('registerError'))
+        <div class = "alert alert-danger"> {{ Session::get('registerError') }} </div>
+    @endif
+    {{ Form::open(array('url' => route('activate'), 'role'=>'form', 'class'=>'form-horizontal')) }}
         <div class='form-group'>
             {{ Form::label('email', 'Email', array('class'=>'col-sm-3 control-label')) }}
             <div class='col-sm-6'>
