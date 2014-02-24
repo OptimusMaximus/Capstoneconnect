@@ -13,7 +13,7 @@ Download CSV File
     <?php
         $answers = ExportCSV::all();
         //Get the evaluation id number
-        $evalId = $answers->lists('eid', 'eid');        
+        $evalId = $answers->lists('eid', 'eid');       
     ?>
 
     <!-- Post message if successful -->
@@ -25,8 +25,9 @@ Download CSV File
         <p1> No evaluations have been completed yet.</p1>
     @endif
 
-    @if($answers != null)
-        @for($i = 1; $i <= count($evalId); $i++)
+    
+    @if($answers != null )
+        @for($i = 1; $i < count($evalId) + 1; $i++)
 
             {{ Form::open(array('route' => array('download_csv'))) }}
 
