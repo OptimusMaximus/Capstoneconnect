@@ -81,7 +81,12 @@ Admin Tools
                     @endforeach
                         <tr class="{{"child-".$project->id}} initiallyHidden">
                             <td class='table-white-space' colspan=3></td>
-                            <td class="text-center">{{HTML::linkRoute('user.create','add', NULL , array('class' => 'btn btn-sm btn-default'))}}</td>
+                            <td>
+                                {{ Form::open(array('route' => array('project.user.create', $project->id), 'method' => 'get')) }}
+                                {{ Form::submit('add', array('class'=>'btn btn-default btn-sm'))}}
+                                {{ Form::close() }}
+                            </td>
+                            <!-- <td class="text-center">{{HTML::linkRoute('user.create','add', NULL , array('class' => 'btn btn-sm btn-default'))}}</td> -->
                         </tr>
                 @endforeach
             @endif
