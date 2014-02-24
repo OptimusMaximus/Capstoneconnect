@@ -34,7 +34,7 @@ Capstone Connect
 		<div class="InsideRecentActivity">
         <?php
           $recent5 = DB::table('answers')->join('evaluations', 'answers.eid', '=', 'evaluations.id')
-                        ->join('users', 'answers.answered_about','=','users.id')->take(10)->get();
+                        ->join('users', 'answers.answered_about','=','users.id')->take(8)->get();
 
 
         ?>
