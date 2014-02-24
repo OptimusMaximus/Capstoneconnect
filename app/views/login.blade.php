@@ -33,6 +33,11 @@
         </div>
       @endif
 
+      <!-- successful registration -->
+      @if (Session::get('registerSuccess'))
+        <div class = "alert alert-success">{{ Session::get('registerSuccess') }}</div>
+      @endif
+
       <div class="form-group">
         {{ Form::label('email', 'Email', array('class' => 'col-sm-2 control-label')) }}
         <div class="col-sm-10">

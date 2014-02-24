@@ -57,16 +57,6 @@ User Management
             ))}}
         </div>
     </div>
-    @if(!isset($first_name))
-    <div class="form-group">  
-        {{ Form::label('password', 'Password: ', 
-            array('class' => 'col-sm-2 control-label')
-        )}}
-        <div class="col-sm-5">
-            {{ Form::password('password', array('class' => 'form-control')) }}
-        </div>
-    </div>
-    @endif
     <div class="form-group">  
         {{ Form::label('name', 'User Type:', 
             array('class' => 'col-sm-2 control-label')

@@ -60,6 +60,7 @@ class UserController extends \BaseController {
 				'first_name' => $_POST["first_name"],
 				'last_name' => $_POST["last_name"],
 				'activated' => false,
+				'password' => sha1(time()),
 				'permissions'=> $permissions,
 			));
 		}
