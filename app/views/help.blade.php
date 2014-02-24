@@ -12,6 +12,7 @@ FAQ
 @stop
 
 @section('content')
+  
 <div class="text-left">
 	<p> 
 		<b>Question:</b> Why Can't I See Any Of The Pages? </br> 			
@@ -44,5 +45,6 @@ FAQ
 		<b> "The story of civilization is, in a sense, the story of engineering - that long and arduous struggle to make the forces of nature work for man's good." </b>  L. Sprague de Camp </br>
 		<a href="https://sites.google.com/site/mechanicalengineershub/eng-quotes" style="color: #73000A">More Engineering Quotes</a>
 	</p>
+
 </div>
 @stop

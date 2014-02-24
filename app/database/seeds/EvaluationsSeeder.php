@@ -7,7 +7,7 @@ class EvaluationsSeeder extends Seeder {
 
 	
 
-	Evaluation::create(array(
+	/*Evaluation::create(array(
 			'q1' => 'What is your name?',
 		    'q2' => 'What is your quest?',
 		    'q3' => 'What is the favorite color?',
@@ -18,7 +18,7 @@ class EvaluationsSeeder extends Seeder {
 		    'q8' => 'What are the questions from?',
 		    'q9' => 'Did you enjoy thier source?',
 		    'q10' => 'Why are there ten questions?'
-		));
+		));*/
 	Evaluation::create(array(
 			'q1' => 'Did your member meet promptly?',
 		    'q2' => 'Did they do the tasks they were given?',

@@ -3,56 +3,37 @@
 class ExportCSVController extends BaseController {
 
 	public function export() {
-		// Database Connection
 
-		/*$host = "localhost";
-		$username = "root";
-		$password = "";
-		$database = "capstone_connect"; 
+		return View::make('download_csv');
 
-		$connection=mysqli_connect($host,$username,$password,$database); 
+	}
 
-		//echo mysql_error();
+	public function doneExportCSV() {
+		
+		$answers = ExportCSV::all();
 
-		// Fetch Record from Database
+		//Place the csv file in public/Downloads
+		$file = fopen('Downloads/ExportedData.csv', 'w'); 
 
-		$output = "";
-		//$table = "users"; // Enter Your Table Name 
-		$sql = 'select * from users';
-		$result = mysqli_query($sql, $connection);
-		$columns_total = mysql_num_fields($result);
+		//Header
+		fputcsv($file, array('Evaluation ID', 'First Name', 'Last Name', 'Answered By First Name', 'Answered By Last Name', 'Question 1', 'Question 2', 'Question 3', 
+			'Question 4', 'Question 5', 'Question 6', 'Question 7', 'Question 8', 'Question 9', 'Question 10'));
+		
+		//Get 'eid' variable from download_csv.blade view
+		$eid = Input::Get('eid');
 
-		// Get The Field Name
-
-		for ($i = 0; $i < $columns_total; $i++) {
-			$heading = mysql_field_name($result, $i);
-			$output .= '"'.$heading.'",';
-		}
-		$output .="\n";
-
-		// Get Records from the table
-
-		while ($row = mysql_fetch_array($result)) {
-			for ($i = 0; $i < $columns_total; $i++) {
-				$output .='"'.$row["$i"].'",';
+		foreach($answers as $row) {
+			if($row->eid == $eid) {
+				$user = User::find($row->answered_about);
+				$answeredBy = User::find($row->answered_by);
+				fputcsv($file, array($row->eid, $user->first_name, $user->last_name, $answeredBy->first_name, $answeredBy->last_name,
+					$row->ans1, $row->ans2, $row->ans3, $row->ans4, $row->ans5, $row->ans6, $row->ans7, $row->ans8, $row->ans9, $row->ans10));
 			}
-			$output .="\n";
 		}
-
-		// Download the file
-
-		$filename = "myFile.csv";
-		header('Content-type: application/csv');
-		header('Content-Disposition: attachment; filename='.$filename);
-
-		echo $output;
-		exit;*/
-
-		$table = ExportCSV::all();
-		$file = fopen('Downloads/ExportedData.csv', 'w');
-		foreach($table as $row) {
-			fputcsv($file, array($row));
-		}
+	
 		fclose($file);
+
+		Session::flash('screenAnnounce', "You have successfully downloaded Evaluation ID #$eid CSV file" );
+		return Redirect::to('download_csv');
 	}
 }

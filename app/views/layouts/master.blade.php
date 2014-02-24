@@ -35,25 +35,34 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href='home'>Capstone Connect</a>
+          <a class="navbar-brand" href='home'>Capstone Connect BETA</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="navbar-collapse">
             <ul class="nav navbar-nav">
                 <li>{{ HTML::linkRoute('home', 'Home') }}</li>
-                <li>{{ HTML::linkRoute('questionnaire', 'Questionnaire') }}</li>
-                <li>{{ HTML::linkRoute('mygrades', 'My Grades') }}</li>
-               
+                <li>{{ HTML::linkRoute('questionnaire', 'Evaluation') }}</li>
+                
                 <?php 
                     try
                     {
                         // Find the user using the user id
                         $user = Sentry::getUser();
+                        $NOTadmin = Sentry::findGroupByName('Users');
+
 
                         // Find the Administrator group
                         $admin = Sentry::findGroupByName('Admin');
 
+
+
+                             if ($user->inGroup($NOTadmin))
+                        {
+                        echo('<li>');
+                            echo (HTML::linkRoute('mygrades', 'My Grades') );
+                            echo('</li>');
+                        }
                         // Check if the user is in the administrator group
                         if ($user->inGroup($admin))
                         {
@@ -66,15 +75,18 @@
                                     echo('<li>');  
                                         echo( HTML::linkRoute('admin_users', 'User/Project') );
                                     echo('</li>');
-                                    //echo('<li>');
-                                    //    echo( HTML::linkRoute('admin_evals', 'Evaluations') );
-                                    //echo('</li>');
                                     echo('<li>');
-
+                                        echo( HTML::linkRoute('admin_evals', 'Evaluations') );
+                                    echo('</li>');
+                                    echo('<li>');
                                         echo( HTML::linkRoute('allgrades', 'All Grades') );
                                     echo('</li>');
-
+                                    echo('<li>');
                                         echo( HTML::linkRoute('create_announcement', 'Create Announcement'));
+                                    echo('</li>');
+                                    echo('<li>');
+                                        echo( HTML::linkRoute('download_csv', 'Download CSV File'));
+                                    echo('</li>');
 
                             echo(  '</ul>  
                                 </li>'
