@@ -13,7 +13,19 @@ class UserController extends \BaseController {
 	}
 
 	/**
-	 * Show the form for creating a new resource.
+	 * Show the form for creating a new user
+	 * belonging to a project of pid.
+	 *
+	 * @return Response
+	 */
+	public function projectCreate($pid)
+	{
+		return View::make('user_new', array('pid' => $pid));	
+	}
+
+
+	/**
+	 * Show the form for creating a new user.
 	 *
 	 * @return Response
 	 */
@@ -60,6 +72,7 @@ class UserController extends \BaseController {
 				'first_name' => $_POST["first_name"],
 				'last_name' => $_POST["last_name"],
 				'activated' => false,
+				'project_id' => $_POST["pid"],
 				'password' => sha1(time()),
 				'permissions'=> $permissions,
 			));
@@ -106,36 +119,36 @@ class UserController extends \BaseController {
 	{
 		$user = User::find($id);
 
-		$group=$_POST["group"];
-		switch ($group)
-		{
-			case "U":
-			  $user->permissions = array(
-			  	'user.create' => -1,
-                'user.delete' => -1,
-                'user.view'   => 1,
-                'user.update' => 1,
-                );
-			  break;
-			case "A":
-			  $user->permissions = array(
-                'user.create' => 1,
-                'user.delete' => 1,
-                'user.view'   => 1,
-                'user.update' => 1,
-                );
-			  break;
-			default:
-				echo "Group wan't specified.";
-			exit;
-		}
+		// $group=$_POST["group"];
+		// switch ($group)
+		// {
+		// 	case "U":
+		// 	  $user->permissions = array(
+		// 	  	'user.create' => -1,
+  //               'user.delete' => -1,
+  //               'user.view'   => 1,
+  //               'user.update' => 1,
+  //               );
+		// 	  break;
+		// 	case "A":
+		// 	  $user->permissions = array(
+  //               'user.create' => 1,
+  //               'user.delete' => 1,
+  //               'user.view'   => 1,
+  //               'user.update' => 1,
+  //               );
+		// 	  break;
+		// 	default:
+		// 		echo "Group wan't specified.";
+		// 	exit;
+		// }
 
 		$user->email = $_POST["email"];
 		$user->first_name = $_POST["first_name"];
 		$user->last_name = $_POST["last_name"];
 		$user->save();
 
-		return Redirect::to('user_edit');
+		return Redirect::to('admin_users');
 	}
 
 	/**

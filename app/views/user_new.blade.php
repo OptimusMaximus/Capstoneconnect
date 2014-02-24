@@ -57,6 +57,9 @@ User Management
             ))}}
         </div>
     </div>
+    @if(isset($pid))
+        {{ Form::hidden('pid',$pid) }}
+    @endif
     <div class="form-group">  
         {{ Form::label('name', 'User Type:', 
             array('class' => 'col-sm-2 control-label')
@@ -70,6 +73,7 @@ User Management
             {{ Form::submit('Add User', array('class'=>'btn btn-default pull-left'))}}
         </div>
     </div>
+
 {{ Form::close() }}
 
 @stop
