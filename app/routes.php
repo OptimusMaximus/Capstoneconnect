@@ -16,10 +16,6 @@ Route::get('/login', array('uses' => 'AuthController@getLogin'));  //, 'as' => '
 Route::post('/login', array('uses' => 'AuthController@postLogin', 'as' => 'login'));
 Route::get('/logout', array('uses' => 'AuthController@getLogout', 'as' => 'logout'));
 
-//Route::post('create', 'AdminToolsController@createQuestionnaire');
-//Route::post('submit', 'UserController@submitAnswers');
-//Route::get('getQuestions', 'UserController@getQuestions');
-
 Route::get('/reset', array('uses' => 'PasswordController@remind', 'as' => 'remind'));
 Route::post('/reset', array('uses' => 'PasswordController@request', 'as' => 'request'));
 Route::get('/reset/{token}', array('uses' => 'PasswordController@reset','as' => 'reset'));
@@ -61,16 +57,4 @@ Route::group(array('prefix' => '', 'before' => 'authAdmin'), function()
 
 });
 
-/*Route::get('/test', function()
-{
-    $users = User::all();
-
-    return View::make('/test')->with('users', $users);
-
-});*/
-
-
-//Route::post('/user/new', 'UserController@create');
-Route::post('/group/new', array('as' => 'newGroup', 'uses' => 'AdminToolsController@addGroup'));
 Route::post('/evaluation/new', array('as' => 'newEval', 'uses' => 'EvaluationController@store'));
-//Route::post('/answers', array('as' => 'submitAnswers' 'uses' => 'UserController@submitAnswers'));
