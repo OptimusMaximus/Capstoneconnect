@@ -19,12 +19,7 @@ class ProjectController extends BaseController {
 	 */
 	public function create()
 	{
-		$group = Project::create(array(
-			'name' => $_POST["group_name"],
-			'description' => $_POST["description"]
-		));
-
-		return Redirect::to('admin_users');
+		Return View::make('project_new');
 	}
 
 	/**
@@ -34,7 +29,8 @@ class ProjectController extends BaseController {
 	 */
 	public function store()
 	{
-		//
+		Project::create(array('name' => $_POST['project_name'], 'description' => $_POST['description']));
+		Redirect::to('admin_users');
 	}
 
 	/**
@@ -57,7 +53,7 @@ class ProjectController extends BaseController {
 	public function edit($id)
 	{
 		$project = Project::find($id);
-		return View::make('project', $project);
+		return View::make('project_edit', $project);
 	}
 
 	/**

@@ -30,7 +30,7 @@ Admin Tools
 
 
 @section('content')
-<div id="manage" class="tab-pane active">
+<div class="table-responsive">
     <table class="table gamecock-table">
         <thead>
             <tr>
@@ -91,6 +91,12 @@ Admin Tools
                 @endforeach
             @endif
         </tbody>
+        <tr>
+            <td colspan=4 class="table-white-space"></td>
+            <td>
+                {{HTML::linkRoute('project.create','Add Project', NULL, array('class' => 'btn btn-default btn-sm'))}}        
+            </td>
+        </tr>
     </table>
 </div>
 @stop
