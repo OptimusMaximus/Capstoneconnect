@@ -10,9 +10,21 @@
 Capstone Connect
 @stop
 @section('content')
+
+ <p1>
+      <font size =6 style="text-shadow:1px 1px 1px #000000;" color=73000A face ="cursive">Welcome to Capstone Connect!</br> 
+      </font>
+        <font color=73000A face ="cursive">
+        Here is the your class's recent activity
+        and the latest announcements from your professor.
+        </p1></font>
+  </br>
+</br>
+
 <div class = "row">
 	<div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-4 col-lg-4" style = "background-color: #73000A">
 		<h3>Announcements</h3>
+
 		
 		<div class="InsideAnnouncement">
   			<?php
