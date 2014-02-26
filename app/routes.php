@@ -46,7 +46,7 @@ Route::group(array('prefix' => '', 'before' => 'authAdmin'), function()
 		Route::resource('evaluation', 'EvaluationController');
 		Route::resource('project', 'ProjectController');
 		Route::resource('user', 'UserController');
-		Route::get('/admin_evals_about', array('uses'=> 'AdminToolsController@makeEvalsAbout', 'as' => 'admin_evals_about'));
+		Route::get('/admin_evals_about/{token}', array('uses'=> 'AdminToolsController@makeEvalsAbout', 'as' => 'admin_evals_about'));
 		Route::get('/project/{token}/user/new', array('uses' => 'UserController@projectCreate', 'as' => 'project.user.create'));
 		Route::get('/admin_users', array('uses' => 'AdminToolsController@makeManageUsers', 'as' => 'admin_users'));
 		Route::get('/evaluation/create', array('uses' => 'AdminToolsController@makeManageEvals', 'as' => 'admin_evals'));

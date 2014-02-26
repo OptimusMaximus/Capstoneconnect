@@ -71,7 +71,8 @@ Admin Tools
                             <td>{{$user->first_name." ".$user->last_name}}</td>
                             <td>{{$user->email}}</td>
                             <td colspan="2" class="text-right">
-                                {{HTML::linkRoute('admin_user_evals','Evals', $user->id, array('class' => 'btn btn-xs btn-block btn-default table-btn-bottom-offset'))}}
+                                {{HTML::linkRoute('admin_evals_about','Evals For', $user->id, array('class' => 'btn btn-xs btn-block btn-default table-btn-bottom-offset'))}}
+                                {{HTML::linkRoute('admin_user_evals','Evals By', $user->id, array('class' => 'btn btn-xs btn-block btn-default table-btn-bottom-offset'))}}
                                 {{HTML::linkRoute('user.edit','Edit',$user->id, array('class' => 'btn btn-default btn-xs btn-block table-btn-bottom-offset'))}}        
                                 {{ Form::open(array('route' => array('user.destroy', $user->id), 'method' => 'delete')) }}
                                 {{ Form::submit('Remove', array('class'=>'btn btn-default btn-xs btn-block table-btn-top-offset'))}}
