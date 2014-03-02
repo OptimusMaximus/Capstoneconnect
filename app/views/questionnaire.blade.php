@@ -9,7 +9,7 @@
 @stop
 
 @section('header')
-Evaluation
+Evaluate Group Member
 @stop
 	 
 @section('content')

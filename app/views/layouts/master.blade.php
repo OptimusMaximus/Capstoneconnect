@@ -42,7 +42,7 @@
         <div class="collapse navbar-collapse" id="navbar-collapse">
             <ul class="nav navbar-nav">
                 <li>{{ HTML::linkRoute('home', 'Home') }}</li>
-                <li>{{ HTML::linkRoute('questionnaire', 'Evaluation') }}</li>
+                <li>{{ HTML::linkRoute('questionnaire', 'Evaluate') }}</li>
                 
                 <?php 
                     try
