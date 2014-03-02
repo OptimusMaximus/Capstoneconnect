@@ -26,7 +26,7 @@ Create Annoucements
         </br>
 
         <div class="form group">
-            {{ Form::submit('Create Announcements', array('class'=>'btn btn-default')) }}
+            {{ Form::submit('Create Announcements', array('class'=>'btn btn-default', 'data-toggle' => 'tooltip','data-placement' => 'top', 'title' => 'Creates announcement that is displayed on the home page')) }}
         </div>
     {{ Form::close() }}
 

@@ -74,7 +74,7 @@
     <div class="row">
       <br>
       <div class="text-center">
-        {{ HTML::link('register', 'Register!', array('class' => 'btn cc-btn-primary btn-lg', 'data-toggle' => 'tooltip','data-placement' => 'top', 'title' => 'Click here to register your account')) }}
+        {{ HTML::link('register', 'Register!', array('class' => 'btn cc-btn-primary btn-lg', 'data-toggle' => 'tooltip','data-placement' => 'top', 'title' => 'Click here to register for an account')) }}
       </div>
     </div>    
   </div>
