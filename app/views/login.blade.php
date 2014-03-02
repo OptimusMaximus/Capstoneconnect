@@ -56,6 +56,9 @@
     <div class="form-group">
         <div class="col-sm-offset-2 col-sm-8">
             {{ Form::submit('login', array('class' => 'btn cc-btn-primary')) }}
+            <!--  <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Tooltip on top</button>
+-->
+
             <div class="checkbox-inline cc-remember-box">
                 <label>
                 {{ Form::checkbox('remember', 'First Choice', false, array('id' => 'remember')) }} Remember me

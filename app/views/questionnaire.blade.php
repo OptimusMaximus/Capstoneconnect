@@ -74,7 +74,7 @@ Evaluation
     	
     	
     	 <br /> 
-       {{ Form::submit('Submit Answers', array('class'=>'btn btn-default'))}}
+       {{ Form::submit('Submit Answers', array('class'=>'btn btn-default' ))}}
     {{ Form::close() }}
     
 @stop
