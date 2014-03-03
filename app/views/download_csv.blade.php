@@ -28,6 +28,7 @@ Download CSV File
         <p1> No evaluations have been completed yet.</p1>
     @elseif($ansId != null )    
             @for($i = 1; $i <= count($ansId)*2; $i++)
+                {{-- Check to see if there is an answer for each questionnaire --}}
                 @if(array_key_exists($i, $ansId))
                     {{ Form::open(array('route' => array('download_csv'))) }}
 
