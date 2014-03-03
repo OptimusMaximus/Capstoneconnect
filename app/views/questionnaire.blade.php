@@ -9,7 +9,7 @@
 @stop
 
 @section('header')
-Evaluation
+Evaluate Group Member
 @stop
 	 
 @section('content')
@@ -74,7 +74,7 @@ Evaluation
     	
     	
     	 <br /> 
-       {{ Form::submit('Submit Answers', array('class'=>'btn btn-default'))}}
+       {{ Form::submit('Submit Answers', array('class'=>'btn btn-default', 'data-toggle' => 'tooltip','data-placement' => 'top', 'title' => 'Click here to submit the evaluation' ))}}
     {{ Form::close() }}
     
 @stop

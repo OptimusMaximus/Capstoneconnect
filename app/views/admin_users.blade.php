@@ -52,10 +52,10 @@ Admin Tools
                         <td>{{$project->description}}</td>
                         <td>{{$project->created_at}}</td>
                         <td>
-                            {{ HTML::linkRoute('project.edit', 'Edit', $project->id, array('class' => 'btn btn-sm btn-default'))}}
+                            {{ HTML::linkRoute('project.edit', 'Edit', $project->id, array('class' => 'btn btn-sm btn-default', 'data-toggle' => 'tooltip','data-placement' => 'top', 'title' => 'Edit group project details'))}}
                         </td>
                         <td>
-                            {{ Form::open(array('route' => array('project.destroy', $project->id), 'method' => 'delete')) }}
+                            {{ Form::open(array('route' => array('project.destroy', $project->id), 'method' => 'delete', 'data-toggle' => 'tooltip','data-placement' => 'top', 'title' => 'Removes the group')) }}
                             {{ Form::submit('Remove', array('class'=>'btn btn-sm btn-default'))}}
                             {{ Form::close() }}
                         </td>
@@ -71,10 +71,15 @@ Admin Tools
                             <td>{{$user->first_name." ".$user->last_name}}</td>
                             <td>{{$user->email}}</td>
                             <td colspan="2" class="text-right">
-                                {{HTML::linkRoute('admin_user_evals','Evals', $user->id, array('class' => 'btn btn-xs btn-block btn-default table-btn-bottom-offset'))}}
-                                {{HTML::linkRoute('user.edit','Edit',$user->id, array('class' => 'btn btn-default btn-xs btn-block table-btn-bottom-offset'))}}        
+
+                                <!--{{HTML::linkRoute('admin_user_evals','Evaluations', $user->id, array('class' => 'btn btn-xs btn-block btn-default table-btn-bottom-offset' , 'data-toggle' => 'tooltip','data-placement' => 'top', 'title' => 'View all user evaluations'))}}
+                                -->
+                                {{HTML::linkRoute('admin_evals_about','Evals For', $user->id, array('class' => 'btn btn-xs btn-block btn-default table-btn-bottom-offset', 'data-toggle' => 'tooltip','data-placement' => 'top', 'title' => 'View all evaluations this user has submitted'))}}
+                                {{HTML::linkRoute('admin_user_evals','Evals By', $user->id, array('class' => 'btn btn-xs btn-block btn-default table-btn-bottom-offset', 'data-toggle' => 'tooltip','data-placement' => 'top', 'title' => 'View all evaluations about this user'))}}
+
+                                {{HTML::linkRoute('user.edit','Edit',$user->id, array('class' => 'btn btn-default btn-xs btn-block table-btn-bottom-offset' , 'data-toggle' => 'tooltip','data-placement' => 'top', 'title' => 'Edit user name or email'))}}        
                                 {{ Form::open(array('route' => array('user.destroy', $user->id), 'method' => 'delete')) }}
-                                {{ Form::submit('Remove', array('class'=>'btn btn-default btn-xs btn-block table-btn-top-offset'))}}
+                                {{ Form::submit('Remove', array('class'=>'btn btn-default btn-xs btn-block table-btn-top-offset', 'data-toggle' => 'tooltip','data-placement' => 'top', 'title' => 'Removes user from the group'))}}
                                 {{ Form::close() }}
                             </td>
                         </tr>
@@ -83,7 +88,7 @@ Admin Tools
                             <td class='table-white-space' colspan=3></td>
                             <td>
                                 {{ Form::open(array('route' => array('project.user.create', $project->id), 'method' => 'get')) }}
-                                {{ Form::submit('add', array('class'=>'btn btn-default btn-sm'))}}
+                                {{ Form::submit('add', array('class'=>'btn btn-default btn-sm', 'data-toggle' => 'tooltip','data-placement' => 'top', 'title' => 'Click here to add a new user'))}}
                                 {{ Form::close() }}
                             </td>
                             <!-- <td class="text-center">{{HTML::linkRoute('user.create','add', NULL , array('class' => 'btn btn-sm btn-default'))}}</td> -->
@@ -94,7 +99,7 @@ Admin Tools
         <tr>
             <td colspan=4 class="table-white-space"></td>
             <td>
-                {{HTML::linkRoute('project.create','Add Project', NULL, array('class' => 'btn btn-default btn-sm'))}}        
+                {{HTML::linkRoute('project.create','Add Project', NULL, array('class' => 'btn btn-default btn-sm', 'data-toggle' => 'tooltip','data-placement' => 'top', 'title' => 'Add a new project'))}}        
             </td>
         </tr>
     </table>

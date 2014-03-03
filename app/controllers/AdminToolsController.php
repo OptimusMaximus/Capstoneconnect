@@ -25,6 +25,11 @@ class AdminToolsController extends BaseController {
 		return View::make('admin_evals');
 	}
 
+	public function makeEvalsAbout($id)
+	{
+		$userid = $id;
+		return View::make('admin_evals_about')->with('userid', $id);
+	}
 	//render evals using id
 	public function getUserEvals($id)
 	{
