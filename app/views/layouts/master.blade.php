@@ -38,7 +38,7 @@
           <a class="navbar-brand" href='home'>Capstone Connect BETA</a>
         </div>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Collect the nav links, forms, and other content for toggling  -->
         <div class="collapse navbar-collapse" id="navbar-collapse">
             <ul class="nav navbar-nav">
                 <li>{{ HTML::linkRoute('home', 'Home') }}</li>
