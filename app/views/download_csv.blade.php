@@ -12,8 +12,11 @@ Download CSV File
 
     <?php
         $answers = ExportCSV::all();
+        $questions = Evaluation::all();
+        //Get the answer id number
+        $ansId = $answers->lists('eid', 'eid');
         //Get the evaluation id number
-        $evalId = $answers->lists('eid', 'eid');       
+        $evalId = $questions->lists('id', 'id');
     ?>
 
     <!-- Post message if successful -->
@@ -21,26 +24,24 @@ Download CSV File
         <div class = "alert alert-success"> {{ Session::get('screenAnnounce') }} </div>
     @endif
 
-    @if($evalId == null)
+    @if($ansId == null)
         <p1> No evaluations have been completed yet.</p1>
-    @endif
+    @elseif($ansId != null )    
+            @for($i = 1; $i <= count($ansId)*2; $i++)
+                @if(array_key_exists($i, $ansId))
+                    {{ Form::open(array('route' => array('download_csv'))) }}
 
-    
-    @if($answers != null )
-        @for($i = 1; $i < count($evalId) + 1; $i++)
-
-            {{ Form::open(array('route' => array('download_csv'))) }}
-
-            <!-- eid is variable passed to controller, eid = $i -->
-            {{ Form::hidden('eid', $i) }}            
+                    <!-- eid is variable passed to controller, eid = $i -->
+                    {{ Form::hidden('eid', $i) }}            
       
-            <div class="form group">
-                {{ Form::submit("Download CSV File with Evaluation ID #$evalId[$i]", array('class'=>'btn btn-default')) }}
-            </div>
-            </br>        
+                    <div class="form group">
+                        {{ Form::submit("Download CSV File with Evaluation ID #$ansId[$i]", array('class'=>'btn btn-default')) }}
+                    </div>
+                    </br>        
 
-        {{ Form::close() }}
-        @endfor
+                    {{ Form::close() }}
+                @endif
+            @endfor       
     @endif
 
 
