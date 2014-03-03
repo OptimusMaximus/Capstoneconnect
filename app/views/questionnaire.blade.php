@@ -74,7 +74,7 @@ Evaluate Group Member
     	
     	
     	 <br /> 
-       {{ Form::submit('Submit Answers', array('class'=>'btn btn-default', 'data-toggle' => 'tooltip','data-placement' => 'top', 'title' => 'Submits answers to evaluation above' ))}}
+       {{ Form::submit('Submit Answers', array('class'=>'btn btn-default', 'data-toggle' => 'tooltip','data-placement' => 'top', 'title' => 'Click here to submit the evaluation' ))}}
     {{ Form::close() }}
     
 @stop
