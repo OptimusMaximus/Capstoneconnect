@@ -30,7 +30,7 @@ class ProjectController extends BaseController {
 	public function store()
 	{
 		Project::create(array('name' => $_POST['project_name'], 'description' => $_POST['description']));
-		Redirect::to('admin_users');
+		Return Redirect::to('admin_users');
 	}
 
 	/**

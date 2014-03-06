@@ -24,7 +24,7 @@ New Evaluation
 	        </div>
 	    @endfor
 	    <div class="form group">
-	        {{ Form::submit('Create Evaluation', array('class'=>'btn btn-default', 'data-toggle' => 'tooltip','data-placement' => 'top', 'title' => 'Creates evaluation')) }}
+	        {{ Form::submit('Create Evaluation', array('class'=>'btn btn-default', 'data-toggle' => 'tooltip','data-placement' => 'top', 'title' => 'Click here to create a new evaluation')) }}
 	    </div>
 	{{ Form::close() }}
 @stop
