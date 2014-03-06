@@ -50,7 +50,7 @@ Capstone Connect
 
 
         ?>
-
+<!-- Recent Activity -->
   			<p1>
   			@foreach($recent5 as $recent)
         <p><font size='2'>{{$recent->first_name.' '.$recent->last_name}} was Evaluated at 
