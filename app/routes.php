@@ -24,6 +24,11 @@ Route::post('/reset/{token}', array('uses' => 'PasswordController@update','as' =
 Route::get('/register', array('uses' => 'AuthController@showRegister'));
 Route::post('/register', array('uses' => 'AuthController@activateUser', 'as' => 'activate'));
 
+
+Route::get('/splash', array('uses'=> 'SplashController@showWelcome', 'as' => 'splash'));
+
+
+
 Route::group(array('prefix' => '', 'before' => 'auth'), function()
 {
         Route::get('/home', array('uses' => 'HomeController@showWelcome', 'as' => 'home'));
