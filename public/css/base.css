@@ -63,6 +63,7 @@
 
 /* Home page */
 	.Announcements {	
+		border-radius:25px;
 		background-color:#73000A;
 		height:550px;
 		width:300px;
@@ -74,7 +75,8 @@
 
 	.InsideAnnouncement {
 		background-color:Grey;
-		height:520px;
+		border-radius:25px;
+		height:420px;
 		width:auto;
 		border:2px solid black;
 		margin: 0 0 3% 0;	
@@ -90,7 +92,7 @@
 	}
 	.InsideRecentActivity {
 		background-color:grey;
-		height:520px;
+		height:420px;
 		width:auto;
 		margin:0 0 3% 0;
 		border:2px solid black;
