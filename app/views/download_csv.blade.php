@@ -37,12 +37,15 @@ Download CSV File
       
                     <div class="form group">
                         {{ Form::submit("Download CSV File with Evaluation ID #$ansId[$i]", array('class'=>'btn btn-default')) }}
+                        
                     </div>
-                    </br>        
+                    </br>  
 
                     {{ Form::close() }}
                 @endif
-            @endfor       
+            @endfor  
+
+               
     @endif
 
 

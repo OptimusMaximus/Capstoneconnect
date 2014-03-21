@@ -32,8 +32,32 @@ class ExportCSVController extends BaseController {
 		}
 	
 		fclose($file);
+		$headers = array(
+        	'Content-Type' => 'text/csv',
+        	'Content-Disposition' => 'attachment; filename="ExportedData.csv"',
+    	);
 
-		Session::flash('screenAnnounce', "You have successfully downloaded Evaluation ID #$eid CSV file" );
-		return Redirect::to('download_csv');
+		//Download to users computer
+		return Response::download('Downloads/ExportedData.csv', "ExportedData#$eid.csv", $headers);
+
+		//Session::flash('screenAnnounce', "You have successfully downloaded Evaluation ID #$eid CSV file" );
+		//return Redirect::to('download_csv');
 	}
+
+	/*public function example() {
+    	$table = ExportCSV::all();
+ 
+    	foreach ($table as $row) {
+       	 $output=  implode(",",$row->toArray());
+    	}
+    	$headers = array(
+        	'Content-Type' => 'text/csv',
+        	'Content-Disposition' => 'attachment; filename="ExportedData.csv"',
+    	);
+ 
+    	return Response::make(rtrim($output, "\n"), 200, $headers);
+
+    	Session::flash('screenAnnounce', "You have successfully downloaded Evaluation ID #$eid CSV file" );
+		return Redirect::to('download_csv');
+	}*/
 }
