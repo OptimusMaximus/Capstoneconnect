@@ -111,6 +111,7 @@
                     <ul class="dropdown-menu bottom-up">  
                       <li>{{ HTML::linkRoute('help', 'Help') }}</li>
                         <li>{{ HTML::linkRoute('logout', 'Logout') }}</li>  
+                           <li>{{ HTML::linkRoute('contact', 'Contact') }}</li> 
                     </ul>  
                 </li> 
             </ul>
