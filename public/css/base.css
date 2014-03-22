@@ -72,8 +72,24 @@
 		border:2px solid black;
 		float:left
 	} 	
+
+/*Calendar Stuff */
+
+.CalendarBox {	
+		
+		background-color:#73000A;
+		height:285px;
+		width:450px;
+		margin: 300 auto;
+		margin:30px 30px 30px 30px;
+		border:2px solid black;
+		float:right
+	} 	
+
 /* Responsive iFrame */
  
+
+
 .responsive-iframe-container {
     position: relative;
     padding-bottom: 56.25%;
@@ -88,8 +104,8 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 89%;
-    height: 88.75%;
+    width: 100%;
+    height: 100%;
 }
 	.InsideAnnouncement {
 		background-color:Grey;
