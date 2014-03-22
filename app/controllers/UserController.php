@@ -20,7 +20,7 @@ class UserController extends \BaseController {
 	 */
 	public function projectCreate($pid)
 	{
-		return View::make('user_new', array('pid' => $pid));	
+		return View::make('user_new', array('pid' => $pid));
 	}
 
 
@@ -43,7 +43,7 @@ class UserController extends \BaseController {
 	{
 		try
 		{
-			$group=$_POST["group"];
+			$group=Input::get("group");
 			switch ($group)
 			{
 				case "U":
@@ -68,11 +68,11 @@ class UserController extends \BaseController {
 			}
 
    			$user = Sentry::createUser(array(
-				'email' => $_POST["email"],
-				'first_name' => $_POST["first_name"],
-				'last_name' => $_POST["last_name"],
+				'email' => Input::get("email"),
+				'first_name' => Input::get("first_name"),
+				'last_name' => Input::get("last_name"),
 				'activated' => false,
-				'project_id' => $_POST["pid"],
+				'project_id' => Input::get("pid"),
 				'password' => sha1(time()),
 				'permissions'=> $permissions,
 			));
@@ -119,33 +119,33 @@ class UserController extends \BaseController {
 	{
 		$user = User::find($id);
 
-		// $group=$_POST["group"];
-		// switch ($group)
-		// {
-		// 	case "U":
-		// 	  $user->permissions = array(
-		// 	  	'user.create' => -1,
-  //               'user.delete' => -1,
-  //               'user.view'   => 1,
-  //               'user.update' => 1,
-  //               );
-		// 	  break;
-		// 	case "A":
-		// 	  $user->permissions = array(
-  //               'user.create' => 1,
-  //               'user.delete' => 1,
-  //               'user.view'   => 1,
-  //               'user.update' => 1,
-  //               );
-		// 	  break;
-		// 	default:
-		// 		echo "Group wan't specified.";
-		// 	exit;
-		// }
+		$group=Input::get("group");
+		switch ($group)
+		{
+			case "U":
+			  $user->permissions = array(
+			  	'user.create' => -1,
+                'user.delete' => -1,
+                'user.view'   => 1,
+                'user.update' => 1,
+                );
+			  break;
+			case "A":
+			  $user->permissions = array(
+                'user.create' => 1,
+                'user.delete' => 1,
+                'user.view'   => 1,
+                'user.update' => 1,
+                );
+			  break;
+			default:
+				echo "Group wan't specified.\n";
+			exit;
+		}
 
-		$user->email = $_POST["email"];
-		$user->first_name = $_POST["first_name"];
-		$user->last_name = $_POST["last_name"];
+		$user->email = Input::get("email");
+		$user->first_name = Input::get("first_name");
+		$user->last_name = Input::get("last_name");
 		$user->save();
 
 		return Redirect::to('admin_users');
@@ -160,7 +160,7 @@ class UserController extends \BaseController {
 	public function destroy($id)
 	{
 		User::destroy($id);
-		return Redirect::back();
+		return Redirect::to('admin_users');
 	}
 
 }
