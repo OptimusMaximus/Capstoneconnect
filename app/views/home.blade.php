@@ -44,9 +44,11 @@ Capstone Connect
   		</div>
 
   	</div>
-    <img src="http://s3.amazonaws.com/cstest/teams%2FUSC_logo.jpg" alt="The Unversity of South Carolina" width="200" height="200" style="float:center" margin:right="20px">
- 
-	<!--	<h3>Recent Activity</h3>
+   
+ <div class="responsive-iframe-container"><iframe src="https://www.google.com/calendar/embed?src=en.usa%23holiday%40group.v.calendar.google.com&ctz=America/Chicago" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+	<iframe src="https://www.google.com/calendar/embed?showTitle=0&amp;showPrint=0&amp;showTabs=0&amp;showTz=0&amp;height=400&amp;wkst=1&amp;bgcolor=%23ffffff&amp;src=en.usa%23holiday%40group.v.calendar.google.com&amp;color=%235F6B02&amp;ctz=America%2FNew_York" style=" border:solid 1px #777 " width="400" height="400" frameborder="0" scrolling="no"></iframe>
+  </div>
+  <!--	<h3>Recent Activity</h3>
 		
 		    
     <div class="InsideRecentActivity">
