@@ -43,7 +43,7 @@ Capstone Connect
   		</div>
 
   	</div>
-    <img src="http://s3.amazonaws.com/cstest/teams%2FUSC_logo.jpg" alt="The Unversity of South Carolina" width="300" height="300" style="float:right">
+    <img src="http://s3.amazonaws.com/cstest/teams%2FUSC_logo.jpg" alt="The Unversity of South Carolina" width="300" height="300" style="float:right" margin:right="20px">
  
 	<!--	<h3>Recent Activity</h3>
 		
