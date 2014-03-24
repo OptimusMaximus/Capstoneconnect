@@ -63,6 +63,7 @@
 
 /* Home page */
 	.Announcements {	
+		border-radius:25px;
 		background-color:#73000A;
 		height:550px;
 		width:300px;
@@ -72,9 +73,44 @@
 		float:left
 	} 	
 
+/*Calendar Stuff */
+
+.CalendarBox {	
+		
+		background-color:#73000A;
+		height:285px;
+		width:450px;
+		margin: 300 auto;
+		margin:30px 30px 30px 30px;
+		border:2px solid black;
+		float:right
+	} 	
+
+/* Responsive iFrame */
+ 
+
+
+.responsive-iframe-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px;
+    height: 0;
+    overflow: hidden;
+}
+ 
+.responsive-iframe-container iframe,   
+.vresponsive-iframe-container object,  
+.vresponsive-iframe-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
 	.InsideAnnouncement {
 		background-color:Grey;
-		height:520px;
+		border-radius:25px;
+		height:420px;
 		width:auto;
 		border:2px solid black;
 		margin: 0 0 3% 0;	
@@ -90,7 +126,7 @@
 	}
 	.InsideRecentActivity {
 		background-color:grey;
-		height:520px;
+		height:420px;
 		width:auto;
 		margin:0 0 3% 0;
 		border:2px solid black;

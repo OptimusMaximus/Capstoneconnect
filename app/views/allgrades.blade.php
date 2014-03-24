@@ -15,7 +15,9 @@
 @section('content')
 
     <div class = QuestionnaireWhite>
+
 <?php $user = Sentry::getUser();
+//Finds the current user ^^^
 //echo $user['email'];
 
 ?>
@@ -47,6 +49,7 @@
 
 
 <?php
+//Current solutuion to the questionaire.
 //$temp = DB::table('answers')->join('users', 'answers.answered_about', '=', 'users.id')
   //  ->avg('ans1', 'ans2')->where('users.id','=',$user->id)->get();
 //$price = DB::table('answers')->where('answered_about', '=', $user->id)->avg('ans1', 'ans2', 'ans3', 'ans4');
@@ -62,7 +65,7 @@ $a7 = DB::table('answers')->where('answered_about', '=', $user->id)->avg('ans7')
 $a8 = DB::table('answers')->where('answered_about', '=', $user->id)->avg('ans8');
 $a9 = DB::table('answers')->where('answered_about', '=', $user->id)->avg('ans9');
 $a10 = DB::table('answers')->where('answered_about', '=', $user->id)->avg('ans10');
-$avg = ($a1 + $a2 + $a3 + $a4 + $a5 + $a6 + $a7 + $a8 + $a9 + $a10)/10;
+$avg = ($a1 + $a2 + $a3 + $a4 + $a5 + $a6 + $a7 + $a8 + $a9 + $a10)/10;   //Averages all a1-a10
 ?>
    
 
