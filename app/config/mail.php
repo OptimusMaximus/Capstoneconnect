@@ -30,7 +30,7 @@ return array(
 
 	//'host' => 'smtp.mailgun.org',
 	//'host' => '',
-	'host' => 'localhost',
+	'host' => 'smtp.gmail.com',
 	/*
 	|--------------------------------------------------------------------------
 	| SMTP Host Port
@@ -42,8 +42,8 @@ return array(
 	|
 	*/
 
-	//'port' => 587,
-	'port' => 25,
+	'port' => 587,
+	//'port' => 25,
 	/*
 	|--------------------------------------------------------------------------
 	| Global "From" Address
@@ -56,7 +56,7 @@ return array(
 	*/
 
 	//'from' => array('address' => null, 'name' => null),
-	'from' => array('address' => 'admin@localhost.com', 'name' => 'Support Team'),
+	'from' => array('address' => 'CapstoneContact@admin.com', 'name' => 'Support Team'),
 
 	/*
 	|--------------------------------------------------------------------------
@@ -82,7 +82,7 @@ return array(
 	|
 	*/
 
-	'username' => null,
+	'username' => 'USCcapstonehelp@gmail.com',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -95,7 +95,7 @@ return array(
 	|
 	*/
 
-	'password' => null,
+	'password' => 'capstoneconnect',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -121,6 +121,6 @@ return array(
 	|
 	*/
 
-	//'pretend' => false,
-	'pretend' => true,
+	'pretend' => false,
+	//'pretend' => true,
 );
