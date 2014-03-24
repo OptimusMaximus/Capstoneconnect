@@ -24,7 +24,7 @@ Evaluate Group Member
     			<?php 
                 $currentUser = Sentry::getUser(); 
                 //$userGroup = DB::select('SELECT id, first_name, last_name, project_id FROM users WHERE project_id = '.$currentUser['project_id']);
-                $userGroup = User::where('project_id','=',$currentUser->project_id)->get();
+                $userGroup = User::where('project_id','=',$currentUser->project_id)->where('id','!=',$currentUser->id)->get();
 
                 $mostRecentEvalDate = Evaluation::max('created_at');
                 $evaluation = Evaluation::where('created_at', $mostRecentEvalDate)->first();

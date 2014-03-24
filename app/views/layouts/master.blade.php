@@ -35,7 +35,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href='home'>Capstone Connect BETA</a>
+          <a class="navbar-brand" href='home'>Capstone Connect</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling  -->
@@ -76,13 +76,13 @@
                                         echo( HTML::linkRoute('admin_users', 'User/Project') );
                                     echo('</li>');
                                     echo('<li>');
-                                        echo( HTML::linkRoute('admin_evals', 'Create Evaluation') );
+                                        echo( HTML::linkRoute('admin_evals', 'Create New Evaluation') );
                                     echo('</li>');
                                     echo('<li>');
-                                        echo( HTML::linkRoute('allgrades', 'All Grades') );
+                                        echo( HTML::linkRoute('allgrades', 'Average Grades') );
                                     echo('</li>');
                                     echo('<li>');
-                                        echo( HTML::linkRoute('create_announcement', 'Create Announcement'));
+                                        echo( HTML::linkRoute('create_announcement', 'Post New Announcement'));
                                     echo('</li>');
                                     echo('<li>');
                                         echo( HTML::linkRoute('download_csv', 'Download CSV File'));
