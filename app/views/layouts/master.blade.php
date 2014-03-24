@@ -57,12 +57,12 @@
 
 
 
-                             if ($user->inGroup($NOTadmin))
+                        /*     if ($user->inGroup($NOTadmin))
                         {
                         echo('<li>');
                             echo (HTML::linkRoute('mygrades', 'My Grades') );
                             echo('</li>');
-                        }
+                        }*/
                         // Check if the user is in the administrator group
                         if ($user->inGroup($admin))
                         {
