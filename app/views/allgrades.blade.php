@@ -9,12 +9,12 @@
 @stop
 
 @section('header')
-<h1>All Grades</h1>
+<h1>Average Grades</h1>
 @stop
 	 
 @section('content')
 
-    <div class = QuestionnaireWhite>
+    <div class = AllGradesWhite>
 
 <?php $user = Sentry::getUser();
 //Finds the current user ^^^

@@ -245,6 +245,16 @@
 		border-radius:25px;
 
 	}
+		.AllGradesWhite {
+		background-color:#FFFFFF;
+		height: auto;
+		width:900px;
+		margin: 0 auto;
+		border:2px solid;
+		border-radius:25px;
+
+	}
+
 
 	.questionairedropbox{
 		background-color: #FFFFFF;
