@@ -24,6 +24,11 @@ Route::post('/reset/{token}', array('uses' => 'PasswordController@update','as' =
 Route::get('/register', array('uses' => 'AuthController@showRegister'));
 Route::post('/register', array('uses' => 'AuthController@activateUser', 'as' => 'activate'));
 
+
+Route::get('/splash', array('uses'=> 'SplashController@showWelcome', 'as' => 'splash'));
+
+
+
 Route::group(array('prefix' => '', 'before' => 'auth'), function()
 {
         Route::get('/home', array('uses' => 'HomeController@showWelcome', 'as' => 'home'));
@@ -37,6 +42,11 @@ Route::group(array('prefix' => '', 'before' => 'auth'), function()
 		//http://laravel.com/docs/controllers#resource-controllers
 		Route::get('/answer/create', array('uses' => 'AnswerController@create', 'as' => 'answers.create'));
 		Route::post('/answer', array('uses' => 'AnswerController@store', 'as' => 'answers.store'));
+		//Contact Page
+		Route::get('/contact', array('uses' => 'ContactController@getContact', 'as' => 'contact'));
+		//Form request:: POST action will trigger to controller
+		Route::post('contact_request','ContactController@getContactUsForm');
+
 });
 
 //For user with admin access permissions only
@@ -59,3 +69,4 @@ Route::group(array('prefix' => '', 'before' => 'authAdmin'), function()
 });
 
 Route::post('/evaluation/new', array('as' => 'newEval', 'uses' => 'EvaluationController@store'));
+
