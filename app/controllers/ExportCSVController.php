@@ -15,25 +15,16 @@ class ExportCSVController extends BaseController {
 		//Get 'eid' variable from download_csv.blade view
 		$eid = Input::Get('eid');
 
-
-		//Headers to allow download of csv file rather than displayed
-		/*$headers = array(
-        	'Content-Type' => 'text/csv',
-        	'Content-Disposition' => 'attachment; filename="ExportedData.csv"',
-    	);*/
-
+		//file name for download
 		$fileName = "Questionnaire#$eid.csv";
  
- 		//Headers to allow download of csv file rather than being displayed
+ 		//Headers to allow download of csv file rather than being displayed on web page
 		header("Cache-Control: must-revalidate, post-check=0, pre-check=0");
 		header('Content-Description: File Transfer');
 		header("Content-type: text/csv");
 		header("Content-Disposition: attachment; filename={$fileName}");
 		header("Expires: 0");
 		header("Pragma: public");
-
-		//Place the csv file in public/Downloads
-		//$file = fopen('Downloads/ExportedData.csv', 'w'); 
 
 		//Create a file pointer connected to the output stream
 		$file = fopen('php://output', 'w');
@@ -52,11 +43,8 @@ class ExportCSVController extends BaseController {
 			}
 		}	
 		fclose($file);		
-
-		//Download to users computer
-		//return Response::download('$file', "ExportedData#$eid.csv", $headers);
 		
-		//Session::flash('screenAnnounce', "You have successfully downloaded Evaluation ID #$eid CSV file" );
-		//return Redirect::to('download_csv');
+		Session::flash('screenAnnounce', "You have successfully downloaded Questionnaire #$eid" );
+		return Redirect::to('download_csv');
 	}
 }
