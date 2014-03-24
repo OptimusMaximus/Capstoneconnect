@@ -18,7 +18,7 @@ displayfrequency: "2 days",
 // Make sure to create a link that calls "javascript:splashpage.closeit()")
 // An IE bug means you should not right align any image within the bar, but instead use "position:absolute" and the "right" attribute
 
-defineheader: '<div style="padding: 5px; color: white; font: bold 16px Verdana; background: #73000A center center repeat-x;"><a style="position:float; top: 5px; right: 2px" href="javascript:splashpage.closeit()" title="Skip to Content">Click Here to Continue to Login Screen</a></div>',
+defineheader: '<div style="padding: 5px; color: white; font: bold 16px Verdana; background: #73000A center center repeat-x;"><a style="position:float; top: 5px; right: 2px" href="./login" title="Skip to Content">Click Here to Continue to Login Screen</a></div>',
 
 //5) cookie setting: ["cookie_name", "cookie_path"]
 cookiename: ["splashpagecookie", "path=/"],
