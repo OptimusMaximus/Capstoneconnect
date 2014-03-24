@@ -44,7 +44,5 @@ class ExportCSVController extends BaseController {
 		}	
 		fclose($file);		
 		
-		Session::flash('screenAnnounce', "You have successfully downloaded Questionnaire #$eid" );
-		return Redirect::to('download_csv');
 	}
 }
