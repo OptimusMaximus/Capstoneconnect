@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', array('uses' => 'AuthController@getLogin' ));
+Route::get('/', array('uses' => 'WelcomeController@showWelcome' ));
 Route::get('/login', array('uses' => 'AuthController@getLogin'));  //, 'as' => 'login')); error here?????
 Route::post('/login', array('uses' => 'AuthController@postLogin', 'as' => 'login'));
 Route::get('/logout', array('uses' => 'AuthController@getLogout', 'as' => 'logout'));
@@ -26,6 +26,8 @@ Route::post('/register', array('uses' => 'AuthController@activateUser', 'as' => 
 
 
 Route::get('/splash', array('uses'=> 'SplashController@showWelcome', 'as' => 'splash'));
+
+Route::get('/splash', array('uses'=> 'WelcomeController@showWelcome', 'as' => 'welcome'));
 
 
 
