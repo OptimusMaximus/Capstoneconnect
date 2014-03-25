@@ -5,7 +5,7 @@
 @stop
 
 @section('header')
-Create Annoucements
+Post New Annoucement
 @stop
 
 @section('content')
