@@ -3,13 +3,14 @@
 class EvaluationController extends \BaseController {
 
 	/**
-	 * Display a listing of the resource.
+	 * Display  of open Evaluations
 	 *
 	 * @return Response
 	 */
 	public function index()
 	{
-		//
+		$openEvals = Evaluations::where('closed_at','>',date('Y-m-d H:i:s'))->orderBy('created_at', 'desc');
+		return View::make('evaluation_open')->with($openEvals);
 	}
 
 	/**
@@ -53,7 +54,13 @@ class EvaluationController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		//
+		$eval = Evaluations::find($id);
+		$currentUser = Sentry::getUser(); 
+		//$userGroup = DB::select('SELECT id, first_name, last_name, project_id FROM users WHERE project_id = '.$currentUser['project_id']);
+	    $groupMembers = User::where('project_id','=',$currentUser->project_id)->where('id','!=',$currentUser->id)->get();
+
+
+		return View::make('questionnaire')->with($eval, $groupMembers);
 	}
 
 	/**
