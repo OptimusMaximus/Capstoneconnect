@@ -41,8 +41,33 @@ class ContactController extends BaseController {
 
                 return View::make('contact');  
             }else{
-//return contact form with errors
+                //return contact form with errors
                 return Redirect::to('/contact')->withErrors($validator);
             }
+        }
+
+
+        public function create(){
+            return View::make('contact_create_email');
+        }
+
+
+        public function update(){
+            
+            //Get 'email' variable from contact_create_email.blade view
+            $email = Input::Get('email');
+            $password = Input::Get('password');
+
+             //Send email using Laravel send function
+                Mail::send('emails.hello', $email, function($message) use ($email)
+                {
+                    //email 'To' field: cahnge this to emails that you want to be notified.                    
+                    $message->to('$email', 'my name')->subject('contact request');
+
+                });
+
+            Session::flash('flash', 'Your contact email has been updated' );
+            return Redirect::to('contact_create_email'); 
+
         }
 }

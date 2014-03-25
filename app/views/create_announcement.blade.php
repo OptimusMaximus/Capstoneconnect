@@ -26,7 +26,7 @@ Post New Annoucement
         </br>
 
         <div class="form group">
-            {{ Form::submit('Create Announcement', array('class'=>'btn btn-default', 'data-toggle' => 'tooltip','data-placement' => 'top', 'title' => 'Click here to submit a new announcement')) }}
+            {{ Form::submit('Create Announcement', array('class'=>'btn cc-btn-primary', 'data-toggle' => 'tooltip','data-placement' => 'top', 'title' => 'Click here to submit a new announcement')) }}
         </div>
     {{ Form::close() }}
 

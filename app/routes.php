@@ -67,6 +67,8 @@ Route::group(array('prefix' => '', 'before' => 'authAdmin'), function()
 		Route::post('/create_announcement', array('uses' => 'AnnouncementController@store', 'as' => 'announcement.store'));
 		Route::get('/download_csv', array('uses' => 'ExportCSVController@export', 'as' => 'download_csv'));
 		Route::post('/download_csv', array('uses' => 'ExportCSVController@doneExportCSV'));
+		Route::get('/contact_create_email', array('uses' => 'ContactController@create', 'as' => 'contact_create_email'));
+		Route::post('/contact_create_email', array('uses' => 'ContactController@update', 'as' => 'update'));
 
 });
 

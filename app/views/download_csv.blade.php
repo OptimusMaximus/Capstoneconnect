@@ -32,7 +32,7 @@ Download CSV File
       
                 <div class = "form group">
                     <div class = "col-sm-12">
-                        {{ Form::submit("Download responses for Questionnaire #$ansId[$i]", array('class'=>'btn btn-default btn-responsive')) }}
+                        {{ Form::submit("Download responses for Questionnaire #$ansId[$i]", array('class'=>'btn cc-btn-primary btn-responsive')) }}
                     </div>                        
                 </div>
                 </br>  
