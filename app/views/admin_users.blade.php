@@ -78,9 +78,9 @@ Admin Tools
                                 {{HTML::linkRoute('admin_user_evals','Evals By', $user->id, array('class' => 'btn btn-xs btn-block btn-default table-btn-bottom-offset', 'data-toggle' => 'tooltip','data-placement' => 'top', 'title' => 'View all evaluations about this user'))}}
                                 {{HTML::linkRoute('user.edit','Edit',$user->id, array('class' => 'btn btn-default btn-xs btn-block table-btn-bottom-offset' , 'data-toggle' => 'tooltip','data-placement' => 'top', 'title' => 'Edit user name or email'))}}        
                                 @if($user->id != Sentry::getUser()->id)
-                                {{ Form::open(array('route' => array('user.destroy', $user->id), 'method' => 'delete')) }}
-                                {{ Form::submit('Remove', array('class'=>'btn btn-default btn-xs btn-block table-btn-top-offset', 'data-toggle' => 'tooltip','data-placement' => 'top', 'title' => 'Removes user from the group'))}}
-                                {{ Form::close() }}
+                                    {{ Form::open(array('route' => array('user.destroy', $user->id), 'method' => 'delete')) }}
+                                    {{ Form::submit('Remove', array('class'=>'btn btn-default btn-xs btn-block table-btn-top-offset', 'data-toggle' => 'tooltip','data-placement' => 'top', 'title' => 'Removes user from the group'))}}
+                                    {{ Form::close() }}
                                 @endif
                             </td>
                         </tr>
@@ -94,6 +94,7 @@ Admin Tools
                                 @else
                                     {{ Form::submit('add', array('class'=>'btn btn-default btn-sm', 'data-toggle' => 'tooltip','data-placement' => 'top', 'title' => 'Click here to add a new user'))}}
                                 @endif
+                                {{ Form::close() }}
                             </td>
                             <!-- <td class="text-center">{{HTML::linkRoute('user.create','add', NULL , array('class' => 'btn btn-sm btn-default'))}}</td> -->
                         </tr>
