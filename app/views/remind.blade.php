@@ -14,6 +14,8 @@
 @section('content')
 <div class = Login>
   <p></p>
+  <!-- Form to enter email address to send a link to reset password-->
+  
   <!-- Check if there was an error and display reason -->
 	@if (Session::has('error'))
   		{{ trans(Session::get('reason')) }}

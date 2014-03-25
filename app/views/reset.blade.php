@@ -14,11 +14,12 @@
 @section('content')
 <div class = Login>
 	<p></p>
+  <!-- Form to create new password -->
 	@if (Session::has('error'))
   		{{ trans(Session::get('reason')) }}
 	@endif
  
-	{{ Form::open(array('route' => array('password.update', $token))) }}
+	{{ Form::open(array('route' => array('update', $token))) }}
  
   <p>{{ Form::label('email', 'Email') }}
   	{{ Form::text('email', Input::old('email'), array('placeholder' => 'admin@sc.edu')) }}
