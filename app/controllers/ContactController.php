@@ -58,13 +58,7 @@ class ContactController extends BaseController {
             $email = Input::Get('email');
             $password = Input::Get('password');
 
-             //Send email using Laravel send function
-                Mail::send('emails.hello', $email, function($message) use ($email)
-                {
-                    //email 'To' field: cahnge this to emails that you want to be notified.                    
-                    $message->to('$email', 'my name')->subject('contact request');
-
-                });
+            
 
             Session::flash('flash', 'Your contact email has been updated' );
             return Redirect::to('contact_create_email'); 
