@@ -9,8 +9,8 @@ class EvaluationController extends \BaseController {
 	 */
 	public function index()
 	{
-		$openEvals = Evaluations::where('closed_at','>',date('Y-m-d H:i:s'))->orderBy('created_at', 'desc');
-		return View::make('evaluation_open')->with($openEvals);
+		$openEvals = Evaluation::where('close_at','>=',Carbon::now())->get();
+		return View::make('evaluation_open', array('openEvals' => $openEvals));
 	}
 
 	/**
@@ -30,6 +30,7 @@ class EvaluationController extends \BaseController {
 	 */
 	public function store()
 	{
+		$date = new Carbon(Input::get('close_at'));
 		$evaluation = Evaluation::create(array(
 			'q1' => $_POST["q1"],
 		    'q2' => $_POST["q2"],
@@ -40,10 +41,14 @@ class EvaluationController extends \BaseController {
 		    'q7' => $_POST["q7"],
 		    'q8' => $_POST["q8"],
 		    'q9' => $_POST["q9"],
-		    'q10' => $_POST["q10"]
+		    'q10' => $_POST["q10"],
+		    'close_at' => ''
 		));
 
-		return Redirect::to('admin_users');
+		$evaluation->close_at = $date;
+		$evaluation->save();
+
+		return Redirect::to('admin_evals');
 	}
 
 	/**
@@ -54,13 +59,13 @@ class EvaluationController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		$eval = Evaluations::find($id);
+		$eval = Evaluation::find($id);
 		$currentUser = Sentry::getUser(); 
 		//$userGroup = DB::select('SELECT id, first_name, last_name, project_id FROM users WHERE project_id = '.$currentUser['project_id']);
 	    $groupMembers = User::where('project_id','=',$currentUser->project_id)->where('id','!=',$currentUser->id)->get();
 
 
-		return View::make('questionnaire')->with($eval, $groupMembers);
+		return View::make('questionnaire', array( 'eval' => $eval, 'groupMembers' => $groupMembers,'currentUser' => $currentUser));
 	}
 
 	/**
@@ -71,7 +76,8 @@ class EvaluationController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		//
+		$eval = Evaluation::find($id);
+		return View::make('evaluation_edit', array('eval' => $eval));
 	}
 
 	/**
@@ -82,7 +88,20 @@ class EvaluationController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		//
+		$eval = Evaluation::find($id);
+		$eval->q1 = Input::get('q1');
+		$eval->q2 = Input::get('q2');
+		$eval->q3 = Input::get('q3');
+		$eval->q4 = Input::get('q4');
+		$eval->q5 = Input::get('q5');
+		$eval->q6 = Input::get('q6');
+		$eval->q7 = Input::get('q7');
+		$eval->q8 = Input::get('q8');
+		$eval->q9 = Input::get('q9');
+		$eval->q10 = Input::get('q10');
+		$eval->close_at = new Carbon(Input::get('close_at')); 
+		$eval->save();
+		return Redirect::route('admin_evals');	
 	}
 
 	/**
@@ -93,7 +112,8 @@ class EvaluationController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		//
+		Evaluation::destroy($id);
+		return Redirect::to('admin_evals');
 	}
 
 }

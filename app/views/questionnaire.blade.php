@@ -21,18 +21,18 @@ Evaluate Group Member
     		<br/>
     		<div class = 'questions'> 
 
-                @if($groupMemebers!=null)
+                @if($groupMembers!=null)
                     <p><font size ='5'>Select the user you are evaluating</font></p>
                     <select name = "answered_about" >
                         @foreach($groupMembers as $member)
-                            <option value = {{$memeber['id']}}>{{$member['first_name']." ".$member['last_name']}}</option>
+                            <option value = {{$member['id']}}>{{$member['first_name']." ".$member['last_name']}}</option>
                         @endforeach
                     </select>
                     <br /><br /><br /><br />
                 @endif
 
          	@if($eval!=null)
-	         	@for($i = 1; $i<=$numOfQuestions; ++$i)
+	         	@for($i = 1; $i<=10; ++$i)
 	         		<?php $question = "q".$i;
 	         			  $answer = "ans".$i;?>
 	    			<p>{{$eval->$question}}</p>	 
@@ -58,7 +58,7 @@ Evaluate Group Member
                     'placeholder' => 'Please enter some comments about your fellow group member.'))}}                
             </div>	
             <input type="hidden" name="answered_by" value={{$currentUser['id']}}>
-            <input type="hidden" name="eid" value={{$evaluation['id']}}>
+            <input type="hidden" name="eid" value={{$eval['id']}}>
     	</div>
     	
     	

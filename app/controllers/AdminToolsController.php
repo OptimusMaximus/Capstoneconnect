@@ -22,7 +22,9 @@ class AdminToolsController extends BaseController {
 	// render admin_evals.blade.php
 	public function makeManageEvals()
 	{
-		return View::make('admin_evals');
+		$openEvals = Evaluation::where('close_at','>=',Carbon::now())->get();
+		$closedEvals = Evaluation::where('close_at','<',Carbon::now())->get();
+		return View::make('admin_evals', array('openEvals' => $openEvals, 'closedEvals' => $closedEvals));
 	}
 
 	public function makeEvalsAbout($id)

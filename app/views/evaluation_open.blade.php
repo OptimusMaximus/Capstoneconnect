@@ -10,6 +10,7 @@ Open Evaluations
 
 @section('content')
    @foreach ($openEvals as $eval)
-   		{{HTML::linkRoute("evaluation.show", 'Evaluation for '.date('M jS', $eval->created_at), array('id' => $eval->id)}}
+   	{{HTML::linkRoute("evaluation.show", 'Evaluation for '.$eval->created_at->toFormattedDateString(), $eval->id)}}
+   	<br>
    @endforeach
 @stop
