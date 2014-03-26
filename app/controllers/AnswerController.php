@@ -30,7 +30,25 @@ class AnswerController extends \BaseController {
 	public function store()
 	{
 		
-		
+		$ans = Answer::where('eid','=',Input::get('eid'))
+				->where('answered_about','=',Input::get('answered_about'))
+				->where('answered_by','=',Input::get('answered_by'))
+				->first();
+		if(isset($ans)) {
+			$ans->ans1=Input::get('ans1');
+			$ans->ans2=Input::get('ans2');
+			$ans->ans3=Input::get('ans3');
+			$ans->ans4=Input::get('ans4');
+			$ans->ans5=Input::get('ans5');
+			$ans->ans6=Input::get('ans6');
+			$ans->ans7=Input::get('ans7');
+			$ans->ans8=Input::get('ans8');
+			$ans->ans9=Input::get('ans9');
+			$ans->ans10=Input::get('ans10');
+			$ans->comment=Input::get('comment');
+			$ans->save();
+		}
+		else {
 		Answer::create(array(
 						   'eid'=>$_POST["eid"],
 						   'answered_about'=>$_POST["answered_about"],
@@ -47,7 +65,8 @@ class AnswerController extends \BaseController {
 						   'ans10' => $_POST["ans10"],
 						   'comment'=>$_POST["comment"]
 						   ));
-		return Redirect::to('questionnaire');
+		}
+		return Redirect::route('evaluation.show', Input::get('eid'));
 	}
 
 	/**
