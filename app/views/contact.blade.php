@@ -12,6 +12,7 @@ Contact
 @stop
 
 @section('content')
+
 <html>
 <body>
 <!-- Blade Template engine -->
@@ -36,7 +37,9 @@ Contact
             {{ Form:: email ('email', '', array('placeholder' => 'me@example.com')) }}
 <br />
             {{ Form:: label ('message', 'Message*' )}}<br />
-            {{ Form:: textarea ('message', '')}}
+            {{ Form::textarea('message', null, ['size' => '35x7']) }}       
+
+
 <br />
             {{ Form::reset('Clear', array('class' => 'you css class for button')) }}
             {{ Form::submit('Send', array('class' => 'you css class for button')) }}

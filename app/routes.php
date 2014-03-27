@@ -27,7 +27,7 @@ Route::post('/register', array('uses' => 'AuthController@activateUser', 'as' => 
 
 Route::get('/splash', array('uses'=> 'SplashController@showWelcome', 'as' => 'splash'));
 
-Route::get('/splash', array('uses'=> 'WelcomeController@showWelcome', 'as' => 'welcome'));
+Route::get('/welcome', array('uses'=> 'WelcomeController@showWelcome', 'as' => 'welcome'));
 
 
 //For user with admin access permissions only
