@@ -85,8 +85,6 @@ class ContactController extends BaseController {
                 Session::flash('warning', 'New email and/or new password cannot be an empty field');
                 return Redirect::to('contact_create_email');
             }
-
-
             //$pattern = '~[a-zA-Z0-9-_.]+@[a-zA-Z]+\.[a-z]{2,4}~i';
 
             //Match exactly the email and password with boundaries
@@ -99,20 +97,22 @@ class ContactController extends BaseController {
 
             //Find the exact pattern and replace with new info
             $emailData = file_get_contents($filename);
-            $emailData = preg_replace($emailPattern, $newEmail, $emailData);
-            if($emailData == false){
+            $newEmailData = preg_replace($emailPattern, $newEmail, $emailData);
+            if($emailData == $newEmailData){
                 Session::flash('warning', 'Your old email does not match.  Try again');
                 return Redirect::to('contact_create_email');
             }
-            echo file_put_contents($filename, $emailData);
+            //Save new email
+            echo file_put_contents($filename, $newEmailData);
 
             $passwordData = file_get_contents($filename);
-            $passwordData = preg_replace($passwordPattern, $newPassword, $passwordData);
-            if($passwordData == false){
+            $newPasswordData = preg_replace($passwordPattern, $newPassword, $passwordData);
+            if($passwordData == $newPasswordData){
                 Session::flash('warning', 'Your old password does not match.  Try again');
                 return Redirect::to('contact_create_email');
             }
-            echo file_put_contents($filename, $passwordData);
+            //Save new password
+            echo file_put_contents($filename, $newPasswordData);
 
             //Success
             Session::flash('screenAnnounce', 'Your new contact email and password has been updated' );

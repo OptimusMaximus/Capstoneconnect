@@ -82,7 +82,7 @@ return array(
 	|
 	*/
 
-	'username' => 'uschelp@gmail.com',
+	'username' => 'USCcapstonehelp@gmail.com',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -95,7 +95,7 @@ return array(
 	|
 	*/
 
-	'password' => 'capstone',
+	'password' => 'capstoneconnect',
 
 	/*
 	|--------------------------------------------------------------------------
