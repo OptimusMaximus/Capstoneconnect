@@ -123,8 +123,18 @@
     </nav>
 
     <body>
-        <h1 class="master-header"><b>@yield('header')</b></h1> 
-        <div class="BigWhite container">
+        <h1 class="master-header"><b>@yield('header')</b></h1>
+        
+        {{--This allows a veiw to override the--}}
+        {{--main div's class value--}}
+        <?php $containerClass; ?>
+        @yield('container_class_value')
+        @if(!isset($containerClass))
+            <?php $containerClass="BigWhite container" ?>
+        @endif
+
+
+        <div class={{"'".$containerClass."'"}}>
             @yield('content')
         </div>
     </body>

@@ -10,6 +10,28 @@
 		color: #000;
 	}
 
+	.SmallWhite {
+		background-color:#FFFFFF;
+		height: auto;
+		width: 50%;
+		margin: 3% auto 0%;
+		border:2px solid;
+		border-radius:25px;
+		padding: 3%;
+		color: #000;
+	}
+	
+	.XSmallWhite {
+		background-color:#FFFFFF;
+		height: auto;
+		width: 30%;
+		margin: 3% auto 0%;
+		border:2px solid;
+		border-radius:25px;
+		padding: 3%;
+		color: #000;
+	}
+
 	.cc-navbar {
 		margin-top: -20px;
 		margin-bottom: 5em;
@@ -65,10 +87,9 @@
 	.Announcements {	
 		border-radius:25px;
 		background-color:#73000A;
-		height:550px;
-		width:300px;
-		margin: 300 auto;
-		margin:30px 30px 30px 30px;
+		padding-bottom: 20px;
+		padding-right: 20px;
+		padding-left: 20px;
 		border:2px solid black;
 		float:left
 	} 	
@@ -445,4 +466,3 @@
 		color: black;
 	}
 /*-----------------------------*/
-

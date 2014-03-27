@@ -8,6 +8,11 @@
 Download CSV File
 @stop
 
+{{--This allows a veiw to override the--}}
+{{--main div's class value--}}
+@section('container_class_value')
+<?php $containerClass="XSmallWhite container"; ?>
+@show
 @section('content')
 
     <?php

@@ -7,7 +7,11 @@
 @section('header')
 Post New Annoucement
 @stop
-
+{{--This allows a veiw to override the--}}
+{{--main div's class value--}}
+@section('container_class_value')
+<?php $containerClass="SmallWhite container"; ?>
+@show
 @section('content')
     {{ Form::open(        
          array('url' => URL::route('create_announcement'),
@@ -18,9 +22,9 @@ Post New Annoucement
             <div class = "alert alert-success"> {{ Session::get('screenAnnounce') }} </div>
          @endif
 
-        <div class="form-group col-centered">                  
+        <div class="form-group">                  
             {{ Form::textarea('announcement', '', 
-                array('class' => 'col-xs-12',
+                array('class' => 'form-control',
                 'placeholder' => 'Please enter new announcements. This will replace any previous announcements.'))}}                
         </div>  
         </br>
