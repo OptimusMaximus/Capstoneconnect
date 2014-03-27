@@ -8,7 +8,10 @@
 Update Contact Email and Password
 @stop
 
-@section('content')    
+@section('content')   
+
+    <p>You can update your contact email and password so you can receive emails from Capstone Connect</p>
+    </br> 
 
 	{{ Form::open(array('url'   => 'contact_create_email', 
                         'class' => 'form-horizontal',
@@ -67,7 +70,7 @@ Update Contact Email and Password
     
     <div class = "form group">
     	<div class="col-sm-offset-2 col-sm-8">       	
-        	{{ Form::submit('Submit new contact email', array('class' => 'btn cc-btn-primary', 'data-toggle' => 'tooltip','data-placement' => 'top', 'title' => 'Submit new contact email')) }}
+        	{{ Form::submit('Update', array('class' => 'btn cc-btn-primary', 'data-toggle' => 'tooltip','data-placement' => 'top', 'title' => 'Update')) }}
         </div>                        
     </div>  
     {{ Form::close() }}
