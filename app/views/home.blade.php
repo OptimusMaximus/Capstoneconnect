@@ -46,8 +46,8 @@ Capstone Connect
   	</div>
 <!-- Calendar Right here -->
     <div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-5 col-lg-6" style = "background-color: #FFFFFF">
- <div class="responsive-video-container iframe">
-	<iframe src="https://www.google.com/calendar/embed?showTitle=0&amp;showPrint=0&amp;showTabs=0&amp;showTz=0&amp;height=400&amp;wkst=1&amp;bgcolor=%23ffffff&amp;src=en.usa%23holiday%40group.v.calendar.google.com&amp;color=%235F6B02&amp;ctz=America%2FNew_York" style=" border:solid 1px #777 " width="400" height="400" frameborder="3" scrolling="no"></iframe>
+ <div class="responsive-iframe-container iframe">
+	<iframe src="https://www.google.com/calendar/embed?showTitle=0&amp;showPrint=0&amp;showTabs=0&amp;showTz=0&amp;height=400&amp;wkst=1&amp;bgcolor=%23ffffff&amp;src=en.usa%23holiday%40group.v.calendar.google.com&amp;color=%235F6B02&amp;ctz=America%2FNew_York" style=" border:solid 1px #777 " ; width="400" height="400" frameborder="3" scrolling="no"></iframe>
   </div>
   </div>
 
