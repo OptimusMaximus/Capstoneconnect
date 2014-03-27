@@ -35,7 +35,9 @@ class ContactController extends BaseController {
                     //email 'From' field: Get users email add and name
                     $message->from($data['email'] , $data['first_name']);
                      //email 'To' field: cahnge this to emails that you want to be notified.                    
-                    $message->to('CapstoneContactSC@gmail.com', 'my name')->subject('contact request');
+                    //$message->to('CapstoneContactSC@gmail.com')->subject('contact request');
+                     $message->to('USCcapstonehelp@gmail.com')->subject('contact request');
+                    //$message->to('$adminEmail', 'my name')->subject('contact request');
 
                 });
 
