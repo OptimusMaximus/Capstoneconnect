@@ -23,7 +23,25 @@
         <!-- Include all compiled plugins (below), or include individual files as needed -->
         {{ HTML::script('js/bootstrap.js') }}
         @yield('head')
-    </head>
+
+        <script type="text/javascript" src="/path/to/jquery-latest.js"></script> 
+        <script type="text/javascript" src="/path/to/jquery.tablesorter.js"></script> 
+
+        <script type="text/javascript"> $(document).ready(function() 
+    { 
+        $("AverageGrades").tablesorter( {sortList: [[0,0], [1,0]]} ); 
+    } 
+); 
+     </script>
+    
+
+
+
+    
+
+
+
+   </head>
 
     <nav class="cc-navbar navbar navbar-default" role="navigation">
       <div class="container-fluid">

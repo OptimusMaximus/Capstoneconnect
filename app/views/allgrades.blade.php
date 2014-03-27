@@ -26,22 +26,30 @@
 //$grades1 = DB::table('students')->lists('grades1', 'id');
 
 ?>
+
+
+<!-- Table starts here -->
+
 <div class="table-responsive">
-<table class="table table-bordered table-groups">
+ <table id="AverageGrades" class="table table-bordered table-groups" >
+
+<thead>
  <tr bgcolor="Black">
+
                    <td><font color="White">First Name</td></font>
                    <td><font color="White">Last Name</td></font>
                    <td><font color="White">Email</td></font>
                   
                    <td> <font color="White">Average Grade</td></font>
         
-   
+                     </td>
 
 
            
                        </tr>
+                       </thead>
 
-                      
+                     
 @foreach ($users as $user)
 
 
@@ -67,16 +75,20 @@ $avg = ($a1 + $a2 + $a3 + $a4 + $a5 + $a6 + $a7 + $a8 + $a9 + $a10)/10;   //Aver
 ?>
    
 
-                        <tr bgcolor="#73000A">
+                     
+                        <tbody>  
+                         <tr bgcolor="#73000A">
                             <td><font color="White">{{$user->first_name}}</td>
                             <td><font color="White">{{$user->last_name}}</td>
                             <td><font color="White">{{$user->email}}</td>
                             <td><font color="White">{{$avg}}</td>  
+                        </tbody>
                         </tr>
 @endforeach  
 
 
 </table>
-</div>
+
+
     
 @stop
