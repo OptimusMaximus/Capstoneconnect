@@ -20,33 +20,22 @@ Evaluate Group Member
 
     		<br/>
     		<div class = 'questions'> 
-    			
-    			<?php 
-                $currentUser = Sentry::getUser(); 
-                //$userGroup = DB::select('SELECT id, first_name, last_name, project_id FROM users WHERE project_id = '.$currentUser['project_id']);
-                $userGroup = User::where('project_id','=',$currentUser->project_id)->where('id','!=',$currentUser->id)->get();
 
-                $mostRecentEvalDate = Evaluation::max('created_at');
-                $evaluation = Evaluation::where('created_at', $mostRecentEvalDate)->first();
-                
-                $numOfQuestions = 10;
-         		?>
-
-                @if($userGroup!=null)
+                @if($groupMembers!=null)
                     <p><font size ='5'>Select the user you are evaluating</font></p>
                     <select name = "answered_about" >
-                        @foreach($userGroup as $users)
-                            <option value = {{$users['id']}}>{{$users['first_name']." ".$users['last_name']}}</option>
+                        @foreach($groupMembers as $member)
+                            <option value = {{$member['id']}}>{{$member['first_name']." ".$member['last_name']}}</option>
                         @endforeach
                     </select>
                     <br /><br /><br /><br />
                 @endif
 
-         	@if($evaluation!=null)
-	         	@for($i = 1; $i<=$numOfQuestions; ++$i)
+         	@if($eval!=null)
+	         	@for($i = 1; $i<=10; ++$i)
 	         		<?php $question = "q".$i;
 	         			  $answer = "ans".$i;?>
-	    			<p>{{$evaluation->$question}}</p>	 
+	    			<p>{{$eval->$question}}</p>	 
 	    			
 		    		<select name = {{$answer}}>
 		  			 	<option>1</option>
@@ -69,7 +58,7 @@ Evaluate Group Member
                     'placeholder' => 'Please enter some comments about your fellow group member.'))}}                
             </div>	
             <input type="hidden" name="answered_by" value={{$currentUser['id']}}>
-            <input type="hidden" name="eid" value={{$evaluation['id']}}>
+            <input type="hidden" name="eid" value={{$eval['id']}}>
     	</div>
     	
     	

@@ -14,8 +14,8 @@ class AddCloseAtToEvaluationTable extends Migration {
 	{
 		Schema::table('evaluations', function(Blueprint $table)
 		{
-			$date = date('Y-m-d H:i:s');
-			$date->add(new DateInterval('P14D'));
+			$date = Carbon::now();
+			$date->addWeeks(2);
 			$table->dateTime('close_at')->default($date);
 		});
 	}
