@@ -35,15 +35,13 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href='home'>Capstone Connect BETA</a>
+          <a class="navbar-brand" href='home'>Capstone Connect</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling  -->
         <div class="collapse navbar-collapse" id="navbar-collapse">
             <ul class="nav navbar-nav">
-                <li>{{ HTML::linkRoute('home', 'Home') }}</li>
-                <li>{{ HTML::linkRoute('questionnaire', 'Evaluate') }}</li>
-                
+                <li>{{ HTML::linkRoute('home', 'Home') }}</li>                
                 <?php 
                     try
                     {
@@ -76,16 +74,19 @@
                                         echo( HTML::linkRoute('admin_users', 'User/Project') );
                                     echo('</li>');
                                     echo('<li>');
-                                        echo( HTML::linkRoute('admin_evals', 'Create Evaluation') );
+                                        echo( HTML::linkRoute('admin_evals', 'Mange Evaluation') );
                                     echo('</li>');
                                     echo('<li>');
-                                        echo( HTML::linkRoute('allgrades', 'All Grades') );
+                                        echo( HTML::linkRoute('allgrades', 'Average Grades') );
                                     echo('</li>');
                                     echo('<li>');
-                                        echo( HTML::linkRoute('create_announcement', 'Create Announcement'));
+                                        echo( HTML::linkRoute('create_announcement', 'Post New Announcement'));
                                     echo('</li>');
                                     echo('<li>');
                                         echo( HTML::linkRoute('download_csv', 'Download CSV File'));
+                                    echo('</li>');
+                                    echo('<li>');
+                                        echo( HTML::linkRoute('contact_create_email', 'Update Email Contact'));
                                     echo('</li>');
 
                             echo(  '</ul>  
@@ -102,6 +103,9 @@
                         echo 'Group was not found.';
                     } 
                 ?>
+                @if(!$user->inGroup($admin))
+                    <li>{{ HTML::linkRoute('evaluation.index', 'Evaluate') }}</li>
+                @endif
             </ul>
             <ul class='nav navbar-nav navbar-right'> 
                 <li class="dropdown">  
@@ -119,8 +123,18 @@
     </nav>
 
     <body>
-        <h1 class="master-header"><b>@yield('header')</b></h1> 
-        <div class="BigWhite container">
+        <h1 class="master-header"><b>@yield('header')</b></h1>
+        
+        {{--This allows a veiw to override the--}}
+        {{--main div's class value--}}
+        <?php $containerClass; ?>
+        @yield('container_class_value')
+        @if(!isset($containerClass))
+            <?php $containerClass="BigWhite container" ?>
+        @endif
+
+
+        <div class={{"'".$containerClass."'"}}>
             @yield('content')
         </div>
     </body>

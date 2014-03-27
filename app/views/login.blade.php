@@ -24,6 +24,10 @@
         <div class = "alert alert-danger"> {{ Session::get('loginError') }} </div>
       @endif
 
+      @if (Session::get('logoutSuccess'))
+        <div class = "alert alert-success"> {{ Session::get('logoutSuccess') }} </div>
+      @endif
+
       <!-- login errors from Validator -->
       @if ($errors->count() > 0)
         <div class = "alert alert-danger">

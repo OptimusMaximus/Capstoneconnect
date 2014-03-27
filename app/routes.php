@@ -30,6 +30,27 @@ Route::get('/splash', array('uses'=> 'SplashController@showWelcome', 'as' => 'sp
 Route::get('/splash', array('uses'=> 'WelcomeController@showWelcome', 'as' => 'welcome'));
 
 
+//For user with admin access permissions only
+Route::group(array('prefix' => '', 'before' => 'authAdmin'), function()
+{
+		Route::resource('answer', 'AnswerController');
+		Route::resource('evaluation', 'EvaluationController');
+		Route::resource('project', 'ProjectController');
+		Route::resource('user', 'UserController');
+
+		Route::get('/admin_evals_about/{token}', array('uses'=> 'AdminToolsController@makeEvalsAbout', 'as' => 'admin_evals_about'));
+		Route::get('/project/{token}/user/new', array('uses' => 'UserController@projectCreate', 'as' => 'project.user.create'));
+		Route::get('/admin_users', array('uses' => 'AdminToolsController@makeManageUsers', 'as' => 'admin_users'));
+		Route::get('/admin_evals/{token}', array('uses' => 'AdminToolsController@getUserEvals', 'as' => 'admin_user_evals'));
+		Route::get('/admin_evals', array('uses' => 'AdminToolsController@makeManageEvals', 'as' => 'admin_evals'));
+		Route::get('/create_announcement', array('uses' => 'AnnouncementController@makeAnnouncement', 'as' => 'create_announcement'));
+		Route::post('/create_announcement', array('uses' => 'AnnouncementController@store', 'as' => 'announcement.store'));
+		Route::get('/download_csv', array('uses' => 'ExportCSVController@export', 'as' => 'download_csv'));
+		Route::post('/download_csv', array('uses' => 'ExportCSVController@doneExportCSV'));
+		Route::get('/contact_create_email', array('uses' => 'ContactController@create', 'as' => 'contact_create_email'));
+		Route::post('/contact_create_email', array('uses' => 'ContactController@update', 'as' => 'update'));
+
+});
 
 Route::group(array('prefix' => '', 'before' => 'auth'), function()
 {
@@ -44,31 +65,11 @@ Route::group(array('prefix' => '', 'before' => 'auth'), function()
 		//http://laravel.com/docs/controllers#resource-controllers
 		Route::get('/answer/create', array('uses' => 'AnswerController@create', 'as' => 'answers.create'));
 		Route::post('/answer', array('uses' => 'AnswerController@store', 'as' => 'answers.store'));
+		Route::resource('evaluation', 'EvaluationController', array('only' => array('index','show')));
+		
 		//Contact Page
 		Route::get('/contact', array('uses' => 'ContactController@getContact', 'as' => 'contact'));
 		//Form request:: POST action will trigger to controller
 		Route::post('contact_request','ContactController@getContactUsForm');
 
 });
-
-//For user with admin access permissions only
-Route::group(array('prefix' => '', 'before' => 'authAdmin'), function()
-{
-		Route::resource('answer', 'AnswerController');
-		Route::resource('evaluation', 'EvaluationController');
-		Route::resource('project', 'ProjectController');
-		Route::resource('user', 'UserController');
-		Route::get('/admin_evals_about/{token}', array('uses'=> 'AdminToolsController@makeEvalsAbout', 'as' => 'admin_evals_about'));
-		Route::get('/project/{token}/user/new', array('uses' => 'UserController@projectCreate', 'as' => 'project.user.create'));
-		Route::get('/admin_users', array('uses' => 'AdminToolsController@makeManageUsers', 'as' => 'admin_users'));
-		Route::get('/evaluation/create', array('uses' => 'AdminToolsController@makeManageEvals', 'as' => 'admin_evals'));
-		Route::get('/admin_evals/{token}', array('uses' => 'AdminToolsController@getUserEvals', 'as' => 'admin_user_evals'));
-		Route::get('/create_announcement', array('uses' => 'AnnouncementController@makeAnnouncement', 'as' => 'create_announcement'));
-		Route::post('/create_announcement', array('uses' => 'AnnouncementController@store', 'as' => 'announcement.store'));
-		Route::get('/download_csv', array('uses' => 'ExportCSVController@export', 'as' => 'download_csv'));
-		Route::post('/download_csv', array('uses' => 'ExportCSVController@doneExportCSV'));
-
-});
-
-Route::post('/evaluation/new', array('as' => 'newEval', 'uses' => 'EvaluationController@store'));
-

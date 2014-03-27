@@ -17,7 +17,11 @@ User Management
 
 @section('content')
 <!-- Form for adding a new student -->
+@if($pid != 0)
 <h1 class="text-center"><u>New User</u></h1>
+@else
+<h1 class="text-center"><u>New Admin User</u></h1>
+@endif
 <br>
 {{ Form::open(
     array('url' => route('user.store'),
@@ -60,6 +64,7 @@ User Management
     @if(isset($pid))
         {{ Form::hidden('pid',$pid) }}
     @endif
+    @if($pid != 0)
     <div class="form-group">  
         {{ Form::label('name', 'User Type:', 
             array('class' => 'col-sm-2 control-label')
@@ -68,6 +73,9 @@ User Management
             {{ Form::select('group', array('U' => 'User', 'A' => 'Admin'), 'U', array('class' => 'form-control'))}}
         </div>
     </div>
+    @else
+        {{ Form::hidden('group','A') }}
+    @endif
     <div class="form-group">
         <div class="col-sm-offset-2 col-sm-10">
             {{ Form::submit('Add User', array('class'=>'btn btn-default pull-left'))}}

@@ -7,48 +7,42 @@
 
 @stop
 @section('header')
-Capstone Connect
+Welcome to Capstone Connect
 @stop
 @section('content')
 
- <p1>
-      <font size =6 style="text-shadow:1px 1px 1px #000000;" color=73000A face ="cursive">Welcome to Capstone Connect!</br> 
-      </font>
-       <!-- <font color=73000A face ="cursive">
-        Here is the your class's recent activity
-        and the latest announcements from your professor.
-       </font> 
--->
-       </p1>
-
-  </br>
-</br>
-
 <div class = "row">
-	<div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-4 col-lg-4" style = "background-color: #73000A">
-		<h3>Announcements</h3>
-
-		
+	<div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-4 col-lg-4 Announcements" style = "background-color: #73000A">
+		<h3>Announcements</h3>	
 
 		<div class="InsideAnnouncement">
+        <!-- Display only the most recent announcement -->
   			<?php
   				$mostRecentDate = Announcement::max('created_at');
   				$announce = Announcement::where('created_at', $mostRecentDate)->first();
   			?>
 
+        <!-- Pull announcement from database if one exists -->
   			@if($announce != null)
   				<p1>
   					{{ $announce->announcement }}
   				</p1>
   			@endif
-  		</div>
-
   	</div>
+<<<<<<< HEAD
 <!-- Calendar Right here -->
     <div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-5 col-lg-6" style = "background-color: #FFFFFF">
  <div class="responsive-iframe-container iframe">
 	<iframe src="https://www.google.com/calendar/embed?showTitle=0&amp;showPrint=0&amp;showTabs=0&amp;showTz=0&amp;height=400&amp;wkst=1&amp;bgcolor=%23ffffff&amp;src=en.usa%23holiday%40group.v.calendar.google.com&amp;color=%235F6B02&amp;ctz=America%2FNew_York" style=" border:solid 1px #777 " ; width="400" height="400" frameborder="3" scrolling="no"></iframe>
+=======
+
+>>>>>>> master
   </div>
+
+  <div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-5 col-lg-6" style = "background-color: #FFFFFF">
+    <div class="responsive-iframe-container iframe">
+	   <iframe src="https://www.google.com/calendar/embed?showTitle=0&amp;showPrint=0&amp;showTabs=0&amp;showTz=0&amp;height=400&amp;wkst=1&amp;bgcolor=%23ffffff&amp;src=en.usa%23holiday%40group.v.calendar.google.com&amp;color=%235F6B02&amp;ctz=America%2FNew_York" style=" border:solid 1px #777 " width="400" height="400" frameborder="0" scrolling="no"></iframe>
+    </div>
   </div>
 
 
@@ -72,11 +66,8 @@ Capstone Connect
         @endforeach	
   			</p1>			
 -->
-  		</div>
- 	</div>
+  		<!--</div>
+ 	</div>-->
 	
-</div>
-	
-
-
+  </div>
 @stop

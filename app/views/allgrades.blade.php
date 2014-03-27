@@ -9,12 +9,11 @@
 @stop
 
 @section('header')
-<h1>All Grades</h1>
+<h1>Average Grades</h1>
 @stop
-	 
+
 @section('content')
 
-    <div class = AllGradesWhite>
 
 <?php $user = Sentry::getUser();
 //Finds the current user ^^^
@@ -22,14 +21,13 @@
 
 ?>
 <p><font size ='5'>Average Grade per User</font></p>
-    <div class="table-responsive">
 <?php $users = User::all();
  $evalID = DB::table('evaluations')->lists('id', 'id');
 //$grades1 = DB::table('students')->lists('grades1', 'id');
 
 ?>
-
-<table class="table table-bordered table-groups pull-right">
+<div class="table-responsive">
+<table class="table table-bordered table-groups">
  <tr bgcolor="Black">
                    <td><font color="White">First Name</td></font>
                    <td><font color="White">Last Name</td></font>
@@ -79,11 +77,6 @@ $avg = ($a1 + $a2 + $a3 + $a4 + $a5 + $a6 + $a7 + $a8 + $a9 + $a10)/10;   //Aver
 
 
 </table>
-  
-  <table class="table">
-
-  </table>
 </div>
-    </div>
     
 @stop

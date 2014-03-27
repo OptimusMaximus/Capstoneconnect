@@ -13,7 +13,10 @@
 
 @section('content')
 <div class = Login>
-	<p></p>
+  <p></p>
+  <!-- Form to enter email address to send a link to reset password-->
+  
+  <!-- Check if there was an error and display reason -->
 	@if (Session::has('error'))
   		{{ trans(Session::get('reason')) }}
 	@elseif (Session::has('success'))
@@ -29,10 +32,10 @@
   	</p>
  	
   	<p>{{ Form::submit('Submit') }}</p>
-  	@endif
+  @endif
 
-  	@if (Session::has('success'))
-  	{{ HTML::link('login', 'Click here to return to login page', array('class' => 'blue'))}}
+  @if (Session::has('success'))
+    {{ HTML::link('login', 'Click here to return to login page', array('class' => 'blue'))}}
  	@endif
 	{{ Form::close() }}
 </div>
