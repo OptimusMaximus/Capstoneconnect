@@ -7,20 +7,25 @@
 @section('header')
 Capstone Connect
 @stop
+{{--This allows a veiw to override the--}}
+{{--main div's class value--}}
+@section('container_class_value')
+<?php $containerClass="SmallWhite container"; ?>
+@show
 
 @section('content')
     
     <h2>Open evaluations</h2>
     <hr>
     @foreach ($openEvals as $open)
-        {{HTML::linkRoute("evaluation.edit", "Evaluation for ".$open->created_at, $open->id)}} <br><br>
+        {{HTML::linkRoute("evaluation.edit", "This Evaluation closes on ".$open->close_at->toFormattedDateString(), $open->id)}} <br><br>
     @endforeach
 
     <h2>Closed evaluations</h2>
     <hr>
     @if(!is_null($closedEvals))
         @foreach ($closedEvals as $closed)
-            {{HTML::linkRoute("evaluation.edit", "Evaluation for ".$closed->created_at, $closed->id)}} <br><br>
+            {{HTML::linkRoute("evaluation.edit", "This Evaluation closed on ".$closed->close_at->toFormattedDateString(), $closed->id)}} <br><br>
         @endforeach
     @endif
     
