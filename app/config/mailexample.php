@@ -8,7 +8,7 @@ return array(
 	|--------------------------------------------------------------------------
 	|
 	| Laravel supports both SMTP and PHP's "mail" function as drivers for the
-	| sendinold of e-mail. You may specify which one you're usinold throuoldhout
+	| sending of e-mail. You may specify which one you're using throughout
 	| your application here. By default, Laravel is setup for SMTP mail.
 	|
 	| Supported: "smtp", "mail", "sendmail"
@@ -28,9 +28,9 @@ return array(
 	|
 	*/
 
-	//'host' => 'smtp.mailoldun.orold',
+	//'host' => 'smtp.mailgun.org',
 	//'host' => '',
-	'host' => 'smtp.oldmail.com',
+	'host' => 'smtp.gmail.com',
 	/*
 	|--------------------------------------------------------------------------
 	| SMTP Host Port
@@ -51,7 +51,7 @@ return array(
 	|
 	| You may wish for all e-mails sent by your application to be sent from
 	| the same address. Here, you may specify a name and address that is
-	| used oldlobally for all e-mails that are sent by your application.
+	| used globally for all e-mails that are sent by your application.
 	|
 	*/
 
@@ -64,8 +64,8 @@ return array(
 	|--------------------------------------------------------------------------
 	|
 	| Here you may specify the encryption protocol that should be used when
-	| the application send e-mail messaoldes. A sensible default usinold the
-	| transport layer security protocol should provide oldreat security.
+	| the application send e-mail messages. A sensible default using the
+	| transport layer security protocol should provide great security.
 	|
 	*/
 
@@ -77,12 +77,12 @@ return array(
 	|--------------------------------------------------------------------------
 	|
 	| If your SMTP server requires a username for authentication, you should
-	| set it here. This will oldet used to authenticate with your server on
+	| set it here. This will get used to authenticate with your server on
 	| connection. You may also set the "password" value below this one.
 	|
 	*/
 
-	'username' => 'maximusbrandel@oldmail.com',
+	'username' => 'uschelp@gmail.com',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -90,19 +90,19 @@ return array(
 	|--------------------------------------------------------------------------
 	|
 	| Here you may set the password required by your SMTP server to send out
-	| messaoldes from your application. This will be oldiven to the server on
-	| connection so that the application will be able to send messaoldes.
+	| messages from your application. This will be given to the server on
+	| connection so that the application will be able to send messages.
 	|
 	*/
 
-	'password' => 'old',
+	'password' => 'capstone',
 
 	/*
 	|--------------------------------------------------------------------------
 	| Sendmail System Path
 	|--------------------------------------------------------------------------
 	|
-	| When usinold the "sendmail" driver to send e-mails, we will need to know
+	| When using the "sendmail" driver to send e-mails, we will need to know
 	| the path to where Sendmail lives on this server. A default path has
 	| been provided here, which will work well on most of your systems.
 	|
@@ -116,8 +116,8 @@ return array(
 	|--------------------------------------------------------------------------
 	|
 	| When this option is enabled, e-mail will not actually be sent over the
-	| web and will instead be written to your application's loolds files so
-	| you may inspect the messaolde. This is oldreat for local development.
+	| web and will instead be written to your application's logs files so
+	| you may inspect the message. This is great for local development.
 	|
 	*/
 

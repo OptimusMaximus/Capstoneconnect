@@ -19,6 +19,20 @@ Update Contact Email and Password
         <div class = "alert alert-success"> {{ Session::get('screenAnnounce') }} </div>
     @endif
 
+     @if (Session::get('warning'))
+        <div class = "alert alert-danger"> {{ Session::get('warning') }} </div>
+    @endif
+
+     <!-- login errors from Validator -->
+      @if ($errors->count() > 0)
+        <div class = "alert alert-danger">
+          <p>
+            {{ $errors->first('email') }}
+            {{ $errors->first('password') }}
+          </p>
+        </div>
+      @endif
+
     <div class="form-group">
         {{ Form::label('oldEmail', 'Old Contact Email Address', array('class' => 'col-sm-4 control-label')) }}
         <div class="col-sm-8">
