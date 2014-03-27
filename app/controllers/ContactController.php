@@ -51,17 +51,36 @@ class ContactController extends BaseController {
             return View::make('contact_create_email');
         }
 
-
+        //Update old email and password for contact information related to email
         public function update(){
             
-            //Get 'email' variable from contact_create_email.blade view
-            $email = Input::Get('email');
-            $password = Input::Get('password');
+            //Get variables from contact_create_email.blade view
+            $newEmail = Input::Get('email');
+            $newPassword = Input::Get('password');
+            $oldEmail = Input::Get('oldEmail');
+            $oldPassword = Input::Get('oldPassword');
 
-            
+            //$pattern = '~[a-zA-Z0-9-_.]+@[a-zA-Z]+\.[a-z]{2,4}~i';
+            $emailPattern = "'$oldEmail'";
+            $passwordPattern = "'$oldPassword'";
 
-            Session::flash('flash', 'Your contact email has been updated' );
+            //$filename = '/var/www/html/Capstoneconnect/mailexample.php';
+            //$filename = 'mailexample.php';
+            $filename = $_SERVER['DOCUMENT_ROOT']."\Capstoneconnect\app\config\mailexample.php";
+
+            $emailData = file_get_contents($filename);
+            $emailData = preg_replace($emailPattern, $newEmail, $emailData);
+            echo file_put_contents($filename, $emailData);
+
+            $passwordData = file_get_contents($filename);
+            $passwordData = preg_replace($passwordPattern, $newPassword, $passwordData);
+            echo file_put_contents($filename, $passwordData);
+
+            if($emailData && $passwordData)
+                Session::flash('screenAnnounce', 'Your new contact email and password has been updated' );
+            else
+                Session::flash('screenAnnounce', 'Your old email and/or old password do not match.  Try again');
+
             return Redirect::to('contact_create_email'); 
-
         }
 }
