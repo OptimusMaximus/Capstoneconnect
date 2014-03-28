@@ -74,14 +74,18 @@ Admin Tools
 
                                 <!--{{HTML::linkRoute('admin_user_evals','Evaluations', $user->id, array('class' => 'btn btn-xs btn-block btn-default table-btn-bottom-offset' , 'data-toggle' => 'tooltip','data-placement' => 'top', 'title' => 'View all user evaluations'))}}
                                 -->
-                                {{HTML::linkRoute('admin_evals_about','Evals For', $user->id, array('class' => 'btn btn-xs btn-block btn-default table-btn-bottom-offset', 'data-toggle' => 'tooltip','data-placement' => 'top', 'title' => 'View all evaluations this user has submitted'))}}
-                                {{HTML::linkRoute('admin_user_evals','Evals By', $user->id, array('class' => 'btn btn-xs btn-block btn-default table-btn-bottom-offset', 'data-toggle' => 'tooltip','data-placement' => 'top', 'title' => 'View all evaluations about this user'))}}
-                                {{HTML::linkRoute('user.edit','Edit',$user->id, array('class' => 'btn btn-default btn-xs btn-block table-btn-bottom-offset' , 'data-toggle' => 'tooltip','data-placement' => 'top', 'title' => 'Edit user name or email'))}}        
+                                <div class="user-btn-group">
+                                {{HTML::linkRoute('admin_evals_about','Evals For', $user->id, array('class' => 'btn btn-xs btn-default user-btn', 'data-toggle' => 'tooltip','data-placement' => 'top', 'title' => 'View all evaluations this user has submitted'))}}
+                                {{HTML::linkRoute('admin_evals_by','Evals By', $user->id, array('class' => 'btn btn-xs  btn-default user-btn', 'data-toggle' => 'tooltip','data-placement' => 'top', 'title' => 'View all evaluations about this user'))}}
+                                </div>
+                                <div class="user-btn-group">
+                                {{HTML::linkRoute('user.edit','Edit',$user->id, array('class' => 'btn btn-xs btn-default user-btn' , 'data-toggle' => 'tooltip','data-placement' => 'top', 'title' => 'Edit user name or email'))}}        
                                 @if($user->id != Sentry::getUser()->id)
-                                    {{ Form::open(array('route' => array('user.destroy', $user->id), 'method' => 'delete')) }}
-                                    {{ Form::submit('Remove', array('class'=>'btn btn-default btn-xs btn-block table-btn-top-offset', 'data-toggle' => 'tooltip','data-placement' => 'top', 'title' => 'Removes user from the group'))}}
+                                    {{ Form::open(array('route' => array('user.destroy', $user->id), 'method' => 'delete', 'style' => 'display: inline')) }}
+                                    {{ Form::submit('Remove', array('class'=>'btn btn-xs btn-default  user-btn', 'data-toggle' => 'tooltip','data-placement' => 'top', 'title' => 'Removes user from the group'))}}
                                     {{ Form::close() }}
                                 @endif
+                                </div>
                             </td>
                         </tr>
                     @endforeach
