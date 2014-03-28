@@ -33,12 +33,13 @@ Route::get('/welcome', array('uses'=> 'WelcomeController@showWelcome', 'as' => '
 //For user with admin access permissions only
 Route::group(array('prefix' => '', 'before' => 'authAdmin'), function()
 {
-		Route::resource('answer', 'AnswerController');
+		Route::resource('answer', 'AnswerController', array('except' => array('store','create')));
 		Route::resource('evaluation', 'EvaluationController');
 		Route::resource('project', 'ProjectController');
 		Route::resource('user', 'UserController');
 
 		Route::get('/admin_evals_about/{token}', array('uses'=> 'AdminToolsController@makeEvalsAbout', 'as' => 'admin_evals_about'));
+		Route::get('/admin_evals_by/{token}', array('uses'=> 'AdminToolsController@makeEvalsBy', 'as' => 'admin_evals_by'));
 		Route::get('/project/{token}/user/new', array('uses' => 'UserController@projectCreate', 'as' => 'project.user.create'));
 		Route::get('/admin_users', array('uses' => 'AdminToolsController@makeManageUsers', 'as' => 'admin_users'));
 		Route::get('/admin_evals/{token}', array('uses' => 'AdminToolsController@getUserEvals', 'as' => 'admin_user_evals'));
@@ -63,8 +64,8 @@ Route::group(array('prefix' => '', 'before' => 'auth'), function()
 		//user allowed crud operations. To add to this look at the table in the following link
 		//to make a route for the apporiate action.
 		//http://laravel.com/docs/controllers#resource-controllers
-		Route::get('/answer/create', array('uses' => 'AnswerController@create', 'as' => 'answers.create'));
-		Route::post('/answer', array('uses' => 'AnswerController@store', 'as' => 'answers.store'));
+		Route::resource('answer', 'AnswerController', array('only' => array('store','create')));
+
 		Route::resource('evaluation', 'EvaluationController', array('only' => array('index','show')));
 		
 		//Contact Page

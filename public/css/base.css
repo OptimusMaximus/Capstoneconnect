@@ -497,3 +497,12 @@ textarea {
 	border-color: black;
 }
 .calendar table td a:link{font-weight:bold}
+
+.user-btn{
+	width: 60px;
+	margin: 1px;
+}
+
+.user-btn-group {
+	display: inline-block;
+}
