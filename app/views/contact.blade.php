@@ -25,10 +25,10 @@ Contact
             </ul>
 
             {{ Form:: label ('first_name', 'First Name*' )}}<br />
-            {{ Form:: text ('first_name', '' )}}
+            {{ Form:: text ('first_name', '', array('placeholder' => 'John')) }}
 <br />
             {{ Form:: label ('last_name', 'Last Name*' )}}<br />
-            {{ Form:: text ('last_name', '' )}}
+            {{ Form:: text ('last_name', '', array('placeholder' => 'Doe')) }}
 <br />
             {{ Form:: label ('phone_number', 'Phone Number' )}}<br />
             {{ Form:: text ('phone_number', '', array('placeholder' => '1234567890')) }}
@@ -37,10 +37,10 @@ Contact
             {{ Form:: email ('email', '', array('placeholder' => 'me@example.com')) }}
 <br />
             {{ Form:: label ('message', 'Message*' )}}<br />
-            {{ Form::textarea('message', null, ['size' => '35x7']) }}       
-
-
+            {{ Form:: textarea('message', '', ['size' => '40x10']) }}       
 <br />
+<br />
+
             {{ Form::reset('Clear', array('class' => 'btn cc-btn-primary')) }}
             {{ Form::submit('Send', array('class' => 'btn cc-btn-primary')) }}
 
