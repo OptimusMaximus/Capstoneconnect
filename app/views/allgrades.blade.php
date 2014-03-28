@@ -8,9 +8,24 @@
 
 @stop
 
+@section('head')
+<script>
+    $(document).ready(function() 
+      { 
+        $('#AverageGrades').dataTable(
+        
+        
+        ); 
+      } 
+    ); 
+</script>    
+@stop
+
 @section('header')
 <h1>Average Grades</h1>
 @stop
+
+
 
 @section('content')
 
@@ -30,26 +45,23 @@
 
 <!-- Table starts here -->
 
-<div class="table-responsive">
+<!--<div class="table-responsive">
  <table id="AverageGrades" class="table table-bordered table-groups" >
-
+-->
+<table id="AverageGrades" class="display">
 <thead>
  <tr bgcolor="Black">
 
-                   <td><font color="White">First Name</td></font>
-                   <td><font color="White">Last Name</td></font>
-                   <td><font color="White">Email</td></font>
-                  
-                   <td> <font color="White">Average Grade</td></font>
+                   <th><font color="White">First Name</th></font>
+                   <th><font color="White">Last Name</th></font>
+                   <th><font color="White">Email</th></font>
+                   <th> <font color="White">Average Grade</th></font>
         
-                     </td>
-
-
-           
-                       </tr>
-                       </thead>
-
                      
+                  </tr>
+</thead>
+
+<tbody>                     
 @foreach ($users as $user)
 
 
@@ -76,19 +88,20 @@ $avg = ($a1 + $a2 + $a3 + $a4 + $a5 + $a6 + $a7 + $a8 + $a9 + $a10)/10;   //Aver
    
 
                      
-                        <tbody>  
-                         <tr bgcolor="#73000A">
-                            <td><font color="White">{{$user->first_name}}</td>
-                            <td><font color="White">{{$user->last_name}}</td>
-                            <td><font color="White">{{$user->email}}</td>
-                            <td><font color="White">{{$avg}}</td>  
-                        </tbody>
+                          
+                         <tr >
+                            <td>{{$user->first_name}}</td>
+                            <td>{{$user->last_name}}</td>
+                            <td>{{$user->email}}</td>
+                            <td>{{$avg}}</td>  
+                        
                         </tr>
-@endforeach  
 
+@endforeach  
+</tbody>
 
 </table>
 
-
+</div>
     
 @stop
