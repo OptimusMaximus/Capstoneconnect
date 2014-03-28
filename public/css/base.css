@@ -471,11 +471,29 @@ textarea {
 		color: black;
 	}
 /*-----------------------------*/
-
+.calendar
+{
+	border-style:none;
+}
 .calendar table
 {
-	height: 150px;
-	width: 300px;
-	margin: 20px;
-	
+	height: 250px;
+	width: 350px;
+	margin-bottom: 20px;
+	color: white;
+	background-color: #73000A;
+	border-color: black;
+	border-width: 2px;
+	border-style: solid;
 }
+
+.calendar table th {
+	background-color: black;
+	border-color: black;
+	border-collapse: collapse;
+}
+
+.calendar table td {
+	border-color: black;
+}
+.calendar table td a:link{font-weight:bold}
