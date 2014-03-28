@@ -107,9 +107,14 @@
 		float:right
 	} 	
 
-/* Responsive iFrame */
- 
+/* Textarea resize */
 
+textarea {
+	resize: none;
+}
+
+
+/* Responsive iFrame */
 
 .responsive-iframe-container {
     position: relative;
