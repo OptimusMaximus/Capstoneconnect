@@ -38,7 +38,7 @@ FAQ
 	<p> 
 		<b>Question:</b> Do You Have Office Hours? </br>
 		<b>Answer:</b> Yes! Please feel free to stop by Room A216 in 300 Main between 00:00 and 00:00 on XXXXdays and XXXXdays. </br>
-		You can also email me at mccants@cec.sc.edu.
+		You can also email me <a href ="./contact">here</a>.
 	</p>
 
 	<p> 
