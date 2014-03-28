@@ -16,6 +16,6 @@
 
 <div>
 <center>
-<iframe width="640" height="400" src="//www.youtube.com/embed/vvc5I5_fsFs?autoplay=1" frameborder="0" allowfullscreen></iframe>
+<iframe width="640" height="400" src="//www.youtube.com/embed/vvc5I5_fsFs?autoplay=0" frameborder="0" allowfullscreen></iframe>
  </div> 
 @stop
