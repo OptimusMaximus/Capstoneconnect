@@ -17,7 +17,16 @@ class HomeController extends BaseController {
 
 	public function showWelcome()
 	{
-		return View::make('home');
+		$now = Carbon::now();
+		$next = Carbon::now();
+		$next->addMonth();
+
+		$currentMonth = Evaluation::whereBetween('close_at', 
+			array($now->startOfMonth()->toDateTimeString(),$now->endOfMonth()->toDateTimeString()))->get();
+		$nextMonth = Evaluation::whereBetween('close_at', 
+			array($next->startOfMonth()->toDateTimeString(), $next->endOfMonth()->toDateTimeString()))->get();
+
+		return View::make('home', array('currMonthEvals' => $currentMonth, 'nextMonthEvals' => $nextMonth));
 	}
 
 }
