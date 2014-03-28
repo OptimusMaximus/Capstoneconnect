@@ -41,8 +41,8 @@ Contact
 
 
 <br />
-            {{ Form::reset('Clear', array('class' => 'you css class for button')) }}
-            {{ Form::submit('Send', array('class' => 'you css class for button')) }}
+            {{ Form::reset('Clear', array('class' => 'btn cc-btn-primary')) }}
+            {{ Form::submit('Send', array('class' => 'btn cc-btn-primary')) }}
 
             {{ Form:: close() }}
 </body>
