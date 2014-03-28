@@ -26,10 +26,19 @@
         {{ HTML::script('js/DataTables-1.9.4/media/js/jquery.dataTables.js') }}
         @yield('head')
 
+<<<<<<< HEAD
+      
+=======
        
 
      
+>>>>>>> 737ef78ee4248f1c357751741396f544e61ab7ed
     
+
+
+
+    
+
 
 
 
