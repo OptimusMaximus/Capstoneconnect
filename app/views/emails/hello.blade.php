@@ -6,6 +6,7 @@ $last_name = Input::get ('last_name');
 $phone_number = Input::get('phone_number');
 $email = Input::get ('email');
 $message = Input::get ('message');
+date_default_timezone_set('America/New_York');
 $date_time = date("F j, Y, g:i a");
 $userIpAddress = Request::getClientIp();
 ?> 
