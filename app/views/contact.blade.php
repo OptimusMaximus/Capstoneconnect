@@ -17,7 +17,7 @@ Contact
 <body>
 <!-- Blade Template engine -->
  {{ Form:: open(array('url' => 'contact_request')) }} <!--contact_request is a router from Route class-->
-
+<div class="form-group">
             <ul class="errors">
                 @foreach($errors->all('<li>:message</li>') as $message)
                 {{ $message }}
@@ -37,7 +37,11 @@ Contact
             {{ Form:: email ('email', '', array('placeholder' => 'me@example.com')) }}
 <br />
             {{ Form:: label ('message', 'Message*' )}}<br />
-            {{ Form:: textarea('message', '', ['size' => '40x10']) }}       
+              <div class="form-group col-centered">                  
+            {{ Form::textarea('message', '', array('class' => 'col-xs-12','placeholder' => 'Please enter a message to your professor'))}}                
+            </div>
+            <b>*</b> indicates required feild
+            
 <br />
 <br />
 
@@ -45,6 +49,7 @@ Contact
             {{ Form::submit('Send', array('class' => 'btn cc-btn-primary')) }}
 
             {{ Form:: close() }}
+</div>            
 </body>
 </html>
 @stop
