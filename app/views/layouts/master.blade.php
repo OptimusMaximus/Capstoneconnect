@@ -24,16 +24,13 @@
         {{ HTML::script('js/bootstrap.js') }}
         @yield('head')
 
-        <script type="text/javascript" src="/path/to/jquery-latest.js"></script> 
-        <script type="text/javascript" src="/path/to/jquery.tablesorter.js"></script> 
-
-        <script type="text/javascript"> $(document).ready(function() 
-    { 
-        $("AverageGrades").tablesorter( {sortList: [[0,0], [1,0]]} ); 
-    } 
-); 
-     </script>
+      
     
+
+
+
+    
+
 
 
 

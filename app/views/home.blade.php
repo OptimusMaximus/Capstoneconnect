@@ -29,7 +29,7 @@ Welcome to Capstone Connect
   				</p1>
   			@endif
   	</div>
-<<<<<<< HEAD
+
 <!-- Calendar Right here -->
     <div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-5 col-lg-6" style = "background-color: #FFFFFF">
  <div class="responsive-iframe-container iframe">
