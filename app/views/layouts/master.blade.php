@@ -27,14 +27,6 @@
         @yield('head')
 
 
-
-
-
-
-    
-
-
-
    </head>
 
     <nav class="cc-navbar navbar navbar-default" role="navigation">
