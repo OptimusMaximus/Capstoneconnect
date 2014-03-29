@@ -68,14 +68,6 @@ User Management
         </div>
     </div>
     @endif
-<!--     <div class="form-group">  
-        {{ Form::label('name', 'User Type:', 
-            array('class' => 'col-sm-2 control-label')
-        )}}
-        <div class="col-sm-5">
-            {{ Form::select('group', array('U' => 'User', 'A' => 'Admin'), 'U', array('class' => 'form-control'))}}
-        </div>
-    </div> -->
     <div class="form group">
         <div class="col-sm-offset-2 col-sm-10">
             {{ Form::submit('Update', array('class'=>'btn btn-default pull-left'))}}
