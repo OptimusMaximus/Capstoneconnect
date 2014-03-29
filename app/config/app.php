@@ -114,7 +114,7 @@ return array(
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 		'Cartalyst\Sentry\SentryServiceProvider',
-		'Gloudemans\Calendar\CalendarServiceProvider',
+		//'Gloudemans\Calendar\CalendarServiceProvider',
 
 	),
 
@@ -182,7 +182,7 @@ return array(
 		'View'            => 'Illuminate\Support\Facades\View',
 		'Sentry' 		  => 'Cartalyst\Sentry\Facades\Laravel\Sentry',
 		'Carbon'		  => 'Carbon\Carbon',
-		'Calendar'        => 'Gloudemans\Calendar\Facades\Calendar',
+		//'Calendar'        => 'Gloudemans\Calendar\Facades\Calendar',
 	),
 
 );

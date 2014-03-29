@@ -8,55 +8,7 @@
 @stop
 @section('head')
 {{ HTML::script('js/jquery-ui-1.10.4.custom.js') }}
-@stop
-@section('header')
-New Evaluation
-@stop
 
-@section('content')
-	{{ Form::open(        
-	     array('url' => URL::route('evaluation.store'),
-	                'role' => 'form'))}}
-	   
-<!--Code to manupulate for add and remove button
-<script type="text/javascript">
-    $(document).ready(function(){
-        $counter = 0; // initialize 0 for limitting textboxes
-        $('#buttonadd').click(function(){
-            if ($counter < 10)
-            {
-                $counter++;
-                $('#buttondiv').append('<div><label>Textbox #'+$counter+'</label><input type="text" name="textbox[]" class="textbox" value="" /></div>');
-            }else{
-                alert('You cannot add more than 10 textboxes');
-            }
-        });
-
-        $('#buttonremove').click(function(){
-            if ($counter){
-                $counter--;
-                $('#buttondiv .textbox:last').parent().remove(); // get the last textbox and parent for deleting the whole div
-            }else{
-                alert('No More textbox to remove');
-            }
-        });
-
-        $('#buttonget').click(function(){
-            alert($('.textbox').serialize()); // use serialize to get the value of textbox
-        });
-
-        $('#dropdownadd').change(function(){
-            $('#dropdowndiv').html(""); // when the dropdown change set the div to empty
-            $loopcount = $(this).val(); // get the selected value
-            for (var i = 1; i <= $loopcount; i++)
-            {
-                $('#dropdowndiv').append('<div><label>Textbox #'+i+'</label><input type="text" name="textbox2[]" class="textbox2" value="" /></div>');
-            }
-        });
-    });
-</script>
-
--->
 <script>
 $(document).ready(function(){
    $(function() {
@@ -68,16 +20,86 @@ $(document).ready(function(){
     });
 });
 </script>
+@stop
+@section('header')
+New Evaluation
+@stop
+
+@section('content')
+	{{ Form::open(        
+	     array('url' => URL::route('evaluation.store'),
+	                'role' => 'form'))}}
+	   
+
+
+
+
+
+
+
+
+
+<div class="table-responsive">
+    <table class="table gamecock-table">
+        <thead>
+            <tr>
+                <th>Add or Remove Questions</th>
+               
+              
+            </tr>
+        </thead>
+        <tbody>
+            <?php $evaluations = Project::all();?>
+            
+            @if($evaluations != null)
+                @foreach($evaluations as $evals)
+                    <?php $users = User::where('id','=',$evals->id)->get(); 
+                          $pid = $evals->id;
+                    ?>
+                    <tr class="parent" id={{ "\"".$evals->id."\"" }}>
+                        <td><span class="btn btn-block btn-default">{{$evals->q}}</span></td>
+                  
+                        </td>
+                    </tr> <!-- trow1 -->
+                    <tr class="{{"child-".$evals->id}} initiallyHidden">
+                        <td class='table-white-space' rowspan={{count($users)+2}}></td>
+                       
+                    </tr>
+                   
+                        
+                @endforeach
+            @endif
+        </tbody>
+       
+    </table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	   <!-- Table Generation -->
 	    @for($i = 1; $i <= 10; $i++)
 
 	        <div class="form group">
-		        {{ Form::hidden('q'.$i, 'Question '.$i, array('class' => 'control-label col-sm-2'))}}
+		        {{ Form::label('q'.$i, 'Question '.$i, array('class' => 'control-label col-sm-2'))}}
 		        <div class="col-sm-10">
-			        {{ Form::hidden('q'.$i,'',array('class' => 'form-control', 'placeholder' => 'enter question'))}}
+			        {{ Form::text('q'.$i,'',array('class' => 'form-control', 'placeholder' => 'enter question'))}}
 		        </div>
 	        </div>
 	        <br><br><br>
 	    @endfor
+
+	    <!-- For the date selector -->
 	    <div class="form group">
 	    	{{ Form::label('close_at', 'Closing Date', array('class' => 'control-label col-sm-2')) }}
 	    	<div class="col-sm-3 col-offset-sm-8">
