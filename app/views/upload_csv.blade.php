@@ -15,12 +15,23 @@ Upload CSV
 @show
 @section('content')  
 
+    <!-- Post message if successful -->
+    @if (Session::get('message'))
+        <div class = "alert alert-success"> {{ Session::get('message') }} </div>
+    @endif
+
+    <!-- Post message if there is an error -->
+    @if (Session::get('error'))
+        <div class = "alert alert-warning"> {{ Session::get('error') }} </div>
+    @endif
+
     <h4>Choose a Student CSV File to upload</h4>  
     </br>
     </br>
-    {{ Form::open(array('route' => array('upload_csv'))) }}
+    
+    {{ Form::open(array('route' => array('upload_csv'), 'files' => true)) }}
 
-    {{ Form::file('csv') }}
+    {{ Form::file('csv_file') }}
 
     <div class = "form group">
         </br>

@@ -15,6 +15,8 @@ Contact
 {{--main div's class value--}}
 @section('container_class_value')
 <?php $containerClass="XSmallWhite container"; ?>
+@show
+
 @section('content')
 
 <html>

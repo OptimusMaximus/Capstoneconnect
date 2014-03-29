@@ -13,6 +13,7 @@ Post New Annoucement
 <?php $containerClass="SmallWhite container"; ?>
 @show
 @section('content')
+    </br>
     {{ Form::open(        
          array('url' => URL::route('create_announcement'),
                     'role' => 'form'))}}
@@ -33,7 +34,4 @@ Post New Annoucement
             {{ Form::submit('Create Announcement', array('class'=>'btn cc-btn-primary', 'data-toggle' => 'tooltip','data-placement' => 'top', 'title' => 'Click here to submit a new announcement')) }}
         </div>
     {{ Form::close() }}
-
-
-
 @stop
