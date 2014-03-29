@@ -2,8 +2,8 @@
 
 class ContactController extends BaseController {
 
-//Server Contact view:: we will create view in next step
- public function getContact(){
+        //Server Contact view:: we will create view in next step
+        public function getContact(){
 
             return View::make('contact');
         }
@@ -32,10 +32,16 @@ class ContactController extends BaseController {
                 //Send email using Laravel send function
                 Mail::send('emails.hello', $data, function($message) use ($data)
                 {
+                     //Arrange contacts table in descending order by created_at time and pick the most recent one
+                    $contact = Contact::orderBy('created_at', 'desc')->first();
+                    $contactEmail = $contact->contact_email;
+                    
                     //email 'From' field: Get users email add and name
                     $message->from($data['email'] , $data['first_name']);
                      //email 'To' field: cahnge this to emails that you want to be notified.                    
-                    $message->to('CapstoneContactSC@gmail.com', 'my name')->subject('contact request');
+                    //$message->to('CapstoneContactSC@gmail.com')->subject('contact request');
+                     $message->to($contactEmail)->subject('Contact Request');
+                    //$message->to('$adminEmail', 'my name')->subject('contact request');
 
                 });
 
@@ -55,21 +61,21 @@ class ContactController extends BaseController {
         public function update(){
             
             //Get variables from contact_create_email.blade view
-            $newEmail = Input::Get('email');
-            $newPassword = Input::Get('password');
+            
+            /*$newPassword = Input::Get('password');
             $oldEmail = Input::Get('oldEmail');
-            $oldPassword = Input::Get('oldPassword');
+            $oldPassword = Input::Get('oldPassword');*/
 
             //Get input from user
             $credentials = array(
-                    'email' => Input::get('email'),
-                    'password' => Input::get('password')
+                    'email' => Input::get("email"),
+                    //'password' => Input::get('password')
             );
 
              // Set Validation Rules
             $rules = array (
                     'email' => 'required|min:4|max:32|email:',
-                    'password' => 'required|min:5'
+                    //'password' => 'required|min:5'
                     );
 
             //Run input validation
@@ -81,19 +87,23 @@ class ContactController extends BaseController {
                 return Redirect::to('contact_create_email')->withErrors($validator)->withInput();
             }
 
-            if($newEmail == null || $newPassword == null) {
+            /*if($newEmail == null ){//|| $newPassword == null) {
                 Session::flash('warning', 'New email and/or new password cannot be an empty field');
                 return Redirect::to('contact_create_email');
-            }
+            }*/
+
+            //$newEmail = Contact::create(array('contact_email' => $_POST['email']));
+            $newEmail = Contact::create(array('contact_email' => Input::get("email")));
+
             //$pattern = '~[a-zA-Z0-9-_.]+@[a-zA-Z]+\.[a-z]{2,4}~i';
 
             //Match exactly the email and password with boundaries
-            $emailPattern = "~\b$oldEmail\b~";
-            $passwordPattern = "~\b$oldPassword\b~";
+            //$emailPattern = "~\b$oldEmail\b~";
+            //$passwordPattern = "~\b$oldPassword\b~";
 
             //$filename = '/var/www/html/Capstoneconnect/mailexample.php';
             //$filename = 'mailexample.php';
-            $filename = $_SERVER['DOCUMENT_ROOT']."\Capstoneconnect\app\config\mailexample.php";
+            /*$filename = $_SERVER['DOCUMENT_ROOT']."\Capstoneconnect\app\config\mailexample.php";
 
             //Find the exact pattern and replace with new info
             $emailData = file_get_contents($filename);
@@ -112,10 +122,10 @@ class ContactController extends BaseController {
                 return Redirect::to('contact_create_email');
             }
             //Save new password
-            echo file_put_contents($filename, $newPasswordData);
+            echo file_put_contents($filename, $newPasswordData);*/
 
             //Success
-            Session::flash('screenAnnounce', 'Your new contact email and password has been updated' );
+            Session::flash('screenAnnounce', 'Your new contact email has been updated' );
             return Redirect::to('contact_create_email'); 
             
         }

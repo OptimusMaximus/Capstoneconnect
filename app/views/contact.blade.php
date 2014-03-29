@@ -17,7 +17,7 @@ Contact
 <body>
 <!-- Blade Template engine -->
  {{ Form:: open(array('url' => 'contact_request')) }} <!--contact_request is a router from Route class-->
-
+<div class="form-group">
             <ul class="errors">
                 @foreach($errors->all('<li>:message</li>') as $message)
                 {{ $message }}
@@ -25,10 +25,10 @@ Contact
             </ul>
 
             {{ Form:: label ('first_name', 'First Name*' )}}<br />
-            {{ Form:: text ('first_name', '' )}}
+            {{ Form:: text ('first_name', '', array('placeholder' => 'John')) }}
 <br />
             {{ Form:: label ('last_name', 'Last Name*' )}}<br />
-            {{ Form:: text ('last_name', '' )}}
+            {{ Form:: text ('last_name', '', array('placeholder' => 'Doe')) }}
 <br />
             {{ Form:: label ('phone_number', 'Phone Number' )}}<br />
             {{ Form:: text ('phone_number', '', array('placeholder' => '1234567890')) }}
@@ -37,14 +37,19 @@ Contact
             {{ Form:: email ('email', '', array('placeholder' => 'me@example.com')) }}
 <br />
             {{ Form:: label ('message', 'Message*' )}}<br />
-            {{ Form::textarea('message', null, ['size' => '35x7']) }}       
-
-
+              <div class="form-group col-centered">                  
+            {{ Form::textarea('message', '', array('class' => 'col-xs-12','placeholder' => 'Please enter a message to your professor'))}}                
+            </div>
+            <b>*</b> indicates required feild
+            
 <br />
-            {{ Form::reset('Clear', array('class' => 'you css class for button')) }}
-            {{ Form::submit('Send', array('class' => 'you css class for button')) }}
+<br />
+
+            {{ Form::reset('Clear', array('class' => 'btn cc-btn-primary')) }}
+            {{ Form::submit('Send', array('class' => 'btn cc-btn-primary')) }}
 
             {{ Form:: close() }}
+</div>            
 </body>
 </html>
 @stop

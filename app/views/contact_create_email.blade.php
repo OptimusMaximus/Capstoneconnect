@@ -5,19 +5,12 @@
 @stop
 
 @section('header')
-Update Contact Email and Password
+Update Contact Email
 @stop
 
 @section('content')   
 
-    <p>You can update your contact email and password so you can receive emails from Capstone Connect</p>
-    </br> 
-
-	{{ Form::open(array('url'   => 'contact_create_email', 
-                        'class' => 'form-horizontal',
-                        'role'  => 'form')) }}
-
-   <!-- Post message if successful -->
+     <!-- Post message if successful -->
     @if (Session::get('screenAnnounce'))
         <div class = "alert alert-success"> {{ Session::get('screenAnnounce') }} </div>
     @endif
@@ -31,12 +24,34 @@ Update Contact Email and Password
         <div class = "alert alert-danger">
           <p>
             {{ $errors->first('email') }}
-            {{ $errors->first('password') }}
+            {{-- $errors->first('password') --}}
           </p>
         </div>
       @endif
 
-    <div class="form-group">
+    <h4>You can update your contact email so you can receive emails from Capstone Connect</h4>
+    </br>
+
+    <?php
+        $contact = Contact::orderBy('created_at', 'desc')->first();
+        if($contact != null)
+            $contactEmail = $contact->contact_email;
+    ?>
+
+    @if($contact != null)
+        <p>You're current contact email address is: {{ $contactEmail }}</p> 
+    @else
+        <div class = "alert alert-danger" >
+            <p>You do not have a current contact email address setup.  Please enter a email address below. </p>
+        </div>
+    </br>
+    @endif
+
+	{{ Form::open(array('url'   => 'contact_create_email', 
+                        'class' => 'form-horizontal',
+                        'role'  => 'form')) }}
+
+    <!--<div class="form-group">
         {{ Form::label('oldEmail', 'Old Contact Email Address', array('class' => 'col-sm-4 control-label')) }}
         <div class="col-sm-8">
           {{ Form::email('oldEmail', Input::old('oldEmail'), array('placeholder' => 'email@email.com', 
@@ -50,23 +65,22 @@ Update Contact Email and Password
         <div class="col-sm-8">
             {{ Form::password('oldPassword', array('class' => 'form-control')) }}
         </div>
-    </div>
+    </div>-->
 
 	<div class="form-group">
         {{ Form::label('email', 'New Contact Email Address', array('class' => 'col-sm-4 control-label')) }}
         <div class="col-sm-8">
-          {{ Form::email('email', Input::old('email'), array('placeholder' => 'email@email.com', 
+          {{ Form::email('email', Input::old('email'), array('placeholder' => 'example@gmail.com', 
                                                              'class'       => 'form-control')) }}
         </div>
     </div>
 
-
-    <div class="form-group">
+    <!--<div class="form-group">
     	{{ Form::label('password', 'Password Used for New Email Address', array('class' => 'col-sm-4 control-label')) }}
         <div class="col-sm-8">
             {{ Form::password('password', array('class' => 'form-control')) }}
         </div>
-    </div>
+    </div>-->
     
     <div class = "form group">
     	<div class="col-sm-offset-2 col-sm-8">       	
