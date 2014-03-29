@@ -39,7 +39,7 @@ class AnnouncementController extends BaseController {
 			'announcement' => $_POST["announcement"],
 		));
 
-		Session::flash('screenAnnounce', 'You have successfully entered a new announcement!' );
+		Session::flash('screenAnnounce', 'You have successfully entered a new announcement.' );
 		return Redirect::to('create_announcement');
 	}
 

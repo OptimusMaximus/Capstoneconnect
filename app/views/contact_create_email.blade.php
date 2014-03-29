@@ -8,6 +8,12 @@
 Update Contact Email
 @stop
 
+{{--This allows a view to override the--}}
+{{--main div's class value--}}
+@section('container_class_value')
+<?php $containerClass="SmallWhite container"; ?>
+@show
+
 @section('content')   
 
      <!-- Post message if successful -->

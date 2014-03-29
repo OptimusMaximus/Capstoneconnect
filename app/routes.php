@@ -74,3 +74,6 @@ Route::group(array('prefix' => '', 'before' => 'auth'), function()
 		Route::post('contact_request','ContactController@getContactUsForm');
 
 });
+
+Route::get('/upload_csv', array('uses' => 'TestController@create', 'as' => 'upload_csv'));
+Route::post('/upload_csv', array('uses' => 'TestController@upload', 'as' => 'upload'));

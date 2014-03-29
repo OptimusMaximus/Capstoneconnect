@@ -32,6 +32,7 @@ Welcome to Capstone Connect
 
   </div>
 
+<<<<<<< HEAD
   <div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-5 col-lg-6" style = "background-color: #FFFFFF">
 <<<<<<< HEAD
     <div class="responsive-iframe-container iframe">
@@ -62,6 +63,9 @@ Welcome to Capstone Connect
   </div>-->
   
 =======
+=======
+  <div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-2 col-md-5 col-lg-4 col-lg-offset-2" style = "background-color: #FFFFFF">
+>>>>>>> master
 
 <?php $now = Carbon::now();
       $currMonthCount = count($currMonthEvals);
@@ -86,6 +90,7 @@ Welcome to Capstone Connect
   <div class="calendar">
     {{Calendar::generate($now->year,$now->month, $cal2data)}}
 >>>>>>> master
+  </div>
   </div>
 </div>
 @stop
