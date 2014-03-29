@@ -118,31 +118,6 @@ class UserController extends \BaseController {
 	public function update($id)
 	{
 		$user = User::find($id);
-
-		$group=Input::get("group");
-		switch ($group)
-		{
-			case "U":
-			  $user->permissions = array(
-			  	'user.create' => -1,
-                'user.delete' => -1,
-                'user.view'   => 1,
-                'user.update' => 1,
-                );
-			  break;
-			case "A":
-			  $user->permissions = array(
-                'user.create' => 1,
-                'user.delete' => 1,
-                'user.view'   => 1,
-                'user.update' => 1,
-                );
-			  break;
-			default:
-				echo "Group wasn't specified.\n";
-			exit;
-		}
-
 		$user->email = Input::get("email");
 		$user->first_name = Input::get("first_name");
 		$user->last_name = Input::get("last_name");
