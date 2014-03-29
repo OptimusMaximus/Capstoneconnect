@@ -57,12 +57,23 @@ New Evaluation
 </script>
 
 -->
-
+<script>
+$(document).ready(function(){
+   $(function() {
+        $('tr.parent td')
+            .on("click","span.btn", function(){
+                var idOfParent = $(this).parents('tr').attr('id');
+                $('tr.child-'+idOfParent).toggle('fast');
+            });
+    });
+});
+</script>
 	    @for($i = 1; $i <= 10; $i++)
+
 	        <div class="form group">
-		        {{ Form::label('q'.$i, 'Question '.$i, array('class' => 'control-label col-sm-2'))}}
+		        {{ Form::hidden('q'.$i, 'Question '.$i, array('class' => 'control-label col-sm-2'))}}
 		        <div class="col-sm-10">
-			        {{ Form::text('q'.$i,'',array('class' => 'form-control', 'placeholder' => 'enter question'))}}
+			        {{ Form::hidden('q'.$i,'',array('class' => 'form-control', 'placeholder' => 'enter question'))}}
 		        </div>
 	        </div>
 	        <br><br><br>
