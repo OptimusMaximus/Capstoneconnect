@@ -27,7 +27,6 @@ Welcome to Capstone Connect
   			@if($id != null)
   				@for($i = $id; $i >= $id-4; $i--)
           <p1>
-            <left>
             Announcement:
             <?php
             $announce = Announcement::where('id', $i)->first();
@@ -38,7 +37,6 @@ Welcome to Capstone Connect
             </br>
             @endif
   				</p1>
-        </left>
           @endfor
   			@endif
   	</div>
