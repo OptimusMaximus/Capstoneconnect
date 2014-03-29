@@ -21,9 +21,7 @@ function make_visable() {
    	}
    	else{
    		questionNum++;
-   		var btn = document.getElementById("add1");
-   		btn.style.display="none";
-   		btn = document.getElementById("add2");
+   		btn = document.getElementById("add1");
    		btn.style.display="none";
    	}
    var e = document.getElementById("question"+questionNum);
@@ -36,8 +34,6 @@ function hide() {
       document.getElementById('frm'+questionNum).value = "";
    	if(questionNum>=10) {
    		var btn = document.getElementById("add1");
-   		btn.style.display="inline";
-   		btn = document.getElementById("add2");
    		btn.style.display="inline";
    	}
     if(questionNum>2){
@@ -67,7 +63,6 @@ New Evaluation
 	        <div class="col-sm-8">
 		        {{ Form::text('q1','',array('class' => 'form-control', 'placeholder' => 'enter question'))}}
 	        </div>
-	    	<span id="add1" onclick = "make_visable();" class="col-sm-2 btn btn-default initiallyHidden">add question</span>
         </div>
 	    @for($i = 2; $i <= 9; $i++)
 	        <div id={{"'question".$i."'"}} class="form-group">
@@ -89,7 +84,7 @@ New Evaluation
 	    		{{ Form::text('close_at','',array('class' => 'form-control', 'id' => 'date'))}}
 	    	</div>
 	    	<span id="remove1" onclick = "hide();" class="col-sm-offset-1 col-sm-2 btn btn-default">remove question</span>
-	    	<span id="add2" onclick = "make_visable();" class="col-sm-2 btn btn-default initiallyHidden">add question</span>
+	    	<span id="add1" onclick = "make_visable();" class="col-sm-2 btn btn-default initiallyHidden">add question</span>
 	    </div>
 	    <div class="form-group">
 	  	</div>
