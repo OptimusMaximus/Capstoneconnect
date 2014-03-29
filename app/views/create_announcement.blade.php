@@ -26,7 +26,7 @@ Post New Annoucement
         <div class="form-group">                  
             {{ Form::textarea('announcement', '', 
                 array('class' => 'form-control',
-                'placeholder' => 'Please enter new announcements. This will replace any previous announcements.'))}}                
+                'placeholder' => 'Please enter a new announcement.'))}}                
         </div>  
         </br>
 
