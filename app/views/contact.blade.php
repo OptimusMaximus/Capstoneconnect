@@ -11,6 +11,10 @@
 Contact
 @stop
 
+{{--This allows a view to override the--}}
+{{--main div's class value--}}
+@section('container_class_value')
+<?php $containerClass="XSmallWhite container"; ?>
 @section('content')
 
 <html>

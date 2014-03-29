@@ -63,7 +63,7 @@ class UserController extends \BaseController {
 	                );
 				  break;
 				default:
-					echo "Group wan't specified.";
+					echo "Group wasn't specified.";
 				exit;
 			}
 
@@ -139,7 +139,7 @@ class UserController extends \BaseController {
                 );
 			  break;
 			default:
-				echo "Group wan't specified.\n";
+				echo "Group wasn't specified.\n";
 			exit;
 		}
 
