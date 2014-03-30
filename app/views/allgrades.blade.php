@@ -24,6 +24,8 @@
 <?php $users = User::all();
  $evalID = DB::table('evaluations')->lists('id', 'id');
 //$grades1 = DB::table('students')->lists('grades1', 'id');
+$id = Answer::max('eid');  
+ 
 
 ?>
 <div class="table-responsive">
@@ -32,9 +34,8 @@
                    <td><font color="White">First Name</td></font>
                    <td><font color="White">Last Name</td></font>
                    <td><font color="White">Email</td></font>
-                  
-                   <td> <font color="White">Average Grade</td></font>
-        
+                   <td> <font color="White">Overall Average Grade</td></font>
+                   <td> <font color="White">Most Recent Evaluation Average Grade</td></font>
    
 
 
@@ -64,14 +65,31 @@ $a8 = DB::table('answers')->where('answered_about', '=', $user->id)->avg('ans8')
 $a9 = DB::table('answers')->where('answered_about', '=', $user->id)->avg('ans9');
 $a10 = DB::table('answers')->where('answered_about', '=', $user->id)->avg('ans10');
 $avg = ($a1 + $a2 + $a3 + $a4 + $a5 + $a6 + $a7 + $a8 + $a9 + $a10)/10;   //Averages all a1-a10
+
+
+$aa1 = DB::table('answers')->where('answered_about', '=', $user->id)->where('eid', $id)->avg('ans1');
+$aa2 = DB::table('answers')->where('answered_about', '=', $user->id)->where('eid', $id)->avg('ans2');
+$aa3 = DB::table('answers')->where('answered_about', '=', $user->id)->where('eid', $id)->avg('ans3');
+$aa4 = DB::table('answers')->where('answered_about', '=', $user->id)->where('eid', $id)->avg('ans4');
+$aa5 = DB::table('answers')->where('answered_about', '=', $user->id)->where('eid', $id)->avg('ans5');
+$aa6 = DB::table('answers')->where('answered_about', '=', $user->id)->where('eid', $id)->avg('ans6');
+$aa7 = DB::table('answers')->where('answered_about', '=', $user->id)->where('eid', $id)->avg('ans7');
+$aa8 = DB::table('answers')->where('answered_about', '=', $user->id)->where('eid', $id)->avg('ans8');
+$aa9 = DB::table('answers')->where('answered_about', '=', $user->id)->where('eid', $id)->avg('ans9');
+$aa10 = DB::table('answers')->where('answered_about', '=', $user->id)->where('eid', $id)->avg('ans10');
+$evalAvg = ($aa1 + $aa2 + $aa3 + $aa4 + $aa5 + $aa6 + $aa7 + $aa8 + $aa9 + $aa10)/10;   //Averages all a1-a10
+
 ?>
-   
+
+
 
                         <tr bgcolor="#73000A">
                             <td><font color="White">{{$user->first_name}}</td>
                             <td><font color="White">{{$user->last_name}}</td>
                             <td><font color="White">{{$user->email}}</td>
-                            <td><font color="White">{{$avg}}</td>  
+                            <td><font color="White">{{$avg}}</td> 
+                            <td><font color="White">{{$evalAvg}}</td>  
+
                         </tr>
 @endforeach  
 
