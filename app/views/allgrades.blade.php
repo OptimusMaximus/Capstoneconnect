@@ -12,10 +12,10 @@
 <script>
     $(document).ready(function() 
       { 
-        $('#AverageGrades').dataTable(
-        
-        
-        ); 
+        $('#AverageGrades').dataTable({
+            "aaSorting": [[ 1, "asc" ]]
+
+        }); 
       } 
     ); 
 </script>    
@@ -58,7 +58,7 @@ $end = DB::table('evaluations')->where('id', $id)->pluck('close_at');
                    <th><font color="White">First Name</th></font>
                    <th><font color="White">Last Name</th></font>
                    <th><font color="White">Email</th></font>
-                   <td> <font color="White">Average For Evaluation ending {{$end}}</td></font>
+                   <td> <font color="White">Average For Evaluation ending <br /> {{$end}}</td></font>
                    <th> <font color="White">Average Grade</th></font>
         
                      
