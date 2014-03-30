@@ -25,6 +25,8 @@
  $evalID = DB::table('evaluations')->lists('id', 'id');
 //$grades1 = DB::table('students')->lists('grades1', 'id');
 $id = Answer::max('eid');  
+$start = DB::table('evaluations')->where('id', $id)->pluck('created_at');
+$end = DB::table('evaluations')->where('id', $id)->pluck('close_at');
  
 
 ?>
@@ -34,7 +36,7 @@ $id = Answer::max('eid');
                    <td><font color="White">First Name</td></font>
                    <td><font color="White">Last Name</td></font>
                    <td><font color="White">Email</td></font>
-                   <td> <font color="White">Average Grade For Most Recent Evaluation/td></font>
+                   <td> <font color="White">Average For Evaluation starting at {{$start}} and ending {{$end}}</td></font>
                    <td> <font color="White">Total Average Grade</td></font>
    
 
@@ -78,6 +80,7 @@ $aa8 = DB::table('answers')->where('answered_about', '=', $user->id)->where('eid
 $aa9 = DB::table('answers')->where('answered_about', '=', $user->id)->where('eid', $id)->avg('ans9');
 $aa10 = DB::table('answers')->where('answered_about', '=', $user->id)->where('eid', $id)->avg('ans10');
 $evalAvg = ($aa1 + $aa2 + $aa3 + $aa4 + $aa5 + $aa6 + $aa7 + $aa8 + $aa9 + $aa10)/10;   //Averages all a1-a10
+
 
 ?>
 
