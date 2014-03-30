@@ -35,6 +35,7 @@ Evaluate Group Member
 	         	@for($i = 1; $i<=10; ++$i)
 	         		<?php $question = "q".$i;
 	         			  $answer = "ans".$i;?>
+            @if($eval->$question != null)      
 	    			<p>{{$eval->$question}}</p>	 
 	    			
 		    		<select name = {{$answer}}>
@@ -50,6 +51,7 @@ Evaluate Group Member
 		 				<option>10</option>
 					</select>
 					<br><br>
+          @endif
 				@endfor
 			 @endif
              <div class="form-group col-centered">                  
