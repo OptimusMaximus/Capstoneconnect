@@ -34,8 +34,8 @@ $id = Answer::max('eid');
                    <td><font color="White">First Name</td></font>
                    <td><font color="White">Last Name</td></font>
                    <td><font color="White">Email</td></font>
-                   <td> <font color="White">Overall Average Grade</td></font>
-                   <td> <font color="White">Most Recent Evaluation Average Grade</td></font>
+                   <td> <font color="White">Average Grade For Most Recent Evaluation/td></font>
+                   <td> <font color="White">Total Average Grade</td></font>
    
 
 
@@ -87,8 +87,8 @@ $evalAvg = ($aa1 + $aa2 + $aa3 + $aa4 + $aa5 + $aa6 + $aa7 + $aa8 + $aa9 + $aa10
                             <td><font color="White">{{$user->first_name}}</td>
                             <td><font color="White">{{$user->last_name}}</td>
                             <td><font color="White">{{$user->email}}</td>
-                            <td><font color="White">{{$avg}}</td> 
-                            <td><font color="White">{{$evalAvg}}</td>  
+                            <td><font color="White">{{$evalAvg}}</td> 
+                            <td><font color="White">{{$avg}}</td>  
 
                         </tr>
 @endforeach  
