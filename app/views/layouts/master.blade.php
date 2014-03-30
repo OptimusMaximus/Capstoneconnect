@@ -13,6 +13,7 @@
         {{ HTML::style('css/bootstrap.css') }}
         {{ HTML::style('css/base.css', array('type' => 'text/css')) }}
         {{ HTML::style('css/small-device.css', array('type' => 'text/css','media'=> 'only screen and (max-width: 767px), only screen and (max-device-width: 767px)')) }}
+        {{ HTML::style('js/DataTables-1.9.4/media/css/demo_table.css') }}
         @yield('stylesheets')
 
         <style>
@@ -22,6 +23,7 @@
         {{ HTML::script('js/jquery-2.0.3.js') }}
         <!-- Include all compiled plugins (below), or include individual files as needed -->
         {{ HTML::script('js/bootstrap.js') }}
+        {{ HTML::script('js/DataTables-1.9.4/media/js/jquery.dataTables.js') }}
         @yield('head')
     </head>
 

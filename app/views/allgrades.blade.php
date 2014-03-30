@@ -8,9 +8,24 @@
 
 @stop
 
+@section('head')
+<script>
+    $(document).ready(function() 
+      { 
+        $('#AverageGrades').dataTable(
+        
+        
+        ); 
+      } 
+    ); 
+</script>    
+@stop
+
 @section('header')
 <h1>Average Grades</h1>
 @stop
+
+
 
 @section('content')
 
@@ -24,27 +39,33 @@
 <?php $users = User::all();
  $evalID = DB::table('evaluations')->lists('id', 'id');
 //$grades1 = DB::table('students')->lists('grades1', 'id');
+
 $id = Answer::max('eid');  
 $start = DB::table('evaluations')->where('id', $id)->pluck('created_at');
 $end = DB::table('evaluations')->where('id', $id)->pluck('close_at');
- 
-
 ?>
-<div class="table-responsive">
-<table class="table table-bordered table-groups">
+
+
+<!-- Table starts here -->
+
+<!--<div class="table-responsive">
+ <table id="AverageGrades" class="table table-bordered table-groups" >
+-->
+<table id="AverageGrades" class="display">
+<thead>
  <tr bgcolor="Black">
-                   <td><font color="White">First Name</td></font>
-                   <td><font color="White">Last Name</td></font>
-                   <td><font color="White">Email</td></font>
-                   <td> <font color="White">Average For Evaluation starting at {{$start}} and ending {{$end}}</td></font>
-                   <td> <font color="White">Total Average Grade</td></font>
-   
 
+                   <th><font color="White">First Name</th></font>
+                   <th><font color="White">Last Name</th></font>
+                   <th><font color="White">Email</th></font>
+                   <td> <font color="White">Average For Evaluation ending {{$end}}</td></font>
+                   <th> <font color="White">Average Grade</th></font>
+        
+                     
+                  </tr>
+</thead>
 
-           
-                       </tr>
-
-                      
+<tbody>                     
 @foreach ($users as $user)
 
 
@@ -54,6 +75,7 @@ $end = DB::table('evaluations')->where('id', $id)->pluck('close_at');
 //$temp = DB::table('answers')->join('users', 'answers.answered_about', '=', 'users.id')
   //  ->avg('ans1', 'ans2')->where('users.id','=',$user->id)->get();
 //$price = DB::table('answers')->where('answered_about', '=', $user->id)->avg('ans1', 'ans2', 'ans3', 'ans4');
+
 
 
 $a1 = DB::table('answers')->where('answered_about', '=', $user->id)->avg('ans1');
@@ -67,7 +89,6 @@ $a8 = DB::table('answers')->where('answered_about', '=', $user->id)->avg('ans8')
 $a9 = DB::table('answers')->where('answered_about', '=', $user->id)->avg('ans9');
 $a10 = DB::table('answers')->where('answered_about', '=', $user->id)->avg('ans10');
 $avg = ($a1 + $a2 + $a3 + $a4 + $a5 + $a6 + $a7 + $a8 + $a9 + $a10)/10;   //Averages all a1-a10
-
 
 $aa1 = DB::table('answers')->where('answered_about', '=', $user->id)->where('eid', $id)->avg('ans1');
 $aa2 = DB::table('answers')->where('answered_about', '=', $user->id)->where('eid', $id)->avg('ans2');
@@ -83,21 +104,24 @@ $evalAvg = ($aa1 + $aa2 + $aa3 + $aa4 + $aa5 + $aa6 + $aa7 + $aa8 + $aa9 + $aa10
 
 
 ?>
+   
 
-
-
-                        <tr bgcolor="#73000A">
-                            <td><font color="White">{{$user->first_name}}</td>
-                            <td><font color="White">{{$user->last_name}}</td>
-                            <td><font color="White">{{$user->email}}</td>
-                            <td><font color="White">{{$evalAvg}}</td> 
-                            <td><font color="White">{{$avg}}</td>  
-
+                     
+                          
+                         <tr >
+                            <td>{{$user->first_name}}</td>
+                            <td>{{$user->last_name}}</td>
+                            <td>{{$user->email}}</td>
+                            <td>{{$evalAvg}}</td> 
+                            <td>{{$avg}}</td>  
+                        
                         </tr>
-@endforeach  
 
+@endforeach  
+</tbody>
 
 </table>
+
 </div>
     
 @stop
