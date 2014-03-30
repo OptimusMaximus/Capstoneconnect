@@ -15,7 +15,7 @@ Welcome to Capstone Connect
   <div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-4 col-lg-4 Announcements" style = "background-color: #73000A">
     <h3>Announcements</h3>  
 
-<<<<<<< HEAD
+
     <div class="InsideAnnouncement">
         <!-- Display only the most recent announcement -->
         <?php
@@ -30,7 +30,7 @@ Welcome to Capstone Connect
           </p1>
         @endif
     </div>
-=======
+
 		<div class="InsideAnnouncement">
         <!-- Display only the 5 most recent announcements -->
   			<?php  				
@@ -54,13 +54,13 @@ Welcome to Capstone Connect
           @endfor
   			@endif
   	</div>
->>>>>>> master
+
 
   </div>
 
-<<<<<<< HEAD
+
   <div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-5 col-lg-6" style = "background-color: #FFFFFF">
-<<<<<<< HEAD
+
     <div class="responsive-iframe-container iframe">
      <iframe src="https://www.google.com/calendar/embed?showTitle=0&amp;showPrint=0&amp;showTabs=0&amp;showTz=0&amp;height=400&amp;wkst=1&amp;bgcolor=%23ffffff&amp;src=en.usa%23holiday%40group.v.calendar.google.com&amp;color=%235F6B02&amp;ctz=America%2FNew_York" style=" border:solid 1px #777 " width="400" height="400" frameborder="0" scrolling="no"></iframe>
     </div>
@@ -88,10 +88,9 @@ Welcome to Capstone Connect
       <!--</div>
   </div>-->
   
-=======
-=======
+
   <div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-2 col-md-5 col-lg-4 col-lg-offset-2" style = "background-color: #FFFFFF">
->>>>>>> master
+
 
 <?php $now = Carbon::now();
       $currMonthCount = count($currMonthEvals);
@@ -115,7 +114,7 @@ Welcome to Capstone Connect
   <?php $now->addMonth(); ?>
   <div class="calendar">
     {{Calendar::generate($now->year,$now->month, $cal2data)}}
->>>>>>> master
+
   </div>
   </div>
 </div>

@@ -8,7 +8,7 @@
 @stop
 @section('head')
 {{ HTML::script('js/jquery-ui-1.10.4.custom.js') }}
-<<<<<<< HEAD
+
 
 <script>
 $(document).ready(function(){
@@ -20,7 +20,7 @@ $(document).ready(function(){
             });
     });
 });
-=======
+
 <script>
 var questionNum=10;
 
@@ -60,7 +60,7 @@ function hide() {
 
    }
 }
->>>>>>> master
+
 </script>
 @stop
 @section('header')
@@ -70,7 +70,7 @@ New Evaluation
 @section('content')
 	{{ Form::open(        
 	     array('url' => URL::route('evaluation.store'),
-<<<<<<< HEAD
+
 	                'role' => 'form'))}}
 	   
 
@@ -134,7 +134,7 @@ New Evaluation
 	    @for($i = 1; $i <= 10; $i++)
 
 	        <div class="form group">
-=======
+
 	                'role' => 'form',
 	                'class' => 'form-horizontal'))}}
         <div class="form-group">
@@ -145,18 +145,18 @@ New Evaluation
         </div>
 	    @for($i = 2; $i <= 9; $i++)
 	        <div id={{"'question".$i."'"}} class="form-group">
->>>>>>> master
+
 		        {{ Form::label('q'.$i, 'Question '.$i, array('class' => 'control-label col-sm-2'))}}
 		        <div class="col-sm-8">
 			        {{ Form::text('q'.$i,'',array("id"=>'frm'.$i,'class' => 'form-control', 'placeholder' => 'enter question'))}}
 		        </div>
 	        </div>
 	    @endfor
-<<<<<<< HEAD
+
 
 	    <!-- For the date selector -->
 	    <div class="form group">
-=======
+
 		    <div id="question10" class="form-group">
 		        {{ Form::label('q10', 'Question 10', array('class' => 'control-label col-sm-2'))}}
 		        <div class="col-sm-8">
@@ -164,7 +164,7 @@ New Evaluation
 		        </div>
 	        </div>
 	    <div class="form-group">
->>>>>>> master
+
 	    	{{ Form::label('close_at', 'Closing Date', array('class' => 'control-label col-sm-2')) }}
 	    	<div class="col-sm-2">
 	    		{{ Form::text('close_at','',array('class' => 'form-control', 'id' => 'date'))}}
