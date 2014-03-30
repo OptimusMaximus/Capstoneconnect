@@ -13,6 +13,7 @@ Post New Annoucement
 <?php $containerClass="SmallWhite container"; ?>
 @show
 @section('content')
+    <h4>Only the last 5 announcements will be posted.</h4>
     </br>
     {{ Form::open(        
          array('url' => URL::route('create_announcement'),
