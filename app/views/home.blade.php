@@ -41,7 +41,7 @@ Welcome to Capstone Connect
 
   </div>
 
-  <div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-2 col-md-5 col-lg-4 col-lg-offset-2" style = "background-color: #FFFFFF">
+  <div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-2 col-md-5 col-md-offset-1 col-lg-4 col-lg-offset-2" style = "background-color: #FFFFFF">
 
 <?php $now = Carbon::now();
       $currMonthCount = count($currMonthEvals);
@@ -60,6 +60,8 @@ Welcome to Capstone Connect
 ?>
   
   <div class="calendar">
+  <br class="rwd-break">
+  
     {{Calendar::generate($now->year, $now->month, $cal1data)}}
   </div>
   <?php $now->addMonth(); ?>

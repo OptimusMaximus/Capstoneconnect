@@ -480,6 +480,11 @@ textarea {
 {
 	border-style:none;
 }
+
+@media screen and (min-width: 992px){
+   .rwd-break { display: none; }
+}
+
 .calendar table
 {
 	height: 250px;
