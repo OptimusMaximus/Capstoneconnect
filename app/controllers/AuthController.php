@@ -116,6 +116,7 @@ class AuthController extends BaseController
         }
         else
         {
+            $user->setHasher(new Cartalyst\Sentry\Hashing\NativeHasher);
             $user->password = Hash::make($_POST["password"]);
             $user->activated = true;
             $user->save();
