@@ -13,6 +13,7 @@ Post New Annoucement
 <?php $containerClass="SmallWhite container"; ?>
 @show
 @section('content')
+    <h4>Only the last 5 announcements will be posted.</h4>
     </br>
     {{ Form::open(        
          array('url' => URL::route('create_announcement'),
@@ -26,7 +27,7 @@ Post New Annoucement
         <div class="form-group">                  
             {{ Form::textarea('announcement', '', 
                 array('class' => 'form-control',
-                'placeholder' => 'Please enter new announcements. This will replace any previous announcements.'))}}                
+                'placeholder' => 'Please enter a new announcement.'))}}                
         </div>  
         </br>
 

@@ -16,17 +16,26 @@ Welcome to Capstone Connect
 		<h3>Announcements</h3>	
 
 		<div class="InsideAnnouncement">
-        <!-- Display only the most recent announcement -->
-  			<?php
-  				$mostRecentDate = Announcement::max('created_at');
-  				$announce = Announcement::where('created_at', $mostRecentDate)->first();
+        <!-- Display only the 5 most recent announcements -->
+  			<?php  				
+          $id = Announcement::max('id');     
   			?>
 
-        <!-- Pull announcement from database if one exists -->
-  			@if($announce != null)
-  				<p1>
-  					{{ $announce->announcement }}
+        <!-- Pull announcements from database if one exists -->
+  			@if($id != null)
+  				@for($i = $id; $i >= $id-4; $i--)
+            <p1>
+           
+              <?php
+                $announce = Announcement::where('id', $i)->first();
+              ?>
+              @if($announce !== null )
+  					     {{ $announce->announcement }}
+                </br>
+                </br>
+              @endif
   				</p1>
+          @endfor
   			@endif
   	</div>
 
