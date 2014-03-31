@@ -16,10 +16,12 @@
 	<p></p>
   <!-- Form to create new password -->
 	@if (Session::has('error'))
-  		{{ trans(Session::get('reason')) }}
+  <div class = "alert alert-warning">
+
+  		{{ trans(Session::get('reason')) }} </div>
 	@endif
  
-	{{ Form::open(array('route' => array('update', $token))) }}
+	{{ Form::open(array('route' => array('reset', $token))) }}
  
   <p>{{ Form::label('email', 'Email') }}
   	{{ Form::text('email', Input::old('email'), array('placeholder' => 'admin@sc.edu')) }}
