@@ -5,7 +5,7 @@
 @stop
 
 @section('header')
-Capstone Connect
+Manage Evaluations
 @stop
 {{--This allows a veiw to override the--}}
 {{--main div's class value--}}
