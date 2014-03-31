@@ -17,8 +17,8 @@ class HomeController extends BaseController {
 
 	public function showWelcome()
 	{
-		$now = Carbon::now();
-		$next = Carbon::now();
+		$now = Carbon::now()->startOfMonth();
+		$next = Carbon::now()->startOfMonth();
 		$next->addMonth();
 
 		$currentMonth = Evaluation::whereBetween('close_at', 

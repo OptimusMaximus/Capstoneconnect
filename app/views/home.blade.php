@@ -43,7 +43,7 @@ Welcome to Capstone Connect
 
   <div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-2 col-md-5 col-md-offset-1 col-lg-4 col-lg-offset-2" style = "background-color: #FFFFFF">
 
-<?php $now = Carbon::now();
+<?php $now = Carbon::now()->startOfMonth();
       $currMonthCount = count($currMonthEvals);
       $nextMonthCount = count($nextMonthEvals);
       $cal1data=array();
