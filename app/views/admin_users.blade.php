@@ -80,7 +80,7 @@ Admin Tools
                                 </div>
                                 <div class="user-btn-group">
                                 {{HTML::linkRoute('user.edit','Edit',$user->id, array('class' => 'btn btn-xs btn-default user-btn' , 'data-toggle' => 'tooltip','data-placement' => 'top', 'title' => 'Edit user name or email'))}}        
-                                @if($user->id != Sentry::getUser()->id)
+                                @if($user->id != Sentry::getUser()->id && $user->email != $SuperAdmin)
                                     {{ Form::open(array('route' => array('user.destroy', $user->id), 'method' => 'delete', 'style' => 'display: inline')) }}
                                     {{ Form::submit('Remove', array('class'=>'btn btn-xs btn-default  user-btn', 'data-toggle' => 'tooltip','data-placement' => 'top', 'title' => 'Removes user from the group'))}}
                                     {{ Form::close() }}

@@ -16,7 +16,7 @@ class AdminToolsController extends BaseController {
 	// render admin_users.blade.php
 	public function makeManageUsers()
 	{
-		return View::make('admin_users');
+		return View::make('admin_users')->with('SuperAdmin','admin@sc.edu');
 	}
 
 	// render admin_evals.blade.php
