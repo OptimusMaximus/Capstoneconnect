@@ -45,7 +45,7 @@ Update Contact Email
     ?>
 
     @if($contact != null)
-        <p>You're current contact email address is: {{ $contactEmail }}</p> 
+        <p>Your current contact email address is: {{ $contactEmail }}</p> 
     @else
         <div class = "alert alert-danger" >
             <p>You do not have a current contact email address setup.  Please enter a email address below. </p>
