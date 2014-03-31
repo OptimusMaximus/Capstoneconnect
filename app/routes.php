@@ -19,7 +19,7 @@ Route::get('/logout', array('uses' => 'AuthController@getLogout', 'as' => 'logou
 Route::get('/reset', array('uses' => 'PasswordController@remind', 'as' => 'remind'));
 Route::post('/reset', array('uses' => 'PasswordController@request', 'as' => 'request'));
 Route::get('/reset/{token}', array('uses' => 'PasswordController@reset','as' => 'reset'));
-Route::post('/reset/{token}', array('uses' => 'PasswordController@update'));
+Route::post('/reset/{token}', array('uses' => 'PasswordController@update')); //,'as' => 'update'));
 
 Route::get('/register', array('uses' => 'AuthController@showRegister'));
 Route::post('/register', array('uses' => 'AuthController@activateUser', 'as' => 'activate'));

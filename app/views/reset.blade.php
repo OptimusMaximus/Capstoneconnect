@@ -5,19 +5,18 @@
 @stop
 
 @section('header')
-<h1><b>Capstone Connect</b></h1>
+<h1><b>Capstone Connect Reset Password</b></h1>
 @stop
 
 @section('styles')
 @stop
 
 @section('content')
-<div class = Login>
+<div class = "Login container text-left">
 	<p></p>
   <!-- Form to create new password -->
 	@if (Session::has('error'))
   <div class = "alert alert-warning">
-
   		{{ trans(Session::get('reason')) }} </div>
 	@endif
  
@@ -25,7 +24,7 @@
  
   <p>{{ Form::label('email', 'Email') }}
   	{{ Form::text('email', Input::old('email'), array('placeholder' => 'admin@sc.edu')) }}
-  </p>
+  </p> 
  
   <p>{{ Form::label('password', 'Password') }}
   		{{ Form::text('password') }}</p>
