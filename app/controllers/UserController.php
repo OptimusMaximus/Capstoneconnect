@@ -43,8 +43,8 @@ class UserController extends \BaseController {
 	{
 		try
 		{
-			$group=Input::get("group");
-			switch ($group)
+			$inputGroup=Input::get("group");
+			switch ($inputGroup)
 			{
 				case "U":
 				  $permissions = array(
@@ -53,6 +53,7 @@ class UserController extends \BaseController {
 	                'user.view'   => 1,
 	                'user.update' => 1,
 	                );
+					$group = Sentry::getGroupProvider()->findByName('users');
 				  break;
 				case "A":
 				  $permissions = array(
@@ -61,13 +62,14 @@ class UserController extends \BaseController {
 	                'user.view'   => 1,
 	                'user.update' => 1,
 	                );
+				$group = Sentry::getGroupProvider()->findByName('admin');
 				  break;
 				default:
 					echo "Group wasn't specified.";
 				exit;
 			}
 
-   			$user = Sentry::createUser(array(
+   			$user = Sentry::getUserProvider()->create(array(
 				'email' => Input::get("email"),
 				'first_name' => Input::get("first_name"),
 				'last_name' => Input::get("last_name"),
@@ -76,6 +78,10 @@ class UserController extends \BaseController {
 				'password' => sha1(time()),
 				'permissions'=> $permissions,
 			));
+			$user->addGroup($group);
+			// $user->setHasher(new Cartalyst\Sentry\Hashing\NativeHasher);
+
+
 		}
 		catch (Cartalyst\Sentry\Users\UserExistsException $e)
 		{
