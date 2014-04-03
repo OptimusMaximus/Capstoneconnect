@@ -53,7 +53,7 @@ class UserController extends \BaseController {
 	                'user.view'   => 1,
 	                'user.update' => 1,
 	                );
-					$group = Sentry::getGroupProvider()->findByName('users');
+					$group = Sentry::getGroupProvider()->findByName('Users');
 				  break;
 				case "A":
 				  $permissions = array(
@@ -62,7 +62,7 @@ class UserController extends \BaseController {
 	                'user.view'   => 1,
 	                'user.update' => 1,
 	                );
-				$group = Sentry::getGroupProvider()->findByName('admin');
+				$group = Sentry::getGroupProvider()->findByName('Admin');
 				  break;
 				default:
 					echo "Group wasn't specified.";

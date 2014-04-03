@@ -10,6 +10,9 @@
       "ircmaxell/password-compat": "1.0.*",
       "gloudemans/calendar": "dev-master"
   },
+    "require-dev": {
+    "phpunit/phpunit": "4.0.*"
+  },
 	
 	"autoload": {
 		"classmap": [

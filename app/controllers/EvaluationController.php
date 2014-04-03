@@ -32,16 +32,16 @@ class EvaluationController extends \BaseController {
 	{
 		$date = new Carbon(Input::get('close_at'));
 		$evaluation = Evaluation::create(array(
-			'q1' => $_POST["q1"],
-		    'q2' => $_POST["q2"],
-		    'q3' => $_POST["q3"],
-		    'q4' => $_POST["q4"],
-		    'q5' => $_POST["q5"],
-		    'q6' => $_POST["q6"],
-		    'q7' => $_POST["q7"],
-		    'q8' => $_POST["q8"],
-		    'q9' => $_POST["q9"],
-		    'q10' => $_POST["q10"],
+			'q1' => Input::get("q1"),
+		    'q2' => Input::get("q2"),
+		    'q3' => Input::get("q3"),
+		    'q4' => Input::get("q4"),
+		    'q5' => Input::get("q5"),
+		    'q6' => Input::get("q6"),
+		    'q7' => Input::get("q7"),
+		    'q8' => Input::get("q8"),
+		    'q9' => Input::get("q9"),
+		    'q10' => Input::get("q10"),
 		    'close_at' => ''
 		));
 
@@ -61,7 +61,6 @@ class EvaluationController extends \BaseController {
 	{
 		$eval = Evaluation::find($id);
 		$currentUser = Sentry::getUser(); 
-		//$userGroup = DB::select('SELECT id, first_name, last_name, project_id FROM users WHERE project_id = '.$currentUser['project_id']);
 	    $groupMembers = User::where('project_id','=',$currentUser->project_id)->where('id','!=',$currentUser->id)->get();
 
 
