@@ -29,7 +29,7 @@ class ProjectController extends BaseController {
 	 */
 	public function store()
 	{
-		Project::create(array('name' => $_POST['project_name'], 'description' => $_POST['description']));
+		Project::create(array('name' => Input::get('project_name'), 'description' => Input::get('description')));
 		Return Redirect::to('admin_users');
 	}
 
@@ -66,8 +66,8 @@ class ProjectController extends BaseController {
 	{
 		$project = Project::find($id);
 
-		$project->name = $_POST["project_name"];
-		$project->description = $_POST["description"];
+		$project->name = Input::get("project_name");
+		$project->description = Input::get("description");
 		$project->save();
 		return Redirect::to('admin_users');
 	}

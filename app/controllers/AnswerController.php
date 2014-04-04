@@ -50,20 +50,20 @@ class AnswerController extends \BaseController {
 		}
 		else {
 		Answer::create(array(
-						   'eid'=>$_POST["eid"],
-						   'answered_about'=>$_POST["answered_about"],
-						   'answered_by'=>$_POST["answered_by"],
-						   'ans1' => $_POST["ans1"],
-						   'ans2' => $_POST["ans2"],
-						   'ans3' => $_POST["ans3"],
-						   'ans4' => $_POST["ans4"],
-						   'ans5' => $_POST["ans5"],
-						   'ans6' => $_POST["ans6"],
-						   'ans7' => $_POST["ans7"],
-						   'ans8' => $_POST["ans8"],
-						   'ans9' => $_POST["ans9"],
-						   'ans10' => $_POST["ans10"],
-						   'comment'=>$_POST["comment"]
+						   'eid'=>Input::get("eid"),
+						   'answered_about'=>Input::get("answered_about"),
+						   'answered_by'=>Input::get("answered_by"),
+						   'ans1' => Input::get("ans1"),
+						   'ans2' => Input::get("ans2"),
+						   'ans3' => Input::get("ans3"),
+						   'ans4' => Input::get("ans4"),
+						   'ans5' => Input::get("ans5"),
+						   'ans6' => Input::get("ans6"),
+						   'ans7' => Input::get("ans7"),
+						   'ans8' => Input::get("ans8"),
+						   'ans9' => Input::get("ans9"),
+						   'ans10' => Input::get("ans10"),
+						   'comment'=>Input::get("comment")
 						   ));
 		}
 		return Redirect::route('evaluation.show', Input::get('eid'));
