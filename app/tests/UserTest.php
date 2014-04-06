@@ -18,14 +18,14 @@ class UserTest extends TestCase {
 		Sentry::authenticate($credentials, false);
 	}
 	/**
-	 * Test that a new user form with pid
-	 * filled is successfully called.
+	 * Test that a new project form
+	 * is successfully called.
 	 * @return void
 	 */
 
 	public function testProjectCreate() 
 	{
-		//testing that admin user can retrieve the form for adding a user
+		//testing that admin user can retrieve the form for adding a project
 		Route::enableFilters();
 		UserTest::adminLogin();
 		$response = $this->call('GET', '/project/1/user/new');
@@ -34,7 +34,7 @@ class UserTest extends TestCase {
 
 		Sentry::logout();
 		
-		//tesing that a normal user can't retrieve a form for adding a user
+		//tesing that a normal user can't retrieve a form for adding a project
 		//and that a page displays a message as to why they can't
 		UserTest::userLogin();
 		$crawler = $this->client->request('GET', '/project/1/user/new');
@@ -68,7 +68,7 @@ class UserTest extends TestCase {
 	 */
 	public function testEdit()
 	{
-		//testing that admin user can retrieve the form for editing a user
+		//testing that admin user can retrieve the form for editing a project
 		Route::enableFilters();
 		UserTest::adminLogin();
 		$bob = User::find(1);
@@ -78,7 +78,7 @@ class UserTest extends TestCase {
 
 		Sentry::logout();
 		
-		// tesing that a normal user can't retrieve a form for editing a user
+		// tesing that a normal user can't retrieve a form for editing a project
 		// and that a page displays a message as to why they can't
 		UserTest::userLogin();
 		$crawler = $this->client->request('GET', '/user/1/edit');

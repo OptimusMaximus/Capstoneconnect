@@ -3,7 +3,8 @@
 class ContactController extends BaseController {
 
         //Server Contact view:: we will create view in next step
-        public function getContact(){
+        public function getContact()
+        {
 
             return View::make('contact');
         }

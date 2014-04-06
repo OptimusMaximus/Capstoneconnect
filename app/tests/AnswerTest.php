@@ -3,8 +3,7 @@
 class AnswerTest extends TestCase {
 
 	/**
-	 * A basic functional test example.
-	 *
+	 * 
 	 * @return void
 	 */
 	public function testStore()
