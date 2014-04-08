@@ -140,7 +140,8 @@ textarea {
 	.InsideAnnouncement {
 		background-color:Grey;
 		border-radius:25px;
-		height:420px;
+		padding: 5px 5px 5px 5px;
+		height:auto;
 		width:auto;
 		border:2px solid black;
 		margin: 0 0 3% 0;	

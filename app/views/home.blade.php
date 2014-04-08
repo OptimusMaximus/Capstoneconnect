@@ -12,10 +12,10 @@ Welcome to Capstone Connect
 @section('content')
 
 <div class = "row">
-  <div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-4 col-lg-4 Announcements" style = "background-color: #73000A">
+  <div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-4 col-lg-4" style = "background-color: #73000A">
     <h3>Announcements</h3>  
 
-    <div class="InsideAnnouncement">
+    <div class="InsideAnnouncement" style = "word-wrap: break-word">
         <!-- Display only the 5 most recent announcements -->
         <?php         
           $id = Announcement::max('id');     
@@ -34,7 +34,7 @@ Welcome to Capstone Connect
                 </br>
                 </br>
               @endif
-          </p1>
+            </p1>
           @endfor
         @endif
     </div>

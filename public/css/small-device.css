@@ -38,7 +38,7 @@
 	}
 	.Announcements {	
 		background-color:#73000A;
-		height:550px;
+		height:auto;
 		width:auto;
 		margin: 0 auto;
 		border:2px solid black;
@@ -47,10 +47,11 @@
 	
 	.InsideAnnouncement {
 		background-color:Grey;
-		height:520px;	
+		height:auto;	
 		width:auto;
 		margin: 0 auto;
 		border:2px solid black;	
+		padding: 5px 5px 5px 5px;
 	}
 
 	.InsideRecentActivity {
