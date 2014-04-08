@@ -37,6 +37,12 @@ Welcome to Capstone Connect
             </p1>
           @endfor
         @endif
+
+        @if($id == null)
+            <p1>No announcements have been entered yet.</p1>
+            </br>
+            </br>
+        @endif
     </div>
 
   </div>

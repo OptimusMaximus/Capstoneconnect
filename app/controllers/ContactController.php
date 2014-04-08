@@ -60,23 +60,15 @@ class ContactController extends BaseController {
 
         //Update old email and password for contact information related to email
         public function update(){
-            
-            //Get variables from contact_create_email.blade view
-            
-            /*$newPassword = Input::Get('password');
-            $oldEmail = Input::Get('oldEmail');
-            $oldPassword = Input::Get('oldPassword');*/
 
             //Get input from user
             $credentials = array(
                     'email' => Input::get("email"),
-                    //'password' => Input::get('password')
             );
 
              // Set Validation Rules
             $rules = array (
                     'email' => 'required|min:4|max:32|email:',
-                    //'password' => 'required|min:5'
                     );
 
             //Run input validation
@@ -88,46 +80,36 @@ class ContactController extends BaseController {
                 return Redirect::to('contact_create_email')->withErrors($validator)->withInput();
             }
 
-            /*if($newEmail == null ){//|| $newPassword == null) {
-                Session::flash('warning', 'New email and/or new password cannot be an empty field');
-                return Redirect::to('contact_create_email');
-            }*/
+            //Arrange contacts table in descending order by created_at time and pick the most recent one
+            $contact = Contact::orderBy('created_at', 'desc')->first();
+            if($contact != null){
+                
+                //Send email using Laravel send function
+               Mail::send('emails.contactChanged', $credentials, function($message) use ($credentials)
+               {
+                    //Send email to old contact to let them know the contact email address has been changed
+                    //Arrange contacts table in descending order by created_at time and pick the most recent one
+                    $oldContact = Contact::orderBy('created_at', 'desc')->first();
+                    $oldEmail = $oldContact->contact_email;                    
+                    
+                    //email 'To' field: change this to emails that you want to be notified.                    
+                    $message->to($oldEmail)->subject('Contact Email Changed');
 
-            //$newEmail = Contact::create(array('contact_email' => $_POST['email']));
-            $newEmail = Contact::create(array('contact_email' => Input::get("email")));
+                    //Put new email into database
+                    $newEmail = Contact::create(array('contact_email' => Input::get("email")));                     
 
-            //$pattern = '~[a-zA-Z0-9-_.]+@[a-zA-Z]+\.[a-z]{2,4}~i';
+                });
 
-            //Match exactly the email and password with boundaries
-            //$emailPattern = "~\b$oldEmail\b~";
-            //$passwordPattern = "~\b$oldPassword\b~";
+                Session::flash('screenAnnounce', 'Your new contact email has been updated.  An email has been sent to the old email address.' );
+                return Redirect::to('contact_create_email'); 
 
-            //$filename = '/var/www/html/Capstoneconnect/mailexample.php';
-            //$filename = 'mailexample.php';
-            /*$filename = $_SERVER['DOCUMENT_ROOT']."\Capstoneconnect\app\config\mailexample.php";
+            } else { //No email address is in database yet
 
-            //Find the exact pattern and replace with new info
-            $emailData = file_get_contents($filename);
-            $newEmailData = preg_replace($emailPattern, $newEmail, $emailData);
-            if($emailData == $newEmailData){
-                Session::flash('warning', 'Your old email does not match.  Try again');
-                return Redirect::to('contact_create_email');
+                //Put new email into database
+                $newEmail = Contact::create(array('contact_email' => Input::get("email")));
+                Session::flash('screenAnnounce', 'Your new contact email has been updated.' );
+                return Redirect::to('contact_create_email'); 
             }
-            //Save new email
-            echo file_put_contents($filename, $newEmailData);
-
-            $passwordData = file_get_contents($filename);
-            $newPasswordData = preg_replace($passwordPattern, $newPassword, $passwordData);
-            if($passwordData == $newPasswordData){
-                Session::flash('warning', 'Your old password does not match.  Try again');
-                return Redirect::to('contact_create_email');
-            }
-            //Save new password
-            echo file_put_contents($filename, $newPasswordData);*/
-
-            //Success
-            Session::flash('screenAnnounce', 'Your new contact email has been updated' );
-            return Redirect::to('contact_create_email'); 
-            
+                       
         }
 }
