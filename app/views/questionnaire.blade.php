@@ -1,5 +1,10 @@
 @extends('layouts.master')
-<!-- require_once('submit_confirm.php');   -->
+<!-- require_once('submit_confirm.php');  
+This had to be commented out. If it's uncommented,
+it breaks the css for the evaluations page. Seems 
+to still work fine without being uncommented.
+
+ -->
 
 
 @section('title')
