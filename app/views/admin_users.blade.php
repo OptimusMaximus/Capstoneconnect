@@ -1,5 +1,4 @@
 @extends('layouts.master')
-require_once('delete_confirm.php');
 
 @section('title')
 @parent
