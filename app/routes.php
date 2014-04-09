@@ -37,6 +37,7 @@ Route::group(array('prefix' => '', 'before' => 'authAdmin'), function()
 		Route::resource('evaluation', 'EvaluationController');
 		Route::resource('project', 'ProjectController');
 		Route::resource('user', 'UserController');
+		Route::resource('announcement', 'AnnouncementController');
 
 		Route::get('/admin_evals_about/{token}', array('uses'=> 'AdminToolsController@makeEvalsAbout', 'as' => 'admin_evals_about'));
 		Route::get('/admin_evals_by/{token}', array('uses'=> 'AdminToolsController@makeEvalsBy', 'as' => 'admin_evals_by'));

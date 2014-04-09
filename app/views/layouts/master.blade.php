@@ -84,10 +84,10 @@
                                         echo( HTML::linkRoute('allgrades', 'Average Grades') );
                                     echo('</li>');
                                     echo('<li>');
-                                        echo( HTML::linkRoute('create_announcement', 'Post New Announcement'));
+                                        echo( HTML::linkRoute('create_announcement', 'Create/Delete Announcements'));
                                     echo('</li>');
                                     echo('<li>');
-                                        echo( HTML::linkRoute('download_csv', 'Download CSV File'));
+                                        echo( HTML::linkRoute('download_csv', 'Download CSV Files'));
                                     echo('</li>');
                                     echo('<li>');
                                         echo( HTML::linkRoute('contact_create_email', 'Update Email Contact'));

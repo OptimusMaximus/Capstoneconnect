@@ -82,9 +82,13 @@ class AnnouncementController extends BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function destroy($id)
+	public function destroy($maxID)
 	{
-		//
+		for($i = 0; $i <= $maxID; $i++) {
+			Announcement::destroy($i);
+		}
+		Session::flash('screenAnnounce', 'You have successfully cleared all announcements.' );
+		return Redirect::to('create_announcement');
 	}
 
 }

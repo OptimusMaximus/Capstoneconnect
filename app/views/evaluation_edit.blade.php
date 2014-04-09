@@ -14,6 +14,9 @@ Edit Evaluation
 @stop
 
 @section('content')
+<!-- this @include is needed for confirmation popup -->
+@include('delete_confirm')
+
 	{{ Form::open(        
 	     array('url' => URL::route('evaluation.update',$eval->id),
 	                'role' => 'form', 'method' => 'patch'))}}
@@ -40,7 +43,11 @@ Edit Evaluation
 	<br>
 	{{Form::open(array('url' => URL::route('evaluation.destroy',$eval->id),
 	                'role' => 'form', 'method' => 'delete'))}}
-    {{ Form::submit('Delete Evaluation', array('class'=>'btn btn-default', 'data-toggle' => 'tooltip','data-placement' => 'top', 'title' => 'Click here to create a delete an evaluation')) }}
+	<!-- Popup with confirmation when submitted -->
+    {{ Form::submit('Delete Evaluation', array('class'=>'btn btn-primary', 'type' => 'submit', 'data-toggle' => 'modal', 'data-target' => '#confirmDelete', 
+            'data-title' => "Delete Evaluation?", 'data-message'=> "Are you sure you want to delete this evaluation?", 'data-placement' => 'top', 'title' => 'Click here to delete the evaluation')) }}
+      
+    {{-- Form::submit('Delete Evaluation', array('class'=>'btn btn-default', 'data-toggle' => 'tooltip','data-placement' => 'top', 'title' => 'Click here to create a delete an evaluation')) --}}
     {{Form::close()}}
 
 	<script>$('#date').datepicker();</script>
