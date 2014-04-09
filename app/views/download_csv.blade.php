@@ -17,6 +17,7 @@ Download CSV File
 
     <?php
         $answers = ExportCSV::all();
+        $maxID = ExportCSV::max('id');
         $questions = Evaluation::all();
         //Get the answer id number
         $ansId = $answers->lists('eid', 'eid');
@@ -27,7 +28,7 @@ Download CSV File
     @if($ansId == null)
         <p1> No evaluations have been completed yet.</p1>
     @elseif($ansId != null )    
-        @for($i = 1; $i <= count($ansId)*2; $i++)
+        @for($i = 1; $i <= $maxID; $i++)
             {{-- Check to see if there is an answer for each questionnaire --}}
             @if(array_key_exists($i, $ansId))
                 {{ Form::open(array('route' => array('download_csv'))) }}
