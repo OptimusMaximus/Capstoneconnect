@@ -1,4 +1,5 @@
 @extends('layouts.master')
+require_once('delete_confirm.php');
 
 @section('title')
 @parent
@@ -30,6 +31,9 @@ Admin Tools
 
 
 @section('content')
+<!-- this @include is needed for confirmation popup -->
+@include('delete_confirm')
+
 <div class="table-responsive">
     <table class="table gamecock-table">
         <thead>
@@ -56,7 +60,10 @@ Admin Tools
                         </td>
                         <td>
                             {{ Form::open(array('route' => array('project.destroy', $project->id), 'method' => 'delete', 'data-toggle' => 'tooltip','data-placement' => 'top', 'title' => 'Removes the group')) }}
-                            {{ Form::submit('Remove', array('class'=>'btn btn-sm btn-default'))}}
+                            {{-- Form::submit('Remove', array('class'=>'btn btn-sm btn-default'))--}}
+                            <!-- Popup with confirmation when submitted -->
+                            {{ Form::submit('Remove', array('class'=>'btn btn-sm btn-default ', 'type' => 'submit', 'data-toggle' => "modal", 'data-target'=> "#confirmDelete", 'data-title'=>"Delete Group?",
+                                      'data-message'=>'Are you sure you want to remove this group?', 'data-placement'=>'top', 'title' => 'Removes group from database')) }}
                             {{ Form::close() }}
                         </td>
                     </tr> <!-- trow1 -->
@@ -83,7 +90,11 @@ Admin Tools
                                 <?php if(!isset($SuperAdmin)){$SuperAdmin = "-99999";} ?>
                                 @if($user->id != Sentry::getUser()->id && $user->email != $SuperAdmin)
                                     {{ Form::open(array('route' => array('user.destroy', $user->id), 'method' => 'delete', 'style' => 'display: inline')) }}
-                                    {{ Form::submit('Remove', array('class'=>'btn btn-xs btn-default  user-btn', 'data-toggle' => 'tooltip','data-placement' => 'top', 'title' => 'Removes user from the group'))}}
+                                    {{-- Form::submit('Remove', array('class'=>'btn btn-xs btn-default  user-btn', 'data-toggle' => 'tooltip','data-placement' => 'top', 'title' => 'Removes user from the group'))--}}
+                                    <!-- Popup with confirmation when submitted -->
+                                    {{ Form::submit('Remove', array('class'=>'btn btn-xs btn-default  user-btn', 'type' => 'submit', 'data-toggle' => "modal", 'data-target'=> "#confirmDelete", 'data-title'=>"Delete User?",
+                                      'data-message'=>'Are you sure you want to remove this user?', 'data-placement'=>'top', 'title' => 'Removes user from the group')) }}
+
                                     {{ Form::close() }}
                                 @endif
                                 </div>
@@ -113,5 +124,7 @@ Admin Tools
             </td>
         </tr>
     </table>
+    
 </div>
+    
 @stop
