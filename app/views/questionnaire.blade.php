@@ -1,5 +1,6 @@
 @extends('layouts.master')
-require_once('submit_confirm.php');
+<!-- require_once('submit_confirm.php');   -->
+
 
 @section('title')
 @parent
@@ -12,11 +13,9 @@ require_once('submit_confirm.php');
 @section('header')
 Evaluate Group Member
 @stop
-	 
 @section('content')
 <!-- this @include is needed for confirmation popup -->
 @include('submit_confirm')
-
 
     	 {{ Form::open(        
          array('url' => route('answer.store'),
@@ -24,7 +23,6 @@ Evaluate Group Member
 
     		<br/>
     		<div class = 'questions'> 
-
                 @if($groupMembers!=null)
                     <p><font size ='5'>Select the user you are evaluating</font></p>
                     <select name = "answered_about" >
