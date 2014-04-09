@@ -112,8 +112,8 @@ $evalAvg = ($aa1 + $aa2 + $aa3 + $aa4 + $aa5 + $aa6 + $aa7 + $aa8 + $aa9 + $aa10
                             <td>{{$user->first_name}}</td>
                             <td>{{$user->last_name}}</td>
                             <td>{{$user->email}}</td>
-                            <td>{{$evalAvg}}</td> 
-                            <td>{{$avg}}</td>  
+                            <td>{{round($evalAvg, 2)}}</td> 
+                            <td>{{round($avg, 2)}}</td>  
                         
                         </tr>
 
