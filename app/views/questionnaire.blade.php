@@ -1,4 +1,11 @@
 @extends('layouts.master')
+<!-- require_once('submit_confirm.php');  
+This had to be commented out. If it's uncommented,
+it breaks the css for the evaluations page. Seems 
+to still work fine without being uncommented.
+
+ -->
+
 
 @section('title')
 @parent
@@ -11,8 +18,9 @@
 @section('header')
 Evaluate Group Member
 @stop
-	 
 @section('content')
+<!-- this @include is needed for confirmation popup -->
+@include('submit_confirm')
 
     	 {{ Form::open(        
          array('url' => route('answer.store'),
@@ -20,7 +28,6 @@ Evaluate Group Member
 
     		<br/>
     		<div class = 'questions'> 
-
                 @if($groupMembers!=null)
                     <p><font size ='5'>Select the user you are evaluating</font></p>
                     <select name = "answered_about" >
@@ -61,11 +68,15 @@ Evaluate Group Member
             </div>	
             <input type="hidden" name="answered_by" value={{$currentUser['id']}}>
             <input type="hidden" name="eid" value={{$eval['id']}}>
-    	</div>
+
     	
     	
     	 <br /> 
-       {{ Form::submit('Submit Answers', array('class'=>'btn btn-default', 'data-toggle' => 'tooltip','data-placement' => 'top', 'title' => 'Click here to submit the evaluation' ))}}
+      {{-- Form::submit('Submit Answers', array('class'=>'btn cc-btn-primary', 'data-toggle' => 'tooltip','data-placement' => 'top', 'title' => 'Click here to submit the evaluation' ))--}}
+        {{ Form::submit('Submit Answers', array('class'=>'btn cc-btn-primary', 'data-toggle' => "modal", 'data-target'=> "#confirmSubmit", 'data-title'=>"Submit Evaluation?",
+                                      'data-message'=>'Are you sure you want to submit this Evaluation?', 'data-placement'=>'top', 'title' => 'Submits Evaluation')) }}
+
     {{ Form::close() }}
+      </div>
     
 @stop
