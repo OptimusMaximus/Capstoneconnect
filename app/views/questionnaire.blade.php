@@ -1,4 +1,5 @@
 @extends('layouts.master')
+require_once('submit_confirm.php');
 
 @section('title')
 @parent
@@ -13,6 +14,9 @@ Evaluate Group Member
 @stop
 	 
 @section('content')
+<!-- this @include is needed for confirmation popup -->
+@include('submit_confirm')
+
 
     	 {{ Form::open(        
          array('url' => route('answer.store'),
@@ -65,7 +69,12 @@ Evaluate Group Member
     	
     	
     	 <br /> 
-       {{ Form::submit('Submit Answers', array('class'=>'btn btn-default', 'data-toggle' => 'tooltip','data-placement' => 'top', 'title' => 'Click here to submit the evaluation' ))}}
+      {{-- Form::submit('Submit Answers', array('class'=>'btn btn-default', 'data-toggle' => 'tooltip','data-placement' => 'top', 'title' => 'Click here to submit the evaluation' ))--}}
+        {{ Form::submit('Submit Answers', array('class'=>'btn btn-default', 'data-toggle' => "modal", 'data-target'=> "#confirmSubmit", 'data-title'=>"Submit Evaluation?",
+                                      'data-message'=>'Are you sure you want to submit this Evaluation?', 'data-placement'=>'top', 'title' => 'Submits Evaluation')) }}
+
+
+
     {{ Form::close() }}
     
 @stop
