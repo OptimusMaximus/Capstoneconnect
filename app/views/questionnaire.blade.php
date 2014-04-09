@@ -65,7 +65,7 @@ Evaluate Group Member
             </div>	
             <input type="hidden" name="answered_by" value={{$currentUser['id']}}>
             <input type="hidden" name="eid" value={{$eval['id']}}>
-    	</div>
+
     	
     	
     	 <br /> 
@@ -73,8 +73,7 @@ Evaluate Group Member
         {{ Form::submit('Submit Answers', array('class'=>'btn btn-default', 'data-toggle' => "modal", 'data-target'=> "#confirmSubmit", 'data-title'=>"Submit Evaluation?",
                                       'data-message'=>'Are you sure you want to submit this Evaluation?', 'data-placement'=>'top', 'title' => 'Submits Evaluation')) }}
 
-
-
     {{ Form::close() }}
+      </div>
     
 @stop
