@@ -8,7 +8,7 @@
 Download CSV File
 @stop
 
-{{--This allows a veiw to override the--}}
+{{--This allows a view to override the--}}
 {{--main div's class value--}}
 @section('container_class_value')
 <?php $containerClass="XSmallWhite container"; ?>
@@ -17,10 +17,13 @@ Download CSV File
 
     <?php
         $answers = ExportCSV::all();
-        $maxID = Evaluation::max('id');
-        $questions = Evaluation::all();
         //Get the answer id number
         $ansId = $answers->lists('eid', 'eid');
+
+        //Get the max id so I know how long the for loop should run
+        $maxID = Evaluation::max('id');
+
+        $questions = Evaluation::all();        
         //Get the evaluation id number
         $evalId = $questions->lists('id', 'id');
     ?>
@@ -33,7 +36,7 @@ Download CSV File
             @if(array_key_exists($i, $ansId))
                 {{ Form::open(array('route' => array('download_csv'))) }}
 
-                <!-- eid is variable passed to controller, eid = $i -->
+                {{--- eid is variable passed to controller, eid = $i ---}}
                 {{ Form::hidden('eid', $i) }}            
       
                 <div class = "form group">
