@@ -35,16 +35,16 @@ class AnswerController extends \BaseController {
 				->where('answered_by','=',Input::get('answered_by'))
 				->first();
 		if(isset($ans)) {
-			$ans->ans1=Input::get('ans1');
-			$ans->ans2=Input::get('ans2');
-			$ans->ans3=Input::get('ans3');
-			$ans->ans4=Input::get('ans4');
-			$ans->ans5=Input::get('ans5');
-			$ans->ans6=Input::get('ans6');
-			$ans->ans7=Input::get('ans7');
-			$ans->ans8=Input::get('ans8');
-			$ans->ans9=Input::get('ans9');
-			$ans->ans10=Input::get('ans10');
+			$ans->ans1= Input::get("ans1")!==NULL ? Input::get("ans1") : '';
+			$ans->ans2= Input::get("ans2")!==NULL ? Input::get("ans2") : '';
+			$ans->ans3= Input::get("ans3")!==NULL ? Input::get("ans3") : '';
+			$ans->ans4= Input::get("ans4")!==NULL ? Input::get("ans4") : '';
+			$ans->ans5= Input::get("ans5")!==NULL ? Input::get("ans5") : '';
+			$ans->ans6= Input::get("ans6")!==NULL ? Input::get("ans6") : '';
+			$ans->ans7= Input::get("ans7")!==NULL ? Input::get("ans7") : '';
+			$ans->ans8= Input::get("ans8")!==NULL ? Input::get("ans8") : '';
+			$ans->ans9= Input::get("ans9")!==NULL ? Input::get("ans9") : '';
+			$ans->ans10= Input::get("ans10")!==NULL ? Input::get("ans10") : '';
 			$ans->comment=Input::get('comment');
 			$ans->save();
 		}
@@ -53,16 +53,16 @@ class AnswerController extends \BaseController {
 						   'eid'=>Input::get("eid"),
 						   'answered_about'=>Input::get("answered_about"),
 						   'answered_by'=>Input::get("answered_by"),
-						   'ans1' => Input::get("ans1"),
-						   'ans2' => Input::get("ans2"),
-						   'ans3' => Input::get("ans3"),
-						   'ans4' => Input::get("ans4"),
-						   'ans5' => Input::get("ans5"),
-						   'ans6' => Input::get("ans6"),
-						   'ans7' => Input::get("ans7"),
-						   'ans8' => Input::get("ans8"),
-						   'ans9' => Input::get("ans9"),
-						   'ans10' => Input::get("ans10"),
+						   'ans1' =>  Input::get("ans1")!==NULL ? Input::get("ans1") : '',
+						   'ans2' =>  Input::get("ans2")!==NULL ? Input::get("ans2") : '',
+						   'ans3' =>  Input::get("ans3")!==NULL ? Input::get("ans3") : '',
+						   'ans4' =>  Input::get("ans4")!==NULL ? Input::get("ans4") : '',
+						   'ans5' =>  Input::get("ans5")!==NULL ? Input::get("ans5") : '',
+						   'ans6' =>  Input::get("ans6")!==NULL ? Input::get("ans6") : '',
+						   'ans7' =>  Input::get("ans7")!==NULL ? Input::get("ans7") : '',
+						   'ans8' =>  Input::get("ans8")!==NULL ? Input::get("ans8") : '',
+						   'ans9' =>  Input::get("ans9")!==NULL ? Input::get("ans9") : '',
+						   'ans10' =>  Input::get("ans10")!==NULL ? Input::get("ans10") : '',
 						   'comment'=>Input::get("comment")
 						   ));
 		}
