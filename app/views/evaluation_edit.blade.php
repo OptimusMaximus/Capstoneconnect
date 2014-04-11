@@ -19,24 +19,30 @@ Edit Evaluation
 
 	{{ Form::open(        
 	     array('url' => URL::route('evaluation.update',$eval->id),
-	                'role' => 'form', 'method' => 'patch'))}}
+	                'role' => 'form', 'method' => 'patch',
+	                'class' => 'form-horizontal'))}}
+	    <div class="form-group">
+	    	{{Form::label('title', "Title", array('class' => 'control-label col-sm-2'))}}
+	    	<div class="col-sm-10">
+	    		{{Form::text('title',$eval->title,array('class'=>'form-control', 'placeholder'=>'place title here'))}}
+	    	</div>
+	    </div>
 	    @for($i = 1; $i <= 10; $i++)
 	    	<?php $q = 'q'.$i; ?>
-	        <div class="form group">
+	        <div class="form-group">
 		        {{ Form::label('q'.$i, 'Question '.$i, array('class' => 'control-label col-sm-2'))}}
 		        <div class="col-sm-10">
 			        {{ Form::text($q,$eval->$q,array('class' => 'form-control', 'placeholder' => 'enter question'))}}
 		        </div>
 	        </div>
-	        <br><br><br>
 	    @endfor
-	    <div class="form group">
+	    <div class="form-group">
 	    	{{ Form::label('close_at', 'Closing Date', array('class' => 'control-label col-sm-2')) }}
 	    	<div class="col-sm-3 col-offset-sm-8">
 	    		{{ Form::text('close_at',$eval->close_at,array('class' => 'form-control', 'id' => 'date'))}}
 	    	</div>
-	    	<br><br><br>
-	    <div class="form group">
+	    </div>
+	    <div class="form-group">
 	        {{ Form::submit('Update Evaluation', array('class'=>'btn btn-default', 'data-toggle' => 'tooltip','data-placement' => 'top', 'title' => 'Click here to create a new evaluation')) }}
 	    </div>
 	{{ Form::close() }}

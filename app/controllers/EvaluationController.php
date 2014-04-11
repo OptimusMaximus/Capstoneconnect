@@ -32,6 +32,7 @@ class EvaluationController extends \BaseController {
 	{
 		$date = new Carbon(Input::get('close_at'));
 		$evaluation = Evaluation::create(array(
+			'title'=>Input::get('title'),
 			'q1' => Input::get("q1"),
 		    'q2' => Input::get("q2"),
 		    'q3' => Input::get("q3"),
@@ -88,6 +89,7 @@ class EvaluationController extends \BaseController {
 	public function update($id)
 	{
 		$eval = Evaluation::find($id);
+		$eval->title=Input::get('title');
 		$eval->q1 = Input::get('q1');
 		$eval->q2 = Input::get('q2');
 		$eval->q3 = Input::get('q3');

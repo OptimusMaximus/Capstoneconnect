@@ -58,6 +58,12 @@ New Evaluation
 	     array('url' => URL::route('evaluation.store'),
 	                'role' => 'form',
 	                'class' => 'form-horizontal'))}}
+	    <div class="form-group">
+	    	{{Form::label('title', "Title", array('class' => 'control-label col-sm-2'))}}
+	    	<div class="col-sm-10">
+	    		{{Form::text('title','',array('class'=>'form-control', 'placeholder'=>'place title here'))}}
+	    	</div>
+	    </div>
         <div class="form-group">
 	        {{ Form::label('q1', 'Question 1', array('class' => 'control-label col-sm-2'))}}
 	        <div class="col-sm-8">
@@ -86,8 +92,6 @@ New Evaluation
 	    	<span id="remove1" onclick = "hide();" class="col-sm-offset-1 col-sm-2 btn btn-default">remove question</span>
 	    	<span id="add1" onclick = "make_visable();" class="col-sm-2 btn btn-default initiallyHidden">add question</span>
 	    </div>
-	    <div class="form-group">
-	  	</div>
 	    <div class="form-group">
 	        {{ Form::submit('Create Evaluation', array('class'=>'btn btn-default', 'data-toggle' => 'tooltip','data-placement' => 'top', 'title' => 'Click here to create a new evaluation')) }}
 	    </div>

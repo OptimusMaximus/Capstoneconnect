@@ -20,6 +20,7 @@ class EvaluationsSeeder extends Seeder {
 		    'q10' => 'Why are there ten questions?'
 		));*/
 	Evaluation::create(array(
+			'title' => 'Evaluation #1',
 			'q1' => 'Did your member meet promptly?',
 		    'q2' => 'Did they do the tasks they were given?',
 		    'q3' => 'Did they do an equal share of the work?',
