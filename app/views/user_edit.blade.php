@@ -58,6 +58,7 @@ User Management
             ))}}
         </div>
     </div>
+    @if($project_id != 0)
     <div class="form-group">
         {{ Form::label('Project', 'Project Group:',
             array('class' => 'col-sm-2 control-label'
@@ -77,6 +78,7 @@ User Management
             </select>
         </div>
     </div>
+    @endif
     @if(!isset($first_name))
     <div class="form-group">  
         {{ Form::label('password', 'Password: ', 
