@@ -15,8 +15,10 @@ class ProjectsSeeder extends Seeder {
         Project::create(array('id'=>'3',
                               'name'=>'Hero Space',
                               'description'=>'Social media app for super heroes.'));
-        Project::create(array('id'=>'0',
+        $project = Project::create(array('id'=>'0',
                               'name'=>'Admin',
                               'description'=>'Admin users'));
+        $project->id = 0;
+        $project->save();
     }
 }

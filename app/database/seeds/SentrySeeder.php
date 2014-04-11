@@ -16,6 +16,7 @@ class SentrySeeder extends Seeder {
             'first_name'  => 'John',
             'last_name'   => 'Doe',
             'activated'   => 1,
+            'project_id' => 0,
             'permissions' => array(
                 'user.create' => 1,
                 'user.delete' => 1,

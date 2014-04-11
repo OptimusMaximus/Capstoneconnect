@@ -127,8 +127,8 @@ class UserController extends \BaseController {
 		$user->email = Input::get("email");
 		$user->first_name = Input::get("first_name");
 		$user->last_name = Input::get("last_name");
+		$user->project_id = Input::get("project");
 		$user->save();
-
 		return Redirect::to('admin_users');
 	}
 

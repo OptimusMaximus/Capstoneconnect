@@ -58,6 +58,25 @@ User Management
             ))}}
         </div>
     </div>
+    <div class="form-group">
+        {{ Form::label('Project', 'Project Group:',
+            array('class' => 'col-sm-2 control-label'
+        ))}}
+        <div class="col-sm-5">
+            <?php $projects = Project::all(); ?>
+            <select name ='project' class="form-control">
+                @foreach($projects as $project)
+                    @if($project->name != 'Admin')
+                        @if($project->id == $project_id)
+                            <option value='{{$project->id}}' selected>{{$project->name}}</option>
+                        @else
+                            <option value='{{$project->id}}'>{{$project->name}}</option>
+                        @endif
+                    @endif
+                @endforeach
+            </select>
+        </div>
+    </div>
     @if(!isset($first_name))
     <div class="form-group">  
         {{ Form::label('password', 'Password: ', 

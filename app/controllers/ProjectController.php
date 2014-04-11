@@ -80,6 +80,11 @@ class ProjectController extends BaseController {
 	 */
 	public function destroy($id)
 	{
+		$users = User::where('project_id','=',$id)->get();
+		foreach ($users as $user) {
+			$user->project_id=NULL;
+			$user->save();
+		}
 		Project::destroy($id);
 		return Redirect::to('admin_users');
 	}
