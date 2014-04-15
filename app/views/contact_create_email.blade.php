@@ -90,7 +90,7 @@ Update Contact Email
     
     <div class = "form group">
     	<div class="col-sm-offset-2 col-sm-8">       	
-        	{{ Form::submit('Update', array('class' => 'btn cc-btn-primary', 'data-toggle' => 'tooltip','data-placement' => 'top', 'title' => 'Update')) }}
+        	{{ Form::submit('Update', array('class' => 'btn cc-btn-primary', 'data-toggle' => 'tooltip','data-placement' => 'top', 'title' => 'Update new Contact Email')) }}
         </div>                        
     </div>  
     {{ Form::close() }}

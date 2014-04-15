@@ -29,5 +29,5 @@ Manage Evaluations
         @endforeach
     @endif
     
-    {{HTML::linkRoute('evaluation.create', 'Create New Evaluation', NULL, array('class' => 'btn btn-default pull-left'))}}
+    {{HTML::linkRoute('evaluation.create', 'Create New Evaluation', NULL, array('class' => 'btn btn-default pull-left', 'data-toggle' => 'tooltip','data-placement' => 'top', 'title' => 'New Evaluation Creation Page'))}}
 @stop

@@ -89,8 +89,8 @@ New Evaluation
 	    	<div class="col-sm-2">
 	    		{{ Form::text('close_at','',array('class' => 'form-control', 'id' => 'date'))}}
 	    	</div>
-	    	<span id="remove1" onclick = "hide();" class="col-sm-offset-1 col-sm-2 btn btn-default">remove question</span>
-	    	<span id="add1" onclick = "make_visable();" class="col-sm-2 btn btn-default initiallyHidden">add question</span>
+	    	<span id="remove1" onclick = "hide();" class="col-sm-offset-1 col-sm-2 btn btn-default">Remove Question</span>
+	    	<span id="add1" onclick = "make_visable();" class="col-sm-2 btn btn-default initiallyHidden">Add Question</span>
 	    </div>
 	    <div class="form-group">
 	        {{ Form::submit('Create Evaluation', array('class'=>'btn btn-default', 'data-toggle' => 'tooltip','data-placement' => 'top', 'title' => 'Click here to create a new evaluation')) }}
