@@ -22,5 +22,6 @@
  <div>
  	Created by <a href="https://github.com/OptimusMaximus" target="_blank">Maximus Brandel, </a> 
  	<a href="https://github.com/skysmith112" target="_blank">Skylar Smith</a>, 
+ 	<a href="https://github.com/nickmknia" target="_blank">Nicholas Keshavarz-Nia</a>, 
 
 @stop
