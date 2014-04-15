@@ -23,6 +23,7 @@
  	Created by <a href="https://github.com/OptimusMaximus" target="_blank">Maximus Brandel, </a> 
  	<a href="https://github.com/skysmith112" target="_blank">Skylar Smith</a>, 
  	<a href="https://github.com/nickmknia" target="_blank">Nicholas Keshavarz-Nia</a>, 
- 	<a href="https://github.com/frankets" target="_blank">Sean Frankett</a>, 
+ 	<a href="https://github.com/frankets" target="_blank">Sean Frankett</a>, and 
+ 	<a href="https://github.com/Bensnorman" target="_blank">Ben Norman</a>.
 
 @stop
