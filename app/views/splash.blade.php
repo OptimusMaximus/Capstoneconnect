@@ -20,5 +20,7 @@
 <iframe width="640" height="400" src="//www.youtube.com/embed/KAutDGd7k-I?autoplay=0;vq=hd720;" frameborder="0" allowfullscreen></iframe>
  </div> 
  <div>
- 	Create by <a href="https://github.com/OptimusMaximus" target="_blank">Maximus Brandel</a> 
+ 	Created by <a href="https://github.com/OptimusMaximus" target="_blank">Maximus Brandel, </a> 
+ 	<a href="https://github.com/skysmith112" target="_blank">Skylar Smith</a>, 
+
 @stop
