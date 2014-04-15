@@ -17,6 +17,6 @@
 <div>
 <center>
 <!-- iframe for splash page video -->	
-<iframe width="640" height="400" src="//www.youtube.com/embed/KAutDGd7k-I?autoplay=0" frameborder="0" allowfullscreen></iframe>
+<iframe width="640" height="400" src="//www.youtube.com/embed/KAutDGd7k-I?autoplay=0;vq=hd720;" frameborder="0" allowfullscreen></iframe>
  </div> 
 @stop
