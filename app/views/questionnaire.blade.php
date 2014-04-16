@@ -37,8 +37,8 @@ Evaluate Group Member
                     </select>
                     <br /><br /><br />
                 @endif
-                <div><em>Please evaluate each member from 1 to 10
-                 with 1 being the worst and 10 being the best.</em></div>
+                <div><em><strong>Please evaluate each member from 1 to 10
+                 with 1 being the worst and 10 being the best.</em></strong></div>
                  <br />
          	@if($eval!=null)
 	         	@for($i = 1; $i<=10; ++$i)
