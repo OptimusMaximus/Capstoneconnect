@@ -92,6 +92,9 @@
                                     echo('<li>');
                                         echo( HTML::linkRoute('contact_create_email', 'Update Email Contact'));
                                     echo('</li>');
+                                    echo('<li>');
+                                        echo( HTML::linkRoute('contact_users', 'Contact All Users'));
+                                    echo('</li>');
 
                             echo(  '</ul>  
                                 </li>'
