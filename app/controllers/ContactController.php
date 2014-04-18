@@ -147,7 +147,7 @@ class ContactController extends BaseController {
                 {
                     
                     $message->from($data['email'] , $data['first_name']);
-                     $message->to($user['email'])->subject('Contact From Professor');
+                     $message->to($user['email'])->subject('Message From Professor');
 
                 });
 }
