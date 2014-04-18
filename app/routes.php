@@ -52,7 +52,7 @@ Route::group(array('prefix' => '', 'before' => 'authAdmin'), function()
 		Route::get('/contact_create_email', array('uses' => 'ContactController@create', 'as' => 'contact_create_email'));
 		Route::post('/contact_create_email', array('uses' => 'ContactController@update', 'as' => 'update'));
 		Route::get('/contact_users', array('uses' => 'ContactController@getContactUsers', 'as' => 'contact_users'));
-		Route::post('contact_users', 'ContactController@getContactAllUsers');
+		Route::post('/contact_users', 'ContactController@getContactAllUsers');
 
 
 });

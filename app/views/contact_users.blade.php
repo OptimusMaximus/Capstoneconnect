@@ -8,7 +8,7 @@
 @stop
 
 @section('header')
-Contact
+Send An Email To All Users
 @stop
 
 {{--This allows a view to override the--}}
@@ -44,7 +44,7 @@ Contact
 <br />
             {{ Form:: label ('message', 'Message*' )}}<br />
               <div class="form-group col-centered">                  
-            {{ Form::textarea('message', '', array('class' => 'col-xs-12','placeholder' => 'Please enter a message to your professor'))}}                
+            {{ Form::textarea('message', '', array('class' => 'col-xs-12','placeholder' => 'Please enter a message to all users'))}}                
             </div>
             <b>*</b> indicates required feild
             
