@@ -29,7 +29,7 @@ Send An Email To All Users
                 {{ $message }}
                 @endforeach
             </ul>
-
+<!--
             {{ Form:: label ('first_name', 'First Name*' )}}<br />
             {{ Form:: text ('first_name', '', array('placeholder' => 'John')) }}
 <br />
@@ -38,7 +38,8 @@ Send An Email To All Users
 <br />
             {{ Form:: label ('email', 'E-mail Address*') }}<br />
             {{ Form:: email ('email', '', array('placeholder' => 'me@example.com')) }}
-<br />
+<br /> 
+-->
             {{ Form:: label ('message', 'Message*' )}}<br />
               <div class="form-group col-centered">                  
             {{ Form::textarea('message', '', array('class' => 'col-xs-12','placeholder' => 'Please enter a message to all users'))}}                

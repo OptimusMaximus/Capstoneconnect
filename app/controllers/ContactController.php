@@ -127,9 +127,11 @@ class ContactController extends BaseController {
 
             //Validation rules
             $rules = array (
+                /*
                 'first_name' => 'required|alpha',
                 'last_name' => 'required|alpha',
                 'email' => 'required|email',
+                */
                 'message' => 'required|min:1'
             );
 
@@ -145,7 +147,7 @@ class ContactController extends BaseController {
                 Mail::queue('emails.hello_users', $data, function($message) use ($data, $user)
                 {
                     
-                    $message->from($data['email'] , $data['first_name']);
+                    //$message->from($data['email'] , $data['first_name']);
                      $message->to($user['email'])->subject('Message From Professor');
 
                 });
