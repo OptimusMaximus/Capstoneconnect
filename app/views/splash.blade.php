@@ -17,6 +17,13 @@
 <div>
 <center>
 <!-- iframe for splash page video -->	
-<iframe width="640" height="400" src="//www.youtube.com/embed/FS_kYbeu9OQ?autoplay=0" frameborder="0" allowfullscreen></iframe>
+<iframe width="640" height="400" src="//www.youtube.com/embed/KAutDGd7k-I?autoplay=0;vq=hd720;" frameborder="0" allowfullscreen></iframe>
  </div> 
+ <div>
+ 	Created by <a href="https://github.com/OptimusMaximus" target="_blank">Maximus Brandel, </a> 
+ 	<a href="https://github.com/skysmith112" target="_blank">Skylar Smith</a>, 
+ 	<a href="https://github.com/nickmknia" target="_blank">Nicholas Keshavarz-Nia</a>, 
+ 	<a href="https://github.com/frankets" target="_blank">Sean Frankett</a>, and 
+ 	<a href="https://github.com/Bensnorman" target="_blank">Ben Norman</a>.
+
 @stop
