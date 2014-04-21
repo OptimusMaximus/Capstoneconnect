@@ -3,19 +3,17 @@
 //get the first name
 $first_name = Input::get('first_name');
 $last_name = Input::get ('last_name');
-$phone_number = Input::get('phone_number');
 $email = Input::get ('email');
 $message = Input::get ('message');
 date_default_timezone_set('America/New_York');
 $date_time = date("F j, Y, g:i a");
 ?> 
 
-<h1>Capstone Connect Student Inquiry</h1>
+<h1>To All Users</h1>
 
 <p>
 First name: <?php echo ($first_name); ?> <br>
 Last name: <?php echo($last_name);?> <br>
-Phone number: <?php echo($phone_number);?><br>
 Email address: <?php echo ($email);?> <br>
 Date: <?php echo($date_time);?><br>
 <b>Message: </b><?php echo ($message);?><br>

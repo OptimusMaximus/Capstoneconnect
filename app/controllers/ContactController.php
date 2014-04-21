@@ -129,7 +129,6 @@ class ContactController extends BaseController {
             $rules = array (
                 'first_name' => 'required|alpha',
                 'last_name' => 'required|alpha',
-                'phone_number'=>'numeric|min:0',
                 'email' => 'required|email',
                 'message' => 'required|min:1'
             );
@@ -143,7 +142,7 @@ class ContactController extends BaseController {
                 foreach ($users as $user) {
                 //Send email using Laravel send function
                     //$email = $user->'email';
-                Mail::queue('emails.hello', $data, function($message) use ($data, $user)
+                Mail::queue('emails.hello_users', $data, function($message) use ($data, $user)
                 {
                     
                     $message->from($data['email'] , $data['first_name']);

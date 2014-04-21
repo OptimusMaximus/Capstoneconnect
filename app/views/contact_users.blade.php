@@ -36,9 +36,6 @@ Send An Email To All Users
             {{ Form:: label ('last_name', 'Last Name*' )}}<br />
             {{ Form:: text ('last_name', '', array('placeholder' => 'Doe')) }}
 <br />
-            {{ Form:: label ('phone_number', 'Phone Number' )}}<br />
-            {{ Form:: text ('phone_number', '', array('placeholder' => '1234567890')) }}
-<br />
             {{ Form:: label ('email', 'E-mail Address*') }}<br />
             {{ Form:: email ('email', '', array('placeholder' => 'me@example.com')) }}
 <br />
