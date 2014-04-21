@@ -8,7 +8,7 @@
 @stop
 
 @section('header')
-Contact
+Contact Professor
 @stop
 
 {{--This allows a view to override the--}}
