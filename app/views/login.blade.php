@@ -70,7 +70,7 @@
 
             <div class="checkbox-inline cc-remember-box">
                 <label>
-                {{ Form::checkbox('remember', 'First Choice', false, array('id' => 'remember' => 'data-toggle' => 'tooltip','data-placement' => 'top', 'title' => 'Click here to register for an account )) }} Remember me
+                {{ Form::checkbox('remember', 'First Choice', false, array('id' => 'remember')) }} Remember me
                 </label>
             </div>
         </div>
