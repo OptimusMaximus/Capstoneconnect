@@ -147,7 +147,7 @@ class ContactController extends BaseController {
                 Mail::queue('emails.hello_users', $data, function($message) use ($data, $user)
                 {
                     
-                    //$message->from($data['email'] , $data['first_name']);
+                    $message->from('CapstoneAdmin@capstoneconnect.com', 'Capstone Admin');
                      $message->to($user['email'])->subject('Message From Professor');
 
                 });
