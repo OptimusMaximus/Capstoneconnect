@@ -18,7 +18,7 @@ Contact Professor
 @show
 
 @section('content')
-
+@include('submit_confirm')
 <html>
 <body>
 <!-- Blade Template engine -->
@@ -52,7 +52,9 @@ Contact Professor
 <br />
 
             {{ Form::reset('Clear', array('class' => 'btn cc-btn-primary')) }}
-            {{ Form::submit('Send', array('class' => 'btn cc-btn-primary')) }}
+            {{-- Form::submit('Send', array('class' => 'btn cc-btn-primary')) --}}
+            {{ Form::submit('Send To Professor', array('class'=>'btn cc-btn-primary', 'data-toggle' => "modal", 'data-target'=> "#confirmSend", 'data-title'=>"Confirm Email",
+                                      'data-message'=>'Are you sure you want to send this message to your Professor?', 'data-placement'=>'top', 'title' => 'Send Email')) }}
 
             {{ Form:: close() }}
 </div>            
