@@ -247,6 +247,7 @@ table.display tr.even.gradeU {
 
 tr.odd {
 	background-color: #A52A2A;
+	color:white;
 }
 
 tr.even {
