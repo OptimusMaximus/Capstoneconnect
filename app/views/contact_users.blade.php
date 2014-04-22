@@ -24,6 +24,11 @@ Send An Email To All Users
 <body>
 <!-- Blade Template engine -->
  {{ Form:: open(array('url' => 'contact_users')) }} <!--contact_request is a router from Route class-->
+
+  <!-- Post message if successfully sent email -->
+        @if (Session::get('screenA'))
+            <div class = "alert alert-success"> {{ Session::get('screenA') }} </div>
+         @endif
 <div class="form-group">
             <ul class="errors">
                 @foreach($errors->all('<li>:message</li>') as $message)

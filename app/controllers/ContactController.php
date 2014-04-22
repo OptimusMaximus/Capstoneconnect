@@ -151,8 +151,14 @@ class ContactController extends BaseController {
                     
                     $message->from('CapstoneAdmin@capstoneconnect.com', 'Capstone Admin');
                      $message->to($user['email'])->subject('Message From Professor');
-
+                       
                 });
+
+                //Sucess Return for sending email
+                 Session::flash('screenA', 'You have successfully sent an email.' );
+
+              
+                     return View::make('contact_users'); 
             }
         
 
