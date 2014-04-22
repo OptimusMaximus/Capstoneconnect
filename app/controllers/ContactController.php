@@ -45,6 +45,8 @@ class ContactController extends BaseController {
                     //$message->to('$adminEmail', 'my name')->subject('contact request');
 
                 });
+                //Sreen Announcement for Successfully Sent email
+                Session::flash('screenA', 'You have successfully sent an email.' );
 
                 return View::make('contact');  
             }else{
@@ -151,8 +153,10 @@ class ContactController extends BaseController {
                      $message->to($user['email'])->subject('Message From Professor');
 
                 });
-}
-                return View::make('contact_users');  
+            }
+        
+
+        
             }else{
                 //return contact form with errors
                 return Redirect::to('/contact_users')->withErrors($validator);
