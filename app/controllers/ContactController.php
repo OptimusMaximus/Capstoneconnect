@@ -112,4 +112,52 @@ class ContactController extends BaseController {
             }
                        
         }
+
+        //This is for the Admin sending emails to ALL USERS!
+        public function getContactUsers()
+        {
+
+            return View::make('contact_users');
+       }
+       public function getContactAllUsers(){
+            //Get all the data and store it inside Store Variable
+            $data = Input::all();
+            $users = User::all();
+          //  $mailuserlist=DB::table('users')->get();
+
+            //Validation rules
+            $rules = array (
+                /*
+                'first_name' => 'required|alpha',
+                'last_name' => 'required|alpha',
+                'email' => 'required|email',
+                */
+                'message' => 'required|min:1'
+            );
+
+            //Validate data
+            $validator  = Validator::make ($data, $rules);
+
+            //If everything is correct than run passes.
+            if ($validator -> passes()){
+
+                foreach ($users as $user) {
+                //Send email using Laravel send function
+                    //$email = $user->'email';
+                Mail::queue('emails.hello_users', $data, function($message) use ($data, $user)
+                {
+                    
+                    $message->from('CapstoneAdmin@capstoneconnect.com', 'Capstone Admin');
+                     $message->to($user['email'])->subject('Message From Professor');
+
+                });
 }
+                return View::make('contact_users');  
+            }else{
+                //return contact form with errors
+                return Redirect::to('/contact_users')->withErrors($validator);
+            }
+        }
+    }
+
+

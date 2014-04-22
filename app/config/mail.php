@@ -82,7 +82,7 @@ return array(
 	|
 	*/
 
-	'username' => 'USCcapstonehelp@gmail.com',
+	'username' => 'usccapstonehelp@gmail.com',
 
 	/*
 	|--------------------------------------------------------------------------

@@ -23,7 +23,7 @@ Create Evaluation/Edit Evaluation:
 1. Click "Admin Tools" near the top left of the page and click "Manage Evaluation." 
 From here you can click on open and closed evaluations to either edit, view, or delete them.
 2. Click "Create New Evaluation".
-3. There are ten questions available by default. Simple click "remove question" 
+3. There are ten questions available by default. Simply click "remove question" 
 to lower the number of questions asked on this evaluation.
 4. Enter desired questions and closing date/time and click "create evaluation."
 
@@ -39,8 +39,10 @@ total average grade for all evaluations.
 
 Post Announcement:
 1. Click "Admin Tools" near the top left of the page and click "Post New Announcemnt."
-2. Enter your announcement and click "Create Announcement." The five most recent announcements 
-posted will show up on the student's home page.
+2. Enter your announcement and click "Create Announcement." The five most recent 
+announcements posted will show up on the student's home page. You can click
+"Delete All Announcements" and that will remove all announcements from admin/user
+homepages.
 
 
 Download CSV:
@@ -53,3 +55,10 @@ Update Email Contact:
 1. Click "Admin Tools" near the top left of the page and click "Update email contact."
 2. Enter the email address where you would like to recieve emails. If a student has a 
 question and uses the build in contact feature, an email will be sent to this email address.
+
+
+Sent Email To All Users
+1. Click "Admin Tools" near the top left of the page and click "Contact All Users."
+2. Enter First Name, Last Name, Email Address, and a Message to all users. 
+The name and email are your name and email and will show up in the email as who
+the email is from(you, the admin). This sends an email to all registed emails in the database. 

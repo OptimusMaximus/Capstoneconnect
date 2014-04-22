@@ -10,15 +10,13 @@ date_default_timezone_set('America/New_York');
 $date_time = date("F j, Y, g:i a");
 ?> 
 
-<h1>Capstone Connect Inquiry</h1>
+<h1>Capstone Connect Student Inquiry</h1>
 
 <p>
 First name: <?php echo ($first_name); ?> <br>
 Last name: <?php echo($last_name);?> <br>
 Phone number: <?php echo($phone_number);?><br>
 Email address: <?php echo ($email);?> <br>
-Message: <?php echo ($message);?><br>
 Date: <?php echo($date_time);?><br>
-
-
+<b>Message: </b><?php echo ($message);?><br>
 </p>
