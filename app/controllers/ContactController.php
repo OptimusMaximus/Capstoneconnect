@@ -155,7 +155,7 @@ class ContactController extends BaseController {
                 });
 
                 //Sucess Return for sending email
-                 Session::flash('screenA', 'You have successfully sent an email.' );
+                 Session::flash('screenA', 'You have successfully sent this email to users' );
 
               
                      return View::make('contact_users'); 

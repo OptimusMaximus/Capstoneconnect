@@ -58,7 +58,7 @@ Send An Email To All Users
             {{ Form::reset('Clear', array('class' => 'btn cc-btn-primary')) }}
             {{-- Form::submit('Send To All Users', array('class' => 'btn cc-btn-primary'))--}}
         {{ Form::submit('Send To All Users', array('class'=>'btn cc-btn-primary', 'data-toggle' => "modal", 'data-target'=> "#confirmSend", 'data-title'=>"Confirm Email",
-                                      'data-message'=>'Are you sure you want to send an email to All Users?', 'data-placement'=>'top', 'title' => 'Send Email')) }}
+                                      'data-message'=>'Are you sure you want to send an email to All Users? This will take a few seconds...', 'data-placement'=>'top', 'title' => 'Send Email')) }}
 
 
             {{ Form:: close() }}
