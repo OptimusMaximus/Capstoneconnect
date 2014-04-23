@@ -66,6 +66,8 @@ class AnswerController extends \BaseController {
 						   'comment'=>Input::get("comment")
 						   ));
 		}
+		Session::flash('screenA', 'You have successfully submitted this evaluation');
+
 		return Redirect::route('evaluation.show', Input::get('eid'));
 	}
 

@@ -28,6 +28,9 @@ Evaluate Group Member
 
     		<br/>
     		<div class = 'questions'> 
+                                @if (Session::get('screenA'))
+            <div class = "alert alert-success"> {{ Session::get('screenA') }} </div>
+         @endif
                 @if($groupMembers!=null)
                     <p><font size ='5'>Select the user you are evaluating</font></p>
                     <select name = "answered_about" >
