@@ -45,8 +45,8 @@ class ContactController extends BaseController {
                     //$message->to('$adminEmail', 'my name')->subject('contact request');
 
                 });
-                //Sreen Announcement for Successfully Sent email
-                Session::flash('screenA', 'You have successfully sent an email.' );
+                //Sreen Announcement for Successfully Sent email to professor
+                Session::flash('screenA', 'You have successfully sent this email to your professor' );
 
                 return View::make('contact');  
             }else{
