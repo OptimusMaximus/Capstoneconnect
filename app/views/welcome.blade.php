@@ -1,3 +1,4 @@
+<!-- This is an extra/blank page that simply calls the the splash page and shows its contents -->
 @extends('layouts.masterlogin')
 
 @section('title')

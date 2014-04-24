@@ -1,3 +1,5 @@
+<!--This is for the admin to send an email to all users in the database -->
+
 @extends('layouts.master')
 
 @section('title')
