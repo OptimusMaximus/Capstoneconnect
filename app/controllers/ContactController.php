@@ -157,7 +157,7 @@ class ContactController extends BaseController {
                 });
 
                 //Screen announcement for a successful email sent to all users
-                 Session::flash('screenA', 'You have successfully sent this email to users' );
+                 Session::flash('screenC', 'You have successfully sent this email to all users' );
 
               
                      return View::make('contact_users'); 

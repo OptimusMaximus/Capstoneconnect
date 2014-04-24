@@ -24,9 +24,8 @@ Route::post('/reset/{token}', array('uses' => 'PasswordController@update')); //,
 Route::get('/register', array('uses' => 'AuthController@showRegister'));
 Route::post('/register', array('uses' => 'AuthController@activateUser', 'as' => 'activate'));
 
-
+//These two routes show the splash page contents under the /welcome link
 Route::get('/splash', array('uses'=> 'SplashController@showWelcome', 'as' => 'splash'));
-
 Route::get('/welcome', array('uses'=> 'WelcomeController@showWelcome', 'as' => 'welcome'));
 
 
@@ -51,6 +50,7 @@ Route::group(array('prefix' => '', 'before' => 'authAdmin'), function()
 		Route::post('/download_csv', array('uses' => 'ExportCSVController@doneExportCSV'));
 		Route::get('/contact_create_email', array('uses' => 'ContactController@create', 'as' => 'contact_create_email'));
 		Route::post('/contact_create_email', array('uses' => 'ContactController@update', 'as' => 'update'));
+		//These routes are for the admin to contact all users in database
 		Route::get('/contact_users', array('uses' => 'ContactController@getContactUsers', 'as' => 'contact_users'));
 		Route::post('/contact_users', 'ContactController@getContactAllUsers');
 
@@ -72,10 +72,9 @@ Route::group(array('prefix' => '', 'before' => 'auth'), function()
 
 		Route::resource('evaluation', 'EvaluationController', array('only' => array('index','show')));
 		
-		//Contact Page
+		//These routes are for the students to contact the admin
 		Route::get('/contact', array('uses' => 'ContactController@getContact', 'as' => 'contact'));
-		//Form request:: POST action will trigger to controller
-		Route::post('contact_request','ContactController@getContactUsForm');
+		Route::post('/contact_request','ContactController@getContactUsForm');
 
 });
 

@@ -1,7 +1,5 @@
-<!--This is for the admin to send an email to all users in the database -->
-
 @extends('layouts.master')
-
+<!--This is for the admin to send an email to all users in the database -->
 @section('title')
 @parent
 @stop
@@ -28,8 +26,8 @@ Send An Email To All Users
  {{ Form:: open(array('url' => 'contact_users')) }} <!--contact_request is a router from Route class-->
 
   <!-- Post message if successfully sent email -->
-        @if (Session::get('screenA'))
-            <div class = "alert alert-success"> {{ Session::get('screenA') }} </div>
+        @if (Session::get('screenC'))
+            <div class = "alert alert-success"> {{ Session::get('screenC') }} </div>
          @endif
 <div class="form-group">
             <ul class="errors">

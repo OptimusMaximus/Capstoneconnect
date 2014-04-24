@@ -1,5 +1,5 @@
-<!-- This is the splash page that contains the video and links on the /welcome page -->
 @extends('layouts.masterlogin')
+<!-- This is the splash page that contains the video and links on the /welcome page -->
 
 @section('title')
 @parent
