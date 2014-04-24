@@ -15,7 +15,8 @@ class ContactController extends BaseController {
             //Get all the data and store it inside Store Variable
             $data = Input::all();
 
-            //Validation rules
+            //Validation rules for contacting professor
+            //phone number is not currently required
             $rules = array (
                 'first_name' => 'required|alpha',
                 'last_name' => 'required|alpha',
@@ -115,7 +116,7 @@ class ContactController extends BaseController {
                        
         }
 
-        //This is for the Admin sending emails to ALL USERS!
+        //This is the controller for the Admin sending emails to ALL USERS!
         public function getContactUsers()
         {
 
@@ -128,6 +129,7 @@ class ContactController extends BaseController {
           //  $mailuserlist=DB::table('users')->get();
 
             //Validation rules
+            //Since it's coming from the admin, only the message is required right now
             $rules = array (
                 /*
                 'first_name' => 'required|alpha',
@@ -154,7 +156,7 @@ class ContactController extends BaseController {
                        
                 });
 
-                //Sucess Return for sending email
+                //Screen announcement for a successful email sent to all users
                  Session::flash('screenA', 'You have successfully sent this email to users' );
 
               
