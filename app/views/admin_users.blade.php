@@ -37,10 +37,10 @@ Admin Tools
     <table class="table gamecock-table">
         <thead>
             <tr>
-                <th>Name</th>
+                <th>Project Name</th>
                 <th>Description</th>
                 <th>Date Created</th>
-                <th colspan=2>options</th>
+                <th colspan=2>Options</th>
             </tr>
         </thead>
         <tbody>
