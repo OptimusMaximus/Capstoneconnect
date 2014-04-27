@@ -18,14 +18,14 @@ Manage Evaluations
     <h2>Open evaluations</h2>
     <hr>
     @foreach ($openEvals as $open)
-        {{HTML::linkRoute("evaluation.edit", $open->title." closes on ".$open->close_at->toFormattedDateString(), $open->id)}} <br><br>
+        {{HTML::linkRoute("evaluation.edit", $open->title." Closes on ".$open->close_at->toFormattedDateString(), $open->id)}} <br><br>
     @endforeach
 
     <h2>Closed evaluations</h2>
     <hr>
     @if(!is_null($closedEvals))
         @foreach ($closedEvals as $closed)
-            {{HTML::linkRoute("evaluation.edit", $closed->title." closed on ".$closed->close_at->toFormattedDateString(), $closed->id)}} <br><br>
+            {{HTML::linkRoute("evaluation.edit", $closed->title." Closed on ".$closed->close_at->toFormattedDateString(), $closed->id)}} <br><br>
         @endforeach
     @endif
     
