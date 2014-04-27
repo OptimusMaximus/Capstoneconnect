@@ -75,10 +75,10 @@
                                     </a>  
                                     <ul class="dropdown-menu bottom-up">');
                                     echo('<li>');  
-                                        echo( HTML::linkRoute('admin_users', 'User/Project') );
+                                        echo( HTML::linkRoute('admin_users', 'User/Project Management') );
                                     echo('</li>');
                                     echo('<li>');
-                                        echo( HTML::linkRoute('admin_evals', 'Mange Evaluation') );
+                                        echo( HTML::linkRoute('admin_evals', 'Mange Evaluations') );
                                     echo('</li>');
                                     echo('<li>');
                                         echo( HTML::linkRoute('allgrades', 'Average Grades') );
@@ -87,7 +87,7 @@
                                         echo( HTML::linkRoute('create_announcement', 'Create/Delete Announcements'));
                                     echo('</li>');
                                     echo('<li>');
-                                        echo( HTML::linkRoute('download_csv', 'Download CSV Files'));
+                                        echo( HTML::linkRoute('download_csv', 'Export CSV Files'));
                                     echo('</li>');
                                     echo('<li>');
                                         echo( HTML::linkRoute('contact_create_email', 'Update Email Contact'));
