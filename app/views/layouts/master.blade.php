@@ -78,7 +78,7 @@
                                         echo( HTML::linkRoute('admin_users', 'User/Project Management') );
                                     echo('</li>');
                                     echo('<li>');
-                                        echo( HTML::linkRoute('admin_evals', 'Mange Evaluations') );
+                                        echo( HTML::linkRoute('admin_evals', 'Manage Evaluations') );
                                     echo('</li>');
                                     echo('<li>');
                                         echo( HTML::linkRoute('allgrades', 'Average Grades') );
