@@ -51,14 +51,15 @@ $end = DB::table('evaluations')->where('id', $id)->pluck('close_at');
 <!--<div class="table-responsive">
  <table id="AverageGrades" class="table table-bordered table-groups" >
 -->
-<table id="AverageGrades" class="display">
+
+<table id="AverageGrades" class="display" height = 100% width = 100%>
 <thead>
  <tr bgcolor="Black">
 
                    <th><font color="White">First Name</th></font>
                    <th><font color="White">Last Name</th></font>
                    <th><font color="White">Email</th></font>
-                   <th> <font color="White">Average For Evaluation ending <br /> {{$end}}</th></font>
+                   <th> <font color="White">Average For Evaluation Ending <br /> {{$end}}</th></font>
                    <th> <font color="White">Average Grade</th></font>
         
                      
