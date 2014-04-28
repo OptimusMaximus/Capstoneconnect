@@ -488,8 +488,8 @@ textarea {
 
 .calendar table
 {
-	height: 250px;
-	width: 350px;
+	height: 100%;
+	width: 100%;
 	margin-bottom: 20px;
 	color: white;
 	background-color: #73000A;
