@@ -48,7 +48,7 @@ Send An Email To All Users
 -->
             {{ Form:: label ('message', 'Message*' )}}<br />
               <div class="form-group col-centered">                  
-            {{ Form::textarea('message', '', array('class' => 'col-xs-12','placeholder' => 'Please enter a message to all users'))}}                
+            {{ Form::textarea('message', '', array('class' => 'col-xs-12','placeholder' => 'Enter the message you wish to send here.'))}}                
             </div>
             <b>*</b> indicates required feild
             
