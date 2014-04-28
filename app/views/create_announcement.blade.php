@@ -33,7 +33,7 @@ Create or Delete Annoucements
         <div class="form-group">                  
             {{ Form::textarea('announcement', '', 
                 array('class' => 'form-control',
-                'placeholder' => 'Please enter a new announcement.'))}}                
+                'placeholder' => 'Enter your announcement here.'))}}                
         </div>  
         </br>
 
