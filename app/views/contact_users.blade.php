@@ -50,7 +50,7 @@ Send An Email To All Users
               <div class="form-group col-centered">                  
             {{ Form::textarea('message', '', array('class' => 'col-xs-12','placeholder' => 'Enter the message you wish to send here.'))}}                
             </div>
-            <b>*</b> indicates required feild
+            <b>*</b> <i>Indicates Required Field</i>
             
 <br />
 <br />
