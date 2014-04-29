@@ -15,8 +15,8 @@ class CreateUsers extends Migration {
 		
 		Schema::create('users', function($table)
 		{
-			$table->bigIncrements('id');
-			$table->bigInteger('project_id')->unsigned()->nullable()->default(NULL);
+			$table->increments('id');
+			$table->unsignedInteger('project_id')->unsigned()->nullable()->default(NULL);
 			$table->string('email');
 			$table->string('password');
 			$table->mediumText('permissions')->nullable();
@@ -30,6 +30,9 @@ class CreateUsers extends Migration {
 			$table->string('last_name')->nullable()->default(NULL);
 			$table->timestamps();
 
+			$table->foreign('project_id')
+				->references('id')->on('projects')
+				->onDelete('cascade');
 			$table->unique('email');
 			$table->index('activation_code');
 			$table->index('reset_password_code');

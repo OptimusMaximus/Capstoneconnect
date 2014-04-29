@@ -14,9 +14,9 @@ class CreateUsersGroups extends Migration {
 		Schema::dropIfExists('users_groups');
 		Schema::create('users_groups', function($table)
 		{
-			$table->bigIncrements('id');
-			$table->bigInteger('user_id');
-			$table->bigInteger('group_id');
+			$table->increments('id');
+			$table->unsignedInteger('user_id');
+			$table->unsignedInteger('group_id');
 
 			$table->engine = 'InnoDB';
 		});

@@ -15,7 +15,7 @@ class CreateGroups extends Migration {
 		
 		Schema::create('groups', function($table)
 		{
-			$table->bigIncrements('id');
+			$table->increments('id');
 			$table->string('name');
 			$table->mediumText('permissions')->nullable();
 			$table->timestamps();

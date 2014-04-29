@@ -15,8 +15,8 @@ class CreateThrottle extends Migration {
 
 		Schema::create('throttle', function($table)
 		{
-			$table->bigIncrements('id');
-			$table->bigInteger('user_id')->unsigned();
+			$table->increments('id');
+			$table->unsignedInteger('user_id')->unsigned();
 			$table->string('ip_address')->nullable()->default(NULL);
 			$table->bigInteger('attempts')->default(0);
 			$table->smallInteger('suspended')->default(0);

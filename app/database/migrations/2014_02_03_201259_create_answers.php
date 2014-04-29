@@ -16,10 +16,10 @@ class CreateAnswers extends Migration {
 		Schema::create('answers',function($table)
 		{
 			//scheme
-			$table->bigIncrements('id');
-			$table->integer('eid');
-			$table->integer('answered_by');
-			$table->integer('answered_about');
+			$table->increments('id');
+			$table->unsignedInteger('eid');//unsigned!!
+!			$table->unsignedInteger('answered_by');
+			$table->unsignedInteger('answered_about');
 			$table->string('ans1');
 			$table->string('ans2');
 			$table->string('ans3');
@@ -33,6 +33,13 @@ class CreateAnswers extends Migration {
 			$table->text('comment');
 			$table->timestamps();
 
+
+			$table->foreign('answered_about')
+				->references('id')->on('users')
+				->onDelete('cascade');
+			$table->foreign('answered_by')
+				->references('id')->on('users')
+				->onDelete('cascade');
 		});
 	}
 
