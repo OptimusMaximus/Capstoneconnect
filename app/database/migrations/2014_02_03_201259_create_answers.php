@@ -40,6 +40,9 @@ class CreateAnswers extends Migration {
 			$table->foreign('answered_by')
 				->references('id')->on('users')
 				->onDelete('cascade');
+			$table->foreign('eid')
+				->references('id')->on('evaluations')
+				->onDelete('cascade');
 		});
 	}
 
