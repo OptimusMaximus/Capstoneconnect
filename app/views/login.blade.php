@@ -21,36 +21,46 @@
       
       <!-- login errors from Sentry -->
       @if (Session::get('loginError'))
-        <div class = "alert alert-danger"> {{ Session::get('loginError') }} </div>
+        <div class = "alert alert-danger"> {{ Session::get('loginError') }}
+          <a class="close" data-dismiss="alert">×</a>
+        </div>
       @endif
 
       @if (Session::get('logoutSuccess'))
-        <div class = "alert alert-success"> {{ Session::get('logoutSuccess') }} </div>
+        <div class = "alert alert-success"> {{ Session::get('logoutSuccess') }}
+          <a class="close" data-dismiss="alert">×</a> 
+        </div>
       @endif
 
       @if (Session::get('resetSuccess'))
-        <div class = "alert alert-success"> {{ Session::get('resetSuccess') }} </div>
+        <div class = "alert alert-success"> {{ Session::get('resetSuccess') }}
+          <a class="close" data-dismiss="alert">×</a>
+        </div>
       @endif
 
       <!-- login errors from Validator -->
       @if ($errors->count() > 0)
         <div class = "alert alert-danger">
+          <a class="close" data-dismiss="alert">×</a>
           <p>
             {{ $errors->first('email') }}
             {{ $errors->first('password') }}
           </p>
+          
         </div>
       @endif
 
       <!-- successful registration -->
       @if (Session::get('registerSuccess'))
-        <div class = "alert alert-success">{{ Session::get('registerSuccess') }}</div>
+        <div class = "alert alert-success">{{ Session::get('registerSuccess') }}
+          <a class="close" data-dismiss="alert">×</a>
+        </div>
       @endif
 
       <div class="form-group">
         {{ Form::label('email', 'Email', array('class' => 'col-sm-2 control-label')) }}
         <div class="col-sm-10">
-          {{ Form::email('email', Input::old('email'), array('placeholder' => 'admin@sc.edu', 
+          {{ Form::email('email', Input::old('email'), array('placeholder' => 'username@email.sc.edu', 
                                                              'class'       => 'form-control')) }}
         </div>
       </div>

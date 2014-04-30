@@ -24,9 +24,16 @@ Contact Professor
 <!-- Blade Template engine -->
  {{ Form:: open(array('url' => 'contact_request')) }} <!--contact_request is a router from Route class-->
         <!-- Post message if successfully sent email -->
+        @if(Session::get('screenB'))
+            <div class = "alert alert-warning"> {{ Session::get('screenB') }} 
+                <a class="close" data-dismiss="alert">×</a>
+            </div>
+        @endif
         @if (Session::get('screenA'))
-            <div class = "alert alert-success"> {{ Session::get('screenA') }} </div>
-         @endif
+            <div class = "alert alert-success"> {{ Session::get('screenA') }} 
+                <a class="close" data-dismiss="alert">×</a>
+            </div>
+        @endif
 
 
 <div class="form-group">

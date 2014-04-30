@@ -27,9 +27,11 @@ Send An Email To All Users
 
   <!-- Post message if successfully sent email -->
         @if (Session::get('screenC'))
-            <div class = "alert alert-success"> {{ Session::get('screenC') }} </div>
+            <div class = "alert alert-success"> {{ Session::get('screenC') }} 
+                <a class="close" data-dismiss="alert">×</a>
+            </div>
          @endif
-<div class="form-group">
+    <div class="form-group">
             <ul class="errors">
                 @foreach($errors->all('<li>:message</li>') as $message)
                 {{ $message }}
@@ -58,7 +60,7 @@ Send An Email To All Users
             {{ Form::reset('Clear', array('class' => 'btn cc-btn-primary')) }}
             {{-- Form::submit('Send To All Users', array('class' => 'btn cc-btn-primary'))--}}
         {{ Form::submit('Send To All Users', array('class'=>'btn cc-btn-primary', 'data-toggle' => "modal", 'data-target'=> "#confirmSend", 'data-title'=>"Confirm Email",
-                                      'data-message'=>'Are you sure you want to send an email to All Users? This will take a few seconds...', 'data-placement'=>'top', 'title' => 'Send Email')) }}
+                                      'data-message'=>'Are you sure you want to send an email to all users? This will take a few seconds...', 'data-placement'=>'top', 'title' => 'Send Email')) }}
 
 
             {{ Form:: close() }}

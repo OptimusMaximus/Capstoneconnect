@@ -17,13 +17,14 @@
   <!-- Form to create new password -->
 	@if (Session::has('error'))
   <div class = "alert alert-warning">
-  		{{ trans(Session::get('reason')) }} </div>
+  		{{ trans(Session::get('reason')) }} 
+  </div>
 	@endif
  
 	{{ Form::open(array('route' => array('reset', $token))) }}
  
   <p>{{ Form::label('email', 'Email') }}
-  	{{ Form::text('email', Input::old('email'), array('placeholder' => 'admin@sc.edu')) }}
+  	{{ Form::text('email', Input::old('email'), array('placeholder' => 'username@email.sc.edu')) }}
   </p> 
  
   <p>{{ Form::label('password', 'Password') }}

@@ -45,7 +45,9 @@
 @section('content')
 <div class='LittleWhite container'>
     @if (Session::get('registerError'))
-        <div class = "alert alert-danger"> {{ Session::get('registerError') }} </div>
+        <div class = "alert alert-danger"> {{ Session::get('registerError') }} 
+            <a class="close" data-dismiss="alert">×</a>
+        </div>
     @endif
     {{ Form::open(array('url' => route('activate'), 'role'=>'form', 'class'=>'form-horizontal')) }}
         <div class='form-group'>
