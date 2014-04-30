@@ -18,16 +18,21 @@ Update Contact Email
 
      <!-- Post message if successful -->
     @if (Session::get('screenAnnounce'))
-        <div class = "alert alert-success"> {{ Session::get('screenAnnounce') }} </div>
+        <div class = "alert alert-success"> {{ Session::get('screenAnnounce') }} 
+            <a class="close" data-dismiss="alert">×</a>
+        </div>
     @endif
 
      @if (Session::get('warning'))
-        <div class = "alert alert-danger"> {{ Session::get('warning') }} </div>
+        <div class = "alert alert-danger"> {{ Session::get('warning') }}
+            <a class="close" data-dismiss="alert">×</a>
+        </div>
     @endif
 
      <!-- login errors from Validator -->
       @if ($errors->count() > 0)
         <div class = "alert alert-danger">
+            <a class="close" data-dismiss="alert">×</a>
           <p>
             {{ $errors->first('email') }}
             {{-- $errors->first('password') --}}

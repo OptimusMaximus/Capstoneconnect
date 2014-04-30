@@ -27,7 +27,9 @@ Create or Delete Annoucements
 
         <!-- Post message if successful -->
         @if (Session::get('screenAnnounce'))
-            <div class = "alert alert-success"> {{ Session::get('screenAnnounce') }} </div>
+            <div class = "alert alert-success"> {{ Session::get('screenAnnounce') }} 
+                <a class="close" data-dismiss="alert">×</a>
+            </div>
          @endif
 
         <div class="form-group">                  
