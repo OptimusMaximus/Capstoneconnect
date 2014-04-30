@@ -16,7 +16,7 @@ class CreateEvaluations extends Migration {
 		Schema::create('evaluations', function($table)
 		{
 			//scheme
-			$table->bigIncrements('id');
+			$table->increments('id');
 			$table->string('q1');
 			$table->string('q2');
 			$table->string('q3');
