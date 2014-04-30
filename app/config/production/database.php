@@ -54,11 +54,11 @@ return array(
 
 		'mysql' => array(
 			'driver'    => 'mysql',
-			'host'      => 'capstonedb.c3o5uazfp1by.us-west-2.rds.amazonaws.com',
-			'database'  => 'capstonedb',
+			'host'      => 'mysql-g11a.mysqldbserver.com',
+			'database'  => 'heres4',
 			'port'      => '3306',
-			'username'  => 'awsuser',
-			'password'  => 'mypassword',
+			'username'  => 'heres4',
+			'password'  => 'SeniorDesign!',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',

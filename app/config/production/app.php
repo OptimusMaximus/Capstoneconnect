@@ -26,7 +26,7 @@ return array(
 	|
 	*/
 
-	'url' => 'http://ec2-54-200-250-56.us-west-2.compute.amazonaws.com',
+	'url' => 'http://heresthedeal.info/capstoneconnect/',
 
 	/*
 	|--------------------------------------------------------------------------
