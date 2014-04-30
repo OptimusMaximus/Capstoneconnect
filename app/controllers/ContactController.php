@@ -37,7 +37,7 @@ class ContactController extends BaseController {
                      //Arrange contacts table in descending order by created_at time and pick the most recent one
                     $contact = Contact::orderBy('created_at', 'desc')->first();
                     if($contact == null) {
-                        Session::flash('screenB', 'Your professor has not setup a contact email address yet');
+                        Session::flash('screenB', 'Your professor has not setup a contact email address yet.');
                         return View::make('contact');
                     }
                     $contactEmail = $contact->contact_email;

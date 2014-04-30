@@ -83,7 +83,7 @@ Capstone Connect
         <br /><br />
         @endforeach
         @else
-        <p>This user has no evaluations filled out about them.</p>
+        <p>This user has not filled out any evaluations.</p>
         @endif
     <br><br>
     
