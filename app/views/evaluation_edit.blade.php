@@ -51,7 +51,8 @@ Edit Evaluation
 	                'role' => 'form', 'method' => 'delete'))}}
 	<!-- Popup with confirmation when submitted -->
     {{ Form::submit('Delete Evaluation', array('class'=>'btn btn-primary', 'type' => 'submit', 'data-toggle' => 'modal', 'data-target' => '#confirmDelete', 
-            'data-title' => "Delete Evaluation?", 'data-message'=> "Are you sure you want to delete this evaluation?", 'data-placement' => 'top', 'title' => 'Click here to delete the evaluation')) }}
+            'data-title' => "Delete Evaluation?", 'data-message'=> "Are you sure you want to delete this evaluation?  You will delete all answers submitted that are associated with this evaluation!", 
+            'data-placement' => 'top', 'title' => 'Click here to delete the evaluation')) }}
       
     {{-- Form::submit('Delete Evaluation', array('class'=>'btn btn-default', 'data-toggle' => 'tooltip','data-placement' => 'top', 'title' => 'Click here to create a delete an evaluation')) --}}
     {{Form::close()}}
