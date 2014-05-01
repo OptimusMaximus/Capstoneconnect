@@ -12,7 +12,7 @@ Welcome to Capstone Connect
 @section('content')
 
 <div class = "row">
-  <div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-4 col-lg-4" style = "background-color: #73000A">
+  <div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-4 col-lg-4 Announcements">
     <h3>Announcements</h3>  
 
     <div class="InsideAnnouncement" style = "word-wrap: break-word">
@@ -49,7 +49,14 @@ Welcome to Capstone Connect
 
   <div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-2 col-md-5 col-md-offset-1 col-lg-4 col-lg-offset-2" style = "background-color: #FFFFFF">
 
-<?php $now = Carbon::now()->startOfMonth();
+<?php
+      $admin = Sentry::findGroupByName('Admin');
+      $NOTadmin = Sentry::findGroupByName('Users');
+      $user = Sentry::getUser();
+
+    if ($user->inGroup($NOTadmin))
+    {
+      $now = Carbon::now()->startOfMonth();
       $currMonthCount = count($currMonthEvals);
       $nextMonthCount = count($nextMonthEvals);
       $cal1data=array();
@@ -63,6 +70,24 @@ Welcome to Capstone Connect
       foreach ($nextMonthEvals as $eval) {
         $cal2data[$eval->close_at->day]=URL::route('evaluation.show', $eval->id);
       }
+    }
+    elseif ($user->inGroup($admin)) 
+    {
+      $now = Carbon::now()->startOfMonth();
+      $currMonthCount = count($currMonthEvals);
+      $nextMonthCount = count($nextMonthEvals);
+      $cal1data=array();
+      $cal2data=array();
+
+      foreach ($currMonthEvals as $eval) {
+        if($eval->close_at->gte(Carbon::now()->startOfDay())){
+          $cal1data[$eval->close_at->day]=URL::route('evaluation.edit', $eval->id);
+        }
+      }
+      foreach ($nextMonthEvals as $eval) {
+        $cal2data[$eval->close_at->day]=URL::route('evaluation.edit', $eval->id);
+      }
+    }
 ?>
   
   <div class="calendar">

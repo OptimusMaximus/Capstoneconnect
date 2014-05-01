@@ -21,7 +21,7 @@ Evaluate Group Member
 @section('content')
 <!-- this @include is needed for confirmation popup -->
 @include('submit_confirm')
-
+  @if(sizeof($groupMembers) > 0)
     	 {{ Form::open(        
          array('url' => route('answer.store'),
               'role' => 'form'))}}
@@ -85,5 +85,7 @@ Evaluate Group Member
 
     {{ Form::close() }}
       </div>
-    
+  @else
+  <p>you have no group members to evaluate</p>
+  @endif    
 @stop

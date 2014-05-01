@@ -37,12 +37,13 @@
 		padding-top:25px;
 	}
 	.Announcements {	
+		border-radius:25px;
 		background-color:#73000A;
-		height:auto;
-		width:auto;
-		margin: 0 auto;
+		padding-bottom: 20px;
+		padding-right: 20px;
+		padding-left: 20px;
 		border:2px solid black;
-		float:none
+		float:left
 	} 	
 	
 	.InsideAnnouncement {
