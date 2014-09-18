@@ -8,6 +8,8 @@
 @stop
 @section('head')
 {{ HTML::script('js/jquery-ui-1.10.4.custom.js') }}
+{{ HTML::script('js/jquery-ui-timepicker-addon.js') }}
+
 <script>
 var questionNum=10;
 
@@ -96,5 +98,23 @@ New Evaluation
 	        {{ Form::submit('Create Evaluation', array('class'=>'btn btn-default', 'data-toggle' => 'tooltip','data-placement' => 'top', 'title' => 'Click here to create a new evaluation')) }}
 	    </div>
 	{{ Form::close() }}
-	<script>$('#date').datepicker();</script>
+	<script>$('#date').datetimepicker();</script>
+	<h4>It is now  
+<script type="text/javascript">
+<!--
+var currentTime = new Date()
+var hours = currentTime.getHours()
+var minutes = currentTime.getMinutes()
+if (minutes < 10){
+minutes = "0" + minutes
+}
+document.write(hours + ":" + minutes + " ")
+if(hours > 11){
+document.write("PM")
+} else {
+document.write("AM")
+}
+//-->
+</script>
+</h4>
 @stop

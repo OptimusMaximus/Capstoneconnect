@@ -8,6 +8,7 @@
 @stop
 @section('head')
 {{ HTML::script('js/jquery-ui-1.10.4.custom.js') }}
+{{ HTML::script('js/jquery-ui-timepicker-addon.js') }}
 @stop
 @section('header')
 Edit Evaluation
@@ -57,5 +58,5 @@ Edit Evaluation
     {{-- Form::submit('Delete Evaluation', array('class'=>'btn btn-default', 'data-toggle' => 'tooltip','data-placement' => 'top', 'title' => 'Click here to create a delete an evaluation')) --}}
     {{Form::close()}}
 
-	<script>$('#date').datepicker();</script>
+	<script>$('#date').datetimepicker();</script>
 @stop
