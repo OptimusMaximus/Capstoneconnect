@@ -1,5 +1,6 @@
 The MIT License (MIT)
 
+Capstone Connect
 Copyright (c) [2014] [Maximus Brandel, Sean Frankett, Nicholas Keshavarz-Nia, Ben Norman, and Skylar Smith]
 
 
