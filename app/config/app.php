@@ -39,7 +39,8 @@ return array(
 	|
 	*/
 
-	'timezone' => 'UTC',
+	//'timezone' => 'UTC',
+	'timezone' => 'America/New_york',
 
 	/*
 	|--------------------------------------------------------------------------
