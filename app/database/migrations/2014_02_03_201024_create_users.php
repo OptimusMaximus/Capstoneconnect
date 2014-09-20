@@ -28,6 +28,7 @@ class CreateUsers extends Migration {
 			$table->string('reset_password_code')->nullable()->default(NULL);
 			$table->string('first_name')->nullable()->default(NULL);
 			$table->string('last_name')->nullable()->default(NULL);
+			$table->string('remember_token')->nullable()->index();
 			$table->timestamps();
 
 			$table->foreign('project_id')
