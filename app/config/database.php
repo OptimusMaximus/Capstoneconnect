@@ -60,7 +60,7 @@ return array(
 			'database'  => 'capstone_connect',
 			'port'      => '3306',
 			'username'  => 'root',
-			'password'  => 'capstone_connect',
+			'password'  => 'capstoneconnect',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
