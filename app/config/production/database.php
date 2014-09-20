@@ -52,7 +52,7 @@ return array(
 			'prefix'   => '',
 		),
 
-		'mysql' => array(
+		/*'mysql' => array(
 			'driver'    => 'mysql',
 			'host'      => 'capstonedb.c3o5uazfp1by.us-west-2.rds.amazonaws.com',
 			'database'  => 'capstonedb',
@@ -62,7 +62,18 @@ return array(
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
-		),
+		),*/
+
+		'mysql' => array(
+			'driver'    => 'mysql',
+			'host'      => '127.0.0.1',
+			'database'  => 'capstonedb',
+			'port'      => '3306',
+			'username'  => 'root',
+			'password'  => 'capstone_connect',
+			'charset'   => 'utf8',
+			'collation' => 'utf8_unicode_ci',
+			'prefix'    => '',
 
 		'pgsql' => array(
 			'driver'   => 'pgsql',
