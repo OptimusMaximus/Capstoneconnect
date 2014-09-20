@@ -25,10 +25,10 @@
  
 	{{ Form::open(array('route' => 'request')) }}
 	@if (!Session::has('success'))
- 	  <p> Enter sc.edu email address associated with your account to reset password </p>
+ 	  <p> Enter email.sc.edu email address associated with your account to reset password </p>
  	
   	<p>{{ Form::label('email', 'Email') }}
-  	{{ Form::text('email', Input::old('email'), array('placeholder' => 'admin@sc.edu')) }}	
+  	{{ Form::text('email', Input::old('email'), array('placeholder' => 'username@email.sc.edu')) }}	
   	</p>
  	
   	<p>{{ Form::submit('Submit') }}</p>

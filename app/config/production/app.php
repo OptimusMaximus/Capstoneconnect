@@ -26,7 +26,7 @@ return array(
 	|
 	*/
 
-	'url' => 'http://ec2-54-200-250-56.us-west-2.compute.amazonaws.com',
+	'url' => 'http://ec2-54-165-91-141.compute-1.amazonaws.com', //'http://ec2-54-200-250-56.us-west-2.compute.amazonaws.com',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -39,7 +39,7 @@ return array(
 	|
 	*/
 
-	'timezone' => 'UTC',
+	'timezone' => 'America/New_york',
 
 	/*
 	|--------------------------------------------------------------------------
