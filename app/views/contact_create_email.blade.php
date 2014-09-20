@@ -40,7 +40,7 @@ Update Contact Email
         </div>
       @endif
 
-    <h4>You can update your contact email so you can receive emails from Capstone Connect</h4>
+    <h4>You can update your contact email so you can receive emails from Capstone Connect students</h4>
     </br>
 
     <?php
