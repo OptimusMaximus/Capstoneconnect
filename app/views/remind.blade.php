@@ -21,6 +21,7 @@
   		{{ trans(Session::get('reason')) }}
 	@elseif (Session::has('success'))
   		An email to reset your password has been sent.
+      Please check your inbox or junk/spam.
 	@endif
  
 	{{ Form::open(array('route' => 'request')) }}
