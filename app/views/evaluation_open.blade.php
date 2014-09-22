@@ -15,10 +15,7 @@ Open Evaluations
 @show
 
 @section('content')
-	@if($openEvals == null)
-	{{'No open evaluation'}}
-
-	@else 
+	
    @foreach ($openEvals as $eval)
    		<div>
    		{{'This Evaluation closes on '.$eval->close_at->toFormattedDateString()." "}}
@@ -26,5 +23,4 @@ Open Evaluations
    		</div>
    		<br>
    @endforeach
-@endif
 @stop
