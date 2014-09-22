@@ -15,7 +15,6 @@ Open Evaluations
 @show
 
 @section('content')
-	
    @foreach ($openEvals as $eval)
    		<div>
    		{{'This Evaluation closes on '.$eval->close_at->toFormattedDateString()." "}}
