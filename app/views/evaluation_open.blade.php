@@ -15,10 +15,10 @@ Open Evaluations
 @show
 
 @section('content')
-	@if(!$eval->close_at->gte(Carbon::now() )){
+	@if(!$eval->close_at->gte(Carbon::now() ))
 	{{'No open evaluation'}}
-}
-@else {
+
+	@else 
    @foreach ($openEvals as $eval)
    		<div>
    		{{'This Evaluation closes on '.$eval->close_at->toFormattedDateString()." "}}
@@ -26,5 +26,5 @@ Open Evaluations
    		</div>
    		<br>
    @endforeach
-}
+@endelseif
 @stop
