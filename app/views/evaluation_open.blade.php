@@ -26,5 +26,5 @@ Open Evaluations
    		</div>
    		<br>
    @endforeach
-@endelseif
+@endif
 @stop
