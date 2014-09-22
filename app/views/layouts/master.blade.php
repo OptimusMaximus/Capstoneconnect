@@ -54,10 +54,8 @@
                         $admin = Sentry::findGroupByName('Admin');
 
                         // Find the user using the user id
-                        if(Sentry::getUser() != null) {
-                            $user = Sentry::getUser();
-                            $NOTadmin = Sentry::findGroupByName('Users');
-                        }
+                        $user = Sentry::getUser();
+                        $NOTadmin = Sentry::findGroupByName('Users');
 
 
 

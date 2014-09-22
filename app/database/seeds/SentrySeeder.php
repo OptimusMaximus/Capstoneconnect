@@ -232,10 +232,13 @@ class SentrySeeder extends Seeder {
                 'user.update' => 1,
                 )
             ));
+            */
         Sentry::getGroupProvider()->create(array(
             'name'        => 'Users',
             'permissions' =>  array('users' => 1),
             ));
+
+        /*
         $studentUser = Sentry::getUserProvider()->findByLogin('gandalfg@sc.edu');
         $studentGroup = Sentry::getGroupProvider()->findByName('Users');
         $studentUser->addGroup($studentGroup);
