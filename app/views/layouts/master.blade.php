@@ -52,10 +52,12 @@
 
                         // Find the Administrator group
                         $admin = Sentry::findGroupByName('Admin');
-                        
+
                         // Find the user using the user id
-                        $user = Sentry::getUser();
-                        $NOTadmin = Sentry::findGroupByName('Users');
+                        if(Sentry::getUser() != null) {
+                            $user = Sentry::getUser();
+                            $NOTadmin = Sentry::findGroupByName('Users');
+                        }
 
 
 
