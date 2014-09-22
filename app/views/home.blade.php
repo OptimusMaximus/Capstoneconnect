@@ -56,7 +56,7 @@ Welcome to Capstone Connect
       $cal2data=array();
 
       foreach ($currMonthEvals as $eval) {
-        if($eval->close_at->gte(Carbon::now()->startOfDay())){
+        if($eval->close_at->gte(Carbon::now() )){
           $cal1data[$eval->close_at->day]=URL::route('evaluation.show', $eval->id);
         }
       }
