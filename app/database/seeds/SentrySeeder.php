@@ -34,7 +34,7 @@ class SentrySeeder extends Seeder {
         // Assign admin to group
         $adminUser  = Sentry::getUserProvider()->findByLogin('mccants@cec.sc.edu');
         $adminGroup = Sentry::getGroupProvider()->findByName('Admin');
-        $adminUser->addGroup($adminGroup);
+        $adminUser->addGroup($admin);
 
        /* Sentry::getUserProvider()->create(array(
             'email'       => 'gandalfg@sc.edu',
