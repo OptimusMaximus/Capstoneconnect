@@ -23,13 +23,13 @@
                 validated = true;
             }
             if (passwordVal == '') {
-                $("#password").after('<span class="alert alert-danger">Please enter a password.</span>');
+                $("#password").after('<span class="error">Please enter a password.</span>');
                 validated = true;
             } else if (checkVal == '') {
-                $("#password-check").after('<span class="alert alert-danger">Please re-enter your password.</span>');
+                $("#password-check").after('<span class="error">Please re-enter your password.</span>');
                 validated = true;
             } else if (passwordVal != checkVal ) {
-                $("#password-check").after('<span class="alert alert-danger">Passwords do not match.</span>');
+                $("#password-check").after('<span class="error">Passwords do not match.</span>');
                 validated = true;
             }
             if(validated == true) {return false;}
