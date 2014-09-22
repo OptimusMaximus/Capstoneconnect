@@ -6,7 +6,7 @@ class ProjectsSeeder extends Seeder {
     {
         DB::table('projects')->delete();
 
-        Project::create(array('id'=>'1',
+        /*Project::create(array('id'=>'1',
                               'name'=>'Middle Earth Interactive',
                               'description'=>'A interactive map of Middle Earth.'));
         Project::create(array('id'=>'2',
@@ -15,6 +15,7 @@ class ProjectsSeeder extends Seeder {
         Project::create(array('id'=>'3',
                               'name'=>'Hero Space',
                               'description'=>'Social media app for super heroes.'));
+                              */
         $project = Project::create(array('id'=>'0',
                               'name'=>'Admin',
                               'description'=>'Admin users'));
