@@ -15,7 +15,7 @@ Open Evaluations
 @show
 
 @section('content')
-	@if(!$eval->close_at->gte(Carbon::now() ))
+	@if($openEvals == null)
 	{{'No open evaluation'}}
 
 	@else 
