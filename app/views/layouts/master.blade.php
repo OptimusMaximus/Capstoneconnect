@@ -49,13 +49,13 @@
                 <?php 
                     try
                     {
-                        // Find the user using the user id
-                        $user = Sentry::getUser();
-                        $NOTadmin = Sentry::findGroupByName('Users');
-
 
                         // Find the Administrator group
                         $admin = Sentry::findGroupByName('Admin');
+                        
+                        // Find the user using the user id
+                        $user = Sentry::getUser();
+                        $NOTadmin = Sentry::findGroupByName('Users');
 
 
 
