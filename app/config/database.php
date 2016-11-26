@@ -54,6 +54,7 @@ return array(
 			'prefix'   => '',
 		),
 
+		# Unsafe
 		'mysql' => array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',

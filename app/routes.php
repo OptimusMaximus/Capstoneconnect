@@ -53,6 +53,7 @@ Route::group(array('prefix' => '', 'before' => 'authAdmin'), function()
 		//These routes are for the admin to contact all users in database
 		Route::get('/contact_users', array('uses' => 'ContactController@getContactUsers', 'as' => 'contact_users'));
 		Route::post('/contact_users', 'ContactController@getContactAllUsers');
+        Route::get('/allgrades', array('uses' => 'allGradesController@showWelcome', 'as' => 'allgrades'));
 
 
 });
@@ -60,7 +61,6 @@ Route::group(array('prefix' => '', 'before' => 'authAdmin'), function()
 Route::group(array('prefix' => '', 'before' => 'auth'), function()
 {
         Route::get('/home', array('uses' => 'HomeController@showWelcome', 'as' => 'home'));
-        Route::get('/allgrades', array('uses' => 'allGradesController@showWelcome', 'as' => 'allgrades'));
         Route::get('/help', array('uses' => 'HelpController@showWelcome', 'as' => 'help'));
 		Route::get('/questionnaire', array('uses' => 'QuestionnaireController@showWelcome', 'as' => 'questionnaire'));
 		Route::get('/mygrades', array('uses' => 'GradesController@showWelcome', 'as' => 'mygrades'));

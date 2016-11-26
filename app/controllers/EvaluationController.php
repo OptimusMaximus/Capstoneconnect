@@ -60,7 +60,14 @@ class EvaluationController extends \BaseController {
 	 */
 	public function show($id)
 	{
+
+		// Make sure eval has closed
 		$eval = Evaluation::find($id);
+		if(!isset($eval)) return Redirect::to('home');
+		if($eval->close_at <= Carbon::now()){
+			return Redirect::to('home');
+		}
+
 		$currentUser = Sentry::getUser(); 
 	    $groupMembers = User::where('project_id','=',$currentUser->project_id)->where('id','!=',$currentUser->id)->get();
 

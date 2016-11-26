@@ -29,11 +29,30 @@ class AnswerController extends \BaseController {
 	 */
 	public function store()
 	{
-		
+		$currentUser = Sentry::getUser(); 
+	    $otherUser = User::where('project_id','=', $currentUser->project_id)
+	    		->where('id','=',Input::get('answered_about'))
+	    		->where('id','!=',$currentUser->id)
+	    		->first();
+
+		// Make sure eval has closed
+		$eval = Evaluation::find(Input::get("eid"));
+		if(!isset($eval)) return Redirect::to('home');
+		if($eval->close_at <= Carbon::now()){
+			return Redirect::to('home');
+		}
+
+	    // Don't allow unauthorized submission
+	    if(!isset($otherUser)){
+	    	Session::flash('screenA', 'Please submit a team member.');
+			return Redirect::route('evaluation.show', Input::get('eid'));
+		}
+
 		$ans = Answer::where('eid','=',Input::get('eid'))
-				->where('answered_about','=',Input::get('answered_about'))
-				->where('answered_by','=',Input::get('answered_by'))
+				->where('answered_about','=',$otherUser->id)
+				->where('answered_by','=',$currentUser->id)
 				->first();
+
 		if(isset($ans)) {
 			$ans->ans1= Input::get("ans1")!==NULL ? Input::get("ans1") : '';
 			$ans->ans2= Input::get("ans2")!==NULL ? Input::get("ans2") : '';
