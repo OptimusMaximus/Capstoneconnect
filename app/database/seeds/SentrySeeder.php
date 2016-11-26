@@ -10,6 +10,7 @@ class SentrySeeder extends Seeder {
         DB::table('groups')->delete();
         DB::table('users_groups')->delete();
  
+        # Unsafe
         Sentry::getUserProvider()->create(array(
             'email'       => 'mccants@cec.sc.edu',
             'password'    => 'capstone@1',
